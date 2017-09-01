@@ -1,30 +1,132 @@
+
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+    
 <style>
 body, html {
-    height: 100%;
-    margin: 0;
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
 }
 
-.bg {
-    /* The image used */
-    background-image: url("images/dozehilz.jpg");
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  opacity: 1.0;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
-    /* Full height */
-    height: 100%; 
+}
+.bgimg-1 {
+background-image: url("images/dozehilz.jpg");
+background-color: #000;
+  min-height: 100%;
+  background-size: 25%;
+}
 
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.bgimg-2 {
+  background-image: url("img_parallax2.jpg");
+  min-height: 400px;
+}
+
+.bgimg-3 {
+  background-image: url("img_parallax3.jpg");
+  min-height: 400px;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 75%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+
+.caption span.border {
+  /*background-color: #000;*/
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+
+subtext {
+  letter-spacing: 5px;
+  font: 20px "Lato", sans-serif;
+  color: #fff;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
 }
 </style>
+
+
 </head>
 <body>
 
-<div class="bg"></div>
+   <a href="#section2"><div class="bgimg-1">
+    
+  <!--<div class="caption">
+    <span class="border">Monk's Evil Lair</span>
+    </br>
+    <subtext>Building robots that chill in the world</p>
+  </div>-->
+</div></a>
+
+<div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;" id="section2">
+  <h3 style="text-align:center;">Monk's Evil Lair</h3>
+  <p>Years of experience building robots, swarm software, and simulation. Need something built on an unreasonably quick timeline? We got you. Headquarters located on the top of San Bruno Hill - drop by if you can find it.
+    </br>
+    </br>
+    sup@monksevillair.com
+    </br>
+    (530) 321-1008
+  </p>
+</div>
 
 </body>
-</html>
-
+</html
