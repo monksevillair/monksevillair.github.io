@@ -1,10 +1,10 @@
 <h2>The Bright Idea</h2>
 
-On January 1st, 2019 I got the bright idea to find a spot to park my sailboat somewhere in the San Francisco Bay and see how long I could live out there. The adventure lasted far longer than I expected and with it brought a moment of peace peppered with short periods of dread, fear, and general wetness. This is the story of a sailor, sailboat, sailrights, and Sahalie.
+On January 1st, 2019 I got the bright idea to find a spot to park my sailboat somewhere in the San Francisco Bay and see how long I could live out there. The adventure lasted far longer than I expected and with it brought a moment of peace peppered with short periods of dread, fear, and general wetness. This is the story of a sailor, sailboat, sailrights, and <a href="https://eattheworld.bandcamp.com/track/sahalie">Sahalie</a>.
 
 <img src="https://github.com/monksevillair/monksevillair.github.io/blob/master/Sailboat/Cover.jpg?raw=true" title="Cover Image"/>
 
-I can tell you what brought us to do this: free rent. This is the Bay Area, the highest cost of living in the world. The year before I bought my first sailboat and <a href="https://www.popularmechanics.com/adventure/outdoors/a18930170/diy-sailboat/">set it up with an electric motor</a>, partly to escape the high rent cost and mostly for the adventure. It was and excellent choice, and I faced a serious learning curve getting the boat sail worthy.
+I can tell you what brought us to do this: free rent. This is the Bay Area, the highest cost of living in the world. The year before I bought my first sailboat and <a href="https://www.popularmechanics.com/adventure/outdoors/a18930170/diy-sailboat/">set it up with an electric motor</a>, partly to escape the high rent cost and mostly for the adventure. It was and excellent choice, and I scaled a serious learning curve getting that boat sail worthy.
 
 <h2>A Small Survey With A Big Soda</h2>
 
