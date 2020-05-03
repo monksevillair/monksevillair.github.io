@@ -47,7 +47,7 @@ I took my dinghy to shore and later that day I gave a call to Coast Guard Island
 December 21, 2019. Big Soda and I get woken up by a man shouting "This is the Police" over the load speaker. We scrambled out on deck, and sure enough there was the East Bay Regional Park Police, and they asked us to board the boat. Initially I refused, but at some point I let them on (fatal mistake) and they ticketed me for a ripped life preserver. They also issued us an illegal camping permit. I showed them the USCG maps, that is was clearly marked as Anchorage 9, but they wouldn't have a bit of it. We were out February 1st, or they'd tow the boats. <a href="https://github.com/monksevillair/monksevillair.github.io/raw/master/Sailboat/2019%20San%20Leandro%20Bay%20Jurisdiction%20Report.pdf">I made a jurisdiction map</a>, and presented it to them, but they wouldn't budge. I heard from one of the officers that out the people on the shore were complaining about us, and a woman from the parks department had been begging them for a week to get us out.
 </br>
 </br>
-Arg an excellent experiment matey- alas, we turn home and head for the motherland.
+Arg an excellent experiment matey, alas, we turn home and head for the motherland.
 </br>
 </br>
 <img src="https://github.com/monksevillair/monksevillair.github.io/blob/master/Sailboat/anchored.jpg?raw=true" title="anchored"/>
