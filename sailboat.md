@@ -1,6 +1,6 @@
 <h2>The Bright Idea</h2>
 
-On January 1st, 2019 I got the bright idea to find a spot to park my sailboat somewhere in the San Francisco Bay and see how long I could live out there. The adventure lasted far longer than I expected and with it brought a moment of peace peppered with short periods of dread, fear, and general wetness. This is the story of a sailor, sailboat, sailrights, and <a href="https://eattheworld.bandcamp.com/track/sahalie">Sahalie</a>.
+I got the bright idea to find a spot to park my sailboat somewhere in the San Francisco Bay and see how long I could live out there. The adventure lasted far longer than I expected and with it brought moments of peace peppered with short periods of dread, fear, and general wetness. This is the story of a sailor, sailboat, sailrights, and <a href="https://eattheworld.bandcamp.com/track/sahalie">Sahalie</a>.
 
 <img src="https://github.com/monksevillair/monksevillair.github.io/blob/master/Sailboat/Cover.jpg?raw=true" title="Cover Image"/>
 
@@ -8,7 +8,7 @@ I can tell you what brought us to do this: free rent. This is the Bay Area, the 
 
 <h2>A Small Survey With A Big Soda</h2>
 
-My friend <a href="http://bigsodamusic.com/">Big Soda</a>, a fellow boat dweller and an incredible musician, joined me for the first day of surveying. Armed with an 8' PVC pipe, we set to probe out our target location in San Leandro Bay - a small bay the joins the south alameda channel to the San Francisco Bay. We identified this location on USCG Chart 18649 as Part of General Anchorage 9, meaning no restrictions for anchoring. I even called around the Coast Guard Offices and confirmed this was an OK spot to anchor long term! Alright!
+My friend <a href="http://bigsodamusic.com/">Big Soda</a>, a fellow boat dweller and an incredible musician, joined me for the first day of surveying. Armed with an 8' PVC pipe, we set to probe out our target location in San Leandro Bay - a small bay that joins the south alameda channel to the San Francisco Bay. We identified this location on USCG Chart 18649 as Part of General Anchorage 9, meaning no restrictions for anchoring. I even called around the Coast Guard Offices and confirmed this was an OK spot to anchor long term! Alright!
 
 The only caveats - much of the area is 1ft deep at low tide, with a few deep spots at around 7ft deep. Our boats have drafts of 6ft and 5ft. From our survey we found we had a 50ft diameter valley we could park our boats in and not strike ground. This isn't enough room to have good scope, so we decided we'd set up 4 large danforth anchors on the corners of the boats. This has the major disadvantage of not allowing the boats to swing into the direction of the current, putting a lot of force on the anchors and cleats. However, this area is pretty protected, and while we were there, we made it through a couple of 30mph wind storms with no dragging. But this method of mooring was absolutely a big unknown.
 
@@ -18,4 +18,28 @@ We need ropes, anchors, chain, solar, reverse osmosis, inverter, internet beamin
 <img src="https://github.com/monksevillair/monksevillair.github.io/blob/master/Sailboat/panels%20prius.jpg?raw=true" title="Panels in the Prius"/>
 <img src="https://github.com/monksevillair/monksevillair.github.io/blob/master/Sailboat/Solar.jpg?raw=true" title="Panels Strapped to boat transom"/>
 
-I installed a propane water heater for the shower connected to the boat water tank
+I installed a propane water heater for the shower, and we set off. Opening bridges with the VHF was an exciting experience.
+
+<img src="https://github.com/monksevillair/monksevillair.github.io/blob/master/Sailboat/bridge%20opening.jpg?raw=true" title="Boat Bridge Opening"/>
+
+<h2>30 Days and 30 Nights</h2>
+We took off on the night of December 1st, 2019. High tide was against us, since we'd gotten a late start. At 3 knots we navigated the Park St, Fruitvale St, and High St bridges by the light of the moon and streetlights. It was loads of fun, but it takes focus to hold the boat in place while the bridge was opening under a quick tide.
+
+We took Big Soda's 1961 Seafarer 31 that night, since it had a shallower draft we could feel out our little deep spot and if we got stuck, maybe get stuck less. When we finally made it to our Google Maps markers from our survey, we dropped anchor and packed up for the night. We took we woke up several times that night to check our depth with a skillet tied to a rope, anchor tension, and our GPS drift. I can't recommend enough having an anchor alarm for this type of boating, it helps with peace of mind.
+
+But my god what a beautiful spot it was at low tide:
+<img src="https://github.com/monksevillair/monksevillair.github.io/blob/master/Sailboat/lowtide.jpg?raw=true" title="low tide at sunset"/>
+
+Those little black spots were thousands of birds, and over the hours you could watch the land rise out of the sea and trap our boat in a puddle. At certain times it was treacherous. The metal stakes that marked the edges of the channel threatend to pop our inflatable dinghies when you couldn't see them at mid-tide, there were times you couldn't row against the tide, and when I did get stuck in the mud, stepping in it sucked in my leg up to my boot.
+
+Absolutely one of the best places I've anchored, and a hidden treasure of the bay area if you plan well.
+
+<h2>Is that a helicopter?</h2>
+Several days later I was woken up by a helicopter circling the boat, spouting unintelligible band-passed questions. I crawled up on deck and sat there looking up at it. Is that for me? Are the messing with me? Looking closer it was definitely a Coast Guard Helicopter - they probably they thought I was in trouble. After giving them several thumbs up they took off, but I was definitely concerned about what the hell they were up to.
+
+I took my dinghy to shore and later that day I gave a call to Coast Guard Island, which is right down the channel. They told me an SOS signal was being sent from my location - and they were making their way to my boat right now. There were no other boats around, and this made no sense, but I jumped back in the dinghy and planed over there. The Coast Guard Officers were super cool, they helped me tear apart the boat for a supposedly water activated SOS life jacket. I had torn the boat apart several times before, and I had the sneaking suspicion they just wanted to see if I had drugs. 
+
+<h2>Busted by the cops</h2>
+December 21, 2019. Big Soda and I get woken up by a man shouting "This is the Police" over the load speaker. We scrambled out on deck, and sure enough there was the East Bay Regional Park Police, and they asked us to board the boat. Initially I refused, but at some point I let them on (fatal mistake) and they ticketed me for a ripped life preserver. They also issued us an illegal camping permit. I showed them the USCG maps, that is was clearly marked as Anchorage 9, but they wouldn't have a bit of it. We were out February 1st, or they'd tow the boats. <a href="https://github.com/monksevillair/monksevillair.github.io/raw/master/Sailboat/2019%20San%20Leandro%20Bay%20Jurisdiction%20Report.pdf">I made a jurisdiction map</a>, and presented it to them, but they wouldn't budge. I heard from one of the officers that out the people on the shore were complaining about us, and a woman from the parks department had been begging them for a week to get us out.
+
+Arg an excellent experiment matey, but alas we turn home and head for the motherland.
