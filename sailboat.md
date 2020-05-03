@@ -14,7 +14,8 @@ The only caveats - much of the area is 1ft deep at low tide, with a few deep spo
 
 <h2>Patiently Preparing Allan Holdsworth's Red Herring</h2>
 We need ropes, anchors, chain, solar, reverse osmosis, inverter, internet beaming, transport boats, food, refregeration, hot water. Welll - at least some of that. Our vigor was great for our productivity - but looking back we could have used a bit more time preparing. Hard to say though, part of the fun was using my battery powered soldering iron to finish the solar system while we were anchored. I ended up strapping two huge <a href="http://www.solardesigntool.com/components/module-panel-solar/Itek-Energy/2783/iT-295-HE/specification-data-sheet.html">295W Itek Residential Solar Panels<a> to the back of my Sailboat. I got them from a local solar retailer that had a surplus of used panels - $100 with a warantee! Incredibly they fit perfectly in the back of my prius, and even came with stacking feet.
-
+</br>
+</br>
 <img src="https://github.com/monksevillair/monksevillair.github.io/blob/master/Sailboat/panels%20prius.jpg?raw=true" title="Panels in the Prius"/>
 <img src="https://github.com/monksevillair/monksevillair.github.io/blob/master/Sailboat/Solar.jpg?raw=true" title="Panels Strapped to boat transom"/>
 
@@ -28,6 +29,8 @@ We took off on the night of December 1st, 2019. High tide was against us, since 
 We took Big Soda's 1961 Seafarer 31 that night, since it had a shallower draft we could feel out our little deep spot and if we got stuck, maybe get stuck less. When we finally made it to our Google Maps markers from our survey, we dropped anchor and packed up for the night. We took we woke up several times that night to check our depth with a skillet tied to a rope, anchor tension, and our GPS drift. I can't recommend enough having an anchor alarm for this type of boating, it helps with peace of mind.
 
 But my god what a beautiful spot it was at low tide:
+</br>
+</br>
 <img src="https://github.com/monksevillair/monksevillair.github.io/blob/master/Sailboat/lowtide.jpg?raw=true" title="low tide at sunset"/>
 
 Those little black spots were thousands of birds, and over the hours you could watch the land rise out of the sea and trap our boat in a puddle. At certain times it was treacherous. The metal stakes that marked the edges of the channel threatend to pop our inflatable dinghies when you couldn't see them at mid-tide, there were times you couldn't row against the tide, and when I did get stuck in the mud, stepping in it sucked in my leg up to my boot.
@@ -45,4 +48,6 @@ December 21, 2019. Big Soda and I get woken up by a man shouting "This is the Po
 </br>
 </br>
 Arg an excellent experiment matey, but alas we turn home and head for the motherland.
+</br>
+</br>
 <img src="https://github.com/monksevillair/monksevillair.github.io/blob/master/Sailboat/anchored.jpg?raw=true" title="anchored"/>
