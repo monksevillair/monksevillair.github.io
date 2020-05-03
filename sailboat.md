@@ -36,10 +36,13 @@ Absolutely one of the best places I've anchored, and a hidden treasure of the ba
 
 <h2>Is that a helicopter?</h2>
 Several days later I was woken up by a helicopter circling the boat, spouting unintelligible band-passed questions. I crawled up on deck and sat there looking up at it. Is that for me? Are the messing with me? Looking closer it was definitely a Coast Guard Helicopter - they probably they thought I was in trouble. After giving them several thumbs up they took off, but I was definitely concerned about what the hell they were up to.
-
+</br>
+</br>
 I took my dinghy to shore and later that day I gave a call to Coast Guard Island, which is right down the channel. They told me an SOS signal was being sent from my location - and they were making their way to my boat right now. There were no other boats around, and this made no sense, but I jumped back in the dinghy and planed over there. The Coast Guard Officers were super cool, they helped me tear apart the boat for a supposedly water activated SOS life jacket. I had torn the boat apart several times before, and I had the sneaking suspicion they just wanted to see if I had drugs. 
 
 <h2>Busted by the cops</h2>
 December 21, 2019. Big Soda and I get woken up by a man shouting "This is the Police" over the load speaker. We scrambled out on deck, and sure enough there was the East Bay Regional Park Police, and they asked us to board the boat. Initially I refused, but at some point I let them on (fatal mistake) and they ticketed me for a ripped life preserver. They also issued us an illegal camping permit. I showed them the USCG maps, that is was clearly marked as Anchorage 9, but they wouldn't have a bit of it. We were out February 1st, or they'd tow the boats. <a href="https://github.com/monksevillair/monksevillair.github.io/raw/master/Sailboat/2019%20San%20Leandro%20Bay%20Jurisdiction%20Report.pdf">I made a jurisdiction map</a>, and presented it to them, but they wouldn't budge. I heard from one of the officers that out the people on the shore were complaining about us, and a woman from the parks department had been begging them for a week to get us out.
-
+</br>
+</br>
 Arg an excellent experiment matey, but alas we turn home and head for the motherland.
+<img src="https://github.com/monksevillair/monksevillair.github.io/blob/master/Sailboat/anchored.jpg?raw=true" title="anchored"/>
