@@ -8,7 +8,7 @@ I can tell you what brought us to do this: free rent. This is the Bay Area, the 
 
 <h2>A Small Survey With A Big Soda</h2>
 
-My friend <a href="http://bigsodamusic.com/">Big Soda</a>, a fellow boat dweller and an incredible musician, joined me for the first day of surveying. Armed with an 8' PVC pipe, we set to probe out our target location in San Leandro Bay - a small bay that joins the south alameda channel to the San Francisco Bay. We identified this location on USCG Chart 18649 as Part of General Anchorage 9, meaning no restrictions for anchoring. I even called around the Coast Guard Offices and confirmed this was an OK spot to anchor long term! Alright!
+My friend <a href="http://bigsodamusic.com/">Big Soda</a>, a fellow boat dweller and an incredible musician, joined me for the first day of surveying. Armed with an 8' PVC pipe, we set to probe out our target location in San Leandro Bay - a small bay that joins the south alameda channel to the San Francisco Bay. We identified this location on USCG Chart 18649 as part of General Anchorage 9, meaning no restrictions for anchoring. I even called around the Coast Guard Offices and confirmed this was an OK spot to anchor long term! Alright!
 
 The only caveats - much of the area is 1ft deep at low tide, with a few deep spots at around 7ft deep. Our boats have drafts of 6ft and 5ft. From our survey we found we had a 50ft diameter valley we could park our boats in and not strike ground. This isn't enough room to have good scope, so we decided we'd set up 4 large danforth anchors on the corners of the boats. This has the major disadvantage of not allowing the boats to swing into the direction of the current, putting a lot of force on the anchors and cleats. However, this area is pretty protected, and while we were there, we made it through a couple of 30mph wind storms with no dragging. But this method of mooring was absolutely a big unknown.
 
@@ -47,7 +47,7 @@ I took my dinghy to shore and later that day I gave a call to Coast Guard Island
 December 21, 2019. Big Soda and I get woken up by a man shouting "This is the Police" over the load speaker. We scrambled out on deck, and sure enough there was the East Bay Regional Park Police, and they asked us to board the boat. Initially I refused, but at some point I let them on (fatal mistake) and they ticketed me for a ripped life preserver. They also issued us an illegal camping permit. I showed them the USCG maps, that is was clearly marked as Anchorage 9, but they wouldn't have a bit of it. We were out February 1st, or they'd tow the boats. <a href="https://github.com/monksevillair/monksevillair.github.io/raw/master/Sailboat/2019%20San%20Leandro%20Bay%20Jurisdiction%20Report.pdf">I made a jurisdiction map</a>, and presented it to them, but they wouldn't budge. I heard from one of the officers that out the people on the shore were complaining about us, and a woman from the parks department had been begging them for a week to get us out.
 </br>
 </br>
-Arg an excellent experiment matey, but alas we turn home and head for the motherland.
+Arg an excellent experiment matey- alas, we turn home and head for the motherland.
 </br>
 </br>
 <img src="https://github.com/monksevillair/monksevillair.github.io/blob/master/Sailboat/anchored.jpg?raw=true" title="anchored"/>
