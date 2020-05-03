@@ -1,6 +1,6 @@
 <h2>The Quest for Free Rent: Anchoring a Sailboat</h2>
 
-I got the bright idea to find a spot to park my sailboat somewhere in the San Francisco Bay and see how long I could live out there. The adventure lasted far longer than I expected and with it brought moments of peace peppered with short periods of dread, fear, and general wetness. This is the story of a sailor, sailboat, sailrights, and <a href="https://eattheworld.bandcamp.com/track/sahalie">Sahalie</a>.
+I got the bright idea to find a spot to park my sailboat somewhere in the San Francisco Bay and see how long I could live out there. The adventure lasted far longer than I expected and with it brought moments of peace peppered with short periods of dread and general wetness. This is the story of a sailor, sailboat, sailrights, and <a href="https://eattheworld.bandcamp.com/track/sahalie">Sahalie</a>.
 
 <img src="https://github.com/monksevillair/monksevillair.github.io/blob/master/Sailboat/Cover.jpg?raw=true" title="Cover Image"/>
 
