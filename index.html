@@ -2,20 +2,50 @@
     <title>Evil Lair Coffee</title>
     <style>
         
-    html, body {margin: 0; height: 100%; overflow: hidden}
+    html, body { height: 100%; width: 100%; overflow: hidden}
         
         a {
-    color: red;
+    color: 9669FE;
+    text-decoration: none;
     }
-    body {background-color: black;}
+        div {
+   font-family: Arial, Geneva, Helvetica, sans-serif;
+            font-size: xx-large;
+            font-weight: bold;
+        }
+    body {background-color: #D0BCFE;}
     
+     
+    .container{
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    .box{
+        width: 100%;
+        height: 100%;            
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.8;  /* for demo purpose  */
+    }
+        
+        .stack-bottom {
+        }
+    .stack-top{
+        z-index: 9;
+        margin: 20;
+    }
+
+  
     .center-screen {
-      display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       min-height: 100vh;
+        top: 50%;
+        transform: translate(5%, 0%);
     }
 
     .rotate {
@@ -48,16 +78,20 @@
     </style>
   </head>
   <body>
-      <a href="https://soundcloud.com/son-of-thelonious/divoc69-1">music</a>
-      <a href="https://www.monksevillair.com/transcriptions/">transcriptions</a>
-      <a href="https://www.monksevillair.com/blog">blog</a>
-      <a href="https://www.evillair.coffee"</a>coffee shop</a>
-      <a href="https://www.monksevillair.com/projects">projects</a>
-
+   <div class="container">
+   <div class="box stack-top">
+   <a href="https://soundcloud.com/son-of-thelonious/divoc69-1">music</a><br>
+      <a href="https://www.monksevillair.com/transcriptions/">transcriptions</a><br>
+      <a href="https://www.monksevillair.com/blog">blog</a><br>
+      <a href="https://www.evillair.coffee" <="" a="">coffee shop</a><br>
+      <a href="https://www.monksevillair.com/projects">projects</a><br>
+   </div>
+<div class="box stack-bottom">
     <div class="center-screen">
-     <div class="shrink">
-        <img src="https://github.com/monksevilcoffee/monksevilcoffee.github.io/blob/main/dozehilz.png?raw=true" class="rotate" width="300">
+        <img src="https://github.com/monksevilcoffee/monksevilcoffee.github.io/blob/main/dozehilz.png?raw=true" class="rotate" width="400">
      </div>
-    </div>
+   </div>
+</div>
+
 
 </body></html>
