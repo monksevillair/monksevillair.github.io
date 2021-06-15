@@ -23,7 +23,7 @@ class genPages():
 
         return pages
 
-    # Generates sidebar html
+    # Generates sidebar html, garbage- fix this
     def gen_sidebar(self, filename):
         link_format = "<a href=\"{link}\">{content}</a></br>\n"
 
@@ -44,7 +44,7 @@ class genPages():
             if str(Path(filename[3:]).parent) in str(x):
                 link_address = (str(x))
                 if str(Path(filename[3:]).parent) != ".":
-                    link_address = (str(x))
+                    link_address = "../"+(str(x))
                 #print (x, filename, Path(filename[3:]).parent)
             #print(x, Path(filename[3:]).parent)
             #if name == "index": continue;
