@@ -11,6 +11,9 @@ Goals
 - [x] Make template.html based on index.html
   - [x] use {} and .format() to modify template
 - [ ] add transciptions and all that stuff we had before back
+- [ ] Map app shows where I am in my van rn
+- [ ] Make README.md the homepage actually
+- [ ] Put html files is root directory?
 - [ ] Make colors slightly change throughout day (for now only when it's updated)
   - [ ] Eventually github actions? script will automate building every few hours and change color and stuff
 - [ ] Update music link
