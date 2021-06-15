@@ -1,0 +1,225 @@
+<!-- generated from espanol/espanol.md at 06-15-2021 17:20:57 --><html>
+  <head>
+    <title># CSS
+</title>
+    <style>
+      html, body {
+	  height: 100%; width: 100%; overflow: hidden
+      }
+        
+      a {
+	  color: 9669FE;
+	  text-decoration: none;
+      }
+      
+      div {
+	  font-family: Arial, Geneva, Helvetica, sans-serif;
+      }
+      
+      body {
+	  background-color: #D0BCFE;
+      }
+
+      pre {
+	  font-size: x-large;
+	  color: 9669FE;
+	  white-space: pre-wrap;       /* Since CSS 2.1 */
+	  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+	  white-space: -pre-wrap;      /* Opera 4-6 */
+	  white-space: -o-pre-wrap;    /* Opera 7 */
+	  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+      }
+      
+      .container{
+          width: 100%;
+          height: 100%;
+      }
+      
+      .box{
+	  float: left;
+	  margin: 5px
+      }
+      
+      .stack-bottom {
+	  font-family: Arial, Geneva, Helvetica, sans-serif;
+          font-weight: bold;
+      }
+      .stack-top {
+	  font-size: xx-large;
+	  font-weight: bold;
+          margin: 20;
+      }
+
+      .scroll {
+	  overflow: auto;
+	  max-height: 100vh;
+	  overflow-x: hidden;
+	  overflow-y: scroll;
+	  text-align: left;
+	  padding: 20px;
+      }
+      
+      
+      
+    </style>
+  </head>
+  <body>
+    <table class="container">
+      <tr class="table-row">
+	<td class="table-cell">
+	  <div class="container">
+	    <div class="box stack-top">
+<a href="./espanol/espanol.md/espanol/espanol.md.html">espanol</a></br>
+	    </div>
+	</td>
+	<td class="table-cell">
+	  <div class="scroll">
+
+	    <!-- used <pre> tag for text formatting -->
+	   <pre>
+## 6-16-2021
+Hoy nos despertamos para encontrar agua por todo el suelo. Una gran tormenta había ocurrido la noche anterior. Pero no problemo, con unas toallas, limpiamos el agua y comenzamos el día. Tuve una llamada en línea y luego preparé el desayuno.
+toallas: towels
+limpiamos: we clean
+comenzamos: we began
+Tuve una llamada en línea: I had an online call
+y luego: and then
+## 6-15-2021
+Mi madre volo aqui hace una semana, que etuvo bien. Nosotras fuimos a Cozumel, una isle frente a la costa de Playa del Carmen. Playa era muy turística, no me gustó. El auga en Cozumel era tan azul, pude ver el fondo. 
+Desafortunadamente, lo tengo una infeccion de oido. Mi amigo alemana tambien, nosotras nadamos en muchos cenotes misteriosos. Fue bastante malo, fui a la clinic y tengo algunos antibioticos. Solo ahora, cinco dias despues, mi oido esta mejor.
+Otro desarrollo, la frontera beliziana es mal por que incluso con la vacuna, neccesito usar "transporte estrella dorada" - entonces no puedo traer mi coche. Muy estupido. No problema, mi caravana se reunira pronto y seguiremos a guatemala. Muchos aventuras ser tenir ahi!
+Ahora que mi oido esta mejor, yo qiero bucear de nuevo. Capitalicé un poco cosas: una luz de buceo kraken y una funda para mi teléfono. Pronto, yo puedo publicado fotos submarinas. Estoy emocionada.
+Tengo otro trabajo esta semana y así puedo continuar mis aventuras. Todo es bien en Quintana Roo, saludos del mundo submarina!
+oido: ear
+fui: i went
+cinco dias despues: 5 days later
+Otro desarrollo: another development
+la frontera beliziana: the belizian border
+incluso con la vacuna: even with the vaccine
+transporte estrella dorada: gold star transport
+pronto: soon
+seguiremos: we will continue
+bucear: dive
+de nuevo: again
+Capitalicé un poco: I capitalismed up some
+fotos submarinas: underwater photos
+Estoy emocionada: I am excited
+así puedo continuar: so I can continue
+saludos del mundo submarina: greetings from the underwater world
+## 6-3-2021
+Hoy yo y mis amigos acampal en el campo. La día anterior nosotros nación en 3 Cenotes. Nosotros pagaré 600 pasos por todo persones en son equipo. Un [horse pulled] un cart y vamanos 12km.
+Buceomos libre del fondo, posibilimebte 10m. Esta muy librador ser libre de los límites de cuerpo. Me gusta mucho.
+Ahora yo estoy en un Cenotes diferente, pero esta es más como una lac*. Esta verde pero muy como un selva. 
+Ahora yo busco café, pero necesito busco menos cafeína. Quiero foco más de buen dormido*.
+Possibliment próximo est chinchin Itza si no es muy turístico ahora. Los persones tiene un espectáculo de luz quiero ver. Quiero comprir un caso para mi teléfono para buceo. Este mucho dinero, pero mi teléfono haces beun fotos. Necesito un lez para buceo también. [Yo van]* a playa del carmen por sus cosas. 
+## 6-2-2021
+Estoy cansando* ahora. Mucho ejercicio* hoy, nación* en la Cenote nahya. Fue el más divertido* (que he tenido)*. Necesito una computadora de buceo, pero yo pienso que me doy 8-10m! Difícil de saber*. Me gusta yucatan, possiblimente plus de oaxca. Los Cenotes son lo mejor cosas del mundo. 
+Lo intenté negociación con un niño en una motorcycleta, pero el gustaba demesiabo* dinero. Nosotros queríamos pagar 25pasos, pero el insistió pagamos 50. Olvidé* que es solo $2.50usd y ahora yo sentido mal. Solo extranjeros pagan por el acceso.
+No puedo esperar por más nación y Cenotes. Mañana nosotros voluntad* un (carril ca tirado por el caballo)* 12km a los tres Conotes de cozuma No puedo esperar por más bucero libre!! 
+Programé segundo ceribre* por 2 hours en Rust y remplio mi regla* no reescriber mi obra. No quiero continuar y possiblimente puedo escriber el programa que convierte automáticamente mis blogs a flashcards. Como mi propio* Lingvist persona*. 
+- how to use del, lo 
+- olvidé i forgot
+TODOs
+- [ ] music prac ruitine. Scrapple, dahound, round midnight, nardis, footprints, dolphin dance, 
+- [ ] strain relief wires solar
+- [ ] implement gihub buffer suggestion
+  - [ ] follow up on how to update firmware over can
+- [ ] Auto add words with * in this doc to flashcard list
+  - [ ] () *
+- [ ] Make my own rust Lingvist-esque program pulling from my blogs
+- [ ] Merida hammock
+- [ ] Insta 360 buy my own
+- [ ] dice computer/make my own
+- [ ] Clean clothes
+## 6-1-2021
+Ahora, yo utiliendo* los palabras neuvaus que yo entiendo de Lingvist. Entiendo varios palabras necesito practicar*. Quand* yo entiendo español, esta soyendo* libre. 
+Estoy en mi principal* Cenotes de yucatan. Yo [did] buscar libre y [learner] como equilizar*. Mucho [pressure] en mi [was relived when] yo equilizé*. 
+Actualmente, yo estoy acampal con mi amigo David y Katie, German y Swiss respectivemente*. Próximo, yo encuentro*[search?] por más Cenotes. Se queda positivo sobre el aventura. Lista por más buscarlo.[*diving?]
+El anterior días, yo deja[stayed?] con mis amigos des combi quien sus problemas con son vw. 
+* Use future tense? 
+* to practice? 
+* when? 
+* will be freeing? 
+* first? 
+* to do? 
+* to equalize
+* swam
+## 5-27-2021
+Ahora yo soy muy cansando. Debo haber comido glucosa misteriosa. Terminé el libro de Ishmael, fue excelente. Sin gorila, habrá esperanza para hombre? Sin hombre, habrá esperanza para gorila? El proximo libro de Daniel Quinn es "la historia de B" - yo soy muy emocionado.
+Pero primero, quiero leer la plaga de Albert camus. Lo empecé, diez páginas en él es genio. Las imágenes de pisado una rato es evacante. 
+Insectos misterioso están mordiendo mis tobillos. Beneficio de vivar de la jungle. Necesito más repeliante des insectos. Conduje a la costa oriental de tabasco. Estoy acampado norte de campeche, un pueblo con flamencos verdad. Muy emocionado. Mi amigos en la campear Volkswagen tienen otra problema, el mal sonido con su eje de la unidad.
+Ahora esta menos caliente, puedo dormir. 
+- menos less, opposite of mas
+- su their
+- drive shaff eje de la unidad
+- Otra another 
+- acampado camped
+- Occidentale western
+- oriental eastern (dayum) 
+- están mordiendo mis tobillos are biting my ankles
+- cansando tired
+- Evacante evacative
+- pisado stepping
+- genio genius
+- Lo empecé i started it 
+- pero primero but first
+- emocionado excited
+- habrá will there be
+- esperanza-hope! como esperanza spaulding
+- debo haber comido. I must have eaten
+- fue it was
+## 5-26-2021
+Esta mañana e levadante a la sórdido des los perros ladrando. Manera común a levadante en México. Esto es vida. Queria ver las pyramids en palenque, Así que me fui mi grupo después compras a la mercado chendraoui. A la mercado, yo hablé a un mexicano qui está deportar des estados unidos. Elle viviré en arkensas y son papá segundo lo partido. Elle hace diabetes tipo 1.
+Yo condujé a las pyramids, pero está  
+Muy capitalistic. Yo se coló en un sendera secret (yo dice que perdido mi bracelet). Beun sendera, pero a la final, un gran hombre de seguridad me atrapó. Seguimos, las pyramids cerradó. Mucho partidos des las pyramids está cerrado por covid. 
+Yo pragrammar el can de ves. Necesito dormir ahora. Yo soy cansado. 
+## 5-25-2021
+El día de ayer, yo reunió con mi amigos des combi con una coche volkswagen. La última vez que los vi fue una mes. Yo estaba haciendo comida en mi coche que esta muy bruto- vegetales y chorizo american. 
+Immediamente, un coche de un hombre tiene chupar y necesitábamos ayudarlo. Yo comí las frutas lo que me hizo necesitar dormir. Yo 
+Aire - Aie ar e
+Chupar-
+Hizo- made
+necesitábamos ayudarlo - we needed to help him
+Fue- was
+Disney movies in Spanish
+Rango 
+Coco 
+Puss and boots
+Papagayos parrot
+Crocodrillo
+Eschuda shield
+Onion soboya
+Hair cabayo
+Ser->to be
+## 5-23-2021
+Un blog muy simple hoy. Yo quiero utilismo des palabras quien yo entiendo solo. Possiblimente, yo puedo blog un día, y el día seguimos, yo puedo correge mi español. 
+Yo encontré los niños con une ropa. Normalmente esta solo quiere dinero. Pero aquí, ellos somos algunas frutas de banans y dura. Los bananas esta tan deliciosa. Un bueno compenairo. 
+Hoy yo condujo a palenque. Yo altó a los cascades de agua azul. Immidiatmente, yo voy el pollo. Y un grande frijol de leche fría! (ice cream bean) yo no se si est el frijole de leche fría verdad, pero yo compriró esta. Esta sé muy rica y está como leche fría! Mi amor está los tropicales.
+El pollo está muy dinero. Necesito más pasos ahora. 
+Un poco palabras con une amiga quien inglés sobre los cascadas. 
+Seguimos, llega a palenque y el mercado por polo y vegetales. El polo no está appetizmente. Esta junto y yo voy sangre. 
+Son noche, yo dormir con un mascota misterioso, posiblemente un monkey quien exhalos con mucho  sonido. Esta un jungle ahí. 
+## 5-22-2021
+Hola! Hoy quiero hacer un nuevo blog sobre mis aventuras. Regresé al tuxtla, chiapus, mexico hace 3 días. Yo conduje al San Cristobal de los cosas y compró café y frijoles des café. Una niña mi rire sobre mis español. Problamente con razon. 
+Corrientemente, mis orejas tiene el sonido de una cabre gritadora quien es casa es detrás de me coche. Siguiente, estoy conduciendo a Palque para cumplir mis amigos inglés. Necesito ellos dar una batterie de Estados Unidos. 
+En el avión aqui, yo hablé un gente de seguridad quien haces amigos quienes son Navy Seals. Ellos extracto personas que son secuestrados. También son guarros internacionales. Necesito para conectar con él en LinkedIn. 
+Yo subí una cascada dañk y observado los aves en la cueva del agua. También, yo hacé dinero por programación el CAN bus del VESC controlador de motor. 
+Llegué a la cascada el corralito, mi lugar de camping. Mas problemas con mi español pero yo estoy aquí ahora. Creo que estos blogs son bueno para mi aprendizaje. Yo usadé más nuevas palabres hoy. 
+Un grande tormenta es viniendo. Rayo 11 millas de distancia. Mi coche es al lado de un rio, yo creo todo es bueno. Mucho lluvia esta semana. Necesito un Camera por mirando el exterior de mi coche. Esta noche, yo reloj "soy cuba," una película communista sobre los cubanos. Un día, quiero autostop en Cuba o motorcycle con Che's diarios de motorcycles. 
+Uno cosa más. Me perdí hoy en el campo de maíz. Fue espantosa, pero bueno que me encontré sin alienigenas. Compriré un maize muy Instagrammable de algunos trabajadores de campo. 
+- Fue espantosa - > It was scary
+- solo mirando, only looking
+- de la agua -> del agua
+- próximo - > like next week al lado-> next to
+- ó é at end of word means past tense
+</pre>
+ 
+	 
+	  </div>	  
+	</td>
+      </tr>
+    </table>	
+      </div>
+    </div>
+  </body>
+</html>
