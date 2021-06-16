@@ -38,6 +38,8 @@ jobs:
         git config user.name "GitHub Actions Bot"
         git config user.email "<>"
         git pull
+        git fetch 
+        git merge
 
     - name: Update site
       run: |
