@@ -123,6 +123,8 @@ class genPages():
             if "# Title" in line: mode = "title"
             if "# Style" in line: mode = "style"
             if "# HTML" in line: mode = "html"
+            if "# CSS" in line: mode = "css"
+            if "# TODO" in line: mode = "todo"
             if line != "\n":
                 if mode == "title":
                     if "# Title" not in line:
@@ -133,6 +135,7 @@ class genPages():
                 if mode == "html": 
                     if "# HTML" not in line:
                         html = html + line
+            
             
         file1 = open(self.template_dir, 'r')
         Lines = file1.readlines()
