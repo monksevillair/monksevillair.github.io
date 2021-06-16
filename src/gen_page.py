@@ -18,7 +18,7 @@ COLOR_DICT = OrderedDict({0: ["#000000", "#FFFFFF", "#FFFFFF"],
 #              160: ["#ffca6f", "#435a91", "#a1b5d6"],
 
 class genPages():
-    def __init__(self, args):
+    def __init__(self):
         directory = ''
         page_title = ''
 
@@ -30,10 +30,10 @@ class genPages():
         self.color_dict = {}
         self.fade_colors()
 
-        self.hr = int(args)
+        #self.hr = int(args)
         self.hr = datetime.now().hour*100
         color_list = self.color_dict[self.hr]
-        print(self.hr, color_list)
+        #print(self.hr, color_list)
         #print(color_list[0].get_hex())
         
         self.color_page = color_list[0].get_hex() #"#D0BCFE"
@@ -175,5 +175,5 @@ class genPages():
 
 
 if __name__ == '__main__':
-    page = genPages(sys.argv[1])
+    page = genPages()
 
