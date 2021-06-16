@@ -39,9 +39,9 @@ jobs:
 
     - name: commit
       run: |
-      # Stage the file, commit and push
-      git add *
-      git commit -m "updated site"
-      git push origin master
+        # Stage the file, commit and push
+        git add *
+        git commit -m "updated site"
+        git push origin master
           
 
