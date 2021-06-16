@@ -1,7 +1,7 @@
 # monksevillair.github.io
 Homepage for Monk's Evil Lair
 
-[![Site Generator](https://github.com/monksevillair/monksevillair.github.io/actions/workflows/python-app.yml/badge.svg)](https://github.com/monksevillair/monksevillair.github.io/actions/workflows/python-app.yml)
+[![Site Build](https://github.com/monksevillair/monksevillair.github.io/actions/workflows/python-app.yml/badge.svg)](https://github.com/monksevillair/monksevillair.github.io/actions/workflows/python-app.yml)
 
 # Projects
 - [ ] Make my own python static generator cause it's fun
