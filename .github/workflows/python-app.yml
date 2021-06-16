@@ -42,7 +42,7 @@ jobs:
       run: |
         # stop the build if there are Python syntax errors or undefined names
         cd src
-        python gen_page.py 100
+        python gen_page.py
         cd ..
 
     - name: commit
