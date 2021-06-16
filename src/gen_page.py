@@ -2,18 +2,19 @@ import sys
 import os
 from pathlib import Path
 from collections import OrderedDict
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from colour import Color
 
 #red = Color("red")
 #colors = list(red.range_to(Color("green"),10))
 
 COLOR_DICT = OrderedDict({0: ["#000000", "#FFFFFF", "#FFFFFF"],
-                          60: ["#9da1fa", "#FFFFFF", "#FFFFFF"],
-                          120: ["#FFFFFF", "#FF0000", "#FF0000"],
+                          120: ["#ffada2", "#FFFFFF", "#FFFFFF"],
                           180: ["#9da1fa", "#FFFFFF", "#FFFFFF"],
                           240: ["#000000", "#FFFFFF", "#FFFFFF"]})
 
+
+#60: ["#9da1fa", "#FFFFFF", "#FFFFFF"],
 #100: ["#dcfaff", "#ffada2", "#442643"],
 #              160: ["#ffca6f", "#435a91", "#a1b5d6"],
 
@@ -22,8 +23,6 @@ class genPages():
         directory = ''
         page_title = ''
 
-
-        
         self.pages = self.find_pages()
         self.template_dir = 'templates/template.html'
 
@@ -31,8 +30,11 @@ class genPages():
         self.fade_colors()
 
         #self.hr = int(args)
-        self.hr = datetime.now().hour*10
-        color_list = self.color_dict[self.hr]
+        timezone_offset = -5.0  # EST (UTC−05:00), connect to map page eventually
+        tzinfo = timezone(timedelta(hours=timezone_offset))
+        self.hr = datetime.now(tzinfo)
+        #print(self.hr)
+        color_list = self.color_dict[self.hr.hour*10]
         #print(self.hr, color_list)
         #print(color_list[0].get_hex())
         
@@ -148,8 +150,8 @@ class genPages():
         
         text_file = open(filename, "w")
 
-        text_file.write("<!-- generated from {filename} at {time} -->".format(
-            filename=directory, time=datetime.now().strftime("%m-%d-%Y %H:%M:%S")))
+        text_file.write("<!-- generated from {filename} at {time} EST -->".format(
+            filename=directory, time=self.hr.strftime("%m-%d-%Y %H:%M:%S")))
 
         for line in Lines:
             content = ''
