@@ -31,7 +31,7 @@ class genPages():
         self.fade_colors()
 
         #self.hr = int(args)
-        self.hr = datetime.now().hour*100
+        self.hr = 230 #datetime.now().hour*100
         color_list = self.color_dict[self.hr]
         #print(self.hr, color_list)
         #print(color_list[0].get_hex())
