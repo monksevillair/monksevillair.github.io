@@ -30,6 +30,10 @@ transform:scale(1.2);
 }
 }
 
+.scroll {
+  overflow: hidden; /* Hide scrollbars */
+  background-color: transparent;
+}
 # HTML
 <!-- spinning bullshit -->
 <img src="./src/templates/images/dozehilz.png" class="rotate" width="400">

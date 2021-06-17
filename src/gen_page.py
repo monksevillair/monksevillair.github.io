@@ -1,19 +1,23 @@
 import sys
 import os
+import markdown
 from pathlib import Path
 from collections import OrderedDict
 from datetime import datetime, timezone, timedelta
 from colour import Color
+import colorsys
+from PIL import ImageColor
+import pdb
 
 #red = Color("red")
 #colors = list(red.range_to(Color("green"),10))
 
-COLOR_DICT = OrderedDict({0: ["#000000", "#FFFFFF", "#FFFFFF"],
-                          120: ["#ffada2", "#FFFFFF", "#FFFFFF"],
+COLOR_DICT = OrderedDict({0: ["#111111", "#DDDDDD", "#DDDDDD"],
+                          #120: ["#ffada2", "#FFFFFF", "#FFFFFF"],
                           180: ["#9da1fa", "#FFFFFF", "#FFFFFF"],
-                          240: ["#000000", "#FFFFFF", "#FFFFFF"]})
+                          240: ["#111111", "#DDDDDD", "#DDDDDD"]})
 
-
+# sexy: 9669FE;
 #60: ["#9da1fa", "#FFFFFF", "#FFFFFF"],
 #100: ["#dcfaff", "#ffada2", "#442643"],
 #              160: ["#ffca6f", "#435a91", "#a1b5d6"],
@@ -29,23 +33,47 @@ class genPages():
         self.color_dict = {}
         self.fade_colors()
 
-        #self.hr = int(args)
         timezone_offset = -5.0  # EST (UTC−05:00), connect to map page eventually
         tzinfo = timezone(timedelta(hours=timezone_offset))
         self.hr = datetime.now(tzinfo)
         #print(self.hr)
-        color_list = self.color_dict[self.hr.hour*10]
+        color_list = self.color_dict[self.hr.hour*10*0+120]
         #print(self.hr, color_list)
         #print(color_list[0].get_hex())
         
         self.color_page = color_list[0].get_hex() #"#D0BCFE"
         self.color_text = color_list[1].get_hex() #"#9669FE"
-        self.color_link = color_list[2].get_hex() #"#9669FE"
+        #self.color_link = color_list[2].get_hex() #"#9669FE"
+
+        self.color_accent_light = self.gen_accent(self.color_page, 20)
+        self.color_accent_dark = self.gen_accent(self.color_page, -35)
+        self.color_accent_very_dark = self.gen_accent(self.color_page, -60)
+        #self.color_link = self.gen_accent(self.color_page, -90)
+        self.color_link = "#fff" #self.gen_accent(self.color_page, -60)
+        #self.color_accent_dark = 
         
-        #print(self.pages)
+
         for page in self.pages:
             self.gen_page(page)
+            #self.gen_html_from_markdown(page)
 
+    def gen_accent(self, base_color, offset):
+        #print(base_color)
+        rgb = ImageColor.getrgb(base_color)
+        hls = list(colorsys.rgb_to_hls( rgb[0], rgb[1], rgb[2] ))
+        #print (hls)
+        hls[1] = hls[1]+offset
+        if hls[1] > 186: hls[1] = 186
+        if hls[1] < 0: hls[1] = 0
+        #print (hls)
+        accent = [int(x) for x in colorsys.hls_to_rgb(hls[0],
+                                                      hls[1],
+                                                      hls[2])]
+
+        final_color = '#%02x%02x%02x' % tuple(accent)
+        #print(final_color)
+        return final_color
+            
     def fade_colors(self):
 
         last_col = 0
@@ -82,6 +110,7 @@ class genPages():
 
     # Generates sidebar html, garbage- fix this
     def gen_sidebar(self, filename):
+        cur_file = (filename.split(".html")[0].split("/")[-1])
         link_format = "<a href=\"{link}\">{content}</a></br>{hr}\n"
 
         directories = self.pages
@@ -92,9 +121,14 @@ class genPages():
         
         for x in sorted_dirs:
             name = x.name.split(".")[0]
-            if name == "index": name = "home"
-            # Need to fix this those it works on all pages not just index
 
+            if name == cur_file:
+                #link_format = "<u><a href=\"{link}\">{content}</a></br>{hr}</u>\n"
+                link_format = "<a style=\"background-color:{}\" href=\"{link}\">&nbsp{content}&nbsp</a></br>{hr}\n".replace("{}",self.color_accent_dark)
+            else:
+                link_format = "<a href=\"{link}\">&nbsp{content}&nbsp</a></br>{hr}\n"
+            # Need to fix this those it works on all pages not just index
+            if name == "index": name = "home"
             link_address = "../"+str(x)
 
             #print(str(Path(filename[3:]).parent), str(x))
@@ -109,16 +143,26 @@ class genPages():
                 link=link_address.replace(".md",".html"), content=name, hr="")
 
         return sidebar_html
+
+    def gen_html_from_markdown(self, page):
+        #print(page)
+        file1 = open(page, 'r')
+        Lines = file1.read()
+        #print(Lines)
+        output = markdown.markdown(Lines)
+        #if "espanol.md" in str(page):
+        #    print(output)
         
     def gen_page(self, directory):
         file1 = open(directory, 'r')
         Lines = file1.readlines()
 
+        
         title = ""
         style = ""
         html = ""
-
         mode = ""
+        
         for line in Lines:
             if "# Title" in line: mode = "title"
             if "# Style" in line: mode = "style"
@@ -135,7 +179,13 @@ class genPages():
                 if mode == "html": 
                     if "# HTML" not in line:
                         html = html + line
-            
+
+        file1 = open(directory, 'r')
+        Lines = file1.read()
+
+        #print(html)
+        
+        html = markdown.markdown(html)
             
         file1 = open(self.template_dir, 'r')
         Lines = file1.readlines()
@@ -172,6 +222,12 @@ class genPages():
                 content = line.format(color_link=self.color_link)
             elif "{color_page}" in line:
                 content = line.format(color_page=self.color_page)
+            elif "{color_accent_dark}" in line:
+                content = line.format(color_accent_dark=self.color_accent_dark)
+            elif "{color_accent_very_dark}" in line:
+                content = line.format(color_accent_very_dark=self.color_accent_very_dark)
+            elif "{color_accent_light}" in line:
+                content = line.format(color_accent_light=self.color_accent_light)
             else:
                 content = line
 

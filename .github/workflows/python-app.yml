@@ -29,7 +29,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pathlib colour
+        pip install pathlib colour markdown
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         
     - name: setup git config

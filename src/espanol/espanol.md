@@ -1,21 +1,26 @@
+
 # Title
 Blogs en Espanol
 
-# CSS
+# Style
 
 # TODO
 - [ ] Fix formatting, make specific blog parser
 
 # HTML
-<pre>
 ## 6-16-2021
+[[location]: 4.23, 4.55]   
+[Today ](../blog/blog.html)
 Hoy nos despertamos para encontrar agua por todo el suelo. Una gran tormenta había ocurrido la noche anterior. Pero no problemo, con unas toallas, limpiamos el agua y comenzamos el día. Tuve una llamada en línea y luego preparé el desayuno.
+  
 
+<vocab>**Vocab**
 toallas: towels
 limpiamos: we clean
 comenzamos: we began
 Tuve una llamada en línea: I had an online call
-y luego: and then
+y luego: and the
+</vocab>
 
 ## 6-15-2021
 Mi madre volo aqui hace una semana, que etuvo bien. Nosotras fuimos a Cozumel, una isle frente a la costa de Playa del Carmen. Playa era muy turística, no me gustó. El auga en Cozumel era tan azul, pude ver el fondo. 
@@ -194,5 +199,3 @@ Uno cosa más. Me perdí hoy en el campo de maíz. Fue espantosa, pero bueno que
 - de la agua -> del agua
 - próximo - > like next week al lado-> next to
 - ó é at end of word means past tense
-
-</pre>

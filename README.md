@@ -8,10 +8,26 @@ Homepage for Monk's Evil Lair
 
 Goals
 - Statically generated so it's free and I can use github.io
+
+# CSS Todo
+- [ ] scroll bar no bg
+- [ ] <vocab> make look better
+
 # TODO
 - [x] Make a src/ directory
 - [x] Make template.html based on index.html
   - [x] use {} and .format() to modify template
+- [x] Parse md files with python-markdown
+  - [x] Replace my basic parser
+- [ ] Move each blog to its own file
+    - [ ] Get git info, add to that blog's CSS
+    - [ ] Add geotag to file props
+    - [ ] Fix <vocab> CSS
+		- [ ] Add vocab globally to some page
+- [ ] Global tags
+  - [ ] Tags page
+  - [ ] Location tag
+- [ ] Make another page for > 10 blogs
 - [ ] add transciptions and all that stuff we had before back
 - [ ] Map app shows where I am in my van rn
 - [ ] Make README.md the homepage actually
