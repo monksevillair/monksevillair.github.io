@@ -37,6 +37,6 @@ transform:scale(1.2);
 # HTML
 <!-- spinning bullshit -->
 <center>
-<img src="./src/templates/images/dozehilz.png" class="rotate" width="400">
+<a href="./music/music.html"><img src="./src/templates/images/dozehilz.png" class="rotate" width="400"></a>
 </center>
 

@@ -2,14 +2,69 @@
 # Title
 Blogs en Espanol
 
-# CSS
+# Style
+.rotate {
+transform-origin: 50.5% 50.5%;
+animation: rotation 8s infinite linear;
+position: relative;
+top: -50px;
+}
+
+.shrink {
+animation: shrinking 5s infinite linear alternate;
+animation-timing-function: ease-in-out;
+}
+
+@keyframes rotation {
+from {
+transform: rotate(0deg);
+}
+to {
+transform: rotate(-359deg);
+}
+}
+
+@keyframes shrinking {
+from {
+transform:scale(1);
+}
+to {
+transform:scale(1.2);
+}
+}
+
+h5 { color: #fff }
+
+.alboom_bg {
+padding: 10px;
+margin: 5px;
+background-color: {color_accent_very_dark};
+width: 450px;
+height: 450px;
+
+}
+
+.music_links {
+position: relative;
+top:-30px;
+}
+
+.scroll {
+  overflow: hidden; /* Hide scrollbars */
+  background-color: transparent;
+}
 
 # TODO
 - [ ] Fix formatting, make specific blog parser
 
 # HTML
-<div class="css-jnwrwc">
-   </br><a href="https://open.spotify.com/album/61iNqab7vq1ZEKf9eAYiKU" target="_blank" rel="noopener noreferrer" aria-label="Listen to Monk's Evil Lair by Monk's Evil Lair on Spotify" data-test-id="link" class="css-1spf6ft">
+<table class="container">
+<tr class="table-row">
+<td class="table-cell">
+	
+	
+<div class="music_links">
+   <a href="https://open.spotify.com/album/61iNqab7vq1ZEKf9eAYiKU" target="_blank" rel="noopener noreferrer" aria-label="Listen to Monk's Evil Lair by Monk's Evil Lair on Spotify" data-test-id="link" class="css-1spf6ft">
       <div class="css-u4eldh">
          <svg width="36" height="36" viewBox="0 0 45 45">
             <path style="fill:#1dd069" d="M45.71,23.22a22.5,22.5,0,1,0-6.59,15.91,22.5,22.5,0,0,0,6.59-15.91Z" transform="translate(-0.71 -0.73)"></path>
@@ -162,3 +217,18 @@ Blogs en Espanol
       </div>
    </a>
 </div>
+
+
+
+</td>
+<td class="table-cell2">
+
+<center>
+<div class="alboom_bg">
+<img src="../src/templates/images/dozehilz.png" class="rotate" width="400">
+</div>
+
+<h5> ALBOOM NOW STREAMING ON YOUR PREFERRED EXPLOITATIVE ENTITY! </h5>
+</center>
+</tr>
+</table>	

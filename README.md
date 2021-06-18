@@ -19,14 +19,9 @@ Goals
   - [x] use {} and .format() to modify template
 - [x] Parse md files with python-markdown
   - [x] Replace my basic parser
-- [ ] Build sitemap
-  - [ ] Link site map to eg. Blog.md#ids
-  - [ ] add ids to md files automatically
-- [ ] Move each blog to its own file
-    - [ ] Get git info, add to that blog's CSS
-    - [ ] Add geotag to file props
-    - [ ] Fix <vocab> CSS
-		- [ ] Add vocab globally to some page
+- [ ] favicon
+- [ ] build map
+- [ ] build contact page
 - [ ] Global tags
   - [ ] Tags page
   - [ ] Location tag
@@ -42,3 +37,12 @@ Goals
 - [ ] Blog comment section
   - [ ] Sends email, requests approval
 
+# FUTURE
+- [ ] Build sitemap
+  - [ ] Link site map to eg. Blog.md#ids
+  - [ ] add ids to md files automatically
+- [ ] Move each blog to its own file
+    - [ ] Get git info, add to that blog's CSS
+    - [ ] Add geotag to file props
+    - [ ] Fix <vocab> CSS
+		- [ ] Add vocab globally to some page

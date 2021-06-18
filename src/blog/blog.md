@@ -7,8 +7,6 @@ padding: 10px;
 margin: 5px;
 background-color: {color_accent_very_dark};
 
-
-}
 # TODO
 - [ ] Fix formatting, make specific blog parser
 
