@@ -19,6 +19,7 @@ Tuve una llamada en línea: I had an online call
 y luego: and the
 </vocab>
 
+---
 ## 6-15-2021
 Mi madre volo aqui hace una semana, que etuvo bien. Nosotras fuimos a Cozumel, una isle frente a la costa de Playa del Carmen. Playa era muy turística, no me gustó. El auga en Cozumel era tan azul, pude ver el fondo.  
 
@@ -49,6 +50,7 @@ así puedo continuar: so I can continue
 saludos del mundo submarina: greetings from the underwater world
 </vocab>
 
+---
 ## 6-3-2021
 Hoy yo y mis amigos acampal en el campo. La día anterior nosotros nación en 3 Cenotes. Nosotros pagaré 600 pasos por todo persones en son equipo. Un [horse pulled] un cart y vamanos 12km.  
 
@@ -60,6 +62,7 @@ Ahora yo busco café, pero necesito busco menos cafeína. Quiero foco más de bu
 
 Possibliment próximo est chinchin Itza si no es muy turístico ahora. Los persones tiene un espectáculo de luz quiero ver. Quiero comprir un caso para mi teléfono para buceo. Este mucho dinero, pero mi teléfono haces beun fotos. Necesito un lez para buceo también. [Yo van]* a playa del carmen por sus cosas.   
 
+---
 ## 6-2-2021
 Estoy cansando* ahora. Mucho ejercicio* hoy, nación* en la Cenote nahya. Fue el más divertido* (que he tenido)*. Necesito una computadora de buceo, pero yo pienso que me doy 8-10m! Difícil de saber*. Me gusta yucatan, possiblimente plus de oaxca. Los Cenotes son lo mejor cosas del mundo.   
 
@@ -73,6 +76,7 @@ Programé segundo ceribre* por 2 hours en Rust y remplio mi regla* no reescriber
 - olvidé i forgot
 </vocab>
 
+---
 ## 6-1-2021
 Ahora, yo utiliendo* los palabras neuvaus que yo entiendo de Lingvist. Entiendo varios palabras necesito practicar*. Quand* yo entiendo español, esta soyendo* libre.  
 
@@ -92,6 +96,7 @@ El anterior días, yo deja[stayed?] con mis amigos des combi quien sus problemas
 * swam
 </vocab>
 
+---
 ## 5-27-2021
 Ahora yo soy muy cansando. Debo haber comido glucosa misteriosa. Terminé el libro de Ishmael, fue excelente. Sin gorila, habrá esperanza para hombre? Sin hombre, habrá esperanza para gorila? El proximo libro de Daniel Quinn es "la historia de B" - yo soy muy emocionado.  
 
@@ -122,6 +127,7 @@ Ahora esta menos caliente, puedo dormir.
 - fue it was
 </vocab>
 
+---
 ## 5-26-2021
 Esta mañana e levadante a la sórdido des los perros ladrando. Manera común a levadante en México. Esto es vida. Queria ver las pyramids en palenque, Así que me fui mi grupo después compras a la mercado chendraoui. A la mercado, yo hablé a un mexicano qui está deportar des estados unidos. Elle viviré en arkensas y son papá segundo lo partido. Elle hace diabetes tipo 1.  
 
@@ -130,6 +136,7 @@ Muy capitalistic. Yo se coló en un sendera secret (yo dice que perdido mi brace
 
 Yo pragrammar el can de ves. Necesito dormir ahora. Yo soy cansado.  
 
+---
 ## 5-25-2021
 El día de ayer, yo reunió con mi amigos des combi con una coche volkswagen. La última vez que los vi fue una mes. Yo estaba haciendo comida en mi coche que esta muy bruto- vegetales y chorizo american.  
 
@@ -152,6 +159,7 @@ Hair cabayo
 Ser->to be
 </vocab>
 
+---
 ## 5-23-2021
 Un blog muy simple hoy. Yo quiero utilismo des palabras quien yo entiendo solo. Possiblimente, yo puedo blog un día, y el día seguimos, yo puedo correge mi español.  
 
@@ -167,6 +175,7 @@ Seguimos, llega a palenque y el mercado por polo y vegetales. El polo no está a
 
 Son noche, yo dormir con un mascota misterioso, posiblemente un monkey quien exhalos con mucho  sonido. Esta un jungle ahí.  
 
+---
 ## 5-22-2021
 Hola! Hoy quiero hacer un nuevo blog sobre mis aventuras. Regresé al tuxtla, chiapus, mexico hace 3 días. Yo conduje al San Cristobal de los cosas y compró café y frijoles des café. Una niña mi rire sobre mis español. Problamente con razon.  
 

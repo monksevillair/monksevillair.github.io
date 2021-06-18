@@ -19,7 +19,8 @@ Goals
   - [x] use {} and .format() to modify template
 - [x] Parse md files with python-markdown
   - [x] Replace my basic parser
-- [ ] favicon
+- [x] favicon
+- [x] disable scrollbars in firefox
 - [ ] build map
 - [ ] build contact page
 - [ ] Global tags
