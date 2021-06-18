@@ -37,7 +37,7 @@ class genPages():
         tzinfo = timezone(timedelta(hours=timezone_offset))
         self.hr = datetime.now(tzinfo)
         #print(self.hr)
-        color_list = self.color_dict[self.hr.hour*10*0+120]
+        color_list = self.color_dict[self.hr.hour*10]
         #print(self.hr, color_list)
         #print(color_list[0].get_hex())
         
