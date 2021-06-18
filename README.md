@@ -19,6 +19,9 @@ Goals
   - [x] use {} and .format() to modify template
 - [x] Parse md files with python-markdown
   - [x] Replace my basic parser
+- [ ] Build sitemap
+  - [ ] Link site map to eg. Blog.md#ids
+  - [ ] add ids to md files automatically
 - [ ] Move each blog to its own file
     - [ ] Get git info, add to that blog's CSS
     - [ ] Add geotag to file props

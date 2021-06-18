@@ -8,192 +8,157 @@ Blogs en Espanol
 - [ ] Fix formatting, make specific blog parser
 
 # HTML
-<pre>
-## 6-16-2021
-Hoy nos despertamos para encontrar agua por todo el suelo. Una gran tormenta había ocurrido la noche anterior. Pero no problemo, con unas toallas, limpiamos el agua y comenzamos el día. Tuve una llamada en línea y luego preparé el desayuno.
-
-toallas: towels
-limpiamos: we clean
-comenzamos: we began
-Tuve una llamada en línea: I had an online call
-y luego: and then
-
-## 6-15-2021
-Mi madre volo aqui hace una semana, que etuvo bien. Nosotras fuimos a Cozumel, una isle frente a la costa de Playa del Carmen. Playa era muy turística, no me gustó. El auga en Cozumel era tan azul, pude ver el fondo. 
-
-Desafortunadamente, lo tengo una infeccion de oido. Mi amigo alemana tambien, nosotras nadamos en muchos cenotes misteriosos. Fue bastante malo, fui a la clinic y tengo algunos antibioticos. Solo ahora, cinco dias despues, mi oido esta mejor.
-
-Otro desarrollo, la frontera beliziana es mal por que incluso con la vacuna, neccesito usar "transporte estrella dorada" - entonces no puedo traer mi coche. Muy estupido. No problema, mi caravana se reunira pronto y seguiremos a guatemala. Muchos aventuras ser tenir ahi!
-
-Ahora que mi oido esta mejor, yo qiero bucear de nuevo. Capitalicé un poco cosas: una luz de buceo kraken y una funda para mi teléfono. Pronto, yo puedo publicado fotos submarinas. Estoy emocionada.
-
-Tengo otro trabajo esta semana y así puedo continuar mis aventuras. Todo es bien en Quintana Roo, saludos del mundo submarina!
-
-oido: ear
-fui: i went
-cinco dias despues: 5 days later
-Otro desarrollo: another development
-la frontera beliziana: the belizian border
-incluso con la vacuna: even with the vaccine
-transporte estrella dorada: gold star transport
-pronto: soon
-seguiremos: we will continue
-bucear: dive
-de nuevo: again
-Capitalicé un poco: I capitalismed up some
-fotos submarinas: underwater photos
-Estoy emocionada: I am excited
-así puedo continuar: so I can continue
-saludos del mundo submarina: greetings from the underwater world
-
-## 6-3-2021
-Hoy yo y mis amigos acampal en el campo. La día anterior nosotros nación en 3 Cenotes. Nosotros pagaré 600 pasos por todo persones en son equipo. Un [horse pulled] un cart y vamanos 12km.
-
-Buceomos libre del fondo, posibilimebte 10m. Esta muy librador ser libre de los límites de cuerpo. Me gusta mucho.
-
-Ahora yo estoy en un Cenotes diferente, pero esta es más como una lac*. Esta verde pero muy como un selva. 
-
-Ahora yo busco café, pero necesito busco menos cafeína. Quiero foco más de buen dormido*.
-
-Possibliment próximo est chinchin Itza si no es muy turístico ahora. Los persones tiene un espectáculo de luz quiero ver. Quiero comprir un caso para mi teléfono para buceo. Este mucho dinero, pero mi teléfono haces beun fotos. Necesito un lez para buceo también. [Yo van]* a playa del carmen por sus cosas. 
-
-## 6-2-2021
-Estoy cansando* ahora. Mucho ejercicio* hoy, nación* en la Cenote nahya. Fue el más divertido* (que he tenido)*. Necesito una computadora de buceo, pero yo pienso que me doy 8-10m! Difícil de saber*. Me gusta yucatan, possiblimente plus de oaxca. Los Cenotes son lo mejor cosas del mundo. 
-
-Lo intenté negociación con un niño en una motorcycleta, pero el gustaba demesiabo* dinero. Nosotros queríamos pagar 25pasos, pero el insistió pagamos 50. Olvidé* que es solo $2.50usd y ahora yo sentido mal. Solo extranjeros pagan por el acceso.
-
-No puedo esperar por más nación y Cenotes. Mañana nosotros voluntad* un (carril ca tirado por el caballo)* 12km a los tres Conotes de cozuma No puedo esperar por más bucero libre!! 
-
-Programé segundo ceribre* por 2 hours en Rust y remplio mi regla* no reescriber mi obra. No quiero continuar y possiblimente puedo escriber el programa que convierte automáticamente mis blogs a flashcards. Como mi propio* Lingvist persona*. 
-
-- how to use del, lo 
-- olvidé i forgot
-
-TODOs
-- [ ] music prac ruitine. Scrapple, dahound, round midnight, nardis, footprints, dolphin dance, 
-- [ ] strain relief wires solar
-- [ ] implement gihub buffer suggestion
-  - [ ] follow up on how to update firmware over can
-- [ ] Auto add words with * in this doc to flashcard list
-  - [ ] () *
-- [ ] Make my own rust Lingvist-esque program pulling from my blogs
-- [ ] Merida hammock
-- [ ] Insta 360 buy my own
-- [ ] dice computer/make my own
-- [ ] Clean clothes
-
-## 6-1-2021
-Ahora, yo utiliendo* los palabras neuvaus que yo entiendo de Lingvist. Entiendo varios palabras necesito practicar*. Quand* yo entiendo español, esta soyendo* libre. 
-
-Estoy en mi principal* Cenotes de yucatan. Yo [did] buscar libre y [learner] como equilizar*. Mucho [pressure] en mi [was relived when] yo equilizé*. 
-
-Actualmente, yo estoy acampal con mi amigo David y Katie, German y Swiss respectivemente*. Próximo, yo encuentro*[search?] por más Cenotes. Se queda positivo sobre el aventura. Lista por más buscarlo.[*diving?]
-
-El anterior días, yo deja[stayed?] con mis amigos des combi quien sus problemas con son vw. 
-
-* Use future tense? 
-* to practice? 
-* when? 
-* will be freeing? 
-* first? 
-* to do? 
-* to equalize
-* swam
-
-## 5-27-2021
-Ahora yo soy muy cansando. Debo haber comido glucosa misteriosa. Terminé el libro de Ishmael, fue excelente. Sin gorila, habrá esperanza para hombre? Sin hombre, habrá esperanza para gorila? El proximo libro de Daniel Quinn es "la historia de B" - yo soy muy emocionado.
-
-Pero primero, quiero leer la plaga de Albert camus. Lo empecé, diez páginas en él es genio. Las imágenes de pisado una rato es evacante. 
-
-Insectos misterioso están mordiendo mis tobillos. Beneficio de vivar de la jungle. Necesito más repeliante des insectos. Conduje a la costa oriental de tabasco. Estoy acampado norte de campeche, un pueblo con flamencos verdad. Muy emocionado. Mi amigos en la campear Volkswagen tienen otra problema, el mal sonido con su eje de la unidad.
-
-Ahora esta menos caliente, puedo dormir. 
-
-- menos less, opposite of mas
-- su their
-- drive shaff eje de la unidad
-- Otra another 
-- acampado camped
-- Occidentale western
-- oriental eastern (dayum) 
-- están mordiendo mis tobillos are biting my ankles
-- cansando tired
-- Evacante evacative
-- pisado stepping
-- genio genius
-- Lo empecé i started it 
-- pero primero but first
-- emocionado excited
-- habrá will there be
-- esperanza-hope! como esperanza spaulding
-- debo haber comido. I must have eaten
-- fue it was
-
-## 5-26-2021
-Esta mañana e levadante a la sórdido des los perros ladrando. Manera común a levadante en México. Esto es vida. Queria ver las pyramids en palenque, Así que me fui mi grupo después compras a la mercado chendraoui. A la mercado, yo hablé a un mexicano qui está deportar des estados unidos. Elle viviré en arkensas y son papá segundo lo partido. Elle hace diabetes tipo 1.
-
-Yo condujé a las pyramids, pero está  
-Muy capitalistic. Yo se coló en un sendera secret (yo dice que perdido mi bracelet). Beun sendera, pero a la final, un gran hombre de seguridad me atrapó. Seguimos, las pyramids cerradó. Mucho partidos des las pyramids está cerrado por covid. 
-
-Yo pragrammar el can de ves. Necesito dormir ahora. Yo soy cansado. 
-
-## 5-25-2021
-El día de ayer, yo reunió con mi amigos des combi con una coche volkswagen. La última vez que los vi fue una mes. Yo estaba haciendo comida en mi coche que esta muy bruto- vegetales y chorizo american. 
-
-Immediamente, un coche de un hombre tiene chupar y necesitábamos ayudarlo. Yo comí las frutas lo que me hizo necesitar dormir. Yo 
-
-
-Aire - Aie ar e
-Chupar-
-Hizo- made
-necesitábamos ayudarlo - we needed to help him
-Fue- was
-Disney movies in Spanish
-Rango 
-Coco 
-Puss and boots
-Papagayos parrot
-Crocodrillo
-Eschuda shield
-Onion soboya
-Hair cabayo
-
-Ser->to be
-
-## 5-23-2021
-Un blog muy simple hoy. Yo quiero utilismo des palabras quien yo entiendo solo. Possiblimente, yo puedo blog un día, y el día seguimos, yo puedo correge mi español. 
-
-Yo encontré los niños con une ropa. Normalmente esta solo quiere dinero. Pero aquí, ellos somos algunas frutas de banans y dura. Los bananas esta tan deliciosa. Un bueno compenairo. 
-
-Hoy yo condujo a palenque. Yo altó a los cascades de agua azul. Immidiatmente, yo voy el pollo. Y un grande frijol de leche fría! (ice cream bean) yo no se si est el frijole de leche fría verdad, pero yo compriró esta. Esta sé muy rica y está como leche fría! Mi amor está los tropicales.
-
-El pollo está muy dinero. Necesito más pasos ahora. 
-
-Un poco palabras con une amiga quien inglés sobre los cascadas. 
-
-Seguimos, llega a palenque y el mercado por polo y vegetales. El polo no está appetizmente. Esta junto y yo voy sangre. 
-
-Son noche, yo dormir con un mascota misterioso, posiblemente un monkey quien exhalos con mucho  sonido. Esta un jungle ahí. 
-
-## 5-22-2021
-Hola! Hoy quiero hacer un nuevo blog sobre mis aventuras. Regresé al tuxtla, chiapus, mexico hace 3 días. Yo conduje al San Cristobal de los cosas y compró café y frijoles des café. Una niña mi rire sobre mis español. Problamente con razon. 
-
-Corrientemente, mis orejas tiene el sonido de una cabre gritadora quien es casa es detrás de me coche. Siguiente, estoy conduciendo a Palque para cumplir mis amigos inglés. Necesito ellos dar una batterie de Estados Unidos. 
-
-En el avión aqui, yo hablé un gente de seguridad quien haces amigos quienes son Navy Seals. Ellos extracto personas que son secuestrados. También son guarros internacionales. Necesito para conectar con él en LinkedIn. 
-
-Yo subí una cascada dañk y observado los aves en la cueva del agua. También, yo hacé dinero por programación el CAN bus del VESC controlador de motor. 
-
-Llegué a la cascada el corralito, mi lugar de camping. Mas problemas con mi español pero yo estoy aquí ahora. Creo que estos blogs son bueno para mi aprendizaje. Yo usadé más nuevas palabres hoy. 
-
-Un grande tormenta es viniendo. Rayo 11 millas de distancia. Mi coche es al lado de un rio, yo creo todo es bueno. Mucho lluvia esta semana. Necesito un Camera por mirando el exterior de mi coche. Esta noche, yo reloj "soy cuba," una película communista sobre los cubanos. Un día, quiero autostop en Cuba o motorcycle con Che's diarios de motorcycles. 
-
-Uno cosa más. Me perdí hoy en el campo de maíz. Fue espantosa, pero bueno que me encontré sin alienigenas. Compriré un maize muy Instagrammable de algunos trabajadores de campo. 
-
-- Fue espantosa - > It was scary
-- solo mirando, only looking
-- de la agua -> del agua
-- próximo - > like next week al lado-> next to
-- ó é at end of word means past tense
-
-</pre>
+<div class="css-jnwrwc">
+   </br><a href="https://open.spotify.com/album/61iNqab7vq1ZEKf9eAYiKU" target="_blank" rel="noopener noreferrer" aria-label="Listen to Monk's Evil Lair by Monk's Evil Lair on Spotify" data-test-id="link" class="css-1spf6ft">
+      <div class="css-u4eldh">
+         <svg width="36" height="36" viewBox="0 0 45 45">
+            <path style="fill:#1dd069" d="M45.71,23.22a22.5,22.5,0,1,0-6.59,15.91,22.5,22.5,0,0,0,6.59-15.91Z" transform="translate(-0.71 -0.73)"></path>
+            <path style="fill:#fff" d="M38.46,16.7a25.43,25.43,0,0,0-2.34-1.21q-1.18-.53-2.44-1A37.88,37.88,0,0,0,27.5,13a46.8,46.8,0,0,0-6.33-.59q-1.3,0-2.6,0t-2.6.16c-.83.08-1.64.17-2.43.29s-1.61.27-2.41.46l-1,.24c-.32.09-.66.18-1,.28A2.44,2.44,0,0,0,8,14.74a2.53,2.53,0,0,0,1.37,3.86,2.46,2.46,0,0,0,.72.1,2.84,2.84,0,0,0,.71-.1l.23-.06c.56-.15,1.11-.3,1.67-.42.86-.19,1.73-.33,2.6-.43s1.77-.18,2.65-.22,1.55-.06,2.32-.05,1.54,0,2.32.08,1.49.11,2.23.2,1.46.19,2.19.32c1.06.19,2.1.41,3.12.69a27.65,27.65,0,0,1,3,1q.75.3,1.46.65c.47.23.94.48,1.42.75a2.58,2.58,0,0,0,1.27.34,2.51,2.51,0,0,0,2.19-1.27,2.57,2.57,0,0,0,.33-1.26v-.06s0-.07,0-.13a3,3,0,0,0-.05-.36,2.45,2.45,0,0,0-.45-1,2.73,2.73,0,0,0-.8-.69Z" transform="translate(-0.71 -0.73)"></path>
+            <path style="fill:#fff" d="M29.87,21.55a33.53,33.53,0,0,0-5.77-1.3A34.39,34.39,0,0,0,18.19,20c-.94,0-1.86.11-2.77.22s-1.82.27-2.74.47l-1.11.27-1.08.31A2.08,2.08,0,0,0,9.43,22,2.22,2.22,0,0,0,9,23.23a2.15,2.15,0,0,0,.35,1.25,2.18,2.18,0,0,0,1,.83,2.15,2.15,0,0,0,.78.16,2.51,2.51,0,0,0,.75-.11,24.79,24.79,0,0,1,3.61-.78,28.69,28.69,0,0,1,3.87-.27c1,0,2,0,2.91.14s1.87.22,2.81.4a28.37,28.37,0,0,1,3.54.9A23.34,23.34,0,0,1,32,27.12c.35.18.69.37,1,.57l.38.21a2.25,2.25,0,0,0,1.64.24,2.15,2.15,0,0,0,1.33-1,2.23,2.23,0,0,0,.25-1.67,2.14,2.14,0,0,0-1-1.33h0L35.38,24a25.6,25.6,0,0,0-2.69-1.39,27.9,27.9,0,0,0-2.82-1.07Z" transform="translate(-0.71 -0.73)"></path>
+            <path style="fill:#fff" d="M24.13,27.42a30.78,30.78,0,0,0-4.36-.34h0l-.91,0c-.69,0-1.39.07-2,.12-.88.07-1.76.19-2.64.33s-1.75.31-2.61.51l-.22.06h0l-.25.08a1.79,1.79,0,0,0-.92.82A1.88,1.88,0,0,0,10,30.27a1.79,1.79,0,0,0,1.78,1.47l.4,0,.35-.07q1.55-.34,3.12-.56c1-.14,2.09-.23,3.15-.28q1.22,0,2.44,0t2.42.25a21.3,21.3,0,0,1,3.8.93A19.6,19.6,0,0,1,31,33.66h0l.06,0,.36.2a1.84,1.84,0,0,0,1.85-3.14,3.57,3.57,0,0,0-.36-.24l0,0h0a22.77,22.77,0,0,0-2.16-1.14,23.32,23.32,0,0,0-2.27-.9,25.39,25.39,0,0,0-4.26-1Z" transform="translate(-0.71 -0.73)"></path>
+         </svg>
+         <div class="css-2b3un8">Spotify</div>
+      </div>
+   </a>
+   </br><a href="https://geo.music.apple.com/mx/album/_/1551482411?mt=1&amp;app=music&amp;ls=1&amp;at=1000lHKX" target="_blank" rel="noopener noreferrer" aria-label="Listen to Monk's Evil Lair by Monk's Evil Lair on Apple Music" data-test-id="link" class="css-1spf6ft">
+      <div class="css-u4eldh">
+         <svg width="36" height="36" viewBox="0 0 40 40">
+            <path d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 4.47165e-06 20 4.47165e-06C8.95431 4.47165e-06 -8.53819e-06 8.9543 -8.53819e-06 20C-8.53819e-06 31.0457 8.95431 40 20 40Z" fill="url(#paint0_linear_apple-music-icon-circle-apple-music-circle-icon)"></path>
+            <g opacity="0.192" filter="url(#filter0_f-apple-music-circle-icon)">
+               <path d="M61.9713 2.26772e-07C45.5355 0.000108324 29.7729 6.52924 18.1511 18.1511C6.52924 29.7729 0.000108324 45.5355 2.26772e-07 61.9713C0.000107682 78.407 6.52924 94.1696 18.1511 105.791C29.7729 117.413 45.5355 123.942 61.9713 123.943C78.407 123.942 94.1696 117.413 105.791 105.791C117.413 94.1696 123.942 78.407 123.943 61.9713C123.942 45.5355 117.413 29.7729 105.791 18.1511C94.1696 6.52924 78.407 0.000107682 61.9713 2.26772e-07V2.26772e-07ZM93.0307 12.2988C94.4959 12.2975 95.572 13.1197 95.9905 14.5618C96.1364 15.0642 96.1721 24.2661 96.1346 51.2079L96.0851 87.1831L95.7071 88.5248C94.4242 93.0876 91.2913 96.3176 86.8536 97.65C83.7175 98.5916 79.1347 98.9411 76.8839 98.4106C74.8804 97.9384 73.4284 97.1012 71.8394 95.5028C69.5281 93.1778 68.5033 90.8026 68.498 87.763C68.4956 86.0628 68.7969 84.7828 69.6024 83.0752C70.7413 80.6608 72.2152 79.2073 74.8689 77.8807C76.9938 76.8185 78.8933 76.2679 84.4429 75.1087C88.0903 74.3468 88.9785 74.02 89.6894 73.1752C90.6669 72.0135 90.6454 72.445 90.5953 54.0366C90.5519 38.0433 90.5342 37.1645 90.2433 36.7205C89.8119 36.0622 88.9128 35.7224 87.9626 35.8583C86.9533 36.0025 51.0662 43.2637 50.1709 43.5047C49.176 43.7726 48.4558 44.5638 48.2244 45.6425C48.088 46.279 48.034 53.3359 48.0331 70.7126C48.0319 97.4009 48.0536 96.7956 46.9866 99.6319C46.6821 100.441 46.1363 101.556 45.7736 102.11C44.857 103.509 43.0949 105.211 41.7248 106.022C38.4476 107.961 32.0395 108.958 28.6169 108.061C24.9907 107.111 22.297 104.643 21.0827 101.159C20.5008 99.4899 20.3639 96.7434 20.7721 94.9087C21.1993 92.9886 22.1877 91.1594 23.5217 89.8193C25.8713 87.4589 28.6485 86.3616 36.1264 84.8386C37.7406 84.5098 39.4056 84.1276 39.8268 83.9894C40.7154 83.6977 41.6791 82.7819 42.1134 81.8161C42.3989 81.1813 42.4203 79.6312 42.4996 52.9689L42.5835 24.7925L42.9756 23.9965C43.4386 23.0563 44.4146 22.171 45.3992 21.7984C46.0355 21.5577 83.3052 13.9608 89.628 12.7831C91.0577 12.5167 92.5889 12.2992 93.0307 12.2988H93.0307Z" transform="translate(3.75378 3.72998) scale(0.264583)" fill="black"></path>
+            </g>
+            <path d="M69.2409 0C50.8771 0 33.2654 7.29501 20.2802 20.2802C7.29501 33.2654 0 50.8771 0 69.2409C0 87.6048 7.29501 105.216 20.2802 118.202C33.2654 131.187 50.8771 138.482 69.2409 138.482C78.3338 138.482 87.3376 136.691 95.7383 133.211C104.139 129.732 111.772 124.631 118.202 118.202C124.631 111.772 129.732 104.139 133.211 95.7383C136.691 87.3376 138.482 78.3338 138.482 69.2409C138.482 60.1481 136.691 51.1443 133.211 42.7436C129.732 34.3429 124.631 26.7098 118.202 20.2802C111.772 13.8506 104.139 8.75034 95.7383 5.27065C87.3376 1.79097 78.3338 0 69.2409 0V0ZM100.3 19.5685C101.766 19.5672 102.842 20.3894 103.26 21.8315C103.406 22.3339 103.442 31.5358 103.404 58.4776L103.355 94.4528L102.977 95.7945C101.694 100.357 98.5609 103.587 94.1232 104.92C90.9872 105.861 86.4043 106.211 84.1535 105.68C82.1501 105.208 80.698 104.371 79.1091 102.772C76.7978 100.447 75.773 98.0723 75.7677 95.0327C75.7654 93.3325 76.0666 92.0525 76.872 90.3449C78.0109 87.9305 79.4849 86.4769 82.1386 85.1504C84.2635 84.0882 86.163 83.5375 91.7126 82.3783C95.36 81.6165 96.2482 81.2897 96.9591 80.4449C97.9366 79.2832 97.9151 79.7147 97.865 61.3063C97.8215 45.313 97.8039 44.4342 97.513 43.9902C97.0816 43.3319 96.1825 42.9921 95.2323 43.128C94.2229 43.2722 58.3358 50.5333 57.4406 50.7744C56.4456 51.0423 55.7254 51.8335 55.4941 52.9122C55.3576 53.5487 55.3037 60.6056 55.3028 77.9823C55.3016 104.671 55.3233 104.065 54.2563 106.902C53.9518 107.711 53.406 108.826 53.0433 109.38C52.1266 110.778 50.3646 112.481 48.9945 113.291C45.7172 115.23 39.3092 116.228 35.8866 115.331C32.2603 114.381 29.5667 111.912 28.3524 108.429C27.7705 106.76 27.6336 104.013 28.0417 102.178C28.4689 100.258 29.4574 98.4291 30.7913 97.089C33.1409 94.7285 35.9181 93.6313 43.3961 92.1083C45.0103 91.7795 46.6753 91.3973 47.0965 91.2591C47.985 90.9674 48.9488 90.0516 49.3831 89.0858C49.6685 88.451 49.6899 86.9009 49.7693 60.2386L49.8531 32.0622L50.2453 31.2661C50.7083 30.326 51.6843 29.4407 52.6689 29.0681C53.3051 28.8274 90.5748 21.2305 96.8976 20.0528C98.3274 19.7864 99.8585 19.5689 100.3 19.5685Z" transform="translate(1.67999 1.68018) scale(0.264583)" fill="white"></path>
+            <defs>
+               <filter id="filter0_f-apple-music-circle-icon" x="1.70421" y="1.68041" width="36.8923" height="36.8923" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                  <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+                  <feGaussianBlur stdDeviation="1.02479" result="effect1_foregroundBlur"></feGaussianBlur>
+               </filter>
+               <linearGradient id="paint0_linear_apple-music-icon-circle-apple-music-circle-icon" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(24.8821 -7.03194) scale(37.2822) rotate(52.3873)">
+                  <stop stop-color="#FF5E50"></stop>
+                  <stop offset="0.249038" stop-color="#FE5C6C"></stop>
+                  <stop offset="0.376518" stop-color="#E3658A"></stop>
+                  <stop offset="0.496954" stop-color="#B87EB0"></stop>
+                  <stop offset="0.626674" stop-color="#916CFF"></stop>
+                  <stop offset="0.762798" stop-color="#70BCFB" stop-opacity="0.919192"></stop>
+                  <stop offset="1" stop-color="#21C7FE"></stop>
+               </linearGradient>
+            </defs>
+         </svg>
+         <div class="css-2b3un8">Apple Music</div>
+      </div>
+   </a>
+   </br><a href="https://www.youtube.com/playlist?list=OLAK5uy_ktuVyUkuKQ35FYBVzZ4iXZALGUHZdCKjE" target="_blank" rel="noopener noreferrer" aria-label="Listen to Monk's Evil Lair by Monk's Evil Lair on YouTube" data-test-id="link" class="css-1spf6ft">
+      <div class="css-u4eldh">
+         <svg width="36" height="36" viewBox="0 0 45 45">
+            <defs>
+               <style>.youtube-icon-circle-1{fill:red;}.youtube-icon-circle-2{fill:#fff;}</style>
+            </defs>
+            <circle class="youtube-icon-circle-1" cx="22.5" cy="22.5" r="22.5"></circle>
+            <path id="lozenge-path-YouTubeCircleIcon-youtube-circle-icon" class="youtube-icon-circle-2" d="M37.12,16a3.71,3.71,0,0,0-2.61-2.61C32.2,12.73,23,12.73,23,12.73s-9.24,0-11.55.62A3.71,3.71,0,0,0,8.79,16a38.56,38.56,0,0,0-.62,7.11,38.56,38.56,0,0,0,.62,7.11,3.71,3.71,0,0,0,2.61,2.61c2.31.62,11.55.62,11.55.62s9.24,0,11.55-.62a3.71,3.71,0,0,0,2.61-2.61,38.56,38.56,0,0,0,.62-7.11A38.56,38.56,0,0,0,37.12,16Z" transform="translate(0 -0.58)"></path>
+            <polygon id="play-polygon-YouTubeCircleIcon-youtube-circle-icon" class="youtube-icon-circle-1" points="20 26.93 27.68 22.5 20 18.07 20 26.93"></polygon>
+         </svg>
+         <div class="css-2b3un8">YouTube</div>
+      </div>
+   </a>
+   </br><a href="https://music.youtube.com/playlist?list=OLAK5uy_ktuVyUkuKQ35FYBVzZ4iXZALGUHZdCKjE" target="_blank" rel="noopener noreferrer" aria-label="Listen to Monk's Evil Lair by Monk's Evil Lair on YouTube Music" data-test-id="link" class="css-1spf6ft">
+      <div class="css-u4eldh">
+         <svg width="36" height="36" viewBox="0 0 40 40">
+            <rect width="40" height="40" fill="black" fill-opacity="0"></rect>
+            <rect width="40" height="40" fill="black" fill-opacity="0"></rect>
+            <path d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40Z" fill="#FF0000"></path>
+            <rect width="20.9091" height="20.9091" fill="black" fill-opacity="0" transform="translate(9.54541 9.54541)"></rect>
+            <path d="M20 10.4636C25.259 10.4636 29.5363 14.7409 29.5363 20C29.5363 25.259 25.259 29.5363 20 29.5363C14.7409 29.5363 10.4636 25.259 10.4636 20C10.4636 14.7409 14.7409 10.4636 20 10.4636ZM20 9.54541C14.225 9.54541 9.54541 14.225 9.54541 20C9.54541 25.775 14.225 30.4545 20 30.4545C25.775 30.4545 30.4545 25.775 30.4545 20C30.4545 14.225 25.775 9.54541 20 9.54541Z" fill="white"></path>
+            <path d="M16.3636 25.2275L25.2273 19.7729L16.3636 14.7729V25.2275Z" fill="white"></path>
+         </svg>
+         <div class="css-2b3un8">YouTube Music</div>
+      </div>
+   </a>
+   </br><a href="https://www.deezer.com/album/204041532" target="_blank" rel="noopener noreferrer" aria-label="Listen to Monk's Evil Lair by Monk's Evil Lair on Deezer" data-test-id="link" class="css-1spf6ft">
+      <div class="css-u4eldh">
+         <svg width="36" height="36" viewBox="0 0 80 80">
+            <circle cx="40" cy="40" r="40" fill="#000000"></circle>
+            <path d="M67.3882 22H55.6279V28.8807H67.3882V22Z" fill="#40AB5D"></path>
+            <path d="M67.3882 31.54H55.6279V38.4207H67.3882V31.54Z" fill="url(#paint0_linear-deezer-circle-icon)"></path>
+            <path d="M67.3882 41.0791H55.6279V47.9598H67.3882V41.0791Z" fill="url(#paint1_linear-deezer-circle-icon)"></path>
+            <path d="M24.7602 50.6191H13V57.4998H24.7602V50.6191Z" fill="url(#paint2_linear-deezer-circle-icon)"></path>
+            <path d="M38.9604 50.6191H27.2002V57.4998H38.9604V50.6191Z" fill="url(#paint3_linear-deezer-circle-icon)"></path>
+            <path d="M53.188 50.6191H41.4277V57.4998H53.188V50.6191Z" fill="url(#paint4_linear-deezer-circle-icon)"></path>
+            <path d="M67.3882 50.6191H55.6279V57.4998H67.3882V50.6191Z" fill="url(#paint5_linear-deezer-circle-icon)"></path>
+            <path d="M53.188 41.0791H41.4277V47.9598H53.188V41.0791Z" fill="url(#paint6_linear-deezer-circle-icon)"></path>
+            <path d="M38.9604 41.0791H27.2002V47.9598H38.9604V41.0791Z" fill="url(#paint7_linear-deezer-circle-icon)"></path>
+            <path d="M38.9604 31.54H27.2002V38.4207H38.9604V31.54Z" fill="url(#paint8_linear-deezer-circle-icon)"></path>
+            <defs>
+               <linearGradient id="paint0_linear-deezer-circle-icon" x1="61.5656" y1="38.4802" x2="61.4551" y2="31.439" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#358C7B"></stop>
+                  <stop offset="0.5256" stop-color="#33A65E"></stop>
+               </linearGradient>
+               <linearGradient id="paint1_linear-deezer-circle-icon" x1="55.455" y1="47.6065" x2="67.5664" y2="41.4354" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#222B90"></stop>
+                  <stop offset="1" stop-color="#367B99"></stop>
+               </linearGradient>
+               <linearGradient id="paint2_linear-deezer-circle-icon" x1="13.0022" y1="54.0622" x2="24.7525" y2="54.0622" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FF9900"></stop>
+                  <stop offset="1" stop-color="#FF8000"></stop>
+               </linearGradient>
+               <linearGradient id="paint3_linear-deezer-circle-icon" x1="27.2133" y1="54.0622" x2="38.9637" y2="54.0622" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FF8000"></stop>
+                  <stop offset="1" stop-color="#CC1953"></stop>
+               </linearGradient>
+               <linearGradient id="paint4_linear-deezer-circle-icon" x1="41.4244" y1="54.0622" x2="53.1748" y2="54.0622" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#CC1953"></stop>
+                  <stop offset="1" stop-color="#241284"></stop>
+               </linearGradient>
+               <linearGradient id="paint5_linear-deezer-circle-icon" x1="55.6216" y1="54.0622" x2="67.372" y2="54.0622" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#222B90"></stop>
+                  <stop offset="1" stop-color="#3559A6"></stop>
+               </linearGradient>
+               <linearGradient id="paint6_linear-deezer-circle-icon" x1="40.9606" y1="46.3746" x2="53.6386" y2="42.6673" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#CC1953"></stop>
+                  <stop offset="1" stop-color="#241284"></stop>
+               </linearGradient>
+               <linearGradient id="paint7_linear-deezer-circle-icon" x1="26.7951" y1="42.2303" x2="39.3819" y2="46.8116" gradientUnits="userSpaceOnUse">
+                  <stop offset="0.00266984" stop-color="#FFCC00"></stop>
+                  <stop offset="0.9999" stop-color="#CE1938"></stop>
+               </linearGradient>
+               <linearGradient id="paint8_linear-deezer-circle-icon" x1="28.2009" y1="30.4707" x2="37.976" y2="39.4908" gradientUnits="userSpaceOnUse">
+                  <stop offset="0.00266984" stop-color="#FFD100"></stop>
+                  <stop offset="1" stop-color="#FD5A22"></stop>
+               </linearGradient>
+            </defs>
+         </svg>
+         <div class="css-2b3un8">Deezer</div>
+      </div>
+   </a>
+   </br><a href="https://music.amazon.com/albums/B08VGVDP4L?do=play" target="_blank" rel="noopener noreferrer" aria-label="Listen to Monk's Evil Lair by Monk's Evil Lair on Amazon Music" data-test-id="link" class="css-1spf6ft">
+      <div class="css-u4eldh">
+         <svg width="36" height="36" viewBox="0 0 80 80">
+            <path d="M80 40.0593C80.014 30.8026 76.8168 21.8275 70.9535 14.6642C65.0902 7.50095 56.9238 2.59302 47.8465 0.777183C38.7693 -1.03866 29.3432 0.350008 21.1753 4.70643C13.0074 9.06285 6.60339 16.1173 3.05511 24.6671C-0.493172 33.2169 -0.966062 42.7327 1.71706 51.5921C4.40019 60.4515 10.0732 68.1061 17.7689 73.2508C25.4647 78.3955 34.7066 80.7119 43.9192 79.8049C53.1318 78.8979 61.7446 74.8238 68.2892 68.2771C75.7728 60.7911 79.9839 50.6442 80 40.0593Z" fill="url(#paint0_linear-amazon-circle-icon)"></path>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M55.4853 23.0322C55.4269 23.0473 55.3791 23.0831 55.3791 23.1117C55.3791 23.1402 55.3296 23.1794 55.2691 23.1984C54.8033 23.3457 54.3703 24.4278 54.6422 24.7648C54.6727 24.8025 54.7165 24.9217 54.7397 25.0297C54.7628 25.1377 54.8033 25.2261 54.8294 25.2261C54.8555 25.2261 54.9828 25.3099 55.1122 25.4123C55.5604 25.7668 57.0783 25.5629 57.0783 25.1481C57.0783 25.1218 57.1358 25.0229 57.206 24.9283C57.3961 24.6722 57.3596 23.7053 57.1542 23.5623C57.0791 23.5099 57.0167 23.4346 57.0155 23.3949C57.0084 23.1593 55.9559 22.9097 55.4853 23.0322ZM16.57 27.5836C16.4364 27.6091 16.1497 27.6629 15.9327 27.7031C15.5427 27.7751 14.582 28.0688 14.3723 28.1798C14.3127 28.2113 14.0868 28.3249 13.8703 28.432C13.654 28.5391 13.4082 28.6766 13.3241 28.7373C12.8003 29.1163 12.6836 29.079 12.6165 28.5112C12.5602 28.034 12.498 28.0053 11.5186 28.0053H10.7119L10.5917 28.2017C10.474 28.3938 10.4714 28.5222 10.4711 34.0812L10.4709 39.7643L10.6412 39.9267C10.8994 40.1731 12.4678 40.1797 12.7321 39.9356L12.8984 39.7822V35.1666V30.5511L13.0688 30.4304C13.1626 30.3639 13.3537 30.2639 13.4936 30.2082C13.6335 30.1525 13.748 30.0848 13.748 30.0578C13.748 30.0309 13.8368 29.9896 13.9453 29.9664C14.0537 29.9431 14.2381 29.8765 14.3549 29.8185C14.4717 29.7605 14.7038 29.6937 14.8707 29.6703C15.0376 29.6469 15.2911 29.5891 15.4342 29.5416C16.4029 29.2205 17.9938 29.7664 17.9964 30.4209C17.9967 30.4713 18.0445 30.5943 18.1026 30.694C18.1998 30.8606 18.2109 31.2359 18.2388 35.3281C18.263 38.8661 18.2854 39.7971 18.3479 39.8595C18.5019 40.013 20.3002 39.9979 20.4842 39.8417L20.636 39.713L20.6522 35.1437L20.6686 30.5743L20.8203 30.4343C20.9039 30.3571 21.0603 30.2642 21.1682 30.2275C21.2761 30.191 21.4293 30.1111 21.5089 30.0499C21.5886 29.9887 21.6981 29.9387 21.7526 29.9387C21.8069 29.9387 21.9491 29.8866 22.0682 29.823C22.1874 29.7594 22.4191 29.6881 22.5831 29.6646C22.7473 29.641 22.977 29.582 23.0938 29.5332C23.2277 29.4774 23.5416 29.441 23.9434 29.435C25.0646 29.4178 25.5592 29.7606 25.8905 30.7846L26.0371 31.2377L26.0674 35.5376C26.0841 37.9025 26.1205 39.8601 26.1481 39.8878C26.2803 40.0196 28.0992 39.9822 28.2239 39.845C28.3441 39.7128 28.386 31.3817 28.2726 30.1852C28.108 28.4489 25.9171 27.1368 24.0189 27.6378C23.8939 27.6709 23.6051 27.7271 23.3769 27.7629C23.1487 27.7987 22.9029 27.8645 22.8307 27.9093C22.7585 27.954 22.6103 28.0068 22.5015 28.0268C22.2539 28.0721 21.2128 28.5746 20.8484 28.8246C20.3186 29.1882 20.3146 29.1889 20.0833 28.9658C19.9701 28.8565 19.8774 28.7426 19.8774 28.7125C19.8774 28.6307 19.2581 28.0727 19.1188 28.029C19.052 28.0082 18.9554 27.9546 18.9041 27.9099C18.8195 27.8361 18.4361 27.7235 17.7837 27.5804C17.4951 27.5171 16.9087 27.5186 16.57 27.5836ZM47.7756 27.6688C47.6159 27.7147 47.3155 27.7718 47.1081 27.7955C46.9008 27.8192 46.6356 27.8875 46.5188 27.947C46.402 28.0065 46.1426 28.1322 45.9423 28.2263C45.568 28.4021 44.8278 29.0432 44.6697 29.3288C44.2628 30.0632 44.0819 30.8893 44.2056 31.4492C44.425 32.4428 44.778 33.039 45.4419 33.5364C45.617 33.6675 45.7963 33.8089 45.8405 33.8505C45.8845 33.8922 45.9559 33.9264 45.9992 33.9264C46.0423 33.9264 46.1474 33.9811 46.2327 34.0478C46.3178 34.1144 46.4786 34.1862 46.5898 34.207C46.7009 34.228 46.8329 34.2795 46.8829 34.3218C46.933 34.364 47.0944 34.4304 47.2416 34.4694C47.3888 34.5085 47.5663 34.5763 47.6361 34.6201C47.7058 34.6641 47.8585 34.7198 47.9753 34.7441C48.0921 34.7685 48.2828 34.8392 48.3992 34.9011C48.5156 34.9632 48.6603 35.0139 48.721 35.0139C48.7817 35.0139 48.9322 35.066 49.0557 35.1298C49.179 35.1935 49.3483 35.2769 49.4318 35.3151C50.3708 35.745 50.693 36.3378 50.4584 37.2041C50.3289 37.6829 49.8138 38.2765 49.528 38.2765C49.4565 38.2765 49.3306 38.3241 49.2481 38.3823C49.1161 38.4752 48.9369 38.488 47.7629 38.488C46.6625 38.488 46.3674 38.4694 46.0846 38.3823C45.896 38.3241 45.6713 38.2765 45.5855 38.2765C45.4994 38.2765 45.2479 38.2086 45.0262 38.1255C44.5826 37.9593 44.2396 37.9352 44.0762 38.0586C43.8022 38.2655 44.0354 39.6057 44.3453 39.6057C44.3839 39.6057 44.4587 39.642 44.5115 39.6861C45.1054 40.1847 48.4085 40.5725 49.298 40.248C49.4413 40.1957 49.7005 40.1343 49.8739 40.1113C50.0473 40.0885 50.2714 40.0198 50.3718 39.9587C50.4723 39.8977 50.5954 39.8473 50.6455 39.8465C50.7409 39.8452 51.2138 39.5545 51.3789 39.3961C51.4317 39.3452 51.4963 39.3037 51.5224 39.3037C51.6101 39.3037 52.0425 38.82 52.2401 38.5013C53.0391 37.211 52.9024 35.5968 51.9069 34.5676C51.61 34.2606 51.5164 34.1942 51.0855 33.9853C50.9436 33.9166 50.8276 33.8344 50.8276 33.8027C50.8276 33.7711 50.7771 33.7451 50.7153 33.7451C50.6534 33.7451 50.4745 33.6771 50.3175 33.5941C50.1606 33.511 49.9858 33.4421 49.9293 33.4411C49.8725 33.4402 49.6897 33.3723 49.5228 33.2906C49.3559 33.2089 49.1851 33.1418 49.1434 33.1415C49.1015 33.1412 48.9653 33.0866 48.8407 33.0201C48.7163 32.9536 48.5729 32.8991 48.5224 32.8988C48.4719 32.8986 48.3485 32.8444 48.2484 32.7784C48.1483 32.7124 48.0181 32.6582 47.9589 32.658C47.6579 32.6568 46.627 31.9401 46.546 31.6756C46.5232 31.6009 46.46 31.4894 46.4055 31.4277C46.0019 30.9711 46.4824 29.9399 47.2838 29.5422L47.6415 29.3647L48.9159 29.3658C49.9804 29.3667 50.2206 29.3832 50.3736 29.4659C50.4745 29.5203 50.7067 29.5927 50.8895 29.6264C51.0724 29.6602 51.304 29.7306 51.4041 29.7827C51.8899 30.0357 51.9882 29.9155 51.9676 29.0945C51.9521 28.4834 51.9374 28.4038 51.8289 28.3441C51.7621 28.3073 51.6933 28.2585 51.676 28.2357C51.6239 28.1672 51.3153 28.0657 51.1592 28.0657C51.079 28.0657 50.9101 28.0142 50.7839 27.9511C50.6364 27.8775 50.3576 27.823 50.0028 27.7987C49.6994 27.7778 49.358 27.734 49.2443 27.7013C48.8783 27.5961 48.0891 27.5788 47.7756 27.6688ZM64.3607 27.8165C64.0476 27.8419 63.7852 27.8973 63.6931 27.9576C63.6097 28.0121 63.4377 28.0757 63.3108 28.0988C63.1841 28.1218 63.0473 28.1736 63.0068 28.2139C62.9664 28.2541 62.8538 28.307 62.7567 28.3311C62.6595 28.3554 62.5128 28.428 62.4306 28.4924C62.3483 28.5568 62.2474 28.6095 62.2063 28.6095C62.1094 28.6095 60.9016 29.7685 60.9016 29.8617C60.9016 29.9007 60.8665 29.9544 60.8236 29.981C60.7524 30.0251 60.591 30.3333 60.241 31.0933C60.1703 31.2465 60.1126 31.429 60.1126 31.4989C60.1126 31.5688 60.0541 31.7697 59.9823 31.9454C59.7321 32.5592 59.7576 35.8198 60.0167 36.3129C60.0691 36.4126 60.112 36.557 60.1123 36.6339C60.1126 36.7623 60.3441 37.3373 60.4816 37.5515C60.5136 37.6014 60.5836 37.7373 60.6368 37.8536C60.7752 38.1557 61.4955 39.0016 61.6143 39.0016C61.6459 39.0016 61.751 39.0695 61.848 39.1526C61.9449 39.2355 62.0541 39.3035 62.0907 39.3037C62.1273 39.3037 62.2053 39.3565 62.2638 39.421C62.3225 39.4857 62.4478 39.5553 62.5422 39.576C62.6366 39.5967 62.7446 39.6505 62.7821 39.6955C62.8197 39.7406 62.9651 39.7967 63.1049 39.8199C63.2448 39.8432 63.4959 39.916 63.6628 39.982C63.997 40.1139 66.6935 40.1527 67.1523 40.0322C68.3569 39.7159 68.5481 39.54 68.5481 38.7492C68.5481 38.0229 68.3006 37.8717 67.5771 38.1557C67.4078 38.2222 67.1268 38.2771 66.9528 38.2777C66.7788 38.2783 66.4726 38.3021 66.2723 38.3303C65.7833 38.399 64.3836 38.2756 64.1786 38.1454C64.0952 38.0926 63.9526 38.0321 63.8615 38.0111C63.4254 37.9104 62.5615 37.0538 62.4538 36.615C62.4293 36.5153 62.3668 36.3869 62.3151 36.3297C62.2605 36.2694 62.2016 36.0407 62.1752 35.7859C62.15 35.5441 62.0989 35.2696 62.0617 35.1761C61.9634 34.9295 61.9781 33.5557 62.0849 32.9997C62.135 32.7391 62.176 32.4216 62.176 32.2939C62.176 32.0723 62.4439 31.3081 62.5815 31.1374C62.6173 31.0929 62.6636 31.001 62.6844 30.9334C62.7718 30.6485 63.5769 29.9498 63.9359 29.847C64.0193 29.8232 64.1286 29.7686 64.1786 29.7257C64.4542 29.4901 67.4977 29.4918 67.8594 29.7277C68.2691 29.9949 68.5481 29.7505 68.5481 29.1246C68.5481 28.4187 68.2827 28.0657 67.7523 28.0657C67.6584 28.0657 67.4484 28.0135 67.2858 27.9497C66.9479 27.8171 65.2878 27.7414 64.3607 27.8165ZM31.7013 27.9849C31.4628 28.0254 31.4723 27.8233 31.4664 32.9494C31.4611 37.4162 31.4746 37.9722 31.5923 38.1255C31.6178 38.1587 31.6694 38.3002 31.7069 38.44C31.7445 38.5797 31.8119 38.7304 31.8566 38.7751C31.9014 38.8197 31.9561 38.9132 31.9784 38.983C32.0123 39.0893 32.3646 39.4432 32.6939 39.7018C33.6716 40.4697 36.631 40.4681 37.7337 39.6992C37.8074 39.6477 37.9109 39.6057 37.9637 39.6057C38.0166 39.6057 38.1524 39.5378 38.2654 39.4547C38.3785 39.3716 38.5103 39.3037 38.5584 39.3037C38.6063 39.3037 38.6905 39.2561 38.7453 39.1979C38.8002 39.1398 38.9882 39.0171 39.1633 38.9254L39.4816 38.7585L39.5411 38.9143C39.5738 38.9997 39.6005 39.162 39.6005 39.2745C39.6005 39.5985 39.7149 39.7801 39.966 39.855C40.2742 39.9468 41.4943 39.9021 41.625 39.7941C41.7407 39.6985 41.7799 28.3071 41.6653 28.1262C41.5801 27.9917 39.6257 27.9579 39.4488 28.0878C39.3297 28.1751 39.3268 28.2647 39.2971 32.7793L39.2668 37.3817L38.6902 37.6698C37.8526 38.0882 37.5789 38.2034 37.3161 38.2477C37.1875 38.2694 36.971 38.3274 36.8352 38.3765C36.2286 38.5958 34.9302 38.4051 34.4478 38.0256C33.7714 37.4938 33.7558 37.3727 33.7165 32.3434C33.6904 29.0054 33.6672 28.1159 33.6049 28.0537C33.526 27.9751 32.0695 27.9225 31.7013 27.9849ZM55.0462 28.0861C54.8673 28.2189 54.8098 39.5947 54.987 39.7897C55.1095 39.9245 56.7269 39.9699 56.9609 39.8453C57.1303 39.755 57.1472 28.2583 56.978 28.1185C56.8251 27.9919 55.2098 27.9648 55.0462 28.0861ZM64.8158 44.5029C64.5488 44.5278 64.0846 44.5917 63.7842 44.6445C63.4838 44.6976 63.1329 44.7411 63.0043 44.7411C62.876 44.7412 62.6848 44.7806 62.5795 44.8287C62.4744 44.8767 62.2267 44.9447 62.029 44.9796C61.8313 45.0146 61.6069 45.0841 61.5304 45.1339C61.454 45.1839 61.3317 45.2247 61.2587 45.2247C61.044 45.2247 59.4669 45.9938 59.214 46.2219C58.3788 46.9749 58.7857 47.2817 60.1733 46.9451C61.4732 46.6299 65.7982 46.6514 66.4067 46.9761C66.5321 47.043 66.66 47.0977 66.6908 47.0977C66.7475 47.0977 67.0893 47.4525 67.0942 47.5164C67.0957 47.5353 67.1215 47.6732 67.1515 47.8227C67.229 48.2091 67.1104 49.5228 66.9648 49.8906C66.901 50.0517 66.8489 50.272 66.8489 50.38C66.8489 50.4881 66.7936 50.6842 66.726 50.8157C66.6584 50.9474 66.5861 51.1639 66.565 51.2968C66.544 51.4297 66.4765 51.6332 66.4148 51.749C66.3532 51.8649 66.3018 52.0144 66.3007 52.0813C66.2998 52.1483 66.2317 52.339 66.1496 52.5052C66.0675 52.6713 65.9998 52.8617 65.9994 52.9281C65.9989 52.9946 65.9442 53.1305 65.8779 53.2302C65.8116 53.3299 65.7569 53.4658 65.7566 53.5323C65.7563 53.5988 65.7016 53.7421 65.635 53.851C65.5682 53.9598 65.5137 54.0836 65.5137 54.1261C65.5137 54.1687 65.4438 54.3431 65.3584 54.5138C65.2472 54.736 65.2083 54.8982 65.2218 55.0846L65.2407 55.3449L65.5137 55.3625C65.7026 55.3748 65.8325 55.3468 65.9352 55.2719C66.1579 55.1094 67.045 54.2218 67.1832 54.0232C67.2497 53.9276 67.3594 53.7781 67.427 53.6909C67.4947 53.6036 67.62 53.4236 67.7056 53.2906C68.1154 52.6535 68.2052 52.5017 68.3478 52.2031C68.3954 52.1034 68.4602 51.9811 68.4916 51.9312C68.5232 51.8814 68.5786 51.7726 68.6147 51.6895C68.6508 51.6065 68.7461 51.4121 68.8266 51.2577C68.907 51.1033 68.9729 50.9332 68.9729 50.8799C68.9729 50.8264 69.0275 50.6813 69.0943 50.5573C69.161 50.4334 69.2156 50.2768 69.2156 50.2093C69.2156 50.1418 69.2661 49.9919 69.3279 49.8761C69.3898 49.7602 69.4596 49.5185 69.4831 49.3388C69.5065 49.1592 69.5655 48.9358 69.6139 48.8426C69.6623 48.7492 69.7301 48.3932 69.7644 48.0514C69.7987 47.7096 69.8589 47.3348 69.898 47.2185C70.1827 46.3751 69.8377 45.1379 69.2803 45.0024C69.1947 44.9815 69.0295 44.9143 68.9131 44.853C68.7967 44.7915 68.6056 44.7414 68.4883 44.7414C68.2683 44.7414 67.3603 44.5832 67.2733 44.5297C67.1867 44.4764 65.3171 44.4559 64.8158 44.5029ZM10.1402 45.7289C9.82251 46.1437 10.0009 46.4423 11.1306 47.3862C11.3186 47.5431 11.4859 47.6854 11.5026 47.7023C11.6581 47.8593 13.1773 49.0311 13.2252 49.0311C13.2387 49.0311 13.3413 49.1164 13.4534 49.2207C13.5654 49.325 13.7253 49.4536 13.8087 49.5064C13.8922 49.5593 14.1941 49.7662 14.4795 49.9662C14.765 50.1664 15.0411 50.3573 15.0931 50.3905C15.4154 50.5961 15.9731 50.9686 16.0276 51.0145C16.0631 51.0444 16.1928 51.1165 16.3158 51.1746C16.4389 51.2328 16.5396 51.3045 16.5396 51.334C16.5396 51.3634 16.5769 51.3874 16.6225 51.3874C16.668 51.3874 16.7822 51.4477 16.8763 51.5214C17.0643 51.6685 17.3062 51.8107 17.632 51.965C17.7488 52.0203 17.858 52.0866 17.8747 52.1125C17.8914 52.1383 18.0006 52.2026 18.1175 52.2555C18.2343 52.3084 18.3845 52.3854 18.4512 52.4266C18.9185 52.7151 19.0349 52.7771 19.11 52.7771C19.1567 52.7771 19.2277 52.8165 19.2679 52.8647C19.3081 52.9127 19.4404 52.9848 19.562 53.0248C19.6835 53.0647 19.8191 53.1334 19.8633 53.1773C19.9074 53.2213 20.0515 53.2862 20.1835 53.3216C20.3155 53.3569 20.4236 53.411 20.4236 53.4417C20.4236 53.4723 20.5296 53.5258 20.6592 53.5606C20.7889 53.5954 20.9273 53.6627 20.9669 53.7101C21.0065 53.7575 21.1257 53.8152 21.2319 53.838C21.338 53.861 21.4974 53.9306 21.586 53.993C21.6746 54.0552 21.7811 54.1063 21.8227 54.1063C21.896 54.1063 22.3444 54.3029 22.8023 54.5359C22.9258 54.5987 23.0634 54.6501 23.1082 54.6501C23.1529 54.6501 23.2934 54.7029 23.4206 54.7674C23.5477 54.8319 23.7284 54.9014 23.822 54.9219C23.9156 54.9425 24.0963 55.012 24.2235 55.0765C24.3506 55.141 24.5044 55.1938 24.5656 55.1938C24.6266 55.1938 24.7778 55.2449 24.9016 55.3073C25.0254 55.3696 25.2219 55.4412 25.3383 55.4663C25.4546 55.4912 25.6048 55.5464 25.672 55.5887C25.7393 55.631 25.9171 55.6853 26.0671 55.7094C26.2172 55.7335 26.4352 55.8041 26.5517 55.8663C26.6682 55.9284 26.8469 55.9793 26.9487 55.9793C27.0507 55.9793 27.237 56.0315 27.3629 56.0954C27.4887 56.1593 27.7061 56.229 27.846 56.2502C27.986 56.2715 28.237 56.3392 28.4039 56.4008C28.5707 56.4625 28.8358 56.528 28.993 56.5466C29.1501 56.5652 29.4428 56.6356 29.6434 56.7028C29.8441 56.7702 30.1041 56.8251 30.2213 56.8251C30.3385 56.8251 30.5373 56.8643 30.6632 56.912C30.789 56.9596 31.13 57.0284 31.421 57.065C31.712 57.1014 32.0534 57.167 32.1796 57.2108C32.3059 57.2546 32.6413 57.3079 32.925 57.3292C33.2087 57.3506 33.6457 57.4112 33.896 57.4638C34.1463 57.5165 34.7198 57.5829 35.1704 57.6118C35.621 57.6405 36.413 57.7086 36.9303 57.7631C37.9946 57.8752 42.5184 57.856 43.09 57.737C43.2569 57.7021 43.7951 57.6458 44.2857 57.6118C44.7765 57.5777 45.3636 57.511 45.5905 57.4639C45.8174 57.4166 46.2078 57.3598 46.4581 57.3373C46.7085 57.315 47.0635 57.2603 47.2471 57.2159C47.4306 57.1715 47.813 57.104 48.0967 57.0661C48.3804 57.0281 48.7081 56.962 48.8249 56.9189C48.9417 56.8759 49.1939 56.8217 49.3852 56.7984C49.5767 56.7753 49.8831 56.7038 50.0664 56.6396C50.2498 56.5755 50.4892 56.5218 50.5985 56.5203C50.7079 56.519 50.9065 56.4762 51.04 56.4256C51.1735 56.3749 51.4651 56.2962 51.6878 56.2509C51.9107 56.2054 52.1701 56.1294 52.2643 56.0818C52.3587 56.0343 52.5441 55.9758 52.6764 55.9519C52.8088 55.9281 52.9935 55.8692 53.0869 55.8211C53.1802 55.7729 53.3723 55.7086 53.5137 55.6781C53.8442 55.6066 54.516 55.3867 54.7115 55.286C54.795 55.2429 54.9588 55.1873 55.0756 55.1624C55.1925 55.1376 55.4041 55.0665 55.546 55.0044C55.6878 54.9425 55.9199 54.841 56.0618 54.7791C56.2037 54.717 56.4153 54.646 56.5321 54.6212C56.6489 54.5964 56.7855 54.541 56.8356 54.498C56.8856 54.4549 57.0414 54.3892 57.1819 54.3519C57.3224 54.3147 57.4524 54.2599 57.4709 54.2301C57.4894 54.2004 57.6407 54.1309 57.8073 54.0758C57.9737 54.0208 58.11 53.954 58.11 53.9273C58.11 53.9007 58.2291 53.8491 58.3746 53.8126C58.5201 53.7761 58.6722 53.7066 58.7126 53.6583C58.7529 53.6099 58.864 53.5532 58.9596 53.5323C59.0552 53.5115 59.1656 53.4554 59.2052 53.408C59.2448 53.3606 59.3832 53.2933 59.5129 53.2585C59.6425 53.2237 59.7485 53.1713 59.7485 53.142C59.7485 53.1125 59.8509 53.0558 59.9761 53.0157C60.1012 52.9758 60.2457 52.9067 60.297 52.8624C60.3482 52.818 60.4848 52.7392 60.6004 52.687C60.716 52.6351 60.9198 52.5244 61.0533 52.441C61.1868 52.3578 61.3801 52.2513 61.4829 52.2044C61.5856 52.1578 61.705 52.0771 61.7483 52.0253C61.7914 51.9735 61.8575 51.9312 61.8951 51.9311C61.9328 51.9311 62.1233 51.8206 62.3187 51.6856C62.514 51.5506 62.7325 51.4142 62.8042 51.3823C62.8758 51.3504 63.0438 51.2426 63.1773 51.1424C63.3108 51.0423 63.5187 50.8953 63.6393 50.8159C64.7438 50.088 64.936 49.3477 64.1239 48.9507C63.821 48.8029 63.1794 48.9032 62.7828 49.1607C62.6994 49.2149 62.5287 49.2772 62.4035 49.2989C62.2784 49.3208 62.176 49.3611 62.176 49.3885C62.176 49.416 62.0463 49.4732 61.8877 49.5158C61.7292 49.5584 61.5312 49.6292 61.4477 49.6734C61.261 49.772 60.6423 49.9877 60.3554 50.0541C60.2386 50.0813 60.0201 50.1606 59.8699 50.2306C59.7197 50.3005 59.5422 50.3591 59.4754 50.3609C59.4087 50.3627 59.3026 50.4029 59.2398 50.4502C59.177 50.4976 58.9722 50.5676 58.7847 50.6059C58.5971 50.6441 58.4146 50.699 58.379 50.7277C58.3433 50.7564 58.1658 50.8104 57.9845 50.8479C57.8032 50.8855 57.5935 50.9547 57.5187 51.0018C57.4439 51.0489 57.2528 51.1045 57.0939 51.1252C56.9351 51.1459 56.7096 51.2097 56.5928 51.2666C56.476 51.3237 56.2382 51.3864 56.0645 51.4059C55.8908 51.4255 55.6842 51.4835 55.6054 51.535C55.5267 51.5864 55.3275 51.6447 55.1627 51.6646C54.998 51.6845 54.713 51.7501 54.5295 51.8104C54.3459 51.8706 54.0591 51.9395 53.8922 51.9637C53.7254 51.9877 53.5205 52.0412 53.4371 52.0824C53.3537 52.1236 53.1215 52.1765 52.9213 52.1998C52.721 52.2229 52.3836 52.2943 52.1715 52.3585C51.9594 52.4226 51.6726 52.4756 51.5343 52.4763C51.3959 52.4772 51.0903 52.5287 50.8552 52.5911C50.6199 52.6534 50.2375 52.7231 50.0056 52.7461C49.7734 52.7689 49.4469 52.8248 49.2801 52.8701C49.1132 52.9154 48.6263 52.9825 48.198 53.019C47.7699 53.0558 47.3504 53.1119 47.266 53.1438C47.1817 53.1758 46.8219 53.2172 46.4668 53.2358C46.1116 53.2544 45.343 53.3239 44.7589 53.39C43.2968 53.5556 37.8024 53.5711 36.5055 53.4133C36.0549 53.3585 35.2903 53.2887 34.8063 53.2583C34.3223 53.2278 33.7352 53.1631 33.5015 53.1145C33.2679 53.0657 32.7569 52.9968 32.3659 52.9613C31.975 52.9257 31.5926 52.873 31.5163 52.8443C31.44 52.8154 31.078 52.758 30.7119 52.7167C30.3457 52.6754 29.9395 52.6041 29.8091 52.5582C29.6787 52.5124 29.4842 52.475 29.377 52.475C29.2697 52.475 28.9658 52.4183 28.7018 52.3492C28.4378 52.28 28.0716 52.2013 27.888 52.1744C27.5184 52.1202 26.6122 51.9095 26.1888 51.7791C26.0386 51.7329 25.7549 51.6669 25.5584 51.6324C25.3619 51.598 25.1699 51.5439 25.1315 51.5122C25.0932 51.4806 24.8945 51.4279 24.6898 51.395C24.4852 51.3622 24.24 51.2953 24.1449 51.2464C24.0499 51.1974 23.836 51.1373 23.6695 51.1128C23.5031 51.0882 23.2717 51.0177 23.1554 50.9559C23.039 50.8941 22.8751 50.8431 22.7912 50.8423C22.7073 50.8415 22.5223 50.7884 22.3798 50.724C22.2375 50.6598 22.019 50.5893 21.8943 50.5675C21.7697 50.5458 21.6126 50.4938 21.5454 50.4522C21.4781 50.4103 21.3279 50.3567 21.2116 50.3328C21.0952 50.3088 20.8908 50.2425 20.7573 50.1853C20.6238 50.1279 20.3917 50.0381 20.2415 49.9857C19.6627 49.7838 19.536 49.7359 19.3009 49.6311C19.1673 49.5715 18.983 49.5043 18.8911 49.4818C18.7993 49.4593 18.6227 49.3894 18.4989 49.3265C18.3751 49.2637 18.235 49.2124 18.1877 49.2124C18.1402 49.2124 18.0163 49.1608 17.9122 49.098C17.8081 49.0352 17.6361 48.9654 17.53 48.943C17.4238 48.9208 17.3067 48.8663 17.2698 48.8221C17.233 48.7778 17.1023 48.7228 16.9794 48.6999C16.8567 48.677 16.6869 48.6095 16.6024 48.55C16.5178 48.4907 16.3617 48.4233 16.2556 48.4003C16.1494 48.3775 16.03 48.3197 15.9902 48.2719C15.9505 48.2242 15.8875 48.1852 15.8504 48.1852C15.8132 48.1852 15.6459 48.1206 15.4785 48.0416C15.3112 47.9624 15.1059 47.8676 15.0224 47.8306C14.939 47.7934 14.8298 47.7384 14.7797 47.7081C14.7296 47.6777 14.3675 47.494 13.975 47.2998C12.8179 46.7272 12.3122 46.465 12.223 46.3912C12.1769 46.3532 12.0653 46.3035 11.9751 46.281C11.8848 46.2585 11.778 46.2003 11.7375 46.1518C11.6971 46.1034 11.5798 46.0233 11.4771 45.9742C11.3743 45.925 11.1412 45.8043 10.959 45.7058C10.5181 45.4674 10.3367 45.4726 10.1402 45.7289Z" fill="white"></path>
+            <defs>
+               <linearGradient id="paint0_linear-amazon-circle-icon" x1="40" y1="79.9974" x2="40" y2="-6.77306e-06" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#2A216D"></stop>
+                  <stop offset="1" stop-color="#4400FF"></stop>
+               </linearGradient>
+            </defs>
+         </svg>
+         <div class="css-2b3un8">Amazon Music</div>
+      </div>
+   </a>
+   </br><a href="https://listen.tidal.com/album/171746730" target="_blank" rel="noopener noreferrer" aria-label="Listen to Monk's Evil Lair by Monk's Evil Lair on Tidal" data-test-id="link" class="css-1spf6ft">
+      <div class="css-u4eldh">
+         <svg width="36" height="36" viewBox="0 0 45 45">
+            <defs>
+               <style>.tidal-icon-circle-1{fill:#231f20;}.tidal-icon-circle-2{fill:#fff;}</style>
+            </defs>
+            <title>tidal_circle icon</title>
+            <path class="tidal-icon-circle-1" d="M45,22.5a22.5,22.5,0,1,0-6.59,15.91A22.5,22.5,0,0,0,45,22.5Z" transform="translate(0 0)"></path>
+            <path class="tidal-icon-circle-2" d="M10.94,13.45H11c.55.63,1.16,1.18,1.74,1.78l4,4v.07L11,25,5.22,19.24a2.35,2.35,0,0,1,.43-.46C7.41,17,9.19,15.24,10.94,13.45Z" transform="translate(0 0)"></path>
+            <path class="tidal-icon-circle-2" d="M22.47,13.45h.07a1.41,1.41,0,0,0,.18.22c1.85,1.83,3.67,3.69,5.54,5.52a.88.88,0,0,1-.22.26L22.5,25c-1.93-1.9-3.83-3.84-5.77-5.74C18.61,17.29,20.58,15.4,22.47,13.45Z" transform="translate(0 0)"></path>
+            <path class="tidal-icon-circle-2" d="M34,13.45h.07c.36.43.78.8,1.16,1.2L39.57,19c.07.08.19.15.21.27C37.84,21.14,36,23.1,34,25l-5.5-5.5c-.09-.1-.21-.17-.25-.3,1-.95,1.92-1.92,2.89-2.88S33.07,14.43,34,13.45Z" transform="translate(0 0)"></path>
+            <path class="tidal-icon-circle-2" d="M16.81,30.66,22.48,25l.08,0q2.84,2.86,5.7,5.69c-.06.14-.2.22-.3.34l-4.13,4.12c-.45.43-.88.91-1.33,1.31-.65-.59-1.25-1.25-1.89-1.86-1.29-1.29-2.57-2.57-3.86-3.85l.05-.13Z" transform="translate(0 0)"></path>
+         </svg>
+         <div class="css-2b3un8">Tidal</div>
+      </div>
+   </a>
+</div>

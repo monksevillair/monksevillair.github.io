@@ -8,14 +8,27 @@ from colour import Color
 import colorsys
 from PIL import ImageColor
 import pdb
-
 #red = Color("red")
 #colors = list(red.range_to(Color("green"),10))
 
 COLOR_DICT = OrderedDict({0: ["#111111", "#DDDDDD", "#DDDDDD"],
-                          #120: ["#ffada2", "#FFFFFF", "#FFFFFF"],
                           180: ["#9da1fa", "#FFFFFF", "#FFFFFF"],
+                          200: ["#ffada2", "#FFFFFF", "#FFFFFF"],
                           240: ["#111111", "#DDDDDD", "#DDDDDD"]})
+
+form_l = "<span style=\"background-color: {};\">&nbsp{}&nbsp</span>"
+form_d = "<span style=\"background-color: {}; color: #000\">&nbsp{}&nbsp</span>"
+REPLACE =     {"{RED}":    form_l.replace("{}","red"),
+               "{ORANGE}": form_l.replace("{}","orange"),
+               "{YELLOW}": form_l.replace("{}","yellow"),
+               "{GREEN}":  form_l.replace("{}","green"),
+               "{BLUE}":   form_l.replace("{}","blue"),
+               "{INDIGO}": form_l.replace("{}","indigo"),
+               "{VIOLET}": form_l.replace("{}","violet"),
+               "{PURPLE}": form_l.replace("{}","purple"),
+               "{WHITE}":  form_d.replace("{}","white"),
+               "{BLACK}":  form_l.replace("{}","black")}
+               
 
 # sexy: 9669FE;
 #60: ["#9da1fa", "#FFFFFF", "#FFFFFF"],
@@ -51,7 +64,10 @@ class genPages():
         #self.color_link = self.gen_accent(self.color_page, -90)
         self.color_link = "#fff" #self.gen_accent(self.color_page, -60)
         #self.color_accent_dark = 
-        
+
+        REPLACE['{color_accent_light}'] = self.color_accent_light
+        REPLACE['{color_accent_dark}'] = self.color_accent_dark
+        REPLACE['{color_accent_very_dark}'] = self.color_accent_very_dark
 
         for page in self.pages:
             self.gen_page(page)
@@ -106,11 +122,30 @@ class genPages():
         for path in Path('.').rglob('*.md'):
                pages.append(path)
 
+        print (pages)
         return pages
 
+    def gen_sitemap(self, cur_file):
+        html = ""
+        link_format = "<a href=\"{link}\">{content}</a></br>\n"
+
+        #print(Path(cur_file).parent,self.pages)
+
+        prefix = ""
+        if str(Path(cur_file).parent) != "..":
+            prefix = "../"
+            
+        for page in self.pages:
+            my_path = str(page.parent)
+            target_path = str(page).replace("md","html")
+            html += link_format.format(link=prefix+target_path,
+                                       content=str(page.name))
+        return html
+    
     # Generates sidebar html, garbage- fix this
     def gen_sidebar(self, filename):
         cur_file = (filename.split(".html")[0].split("/")[-1])
+                        
         link_format = "<a href=\"{link}\">{content}</a></br>{hr}\n"
 
         directories = self.pages
@@ -122,7 +157,15 @@ class genPages():
         for x in sorted_dirs:
             name = x.name.split(".")[0]
 
-            if name == cur_file:
+            valid_dirs = [str(x.parent) for x in sorted_dirs]
+            file_to_check = str(x.name.split(".md")[0])
+            if file_to_check not in valid_dirs and name != "index": continue
+
+            #print (name, filename)
+            #print([x.parent for x in sorted_dirs])
+            #if str(cur_file) in str(x.name): continue
+            #if str(name) in str(cur_file):
+            if str(name) in str(filename):
                 #link_format = "<u><a href=\"{link}\">{content}</a></br>{hr}</u>\n"
                 link_format = "<a style=\"background-color:{}\" href=\"{link}\">&nbsp{content}&nbsp</a></br>{hr}\n".replace("{}",self.color_accent_dark)
             else:
@@ -136,6 +179,7 @@ class genPages():
                 link_address = (str(x))
                 if str(Path(filename[3:]).parent) != ".":
                     link_address = "../"+(str(x))
+
                 #print (x, filename, Path(filename[3:]).parent)
             #print(x, Path(filename[3:]).parent)
             #if name == "index": continue;
@@ -186,6 +230,13 @@ class genPages():
         #print(html)
         
         html = markdown.markdown(html)
+
+        # replace html {} tags
+        for key in REPLACE.keys():
+            if key in html:
+                html = html.replace(key, REPLACE[key])
+            if key in style:
+                style = style.replace(key, REPLACE[key])
             
         file1 = open(self.template_dir, 'r')
         Lines = file1.readlines()
@@ -205,6 +256,7 @@ class genPages():
 
         text_file.write("<!-- generated from {filename} at {time} EST -->".format(
             filename=directory, time=self.hr.strftime("%m-%d-%Y %H:%M:%S")))
+
 
         for line in Lines:
             content = ''
@@ -228,8 +280,12 @@ class genPages():
                 content = line.format(color_accent_very_dark=self.color_accent_very_dark)
             elif "{color_accent_light}" in line:
                 content = line.format(color_accent_light=self.color_accent_light)
+            elif "{site_map}" in line:
+                content = line.format(site_map=self.gen_sitemap(filename))
             else:
                 content = line
+
+                    
 
             text_file.write(content)
         text_file.close()

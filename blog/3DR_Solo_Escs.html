@@ -1,7 +1,8 @@
-
+<!-- generated from blog/3DR_Solo_Escs.md at 06-17-2021 22:58:41 EST -->
 <html>
   <head>
-    <title>{page_title}</title>
+    <title>Test 2
+</title>
     <style>
       html, body {
 	  height: 100%; width: 100%; overflow: hidden
@@ -9,12 +10,12 @@
         
       a {
 	  /*color: 9669FE;*/
-	  color: {color_link};
+	  color: #fff;
 	  text-decoration: none;
       }
 
       hr {
-	  border: 7px solid {color_page};
+	  border: 7px solid #a43f39;
 	  width: 150%;
 	    position: relative;
 
@@ -25,7 +26,7 @@
       }
 
       a:hover {
-	  background-color: {color_accent_very_dark}
+	  background-color: #4a1d1a
       }
       
       div {
@@ -34,7 +35,7 @@
       
       body {
 	  /*background-color: #D0BCFE;*/
-	  background-color: {color_page};
+	  background-color: #a43f39;
       }
 
 
@@ -50,9 +51,9 @@
 	  white-space: pre-line;
 	  /*white-space:normal;*/
 
-	  /*background: {color_page};*/
+	  /*background: #a43f39;*/
 	  /*border: 1px solid #ddd;*/
-	  border-left: 5px solid {color_accent_very_dark};
+	  border-left: 5px solid #4a1d1a;
 	  color: #fff; /*#666;*/
 	  page-break-inside: avoid;
 	  font-family: monospace;
@@ -69,7 +70,7 @@
       woop {
 	  font-size: x-large;
 	  /*color: 9669FE;*/
-	  color: {color_text};
+	  color: #eee;
 	  white-space: pre;
 	  white-space: pre-wrap;       /* Since CSS 2.1 */
 	  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
@@ -106,8 +107,8 @@
       .scroll {
 	  font-size: large;
 	  /*color: 9669FE;*/
-	  color: {color_text};
-	  background-color: {color_accent_dark};
+	  color: #eee;
+	  background-color: #6f2b27;
 	  overflow: auto;
 	  max-height: 100vh;
 	  overflow-x: hidden;
@@ -129,8 +130,8 @@
       .table-cell2 { width: 100%; }
       
       .scroll a:link {
-	  color: {color_link};
-	  /*background-color: {color_accent_light};*/
+	  color: #fff;
+	  /*background-color: #c14a43;*/
 
 	  font-weight: bold;
       }
@@ -138,7 +139,7 @@
       
       .scroll a:hover {
 	  color: #eee;
-	  background-color: {color_accent_very_dark};
+	  background-color: #4a1d1a;
       }
 
       ::-webkit-scrollbar {
@@ -152,7 +153,7 @@
 	 
       }
       
-      {additional_css}
+      
       
     </style>
   </head>
@@ -162,14 +163,29 @@
 	<td class="table-cell">
 	  <div class="container2">
 	    <div class="box stack-top">
-	      {sidebar_html}
+<a style="background-color:#6f2b27" href="../blog/blog.html">&nbspblog&nbsp</a></br>
+<a href="../espanol/espanol.html">&nbspespanol&nbsp</a></br>
+<a href="../index.html">&nbsphome&nbsp</a></br>
+<a href="../map/map.html">&nbspmap&nbsp</a></br>
+<a href="../music/music.html">&nbspmusic&nbsp</a></br>
+<a href="../transcriptions/transcriptions.html">&nbsptranscriptions&nbsp</a></br>
 	    </div>
 	</td>
 	<td class="table-cell2">
 	  <div class="scroll">
 
 	    <!-- used <pre> tag for text formatting -->
-	   {page_content} 
+	   <h2>3DR Solo ESCs</h2>
+<h3>3-14-2019</h3>
+<h4>Background</h4>
+<p><img src="../src/blog/images/solo_esc_wiring.jpg" style="float: right;" width="30%" margin="20px" />
+asasdsadads<br />
+I use to work at 3D Robotics, and managed to hack every component of the Solo while I was there. I one point they purged all their old electronics and some of it went to me and some other intern friends. I got a ton of ESCs for the solo drone, and have been using them for any project that involves small brushless motors.  </p>
+<h4>Pinout</h4>
+<p><code>PWM: <span style="background-color: white; color: #000">&nbspwhite&nbsp</span>  5V: <span style="background-color: red;">&nbspred&nbsp</span>, GND: <span style="background-color: black;">&nbspblack&nbsp</span></code></p>
+<h4>Links</h4>
+<p><code>- <a href="https://github.com/imcnanie/brushed-esc-nfet">Brushed ESC Firmware</a>
+- <a href="https://github.com/sim-/tgy">SimonK Brushless Firmware</a></code></p> 
 	 
 	  </div>	  
 	</td>
