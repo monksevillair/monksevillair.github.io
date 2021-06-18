@@ -21,6 +21,9 @@ Goals
   - [x] Replace my basic parser
 - [x] favicon
 - [x] disable scrollbars in firefox
+- [ ] Make links EVEN BOLDER
+- [ ] Make local site have pages for invoice, todo, dont pub that publically
+- [ ] Make site titles lower case
 - [ ] build map
 - [ ] build contact page
 - [ ] Global tags

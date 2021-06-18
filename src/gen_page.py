@@ -12,8 +12,9 @@ import pdb
 #colors = list(red.range_to(Color("green"),10))
 
 COLOR_DICT = OrderedDict({0: ["#111111", "#DDDDDD", "#DDDDDD"],
-                          180: ["#9da1fa", "#FFFFFF", "#FFFFFF"],
-                          200: ["#ffada2", "#FFFFFF", "#FFFFFF"],
+                          #100: ["#a1b5d6", "#FFFFFF", "#FFFFFF"],
+                          180: ["#ffada2", "#FFFFFF", "#FFFFFF"],
+                          200: ["#9da1fa", "#FFFFFF", "#FFFFFF"],
                           240: ["#111111", "#DDDDDD", "#DDDDDD"]})
 
 form_l = "<span style=\"background-color: {};\">&nbsp{}&nbsp</span>"
@@ -80,7 +81,8 @@ class genPages():
         #print (hls)
         hls[1] = hls[1]+offset
         if hls[1] > 186: hls[1] = 186
-        if hls[1] < 0: hls[1] = 0
+        # don't ever let accent be 100% black to limit eye strain
+        if hls[1] < 10: hls[1] = 10
         #print (hls)
         accent = [int(x) for x in colorsys.hls_to_rgb(hls[0],
                                                       hls[1],
