@@ -1,4 +1,4 @@
-<!-- generated from blog/blog.md at 06-18-2021 01:31:07 EST -->
+<!-- generated from blog/blog.md at 06-19-2021 03:34:59 EST -->
 <html>
   <head>
     <title>Blog
@@ -20,7 +20,7 @@
       }
 
       hr {
-	  border: 7px solid #1d1a1a;
+	  border: 7px solid #392929;
 	  width: 150%;
 	    position: relative;
 
@@ -31,7 +31,7 @@
       }
 
       a:hover {
-	  background-color: #0a0909
+	  background-color: #0b0808
       }
       
       div {
@@ -40,7 +40,7 @@
       
       body {
 	  /*background-color: #D0BCFE;*/
-	  background-color: #1d1a1a;
+	  background-color: #392929;
       }
 
 
@@ -53,16 +53,16 @@
       
       vocab, code {
 	  unicode-bidi: embed;
-	  white-space: pre-line;
+	  white-space: pre;
 	  /*white-space:normal;*/
 
-	  /*background: #1d1a1a;*/
+	  /*background: #392929;*/
 	  /*border: 1px solid #ddd;*/
-	  border-left: 5px solid #0a0909;
+	  border-left: 5px solid #0b0808;
 	  color: #fff; /*#666;*/
 	  page-break-inside: avoid;
 	  font-family: monospace;
-	  font-size: 15px;
+	  font-size: 12px;
 	  line-height: 1.6;
 	  margin-bottom: 1.6em;
 	  max-width: 100%;
@@ -75,7 +75,7 @@
       woop {
 	  font-size: x-large;
 	  /*color: 9669FE;*/
-	  color: #dfdfdf;
+	  color: #e3e3e3;
 	  white-space: pre;
 	  white-space: pre-wrap;       /* Since CSS 2.1 */
 	  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
@@ -114,8 +114,8 @@
 	  scrollbar-width: none;
 	  font-size: large;
 	  /*color: 9669FE;*/
-	  color: #dfdfdf;
-	  background-color: #0a0909;
+	  color: #e3e3e3;
+	  background-color: #100b0b;
 	  overflow: auto;
 	  max-height: 100vh;
 	  overflow-x: hidden;
@@ -138,7 +138,7 @@
       
       .scroll a:link {
 	  color: #fff;
-	  /*background-color: #322c2c;*/
+	  /*background-color: #503939;*/
 
 	  /*font-weight: bolder;*/
 	  border-bottom:1px solid;
@@ -147,7 +147,7 @@
       
       .scroll a:hover {
 	  color: #eee;
-	  background-color: #0a0909;
+	  background-color: #0b0808;
       }
 
       ::-webkit-scrollbar {
@@ -166,7 +166,12 @@
       img {
 padding: 10px;
 margin: 5px;
-background-color: #0a0909;
+background-color: #0b0808;
+}
+.scroll {
+font-size: medium; 
+line-height: 1.6;
+}
 
       
     </style>
@@ -177,7 +182,7 @@ background-color: #0a0909;
 	<td class="table-cell">
 	  <div class="container2">
 	    <div class="box stack-top">
-<a style="background-color:#0a0909" href="../blog/blog.html">&nbspblog&nbsp</a></br>
+<a style="background-color:#100b0b" href="../blog/blog.html">&nbspblog&nbsp</a></br>
 <a href="../espanol/espanol.html">&nbspespanol&nbsp</a></br>
 <a href="../index.html">&nbsphome&nbsp</a></br>
 <a href="../music/music.html">&nbspmusic&nbsp</a></br>
@@ -188,7 +193,54 @@ background-color: #0a0909;
 	  <div class="scroll">
 
 	    <!-- used <pre> tag for text formatting -->
-	   <h2>3DR Solo ESCs</h2>
+	   <h2>Building a Second Brain</h2>
+<h3>6-19-2021</h3>
+<p>After listening to the excellent "Building a Second Brain" podcast, I decided to build my own second brain. In fact, this website is automatically generated from the brain, which in short, is my notebook. I won't explain in detail all the ideas of the podcast here, but some of my favorite things I've taken awy from it are Projects over categories, and slow burns, or the concept of collecting ideas in a notebook whenever you have free time. <br />
+I wrote my whole album like this, randomly jotting down ideas for songs and critiques every time I heard it. I was left with <strong>so</strong> many more ideas that just needed to be implemented, rather than having to think of fresh ideas while making music. For someone interested in notetaking, I can't recommend the podcast enough.<br />
+And yes, I use emacs, and I've tried org-mode. But as <a href="https://www.gwern.net/Links">gwern</a> says: "Friends don't let friends use heroin or org-mode" - great advice.<br />
+After trying tons of notetaking apps, and an avid user of Google Keep, I've come to the conclusion that if you have the means (or not!), you should just write one yourself.<br />
+I settled on these goals:<br />
+<code>- Markdown files, directory structure
+  - _TODO.md file in each directory
+- Calendar agregating todo lists, organize by date
+- Invoice generator based on todos
+  - time tracking by typing eg. <em>18:00-19:00</em> in a todo
+</code>
+The directory structure ends up looking like this:<br />
+<code>src/
+  gen_calendar.py
+  gen_invoice.py
+reading notes/
+future_projects/
+current_projects/
+  finished_projects/
+  proj1/
+    proj1_TODO.md
+    README.md
+  monksevillair.github.io/
+    monksevillair.github.io_TODO.md
+    src/
+      blog/
+      espanol/
+      music/
+      transcriptions/
+      index.html
+      README.md
+</code><br />
+More info on the website later, but with this structure, if want to make anything public, I can move a project into the monksevillair.github.io directory and it will go live on the next push. Everything is tracked with git, synced to my phone with <a href="https://syncthing.net/">syncthing</a>, although I'd like to pull and push from my phone soon.</p>
+<h4>Calendar App</h4>
+<p>I used Google calendar for a long time, and I still like it, but having it seperated from my TODOs was a huge barrier to having an effective calendar. I wanted to generate a calendar automatically from my TODO lists globally. <em>gen_calendar.py</em> automatically scans all the todo files</p>
+<h4>Invoice App</h4>
+<p>Many invoices and mucho dinero has been frittered as a result of my deep hatred for generating invoices. What better way to fix this problem than to generate them automatically from my todos? If I add eg. *18:00-19:00* to a TODO.md file, <em>gen_invoice.py</em> will add that todo to a global invoice maker</p>
+<h4>Where does this all run?</h4>
+<p>At the moment, in github actions. It's sick. The website generates and commits a new version every hr, which is how the background color changes. Eventually it will do other dynamic things. I use <a href="../.github/workflows/python-app.yml">this</a> workflow.<br />
+When editing locally I run this script which scans for files locally and runs the python scripts when a file changes:<br />
+<code>find ./ | entr sh -c "python3 ../src/calendar_todo.py &gt; calendar.html"</code><br />
+I plan to run these scripts on my Pixel 3a running Ubuntu Touch, which will also run the alarm and GPS tracking in my van. Soon there will be a map page logging my travels in my van, Allan Holdsworth.
+Much more to come on this stuff, when it's more mature I'll make my second brain public, maybe it would be useful for someone! Shout out to the Second Brain podcast!</p>
+<hr />
+<p></br></p>
+<h2>3DR Solo ESCs</h2>
 <h3>3-14-2019</h3>
 <p><img src="../src/blog/images/solo_esc_wiring.jpg" style="float: right;" width="30%" margin="20px" />
 I use to work at 3D Robotics, and managed to hack every component of the Solo while I was there. I one point they purged all their old electronics and some of it went to me and some other intern friends. I got a ton of ESCs for the solo drone, and have been using them for any project that involves small brushless motors.  </p>

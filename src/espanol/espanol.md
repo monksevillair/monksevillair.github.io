@@ -3,6 +3,16 @@
 Blogs en Espanol
 
 # Style
+img {
+padding: 10px;
+margin: 5px;
+background-color: {color_accent_very_dark};
+}
+
+.scroll {
+font-size: medium; 
+line-height: 1.6;
+}
 
 # TODO
 - [ ] Fix formatting, make specific blog parser

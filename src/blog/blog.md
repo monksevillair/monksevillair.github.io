@@ -6,11 +6,84 @@ img {
 padding: 10px;
 margin: 5px;
 background-color: {color_accent_very_dark};
+}
 
+.scroll {
+font-size: medium; 
+line-height: 1.6;
+}
 # TODO
 - [ ] Fix formatting, make specific blog parser
+- [ ] Website blog
+- [ ] Calendar aggregator blog
+- [ ] Invoice aggregator blog
+- [ ] Make cal and invoice scripts public
+- [ ] Review ubuntu touch on pixel 3a
+- [ ] Review Kracken phone case
+  - bluetooth interface?
+- [ ] Van tech blog
 
 # HTML
+## Building a Second Brain
+### 6-19-2021
+After listening to the excellent "Building a Second Brain" podcast, I decided to build my own second brain. In fact, this website is automatically generated from the brain, which in short, is my notebook. I won't explain in detail all the ideas of the podcast here, but some of my favorite things I've taken awy from it are Projects over categories, and slow burns, or the concept of collecting ideas in a notebook whenever you have free time.   
+
+I wrote my whole album like this, randomly jotting down ideas for songs and critiques every time I heard it. I was left with __so__ many more ideas that just needed to be implemented, rather than having to think of fresh ideas while making music. For someone interested in notetaking, I can't recommend the podcast enough.  
+
+And yes, I use emacs, and I've tried org-mode. But as [gwern](https://www.gwern.net/Links) says: "Friends don't let friends use heroin or org-mode" - great advice.  
+
+After trying tons of notetaking apps, and an avid user of Google Keep, I've come to the conclusion that if you have the means (or not!), you should just write one yourself.  
+
+I settled on these goals:  
+<code>- Markdown files, directory structure
+  - _TODO.md file in each directory
+- Calendar agregating todo lists, organize by date
+- Invoice generator based on todos
+  - time tracking by typing eg. *18:00-19:00* in a todo
+</code>
+
+The directory structure ends up looking like this:  
+<code>src/
+  gen_calendar.py
+  gen_invoice.py
+reading notes/
+future_projects/
+current_projects/
+  finished_projects/
+  proj1/
+	proj1_TODO.md
+	README.md
+  monksevillair.github.io/
+    monksevillair.github.io_TODO.md
+	src/
+	  blog/
+	  espanol/
+	  music/
+	  transcriptions/
+	  index.html
+	  README.md
+</code>  
+
+More info on the website later, but with this structure, if want to make anything public, I can move a project into the monksevillair.github.io directory and it will go live on the next push. Everything is tracked with git, synced to my phone with [syncthing](https://syncthing.net/), although I'd like to pull and push from my phone soon.
+
+#### Calendar App
+I used Google calendar for a long time, and I still like it, but having it seperated from my TODOs was a huge barrier to having an effective calendar. I wanted to generate a calendar automatically from my TODO lists globally. *gen_calendar.py* automatically scans all the todo files
+
+#### Invoice App
+Many invoices and mucho dinero has been frittered as a result of my deep hatred for generating invoices. What better way to fix this problem than to generate them automatically from my todos? If I add eg. \*18:00-19:00\* to a TODO.md file, *gen_invoice.py* will add that todo to a global invoice maker
+
+#### Where does this all run?
+At the moment, in github actions. It's sick. The website generates and commits a new version every hr, which is how the background color changes. Eventually it will do other dynamic things. I use [this](../.github/workflows/python-app.yml) workflow.  
+
+When editing locally I run this script which scans for files locally and runs the python scripts when a file changes:  
+
+<code>find ./ | entr sh -c "python3 ../src/calendar_todo.py > calendar.html"</code>  
+
+I plan to run these scripts on my Pixel 3a running Ubuntu Touch, which will also run the alarm and GPS tracking in my van. Soon there will be a map page logging my travels in my van, Allan Holdsworth.
+
+Much more to come on this stuff, when it's more mature I'll make my second brain public, maybe it would be useful for someone! Shout out to the Second Brain podcast!
+---
+</br>
 
 ## 3DR Solo ESCs
 ### 3-14-2019

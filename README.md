@@ -21,10 +21,13 @@ Goals
   - [x] Replace my basic parser
 - [x] favicon
 - [x] disable scrollbars in firefox
-- [ ] Make links EVEN BOLDER
+- [x] Underline links
+- [ ] Reading List Page
+  - [ ] Other people's blogs
+  - [ ] Programs
 - [ ] Make local site have pages for invoice, todo, dont pub that publically
 - [ ] Make site titles lower case
-- [ ] build map
+- [ ] build geotagged map from van
 - [ ] build contact page
 - [ ] Global tags
   - [ ] Tags page

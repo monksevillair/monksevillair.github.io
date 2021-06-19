@@ -38,7 +38,7 @@ h5 { color: #fff }
 .alboom_bg {
 padding: 10px;
 margin: 5px;
-background-color: {color_accent_very_dark};
+background-color: 000; /*{color_accent_very_dark};*/
 width: 450px;
 height: 450px;
 
