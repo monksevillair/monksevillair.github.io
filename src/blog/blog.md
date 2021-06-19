@@ -26,13 +26,13 @@ line-height: 1.6;
 # HTML
 ## Building a Second Brain
 ### 6-19-2021
-After listening to the excellent "Building a Second Brain" podcast, I decided to build my own second brain. In fact, this website is automatically generated from the brain, which in short, is my notebook. I won't explain in detail all the ideas of the podcast here, but some of my favorite things I've taken awy from it are Projects over categories, and slow burns, or the concept of collecting ideas in a notebook whenever you have free time.   
+After listening to the excellent "Building a Second Brain" podcast, I decided to build my own second brain. In fact, this website is automatically generated from the brain, which in short, is my notebook. I won't explain in detail all the ideas of the podcast here, but some of my favorite things I've taken away from it are __Projects over Categories_ and _Slow Burns_, or the concept of collecting ideas in notebooks whenever you have free time.   
 
-I wrote my whole album like this, randomly jotting down ideas for songs and critiques every time I heard it. I was left with __so__ many more ideas that just needed to be implemented, rather than having to think of fresh ideas while making music. For someone interested in notetaking, I can't recommend the podcast enough.  
+I wrote my whole album like this, randomly jotting down ideas for songs and critiques every time I heard it. I was left with _so_ many more ideas that just needed to be implemented, rather than having to think of fresh ideas while making music. For someone interested in notetaking, I can't recommend the podcast enough.  
 
 And yes, I use emacs, and I've tried org-mode. But as [gwern](https://www.gwern.net/Links) says: "Friends don't let friends use heroin or org-mode" - great advice.  
 
-After trying tons of notetaking apps, and an avid user of Google Keep, I've come to the conclusion that if you have the means (or not!), you should just write one yourself.  
+After trying tons of notetaking apps, and an avid user of Google Keep, I've come to the conclusion that if you have the means (or not!), you should just write one yourself. You wouldn't want someone else designing your brain, would you? That almost sounds like...  
 
 I settled on these goals:  
 <code>- Markdown files, directory structure
