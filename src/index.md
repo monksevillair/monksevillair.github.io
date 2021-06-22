@@ -34,9 +34,24 @@ transform:scale(1.2);
   overflow: hidden; /* Hide scrollbars */
   background-color: transparent;
 }
+
+.scroll a:hover {
+  background-color: transparent;
+}
+
+.scroll a:link {
+	  color: {color_link};
+	  /*background-color: {color_accent_light};*/
+
+	  /*font-weight: bolder;*/
+	  border-bottom:0px solid;
+}
+
 # HTML
 <!-- spinning bullshit -->
 <center>
-<a href="./music/music.html"><img src="./src/templates/images/dozehilz.png" class="rotate" width="400"></a>
+<a href="./music/music.html">
+<img src="./src/templates/images/dozehilz.png" class="rotate" width="400">
+</a>
 </center>
 
