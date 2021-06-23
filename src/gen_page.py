@@ -51,7 +51,7 @@ class genPages():
         tzinfo = timezone(timedelta(hours=timezone_offset))
         self.hr = datetime.now(tzinfo)
         #print(self.hr)
-        color_list = self.color_dict[self.hr.hour*10]
+        color_list = self.color_dict[self.hr.hour*10*0]
         #print(self.hr, color_list)
         #print(color_list[0].get_hex())
         
@@ -226,8 +226,6 @@ class genPages():
                     if "# HTML" not in line:
                         html = html + line
 
-        file1 = open(directory, 'r')
-        Lines = file1.read()
 
         #print(html)
         
