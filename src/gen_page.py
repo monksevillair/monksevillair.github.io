@@ -8,6 +8,7 @@ from colour import Color
 import colorsys
 from PIL import ImageColor
 import pdb
+import random
 #red = Color("red")
 #colors = list(red.range_to(Color("green"),10))
 
@@ -69,11 +70,12 @@ class genPages():
         REPLACE['{color_accent_light}'] = self.color_accent_light
         REPLACE['{color_accent_dark}'] = self.color_accent_dark
         REPLACE['{color_accent_very_dark}'] = self.color_accent_very_dark
-
+        REPLACE['{gen_quote}'] = self.gen_quote()
+        
         for page in self.pages:
             self.gen_page(page)
             #self.gen_html_from_markdown(page)
-
+            
     def gen_accent(self, base_color, offset):
         #print(base_color)
         rgb = ImageColor.getrgb(base_color)
@@ -143,6 +145,14 @@ class genPages():
             html += link_format.format(link=prefix+target_path,
                                        content=str(page.name))
         return html
+
+    def gen_quote(self):
+        file1 = open("./lists/quotes.md", 'r')
+        Lines = file1.readlines()
+
+        the_quote = markdown.markdown(str(Lines[random.randint(0,len(Lines)-1)].strip("- ")))
+        
+        return "<div class=\"quote\">"+the_quote+"</div>"
     
     # Generates sidebar html, garbage- fix this
     def gen_sidebar(self, filename):
@@ -203,7 +213,6 @@ class genPages():
         file1 = open(directory, 'r')
         Lines = file1.readlines()
 
-        
         title = ""
         style = ""
         html = ""

@@ -37,21 +37,33 @@ transform:scale(1.2);
 
 .scroll a:hover {
   background-color: transparent;
+
 }
 
 .scroll a:link {
 	  color: {color_link};
+	  text-decoration: underline;
 	  /*background-color: {color_accent_light};*/
 
 	  /*font-weight: bolder;*/
 	  border-bottom:0px solid;
 }
 
+.quote {
+	  font-weight: bold;
+	  font-style: italic;
+	  text-align: right;
+}
+
 # HTML
-<!-- spinning bullshit -->
+<!-- spinninsdg bullshit -->
 <center>
 <a href="./music/music.html">
 <img src="./src/templates/images/dozehilz.png" class="rotate" width="400">
 </a>
 </center>
+
+{gen_quote}
+
+
 

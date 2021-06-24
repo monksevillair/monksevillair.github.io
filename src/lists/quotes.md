@@ -1,0 +1,16 @@
+- "Friends don't let friends use heroin or org-mode" -[gwern](https://www.gwern.net/)
+- "Those who profit are those who can afford to take calculated risks. In learning, this is the intersection of people with time and people with discipline." -[Nick Kirby](https://nicjam.es/writing/tacit_knowledge/)
+- "An artist takes responsibility for every moment"
+- "What communist fears death?"
+- "Avidazen" -roz
+- "Last words are for fools who haven’t said enough!" -Karl Marx
+- "Man ceases to be the slave and tool of his environment and converts himself into the architect of his own destiny" -Che Guevara
+- "For sale: baby's shoes. Never worn." -Ernest Hemmingway (maybe)
+- "People who say it cannot be done, should not interrupt those who are doing it" -Bernard Shaw 
+- "Jazz is just playing the blues in all 12 keys at the same time"
+- "Don’t forget what happened to the man who suddenly got everything he wanted." "What happened?" "He lived happily ever after.” -Willy Wonka
+- "People don't think that it be like it is but it do" -WTYP Pod's Too Many Floors
+- "I was shocked, she served blue tortillas, so dated!" - John Carpenter's They Live
+- "A guy walks into a psychiatrist's office and says, hey doc, my brother's crazy! He thinks he's a chicken. Then the doc says, why don't you turn him in? Then the guy says, I would but I need the eggs" -_Annie Hall_
+- "Die young, stay pretty" -Blondie
+- "You either die a hero, or you live long enough to see yourself become a villain" -Batman
