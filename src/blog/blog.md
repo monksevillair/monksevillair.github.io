@@ -44,7 +44,7 @@ Trotsky's *Permanent Revolution*, in a nutshell, is a theory on how to preserve 
 *what a guy*
 </center>  -->
 
-On a much lighter note, *that kind* of literature has become a seed for a *Theory of Permanent Discomfort*. This is part of my Second Brain project, building a project-based notebook also does time tracking, generates invoices, and helps me improve my productivity.  
+On a much lighter note, *that kind* of literature has become a seed for my *Theory of Permanent Discomfort*. This is part of my Second Brain project, building a project-based notebook also does time tracking, generates invoices, and helps me improve my productivity.  
 
 For a month now, I've been setting eight daily tasks for myself to complete. That's it! How hard can it be to complete eight tasks? Well as it turns out, somewhat hard to do consistently. Before I wrote this program, I didn't realize how often I was getting distracted by new ideas and projects, and while I haven't improved much in the last month, I now have metrics to measure my progress in this area. Every day, I set up tasks in my notebook: 
 
