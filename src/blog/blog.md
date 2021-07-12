@@ -8,6 +8,13 @@ margin: 5px;
 background-color: {color_accent_light}; 
 }
 
+.img_div {
+padding: 10px;
+margin: 5px;
+background-color: {color_accent_light}; 
+}
+
+
 .scroll {
 font-size: medium; 
 line-height: 1.6;
@@ -27,34 +34,37 @@ line-height: 1.6;
 # HTML
 ## Theory of Permanent Discomfort
 ### 7-11-2021
+
+<img style="float: right;" margin="20px" width="35%" src="../src/blog/permanent_discomfort/trotsky.webp"  />
+
 Trotsky's *Permanent Revolution*, in a nutshell, is a theory on how to preserve classless society, also known as the Dictatorship of the Proletariat. Murdered by Ice Pick wielding NKVD agent Ramón Mercader at the order of fellow revolutionary Joseph Stalin, it is interesting to wonder whether Trotsky's ideas could have prevented the over-bureaucratization of the Soviet Union and consolidation of power that occurred after Stalin. Maybe, maybe not.  
 
-<center>
+<!--<center>
 ![Trotsky](../src/blog/permanent_discomfort/trotsky.webp)  
 *what a guy*
-</center>  
+</center>  -->
 
-On a much lighter note, *that kind* of literature has become a seed for my Theory of *Permanent Discomfort*. This is part of my Second Brain project, building a project-based notebook also does time tracking, generates invoices, and helps me improve my productivity.  
+On a much lighter note, *that kind* of literature has become a seed for a *Theory of Permanent Discomfort*. This is part of my Second Brain project, building a project-based notebook also does time tracking, generates invoices, and helps me improve my productivity.  
 
-For a month now, I've been setting 8 daily tasks for myself to complete. That's it! How hard can it be to complete 8 tasks? Well as it turns out, somewhat hard to do consistently. Before I wrote this program, I didn't realize how often I was getting distracted by new ideas and projects, and while I haven't improved much in the last month, I now have metrics to measure my progress in this area. Every day, I set up 8 tasks in my notebook: 
+For a month now, I've been setting eight daily tasks for myself to complete. That's it! How hard can it be to complete eight tasks? Well as it turns out, somewhat hard to do consistently. Before I wrote this program, I didn't realize how often I was getting distracted by new ideas and projects, and while I haven't improved much in the last month, I now have metrics to measure my progress in this area. Every day, I set up tasks in my notebook: 
 
 <center>
 ![Permanent Discomfort Task List Example](../src/blog/permanent_discomfort/permanent_discomfort_tasklist_example.png)  
 *A global task list automatically generated from each project's TODO list*
 </center>  
 
-As I check them off, a graph is generated that shows my progress that day and displays my average success rate for the previous 2 weeks:  
+As I check them off, a graph is generated that shows my progress that day and displays my average success rate for the previous two weeks:  
 
 <center>
-<img src="../src/blog/permanent_discomfort/task_graph.svg" style="background-color:white;" /></img>  
+<img src="../src/blog/permanent_discomfort/task_graph.svg" /></img>  
 *Chart shows completed tasks in the last two weeks, and the average completion %*
 </center>  
 
-Now that I can measure my Target/Goal ratio, I can make tangible improvements based on my results. I learned from Keto that *you can't make improvements without a way to measure progress.* And as you can see I still have a lot of progress to make. After I make my goal of 8 tasks per day, I hope to slowly shore up my productivity and in a year reach 16 completed tasks per day. I expect a critical piece will be managing context switching, which has improved significantly since I started to care about my notebook.  
+Now that I can measure my Target/Goal ratio, I can make tangible improvements based on my results. I learned from Keto that *you can't make improvements without a way to measure progress.* And as you can see I still have a lot of progress to make. After I make my goal of eight tasks per day, I hope to slowly shore up my productivity and in a year reach 16 completed tasks per day. I expect a critical piece will be managing context switching, which has improved significantly since I started to care about my notebook.  
 
-This brings us to the *carne importante* of this blog post, our *dénouement*: the Theory of Permanent Discomfort. Having run this experiment for a month now, I have noticed that I automatically poise tasks on the precipice of what is possible. I have consistently overreached and not made goals that I thought were attainable at the beginning of the day. So I have come to peace with the fact that I will not always make the goals, and allow the day to go uncompleted, even though I could modify the day's tasks to make me always succeed. Some days I find it exceptionally difficult to make all the goals, but having the metrics there keeps me motivated to make them.  
+This brings us to the *carne importante* of this blog post, our *dénouement*: *The Theory of Permanent Discomfort*. Having run this experiment for a month now, I have noticed that I automatically poise tasks on the precipice of what is possible. I have consistently overreached and not made goals that I thought were attainable at the beginning of the day. So I have come to peace with the fact that I will not always make the goals, and allow the day to go uncompleted, even though I could modify the day's tasks to make me always succeed. Some days I find it exceptionally difficult to make all the goals, but having the metrics there keeps me motivated to make them.  
 
-This is Permanent Discomfort- to expect that all goals will never be attained and to use that bit of failure as motivation to achieve more the next day.  
+This is Permanent Discomfort - to expect that all goals will never be attained and to use that bit of failure as motivation to achieve more the next day.  
 
 ---
 
@@ -120,9 +130,8 @@ Much more to come on this stuff, when it's more mature I'll make my second brain
 </br>
 
 ## 3DR Solo ESCs
-### 3-14-2019
-
 <img src="../src/blog/images/solo_esc_wiring.jpg" style="float: right;" width="30%" margin="20px" />
+### 3-14-2019
 
 I use to work at 3D Robotics, and managed to hack every component of the Solo while I was there. I one point they purged all their old electronics and some of it went to me and some other intern friends. I got a ton of ESCs for the solo drone, and have been using them for any project that involves small brushless motors.  
 
