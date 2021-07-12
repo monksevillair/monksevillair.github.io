@@ -3,6 +3,7 @@ import os
 import markdown
 from pathlib import Path
 from collections import OrderedDict
+from autocorrect import Speller
 from datetime import datetime, timezone, timedelta
 from colour import Color
 import colorsys
@@ -126,7 +127,7 @@ class genPages():
         for path in Path('.').rglob('*.md'):
                pages.append(path)
 
-        print (pages)
+        #print (pages)
         return pages
 
     def gen_sitemap(self, cur_file):
@@ -206,6 +207,7 @@ class genPages():
         Lines = file1.read()
         #print(Lines)
         output = markdown.markdown(Lines)
+
         #if "espanol.md" in str(page):
         #    print(output)
         
@@ -235,11 +237,11 @@ class genPages():
                     if "# HTML" not in line:
                         html = html + line
 
-
         #print(html)
         
         html = markdown.markdown(html)
-
+        #print(dir(spell.candidates(word)))
+        
         # replace html {} tags
         for key in REPLACE.keys():
             if key in html:
