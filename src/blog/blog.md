@@ -64,7 +64,7 @@ Now that I can measure my Target/Goal ratio, I can make tangible improvements ba
 
 This brings us to the *carne importante* of this blog post, our *dénouement*: *The Theory of Permanent Discomfort*. Having run this experiment for a month now, I have noticed that I automatically poise tasks on the precipice of what is possible. I have consistently overreached and not made goals that I thought were attainable at the beginning of the day. So I have come to peace with the fact that I will not always make the goals, and allow the day to go uncompleted, even though I could modify the day's tasks to make me always succeed. Some days I find it exceptionally difficult to make all the goals, but having the metrics there keeps me motivated to make them.  
 
-This is Permanent Discomfort - to expect that all goals will never be attained and to use that bit of failure as motivation to achieve more the next day.  
+This is Permanent Discomfort - to know that not all goals will be met and to use that bit of failure as motivation to achieve more the next day.  
 
 ---
 
