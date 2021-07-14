@@ -13,6 +13,9 @@ Goals
 - [ ] scroll bar no bg
 - [ ] <vocab> make look better
 
+# Inspiring Sites
+- https://solvespace.com/index.pl
+
 # TODO
 - [x] Make a src/ directory
 - [x] Make template.html based on index.html
