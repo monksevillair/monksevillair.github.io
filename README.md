@@ -46,6 +46,7 @@ Goals
 - [ ] Add spanish blog
 - [ ] Blog comment section
   - [ ] Sends email, requests approval
+- [ ] Robots.txt in src/ files
 
 # FUTURE
 - [ ] Build sitemap

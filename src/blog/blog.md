@@ -30,6 +30,10 @@ line-height: 1.6;
 - [ ] Review Kracken phone case
   - bluetooth interface?
 - [ ] Van tech blog
+- discipline vs restriction. Buy cookies and eat 1 vs don't buy cookies y w
+withoku
+- Blog idea : key to learning is obsession
+  - short attainable goalsrv park
 
 # HTML
 ## Theory of Permanent Discomfort
