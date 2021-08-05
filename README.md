@@ -16,6 +16,17 @@ Goals
 # Inspiring Sites
 - https://solvespace.com/index.pl
 
+# Blog Topics
+- [ ] Chinese learnings
+- [ ] phone mods for focus
+- [ ] polyphasic sleep day 1, 7, 30
+- [ ] digital Soviet russia
+- [ ] hydroponics
+- [ ] reaching for the uncommon chord and Tokyo dream
+- [ ] kaios app dev
+- [ ] 5ths and 5ths guitar booka
+- [ ] pomadoro in brain
+
 # TODO
 - [x] Make a src/ directory
 - [x] Make template.html based on index.html
@@ -25,6 +36,10 @@ Goals
 - [x] favicon
 - [x] disable scrollbars in firefox
 - [x] Underline links
+- [ ] Make sidebar shrink when page is shrunk or on phone
+  - [ ] Special phone version
+- [ ] website tree gened with unix tree command
+- [ ] dumb simple search engine searches site by running ag on the query
 - [ ] Reading List Page
   - [ ] Other people's blogs
   - [ ] Programs
