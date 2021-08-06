@@ -2,4 +2,4 @@
 - [x] [7] Begin Polyphasic blog
 
 8-4-2021
-- [7] Finish and Publish Polyphasic blog
+- [x] [7] Finish and Publish Polyphasic blog
