@@ -3,7 +3,7 @@ import os
 import markdown
 from pathlib import Path
 from collections import OrderedDict
-from autocorrect import Speller
+#from autocorrect import Speller
 from datetime import datetime, timezone, timedelta
 from colour import Color
 import colorsys
