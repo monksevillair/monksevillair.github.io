@@ -8,18 +8,18 @@
     <link rel="manifest" href="/src/templates/images/site.webmanifest">
     <style>
       html, body {
-	  height: 100%; width: 100%; overflow: hidden;
+	  height: 100%; width: 100%; overflow-y: hidden;
 					       
       }
         
       a {
 	  /*color: 9669FE;*/
-	  color: {color_link};
+	  color: #fff;
 	  text-decoration: none;
       }
 
       hr {
-	  border: 7px solid {color_page};
+	  border: 7px solid #111;
 	  width: 150%;
 	    position: relative;
 
@@ -30,7 +30,7 @@
       }
 
       a:hover {
-	  background-color: {color_accent_very_dark}
+	  background-color: #0a0a0a
       }
       
       div {
@@ -39,12 +39,13 @@
       
       body {
 	  /*background-color: #D0BCFE;*/
-	  background-color: {color_page};
+	  background-color: #111;
       }
 
 
       .scroll br {
-	  display:block; content:"";
+	  display:block; 
+		content:"";
 	  margin-top:1.0em;
 	  line-height:230%;
 	  vertical-align:top;
@@ -60,10 +61,10 @@
 	  white-space: pre;
 	  /*white-space:normal;*/
 
-	  /*background: {color_page};*/
+	  /*background: #111;*/
 	  /*border: 1px solid #ddd;*/
-	  /*border-left: 5px solid {color_accent_very_dark};*/
-	  border-left: 5px solid {color_accent_light};
+	  /*border-left: 5px solid #0a0a0a;*/
+	  border-left: 5px solid #252525;
 	  color: #fff; /*#666;*/
 	  page-break-inside: avoid;
 	  font-family: monospace;
@@ -80,7 +81,7 @@
       woop {
 	  font-size: x-large;
 	  /*color: 9669FE;*/
-	  color: {color_text};
+	  color: #ddd;
 	  white-space: pre;
 	  white-space: pre-wrap;       /* Since CSS 2.1 */
 	  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
@@ -96,6 +97,7 @@
       .container2{
 
           height: 100%;
+				  width: 100%;
       }      
       .box{
 	  float: left;
@@ -119,11 +121,11 @@
 	  scrollbar-width: none;
 	  font-size: large;
 	  /*color: 9669FE;*/
-	  color: {color_text};
-	  background-color: {color_accent_dark};
+	  color: #ddd;
+	  background-color: #0a0a0a;
 	  overflow: auto;
 	  max-height: 100vh;
-	  overflow-x: auto;
+	  overflow-x: hidden;
 	  overflow-y: scroll;
 	  text-align: left;
 	  padding: 20px;
@@ -131,8 +133,8 @@
 	  /*width: -webkit-calc(100% - 60px);*/
 	  /*width:    -moz-calc(100% - 60px);*/
 	  /*width:         calc(100% - 60px);*/
-	  width: 90%;
-	  max-width: 800px;
+	  width: 80%;
+		max-width: 800px;
 	  height: -webkit-calc(100% - 60px);
 	  height:    -moz-calc(100% - 60px);
 	  height:         calc(100% - 60px);
@@ -140,11 +142,12 @@
       }
 
 
+			.table-row { width: 100%}
       .table-cell2 { width: 100%; }
       
       .scroll a:link {
-	  color: {color_link};
-	  /*background-color: {color_accent_light};*/
+	  color: #fff;
+	  /*background-color: #252525;*/
 
 	  /*font-weight: bolder;*/
 	  border-bottom:1px solid;
@@ -153,7 +156,7 @@
       
       .scroll a:hover {
 	  color: #eee;
-	  background-color: {color_accent_very_dark};
+	  background-color: #0a0a0a;
       }
 
       ::-webkit-scrollbar {
@@ -166,7 +169,6 @@
 
 	 
       }
-
 
       
       {additional_css}
