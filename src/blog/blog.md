@@ -36,8 +36,29 @@ withoku
   - key to learning is obsession
     - short attainable goalsrv park
   - fear of the alarm
+- [ ] let's delete time, use the scientific method
 
 # HTML
+## Let's delete time
+I've decided to run weekly experiments on things like food, sleep, excersise, and whatever else, in order to develop a lifestyle that can significantly increase my productivity and health.
+
+There's also something new about the format, I'm going to implement these posts in the form of the scientific method, which will hopefully make things more relevant when evaluating which change was better and which was worse.
+
+Sometimes, the experiment may take longer than a week, in which case, I'll do a mid week update on the blog post. Just like my Polyphasic blog, I'll have subheadings for the weekly updates in that case.
+
+This week's experiment you ask? _Let's delete time._ What might it feel like to live in a timeless existence? I've already gone ahead and taped over the clock on my phone, deleted my lockscreen, and removed the clock from my computer, but every once in a while, a new clock unwittingly appears.
+
+So I'm using Saturday, today, as a "time cheat day" to eliminate the extra clocks and set up a calendar for the week with 1hr warnings before I need to make it to my event. This is a compromise, but it will allow me to not blow off everything in my life immediately. Down the road, I may find alternatives to hard scheduling, and perhaps I can set up or write something like Calendy that allows people to schedule time with me and gives me adequate warning.
+
+### 为什么/hypothesis
+I think there could be stress benefits and improvements in prioritizing living in the moment over living for tomorrow. Having a "time cheat day" may force me to simultaneously think about my life from an objective place, and slice my weeks up to support long term goals.
+
+超越时间
+
+## Gone Polyphasic
+### 11-6-2021
+After a month long experiment, I dropped my Polyphasic sleep schedule. 
+
 ## Going Polyphasic
 ### 8-3-2021 - Day 1
 As persistent procrastination precipitates the looming demolition of my happiness, I stare blankly at my computer- The clock strikes 4 in the morning. I have an important deadline tomorrow, and I can't stop reading about polyphasic sleep.  
