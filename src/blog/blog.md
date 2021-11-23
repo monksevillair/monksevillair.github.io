@@ -39,6 +39,24 @@ withoku
 - [ ] let's delete time, use the scientific method
 
 # HTML
+## Weekly Goals
+### Monday, November 22 2021
+Going to start posting some weekly goals here so I'm more inspired to do them!
+
+#### 中文
+- [x] Take a Wing Chun class
+- [ ] Do an iTalki class every day
+
+#### 咖啡
+- [ ] Order and brew a 5gal batch of cold brew
+- [ ] Operate my new coffee robot 24/7
+
+#### 音乐
+- [ ] Learn Misty
+- [ ] Get a solo set together
+
+_I hope you too have an excellent week, much love_
+
 ## Let's Delete Time
 I've decided to run weekly experiments on things like food, sleep, excersise, and whatever else, in order to develop a lifestyle that can significantly increase my productivity and health.  
 
