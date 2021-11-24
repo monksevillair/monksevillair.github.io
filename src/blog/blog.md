@@ -55,9 +55,9 @@ Going to start posting some weekly goals here so I'm more inspired to do them!
 - [ ] Learn Misty
 - [ ] Get a solo set together  
 
-_I hope you have an excellent week, much love_
+_I hope you have an excellent week, much love_  
 
---
+---
 
 ## Let's Delete Time
 I've decided to run weekly experiments on things like food, sleep, excersise, and whatever else, in order to develop a lifestyle that can significantly increase my productivity and health.  
