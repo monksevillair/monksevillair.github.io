@@ -40,10 +40,11 @@ withoku
 
 # HTML
 ## Weekly Goals
-### Monday, November 22 2021
+### Monday, December 1 2021
 #### 中文
 - [x] Take another Wing Chun class (explore other schools)
-- [ ] Do an iTalki class every day [x] M [ ] T [ ] W [ ] Th [ ] F [ ] S [ ] Su
+- [ ] Do an iTalki class every day 
+  - [ ] [x] M [ ] T [ ] W [ ] Th [ ] F [ ] S [ ] Su
 
 #### 咖啡
 - [ ] Order and brew a 5gal batch of cold brew
