@@ -40,15 +40,38 @@ withoku
 
 # HTML
 ## Weekly Goals
+### Wednesday, December 15 2021
+#### 生活
+- [ ] Nail down a better form of excersize
+- [ ] elim all restaurants, processed food when eating alone
+
+#### 中文
+- [ ] Do an iTalki class every day 
+  - M [ ] T [ ] W [ ] Th [ ] F [ ] S [ ] Su [ ]
+
+#### 咖啡
+- [ ] Procure 1kilo of dank coffee beans
+- [ ] Add load cell to coffee robot
+
+#### 水培
+- [ ] Automate lights, fans, pump, measure temp
+
+#### 音乐
+- [ ] Learn Misty
+
+---
+
 ### Monday, December 1 2021
 #### 中文
 - [ ] Take another Wing Chun class (explore other schools)
 - [ ] Do an iTalki class every day 
-  - M [x] T [ ] W [ ] Th [ ] F [x] S [ ] Su [ ]
+  - M [x] T [ ] W [ ] Th [ ] F [x] S [x] Su [ ]
+  - _Even though I didn't do it every day, I'm already noticing an insane improvement in my listening. Also trying to speak at chinese restaurants is wearing away what little embarrasment juice I had left._
 
 #### 咖啡
 - [ ] Order and brew a 5gal batch of cold brew
-- [ ] Operate my new coffee robot 24/7
+  - _Need to procure from wholesaler_
+- [ ] Operate coffee robot 24/7
 
 #### 音乐
 - [ ] Set up another gig
@@ -84,6 +107,9 @@ _I hope you have an excellent week, much love_
 ---
 
 ## Let's Delete Time
+
+<iframe width="765" height="430" src="https://www.youtube.com/embed/7uy0ldI_1HA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 I've decided to run weekly experiments on things like food, sleep, excersise, and whatever else, in order to develop a lifestyle that can significantly increase my productivity and health.  
 
 There's also something new about the format, I'm going to implement these posts in the form of the scientific method, which will hopefully make things more relevant when evaluating which change was better and which was worse.  
