@@ -61,7 +61,8 @@ I took a week long trip down the 1 in my van, spent some days in slab city, hopp
 - Set aside the weekends for socializing/random adventures/reading/excersize
 
 #### Projects in the Queue
-This is the schedule for my next 3 weeks. I will self-critisize every day on this blog. I will also take the weekends off for socializing/random adventures/reading.
+This is the schedule for my next 3 weeks. I will self-critisize every day on this blog. I will also take the weekends off for socializing/random adventures/reading.  
+
 - Finish my van (3/16/2022 - 3/23/2022)  
   - Day 1: Wake @ 8, coffee, sketch out concept, order by priority (windows, insulation, sink, kitchen counter, shower, bed/couch, swivel seats), gen gantt & post on blog  
   - Don't be limited by currently available materials, be artistic  
