@@ -44,13 +44,13 @@ withoku
 I'm cheeting- it took 2 weeks, but I did completely redesign the van interior. Everything is built out of milk crates for maximum storage, cheapness and squareness! Still needs a lot of finishing and trim, rewiring, insulation, but I'm really happy with how much storage I have, it feels much more liveable.
 
 Initial Sketch:
-<img width=60% src="../src/blog/3-29-2022-van/sketch.png></img>
+<img width=60% src="../src/blog/3-29-2022-van/sketch.png"></img>
 
 30 milkcrates from Urban Ore in Berkeley:
-<img width=60% src="../src/blog/3-29-2022-van/PXL_20220321_214059558.jpg></img>
+<img width=60% src="../src/blog/3-29-2022-van/PXL_20220321_214059558.jpg"></img>
 
 Final product:
-<img width=60% src="../src/blog/3-29-2022-van/PXL_20220328_072345335.jpg)
+<img width=60% src="../src/blog/3-29-2022-van/PXL_20220328_072345335.jpg></img>
 
 ### Improvements
 - Started Pomedoroing myself, makes context switching a lot easier
@@ -96,7 +96,10 @@ This is the schedule for my next 3 weeks. I will self-critisize every day on thi
 - Solar powerd sailboat scale model (hobie 18) (3/30/2022 - 3/6/2022)  
 - Vegetable/meat dispenser/fridge (3/6/2022 - 3/13/2022)  
 - chinese language learning app idea (pimsleur 2.0)  
+- automated coffee 
 - auto post weight to blog, excersize routine, other embarassing things  
+- studio q vending machine
+- studio q radio 2.0
 - hydroponic system mini vegetables  
 - Solar powered catamaran (wait 'till an abandoned cat comes around)
 
