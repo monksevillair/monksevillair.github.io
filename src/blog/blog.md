@@ -50,7 +50,7 @@ Initial Sketch:
 <img width=60% src="../src/blog/3-29-2022-van/PXL_20220321_214059558.jpg"></img>
 
 Final product:
-<img width=60% src="../src/blog/3-29-2022-van/PXL_20220328_072345335.jpg></img>
+<img width=60% src="../src/blog/3-29-2022-van/PXL_20220328_072345335.jpg"></img>
 
 ### Improvements
 - Started Pomedoroing myself, makes context switching a lot easier
