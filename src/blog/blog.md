@@ -39,6 +39,28 @@ withoku
 - [ ] let's delete time, use the scientific method
 
 # HTML
+## Week 1: Van project
+I'm cheeting- it took 2 weeks, but I did completely redesign the van interior. Everything is built out of milk crates for maximum storage, cheapness and squareness! Still needs a lot of finishing and trim, rewiring, insulation, but I'm really happy with how much storage I have, it feels much more liveable.
+
+Initial Sketch:
+![inital sketch](../src/blog/3-29-2022-van/sketch.png)
+
+30 milkcrates from Urban Ore in Berkeley:
+![30 milkcrates](../src/blog/3-29-2022-van/PXL_20220321_214059558.jpg)
+
+Final product:
+![final product](../src/blog/3-29-2022-van/PXL_20220328_072345335.jpg)
+
+### Improvements
+- Started Pomedoroing myself, makes context switching a lot easier
+- Feels much more liveable
+
+### To Improve
+- Only take 1 week to blog
+- Still not finished, lots of details left
+- Spent a lot of time planning my future sailboat project instead of doing this project
+- Can't get distracted by the exciting sailboat project, need to finish stirfry machine this week!!
+
 ## On dilly-dallying
 ### Wednesday, March 16 2022
 Today I found myself thinking about how much work I've been doing vs how much I feel I've accomplished. I feel like all my personal projects, except for music, are stalling out. I'm taking some time right now to critisize myself do a quick debrief to try to understand why. I also want to lay out a new strategy for finishing more projects. 
@@ -68,12 +90,12 @@ This is the schedule for my next 3 weeks. I will self-critisize every day on thi
   - Don't be limited by currently available materials, be artistic  
 - Stirfry gantry robot (3/23/2022 - 3/30/2022)  
   - clean/organize lab with milk-crates  
-- Solar powered sailboat (3/30/2022 - 3/6/2022)  
+- Solar powerd sailboat scale model (hobie 18) (3/30/2022 - 3/6/2022)  
 - Vegetable/meat dispenser/fridge (3/6/2022 - 3/13/2022)  
 - chinese language learning app idea (pimsleur 2.0)  
 - auto post weight to blog, excersize routine, other embarassing things  
 - hydroponic system mini vegetables  
-
+- Solar powered catamaran (wait 'till an abandoned cat comes around)
 
 ## Weekly Goals
 ### Wednesday, December 15 2021
