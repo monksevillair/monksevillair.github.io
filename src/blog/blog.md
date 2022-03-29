@@ -40,6 +40,7 @@ withoku
 
 # HTML
 ## Week 1: Van project
+### March 29, 2022
 I'm cheeting- it took 2 weeks, but I did completely redesign the van interior. Everything is built out of milk crates for maximum storage, cheapness and squareness! Still needs a lot of finishing and trim, rewiring, insulation, but I'm really happy with how much storage I have, it feels much more liveable.
 
 Initial Sketch:
