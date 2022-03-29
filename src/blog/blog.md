@@ -44,13 +44,13 @@ withoku
 I'm cheeting- it took 2 weeks, but I did completely redesign the van interior. Everything is built out of milk crates for maximum storage, cheapness and squareness! Still needs a lot of finishing and trim, rewiring, insulation, but I'm really happy with how much storage I have, it feels much more liveable.
 
 Initial Sketch:
-![inital sketch](../src/blog/3-29-2022-van/sketch.png)
+<img width=60% src="../src/blog/3-29-2022-van/sketch.png></img>
 
 30 milkcrates from Urban Ore in Berkeley:
-![30 milkcrates](../src/blog/3-29-2022-van/PXL_20220321_214059558.jpg)
+<img width=60% src="../src/blog/3-29-2022-van/PXL_20220321_214059558.jpg></img>
 
 Final product:
-![final product](../src/blog/3-29-2022-van/PXL_20220328_072345335.jpg)
+<img width=60% src="../src/blog/3-29-2022-van/PXL_20220328_072345335.jpg)
 
 ### Improvements
 - Started Pomedoroing myself, makes context switching a lot easier
