@@ -62,6 +62,8 @@ Final product:
 - Spent a lot of time planning my future sailboat project instead of doing this project
 - Can't get distracted by the exciting sailboat project, need to finish stirfry machine this week!!
 
+---
+
 ## On dilly-dallying
 ### Wednesday, March 16 2022
 Today I found myself thinking about how much work I've been doing vs how much I feel I've accomplished. I feel like all my personal projects, except for music, are stalling out. I'm taking some time right now to critisize myself do a quick debrief to try to understand why. I also want to lay out a new strategy for finishing more projects. 
@@ -97,6 +99,8 @@ This is the schedule for my next 3 weeks. I will self-critisize every day on thi
 - auto post weight to blog, excersize routine, other embarassing things  
 - hydroponic system mini vegetables  
 - Solar powered catamaran (wait 'till an abandoned cat comes around)
+
+---
 
 ## Weekly Goals
 ### Wednesday, December 15 2021
