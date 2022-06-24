@@ -39,6 +39,77 @@ withoku
 - [ ] let's delete time, use the scientific method
 
 # HTML
+## Future Sailboat Plans
+### June 24, 2022 07:23
+I just posted three posts I wrote over the last couple months. They were sitting in my email as I plan to write an email bot to auto-post these when I send them to myself. Should eliminate the friction of opening github, and lets me write from anywhere. I'm also going to write more off-the-cuff, care even less about spelling, because I really want to post stuff and stop caring so much about perfection.
+
+I designed and 3D printed a catamaran boat mold! Turns out, sailboats are just really heavy, and don't have enough surface area to run solar powered. Even if the boat is completely covered, with solar wings hanging off the edge, the max I could ever get is 10kw. OK for light wind in the Alameda channel, but not even close if you get out in the bay. Though I've puttered around out there on less.
+
+My search for tri's and cat's was not going very well, and I was sub-happy to learn that many of these boats are overbuilt nonsense, filled with heavy and rediculous furniture. So I've opted to take the hard route and delete the idea of converting some 50's overbuilt cat, and instead increase my fiberglass chops! That's right, one day I'm going to cross an ocean in a homebuilt solar boat baby!
+
+I decided first to build a scale model. A proper vacuum-bagged hull. I designed and 3D printed a hull (inspired by [RC test flights](https://www.youtube.com/watch?v=HFhsh4V8SZA) video), but I'm cheap so I designed a mold that's symetrical on all sides so I can use half the material.
+
+<img width=60% src="../src/blog/6-24-2022-future-boat/im1.jpg"></img>
+
+Much sanding, polyester resin, vacuum pump, 2 layers of glass, peel ply... BAM you got a hull. Can't wait to see if it releases from the mold tomorrow!!
+
+<img width=60% src="../src/blog/6-24-2022-future-boat/im2.jpg"></img>
+
+### May 1, 2022 06:16
+Had a little grand unifying theory moment tonight, or should I say this morning 😉, as I write this locked outside of an apartment waiting to follow in the next car that opens garage so I can grab my keys and finally fall asleep.
+
+Realizing I have a perfectly fine sailboat I'm paying slip fees on, and another wood boat I built a few years ago with a friend from scratch, I came to the conclusion that I should build a 10kw outboard out of the ex-kittyhawk motors I happen to have access to!
+
+Paired with some 100v batteries, bob's your uncle I've got myself a couple of electric boats and an excellent opportunity for some excersize lugging the outboard around.
+
+I'm thinking I'll drop the mast on my sailboat, slice it down the middle like a rather elongated sandwich, then cut each piece in half to end up with 4 pieces I can bolt to the deck of the sailboat and lay solar panels on to make a 10kw array.
+
+Trimaran can wait, I can use this boat as a test platform for the electric power system and as a living space so I can sell my van and aquire a bit of capital to make the project happen!
+
+That's all for now, someone came out of the garage!
+
+---
+
+## Presenting: ROSWM (Proof of Concept)
+### May 10, 2022
+I present: ROSWM! An window manager for ROS2. What's it do? It listens to the currently published ROS2 topics running in your terminal windows and draws a directed graph between them! Like a living RQTgraph!
+
+It's a proof of concept, written in python because Wayland bindings for python are surprisingly even weirder than xlib. Just wanted to quickly throw something together to improve my ROS2 workflow! Plz appreciate the _lofi_.
+
+Features I'd like to add:
+- save graph, process list & window locations to a ROS launch file, recall them later
+- multiple desktops, multiple graphs for different parts of the robot like a kicad schematic
+
+If anyone thinks this is a cool idea, feel free to make a PR to the repo or make suggestions!
+
+https://github.com/imcnanie/roswm
+
+<img width=60% src="https://github.com/imcnanie/roswm/raw/main/roswm.png"></img>
+
+---
+## Checking out a Santa-Barbarian Trimaran
+### Apr 25, 2022 15:38
+
+I've got ambitions to cross the Pacific on a solar boat, so I'm looking around for seaworthy multihulls at a good price with no rig or engine. Found a nice Trimaran a few days ago. Good opportunity for a quick trip down to Santa Barbara to check it out! It's a 37ft Piver Searunner.
+
+I'm starting to see these everywhere. Checked out another one in Alameda a few weeks ago, 25ft. Seems like some guy named Piver popularized these as wood core kits in the 70s?
+
+So far I'm not impressed. These days, I think wood should never be a building material for a boat. It was fine in the 1700s back before we invented fiberglass...
+
+But 50 years later every piece of wood on this thing is rotted. Which would be ok if it was just the deck. But the HULLS are rotted too. I did briefly entertain the idea of pulling out all the rotten wood and recoreing it with fiberglass, but it started to sound more and more like the ship of Theseus.
+
+Now I know I'd much rather find something with a solid fiberglass hull. I want to build things that last a long time, not a big fan of engaging in the building of disposable objects!
+
+Also... The boat was called the solar glow. if that ain't an omen....
+
+New plan:
+- make a scale model
+- check all the local boat yards and marinas for free cats/tris in the bay
+
+<img width=60% src="../src/blog/6-24-2022-trimaran/im1.png"></img>
+<img width=60% src="../src/blog/6-24-2022-trimaran/im2.png"></img>
+
+---
 ## Week 1: Van project
 ### March 29, 2022
 I'm cheeting- it took 2 weeks, but I did completely redesign the van interior. Everything is built out of milk crates for maximum storage, cheapness and squareness! Still needs a lot of finishing and trim, rewiring, insulation, but I'm really happy with how much storage I have, it feels much more liveable.
