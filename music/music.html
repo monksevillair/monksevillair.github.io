@@ -1,4 +1,4 @@
-<!-- generated from music/music.md at 06-24-2022 09:05:05 EST -->
+<!-- generated from music/music.md at 06-24-2022 09:10:49 EST -->
 <html>
   <head>
     <title>Music
@@ -238,7 +238,24 @@ canvas {
 	  <div class="scroll">
 
 	    <!-- used <pre> tag for text formatting -->
-	   <table class="container">
+	   <script src="https://cdn.jsdelivr.net/npm/@tonaljs/tonal/browser/tonal.min.js"></script>
+<script>
+  console.log(Tonal.Key.minorKey("Ab"));
+</script>
+<canvas id="canvas" width="900" height="200">
+            This text is displayed if your browser does not support HTML5 Canvas.
+</canvas>
+<p><br />
+<select id="selectKey">
+</select>
+<select id="selectScale">
+</select>
+<select id="selectRoot">
+</select>
+<select id="selectArp">
+</select>
+<select id="selectTuning"></p>
+<table class="container">
 <tr class="table-row">
 <td class="table-cell">
 
@@ -409,24 +426,6 @@ canvas {
 </table>
 <pre><code>
 </code></pre>
-<script src="https://cdn.jsdelivr.net/npm/@tonaljs/tonal/browser/tonal.min.js"></script>
-<script>
-  console.log(Tonal.Key.minorKey("Ab"));
-</script>
-<canvas id="canvas" width="900" height="200">
-            This text is displayed if your browser does not support HTML5 Canvas.
-</canvas>
-<p><br />
-<select id="selectKey">
-</select>
-<select id="selectScale">
-</select>
-<select id="selectRoot">
-</select>
-<select id="selectArp">
-</select>
-<select id="selectTuning">
-</select></p>
 <script>
 class Person {
   my_canvas;
