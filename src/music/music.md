@@ -62,28 +62,7 @@ canvas {
 - [ ] Fix formatting, make specific blog parser
 
 # HTML
-<script src="https://cdn.jsdelivr.net/npm/@tonaljs/tonal/browser/tonal.min.js"></script>
-<script>
-  console.log(Tonal.Key.minorKey("Ab"));
-</script>
-<canvas id="canvas" width="900" height="200">
-            This text is displayed if your browser does not support HTML5 Canvas.
-</canvas>
-<br />
-<select id="selectKey">
-</select>
 
-<select id="selectScale">
-</select>
-
-<select id="selectRoot">
-</select>
-
-<select id="selectArp">
-</select>
-
-<select id="selectTuning">
-</select>
 
 <table class="container">
 <tr class="table-row">
@@ -259,11 +238,11 @@ canvas {
 </center>
 </tr>
 </table>	
+
 <script src="https://cdn.jsdelivr.net/npm/@tonaljs/tonal/browser/tonal.min.js"></script>
 <script>
   console.log(Tonal.Key.minorKey("Ab"));
 </script>
-
 <canvas id="canvas" width="900" height="200">
             This text is displayed if your browser does not support HTML5 Canvas.
 </canvas>
@@ -284,6 +263,7 @@ canvas {
 </select>
 
 <script>
+
 
 class Person {
 
@@ -418,6 +398,7 @@ draw_notes_et(y, color) {
   }
 
   render_frets() {
+    p.context.clearRect(0, 0, canvas.width, canvas.height);
     this.context.moveTo(20, 20);
     this.context.lineTo(100, 20);
     
@@ -491,7 +472,6 @@ function change_arp() {
   p.render_frets()
 }
 function change_tuning() {
-  p.context.clearRect(0, 0, canvas.width, canvas.height);
   p.tuning = select_tuning.value.split(',')
   console.log(p.tuning)
   p.render_frets()
@@ -502,6 +482,7 @@ select_key.addEventListener("change", change_scale);
 select_root.addEventListener("change", change_arp);
 select_arp.addEventListener("change", change_arp);
 select_tuning.addEventListener("change", change_tuning);
+
 
 
 
