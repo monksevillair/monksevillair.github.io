@@ -1,4 +1,4 @@
-<!-- generated from music/music.md at 06-24-2022 08:40:34 EST -->
+<!-- generated from music/music.md at 06-24-2022 08:50:40 EST -->
 <html>
   <head>
     <title>Music
@@ -444,7 +444,213 @@ canvas {
 <select id="selectArp">
 </select>
 <select id="selectTuning">
-</select></p> 
+</select></p>
+<script>
+class Person {
+  my_canvas;
+  constructor(my_canvas) {
+    this.my_canvas = document.getElementById('canvas')
+    this.context = this.my_canvas.getContext("2d");
+    this.tuning = ['C','G','C','G','C','G'].reverse()
+    this.tunings = [['C','G','C','G','C','G'],
+                                    ['E','A','D','G','B','E'],
+                    ['E','A','D','G','C','F'],
+                    ['C','G','D','A','E','B']]
+    this.scale = {'A': 0,
+                                'Bb':1,
+                  'B': 2,
+                  'C': 3,
+                  'Db':4,
+                  'D': 5,
+                  'Eb':6,
+                  'E': 7,
+                  'F': 8,
+                  'Gb':9,
+                  'G': 10,
+                  'Ab':11}
+    this.scale_sharps = {'A': 0,
+                                'A#':1,
+                  'B': 2,
+                  'C': 3,
+                  'C#':4,
+                  'D': 5,
+                  'D#':6,
+                  'E': 7,
+                  'F': 8,
+                  'F#':9,
+                  'G': 10,
+                  'G#':11}
+    this.highlight_chord = []
+    this.tet = 12
+    this.octaves = 1
+    this.target_scale = Tonal.Scale.get("C lydian").notes
+    this.prefer_sharps_flats = ""//"flats"
+  }
+
+  set_highlight_chord(chord) {
+    console.log(Tonal.Chord.get(chord))
+    this.highlight_chord = Tonal.Chord.get(chord).notes
+  }
+
+  set_target_scale(scale) {
+        this.context.clearRect(0, 0, canvas.width, canvas.height);
+      this.target_scale = Tonal.Scale.get(scale).notes
+  }
+
+    draw_fret(x) {
+    this.context.fillStyle = "orange";
+    //context.strokeRect(20,20,30,50);
+    this.context.fillRect(x,0,5,200);
+  }
+
+  draw_frets_et() {
+    var k = 1.05946 
+    var guit_len = 1600
+    for (let f = 0; f < this.tet; f++) {
+        var x = guit_len - (guit_len/(k**f))
+      if (f === 0){
+            this.draw_fret(x+90)
+      } else {
+      this.draw_fret(x+20)
+      }
+    }
+  }
+
+draw_notes_et(y, color) {
+    var k = 1.05946 
+    var guit_len = 1600
+    this.context.font = "18px Helvetica";
+
+
+
+    for (let f = 0; f < this.tet; f++) {
+        var x = guit_len - (guit_len/(k**f))
+      var x1 = guit_len - (guit_len/(k**(f+1)))
+
+      var cur_note = Object.keys(this.scale)[(this.scale[this.tuning[y]]+f)%this.tet]
+      var cur_note_sharps = Object.keys(this.scale_sharps)[(this.scale_sharps[this.tuning[y]]+f)%this.tet]
+
+      if (this.target_scale.includes(cur_note)) {
+        if (this.highlight_chord.includes(cur_note)) {     
+          this.draw_circle((x+x1)/2+20,y*200/6+15,14, "orange")
+        } else {
+          this.draw_circle((x+x1)/2+20,y*200/6+15,14, "#999")
+        }
+        this.context.fillStyle = color;
+        if (this.prefer_sharps_flats === "sharps") {
+        this.context.fillText(cur_note_sharps, (x+x1)/2-5+20,y*200/6+15+5);
+        } else {
+        this.context.fillText(cur_note, (x+x1)/2-5+20,y*200/6+15+5);
+        }
+      }
+
+      if (this.target_scale.includes(cur_note_sharps)) {
+        if (this.highlight_chord.includes(cur_note_sharps)) {     
+          this.draw_circle((x+x1)/2+20,y*200/6+15,14, "orange")
+        } else {
+          this.draw_circle((x+x1)/2+20,y*200/6+15,14, "#999")
+        }
+        this.context.fillStyle = "#000";
+        if (this.prefer_sharps_flats === "flats") {
+                this.context.fillText(cur_note, (x+x1)/2-5+20,y*200/6+15+5);
+                } else {
+        this.context.fillText(cur_note_sharps, (x+x1)/2-5+20,y*200/6+15+5);
+        }
+      }
+    }
+  }
+
+
+  draw_frets_ev() {
+    for (let f = 0; f < this.tet; f++) {
+            this.draw_fret(f*(800/(this.tet)))
+    }
+  }
+
+    draw_circle (x, y, r, color) {
+    this.context.fillStyle = color;
+    this.context.beginPath();
+    this.context.arc(x,y,r,0,2*Math.PI);
+    this.context.fill();
+  }
+  render_frets() {
+    this.context.moveTo(20, 20);
+    this.context.lineTo(100, 20);
+
+        this.draw_frets_et()
+    for (let f = 0; f < this.tuning.length; f++) {
+        this.draw_notes_et(f, "#000")
+    }
+  }
+}
+var p = new Person()
+var scale_list = Tonal.ScaleType.all().map(scaleType => scaleType.name)
+var chord_list = Tonal.ChordType.all().map(get => get.name);
+var select_key = document.getElementById("selectKey");
+var select_root = document.getElementById("selectRoot");
+var scale = Object.keys(p.scale)
+for(var i = 0; i < scale.length; i++) {
+  var opt = scale[i];
+  var el = document.createElement("option");
+  el.textContent = opt;
+  el.value = opt;
+  select_key.appendChild(el); 
+}
+for(var i = 0; i < scale.length; i++) {
+  var opt = scale[i];
+  var el = document.createElement("option");
+  el.textContent = opt;
+  el.value = opt;
+  select_root.appendChild(el);
+
+}
+var select = document.getElementById("selectScale");
+for(var i = 0; i < scale_list.length; i++) {
+  var opt = scale_list.sort()[i];
+  var el = document.createElement("option");
+  el.textContent = opt;
+  el.value = opt;
+  select.appendChild(el);
+}
+var select_arp = document.getElementById("selectArp");
+for(var i = 0; i < chord_list.length; i++) {
+  var opt = Tonal.Chord.get(chord_list[i]).symbol;
+  var el = document.createElement("option");
+  el.textContent = opt;
+  el.value = opt;
+  if (chord_list[i] !== "") {
+  select_arp.appendChild(el);
+  }
+}
+var select_tuning = document.getElementById("selectTuning");
+for(var i = 0; i < p.tunings.length; i++) {
+  var opt = p.tunings[i];
+  var el = document.createElement("option");
+  el.textContent = opt;
+  el.value = opt;
+  select_tuning.appendChild(el);
+}
+function change_scale() {
+  console.log(select_key.value+" "+select.value)
+  p.set_target_scale(select_key.value+" "+select.value)
+  p.render_frets()
+}
+function change_arp() {
+  p.set_highlight_chord(select_root.value+" "+select_arp.value)
+  p.render_frets()
+}
+function change_tuning() {
+  p.context.clearRect(0, 0, canvas.width, canvas.height);
+  p.tuning = select_tuning.value.split(',')
+  console.log(p.tuning)
+  p.render_frets()
+}
+select.addEventListener("change", change_scale);
+select_key.addEventListener("change", change_scale);
+select_root.addEventListener("change", change_arp);
+select_arp.addEventListener("change", change_arp);
+select_tuning.addEventListener("change", change_tuning);
+</script> 
 	 
 	  </div>	  
 	</td>
