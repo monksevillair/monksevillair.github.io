@@ -470,7 +470,7 @@ function change_arp() {
   p.render_frets()
 }
 function change_tuning() {
-  p.tuning = select_tuning.value.split(',')
+  p.tuning = select_tuning.value.split(',').reverse()
   console.log(p.tuning)
   p.render_frets()
 }
