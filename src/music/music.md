@@ -63,6 +63,27 @@ canvas {
 
 # HTML
 
+<script src="https://cdn.jsdelivr.net/npm/@tonaljs/tonal/browser/tonal.min.js"></script>
+<script>
+  console.log(Tonal.Key.minorKey("Ab"));
+</script>
+<canvas id="canvas" width="900" height="200">
+            This text is displayed if your browser does not support HTML5 Canvas.
+</canvas>
+<br />
+<select id="selectKey">
+</select>
+
+<select id="selectScale">
+</select>
+
+<select id="selectRoot">
+</select>
+
+<select id="selectArp">
+</select>
+
+<select id="selectTuning">
 
 <table class="container">
 <tr class="table-row">
@@ -238,29 +259,6 @@ canvas {
 </center>
 </tr>
 </table>	
-
-<script src="https://cdn.jsdelivr.net/npm/@tonaljs/tonal/browser/tonal.min.js"></script>
-<script>
-  console.log(Tonal.Key.minorKey("Ab"));
-</script>
-<canvas id="canvas" width="900" height="200">
-            This text is displayed if your browser does not support HTML5 Canvas.
-</canvas>
-<br />
-<select id="selectKey">
-</select>
-
-<select id="selectScale">
-</select>
-
-<select id="selectRoot">
-</select>
-
-<select id="selectArp">
-</select>
-
-<select id="selectTuning">
-</select>
 
 <script>
 
