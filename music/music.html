@@ -1,4 +1,4 @@
-<!-- generated from music/music.md at 06-24-2022 09:44:37 EST -->
+<!-- generated from music/music.md at 06-24-2022 09:50:12 EST -->
 <html>
   <head>
     <title>Music
@@ -622,7 +622,7 @@ function change_arp() {
   p.render_frets()
 }
 function change_tuning() {
-  p.tuning = select_tuning.value.split(',')
+  p.tuning = select_tuning.value.split(',').reverse()
   console.log(p.tuning)
   p.render_frets()
 }
