@@ -39,6 +39,29 @@ withoku
 - [ ] let's delete time, use the scientific method
 
 # HTML
+## Another Week, Another Rediculous Plan
+### June 26, 2022 05:49
+My despisal of multi-ton quadracycles continues, so I've decided to spend the next week as humble bicyclist. Since I am a van dweller, this means I'll need a different place to stay. A perfect opportunity for to get my feet wet bike-camping! I still have lots of projects to finish, so I'm thinking find somewhere to camp over the Golden Gate, maybe up near Mt. Tam! I've been biking a lot more recently, but it's mainly been demonstrating how much better shape I could get into, and I'm pretty hyped about setting up some future long-term bike trips!  
+
+Here's the plan:  
+- 星期日 do camping research, setup bike!
+- 星期一 to 星期五 do the thing, only tenting it up, it may be painful!
+
+Why?  
+- I know it will be painful, want to prove to myself I can do it
+- I slightly don't want to do it, which is a good indication I should do it
+- I have a sneaking suspicion that houses, vans, life-boxes isolate you from the world. I want to evaluate the limit of non-house dwelling.
+- Get ripped (lol), feel good via exercise
+- Need to get preped for longer bike trips
+
+In other news, the boat mold is turning out excellent. I love peel-ply. Gives a wonderfull fabric-feeling texture to the mold. My 3D printed mold isn't too smooth, it's making me wonder if I can use peel-ply on both sides of the mold. Also some _super_ important notes when vacuum bagging: makes sure you use absorbative cloth (i used paper towels), otherwise the resin pools on the mold side and makes a thick gel layer, which is just useless weight and looks bad. Also I made a resin trap out of some pipe because didn't want to screw up the vacuum pump. Can't wait to make more stuff, this is a really fun art!  
+
+
+<img width=60% src="../src/blog/6-26-2022-another-rediculous-plan/im1.jpg"></img>  
+<img width=60% src="../src/blog/6-26-2022-another-rediculous-plan/im2.jpg"></img>  
+
+---
+
 ## Future Sailboat Plans
 ### June 24, 2022 07:23
 I just posted three posts I wrote over the last couple months. They were sitting in my email as I plan to write an email bot to auto-post these when I send them to myself. Should eliminate the friction of opening github, and lets me write from anywhere. I'm also going to write more off-the-cuff, care even less about spelling, because I really want to post stuff and stop caring so much about perfection.  
@@ -56,6 +79,7 @@ Much sanding, polyester resin, vacuum pump, 2 layers of glass, peel ply... BAM y
 <img width=60% src="../src/blog/6-24-2022-future-boat/im2.jpg"></img>  
 
 ---
+
 ## Grand Unifying Theory of Solarboat Building
 ### May 1, 2022 06:16
 Had a little grand unifying theory moment tonight, or should I say this morning 😉, as I write this locked outside of an apartment waiting to follow in the next car that opens garage so I can grab my keys and finally fall asleep.  
