@@ -55,12 +55,13 @@ Why?
 - Need to get preped for longer bike trips  
 - Sunlight might fix my sleep schedule  
 
-Smart things
-- Wear sunscreen
-- Bike light
-- High Viz
-- Water Bottles
-- Hammock w/ bug cover
+Smart things  
+- Wear sunscreen  
+- Sunglasses  
+- Bike light  
+- High Viz  
+- Water Bottles  
+- Hammock w/ bug cover  
 
 In other news, the boat mold is turning out excellent. I love peel-ply. Gives a wonderfull fabric-feeling texture to the mold. My 3D printed mold isn't too smooth, it's making me wonder if I can use peel-ply on both sides of the mold. Also some _super_ important notes when vacuum bagging: makes sure you use absorbative cloth (i used paper towels), otherwise the resin pools on the mold side and makes a thick gel layer, which is just useless weight and looks bad. Also I made a resin trap out of some pipe because didn't want to screw up the vacuum pump. Can't wait to make more stuff, this is a really fun art!  
 
