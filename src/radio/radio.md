@@ -4,7 +4,7 @@ Monk's Evil Radio
 
 # Style
 body {
-  background-image: url('bg2.jpg');
+  background-image: url('https://www.monksevillair.com/src/radio/bg2.jpg');
   background-size: cover;
 }
 
@@ -31,12 +31,12 @@ line-height: 1.6;
 
 # HTML
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="css/AudioPlayer.css">
+<link rel="stylesheet" href="https://www.monksevillair.com/src/radio/css/AudioPlayer.css">
 <!-- Audio player container-->
 <div id='player'></div>
 
 <!-- Audio player js begin-->
-<script src="js/AudioPlayer.js"></script>
+<script src="https://www.monksevillair.com/src/radio/js/AudioPlayer.js"></script>
 
 <script>
       
