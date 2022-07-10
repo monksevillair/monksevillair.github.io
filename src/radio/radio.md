@@ -4,7 +4,6 @@ Monk's Evil Radio
 
 # Style
 body {
-  background-image: url('https://www.monksevillair.com/src/radio/bg2.jpg');
   background-size: cover;
 }
 
@@ -45,7 +44,7 @@ line-height: 1.6;
         let mp3s = []; 
         let people = ["tilden","soda","criibaby","panda","casey","monk","zack","surfer-dave", "iocl"];
         
-        const response = await fetch('https://api.github.com/repos/monksevillair/monksevillair.github.io/src/radio/contents/mp3/'); 
+        const response = await fetch('https://api.github.com/repos/monksevillair/monksevillair.github.io/contents/src/radio/mp3/'); 
         const data = await response.json(); 
          // test image for web notifications
         var iconImage = null;
