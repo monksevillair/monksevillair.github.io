@@ -42,7 +42,6 @@ line-height: 1.6;
                 lines += "## "+ title + "  \r\n"
                 lines += "### "+ str(date.strftime("%A, %B %d %Y")) + "  \r\n"
 
-
                 for lll in f.readlines():
                     ll = lll.replace("\"./",base+b.strip("main.md"))
                     l = ll.replace("\"~/","https://monksevillair.com/")
@@ -50,8 +49,8 @@ line-height: 1.6;
                     
                 lines += "\r\n"+ "---  "+ "\r\n\r\n"
                 
-        #print(lines)
-        f = open("blog.md", "a")
+            print(b)
+        f = open("blog.md", "w")
         f.write(lines)
         f.close()
         
