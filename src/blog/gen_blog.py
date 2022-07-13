@@ -33,7 +33,7 @@ line-height: 1.6;
 # HTML
 '''
 
-        id_tag = '''## {title}{{#{tag}}}  \r\n'''
+        id_tag = '''## {title} {{#{tag}}}  \r\n'''
         base = "\"https://monksevillair.com/src/blog"
         base2 = "https://monksevillair.com/blog"
         
