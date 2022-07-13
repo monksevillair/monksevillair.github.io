@@ -15,9 +15,9 @@ import random
 
 COLOR_DICT = OrderedDict({0: ["#111111", "#DDDDDD", "#DDDDDD"],
                           #100: ["#a1b5d6", "#FFFFFF", "#FFFFFF"],
-                          180: ["#ffada2", "#FFFFFF", "#FFFFFF"],
-                          200: ["#9da1fa", "#FFFFFF", "#FFFFFF"],
-                          240: ["#111111", "#DDDDDD", "#DDDDDD"]})
+                          #180: ["#ffada2", "#FFFFFF", "#FFFFFF"],
+                          #200: ["#9da1fa", "#FFFFFF", "#FFFFFF"],
+                          240: ["#111111", "#EEEEEE", "#EEEEEE"]})
 
 form_l = "<span style=\"background-color: {};\">&nbsp{}&nbsp</span>"
 form_d = "<span style=\"background-color: {}; color: #000\">&nbsp{}&nbsp</span>"
@@ -151,7 +151,7 @@ class genPages():
         file1 = open("./lists/quotes.md", 'r')
         Lines = file1.readlines()
 
-        the_quote = markdown.markdown(str(Lines[random.randint(0,len(Lines)-1)].strip("- ")))
+        the_quote = markdown.markdown(str(Lines[random.randint(0,len(Lines)-1)].strip("- ")),extensions=['toc'])
         
         return "<div class=\"quote\">"+the_quote+"</div>"
     
