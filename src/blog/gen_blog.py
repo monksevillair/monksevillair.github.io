@@ -34,7 +34,7 @@ line-height: 1.6;
 '''
 
         #id_tag = '''# {title} {{#{tag}}}  \r\n'''
-        id_tag = '''# {title} \r\n'''
+        id_tag = '''## {title} \r\n'''
         base = "\"https://monksevillair.com/src/blog"
         base2 = "https://monksevillair.com/blog"
         
@@ -46,7 +46,7 @@ line-height: 1.6;
 
                 #lines += id_tag.format(title=title, tag=b.split("/")[1].lower())
                 lines += id_tag.format(title=title)
-                lines += "## "+ str(date.strftime("%A, %B %d %Y")) + "  \r\n"
+                lines += "### "+ str(date.strftime("%A, %B %d %Y")) + "  \r\n"
 
                 for lll in f.readlines():
                     ll = lll.replace("\"./",base+b.strip("main.md"))
