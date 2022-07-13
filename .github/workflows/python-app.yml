@@ -5,9 +5,9 @@ name: Site Build
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
   workflow_dispatch:
     inputs:
       logLevel:
@@ -33,6 +33,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install pathlib colour markdown pillow
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        apt install python3-dateutil
         
     - name: setup git config
       run: |
