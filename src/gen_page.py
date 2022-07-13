@@ -206,7 +206,7 @@ class genPages():
         file1 = open(page, 'r')
         Lines = file1.read()
         #print(Lines)
-        output = markdown.markdown(Lines)
+        output = markdown.markdown(Lines, extensions=['toc'])
 
         #if "espanol.md" in str(page):
         #    print(output)
@@ -239,7 +239,7 @@ class genPages():
 
         #print(html)
         
-        html = markdown.markdown(html)
+        html = markdown.markdown(html,extensions=['toc'])
         #print(dir(spell.candidates(word)))
         
         # replace html {} tags
