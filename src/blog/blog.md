@@ -22,8 +22,8 @@ line-height: 1.6;
 }
 
 # HTML
-## Future Boat {#2022-06-24-future-boat}  
-### Friday, June 24 2022  
+# Future Boat 
+## Friday, June 24 2022  
 I just posted three posts I wrote over the last couple months. They were sitting in my email as I plan to write an email bot to auto-post these when I send them to myself. Should eliminate the friction of opening github, and lets me write from anywhere. I'm also going to write more off-the-cuff, care even less about spelling, because I really want to post stuff and stop caring so much about perfection.    
   
 I designed and 3D printed a catamaran boat mold! Turns out, sailboats are just really heavy, and don't have enough surface area to run solar powered. Even if the boat is completely covered, with solar wings hanging off the edge, the max I could ever get is 10kw. OK for light wind in the Alameda channel, but not even close if you get out in the bay. Though I've puttered around out there on less.    
@@ -40,8 +40,8 @@ Much sanding, polyester resin, vacuum pump, 2 layers of glass, peel ply... BAM y
 
 ---  
 
-## Presenting ROSWM Proof of Concept {#2022-05-10-presenting-roswm-proof-of-concept}  
-### Tuesday, May 10 2022  
+# Presenting ROSWM Proof of Concept 
+## Tuesday, May 10 2022  
 I present: ROSWM! An window manager for ROS2. What's it do? It listens to the currently published ROS2 topics running in your terminal windows and draws a directed graph between them! Like a living RQTgraph!    
   
 It's a proof of concept, written in python because Wayland bindings for python are surprisingly even weirder than xlib. Just wanted to quickly throw something together to improve my ROS2 workflow! Plz appreciate the _lofi_.    
@@ -58,8 +58,8 @@ https://github.com/imcnanie/roswm
 
 ---  
 
-## Grand Unifying Theory of Solarboat Building {#2022-05-01-grand-unifying-theory-of-solarboat-building}  
-### Sunday, May 01 2022  
+# Grand Unifying Theory of Solarboat Building 
+## Sunday, May 01 2022  
 Had a little grand unifying theory moment tonight, or should I say this morning 😉, as I write this locked outside of an apartment waiting to follow in the next car that opens garage so I can grab my keys and finally fall asleep.    
   
 Realizing I have a perfectly fine sailboat I'm paying slip fees on, and another wood boat I built a few years ago with a friend from scratch, I came to the conclusion that I should build a 10kw outboard out of the ex-kittyhawk motors I happen to have access to!    
@@ -74,8 +74,8 @@ That's all for now, someone came out of the garage!
 
 ---  
 
-## Checking Out A Santa Barbarian Trimar {#2022-04-25-checking-out-a-santa-barbarian-trimaran}  
-### Monday, April 25 2022  
+# Checking Out A Santa Barbarian Trimar 
+## Monday, April 25 2022  
 I've got ambitions to cross the Pacific on a solar boat, so I'm looking around for seaworthy multihulls at a good price with no rig or engine. Found a nice Trimaran a few days ago. Good opportunity for a quick trip down to Santa Barbara to check it out! It's a 37ft Piver Searunner.    
   
 I'm starting to see these everywhere. Checked out another one in Alameda a few weeks ago, 25ft. Seems like some guy named Piver popularized these as wood core kits in the 70s?    
@@ -97,8 +97,8 @@ New plan:
 
 ---  
 
-## Week One Van Project {#2022-03-29-week-one-van-project}  
-### Tuesday, March 29 2022  
+# Week One Van Project 
+## Tuesday, March 29 2022  
 I'm cheeting- it took 2 weeks, but I did completely redesign the van interior. Everything is built out of milk crates for maximum storage, cheapness and squareness! Still needs a lot of finishing and trim, rewiring, insulation, but I'm really happy with how much storage I have, it feels much more liveable.  
   
 Initial Sketch:    
@@ -122,8 +122,8 @@ Final product:
 
 ---  
 
-## On Dilly Dallying {#2022-03-16-on-dilly-dallying}  
-### Wednesday, March 16 2022  
+# On Dilly Dallying 
+## Wednesday, March 16 2022  
 Today I found myself thinking about how much work I've been doing vs how much I feel I've accomplished. I feel like all my personal projects, except for music, are stalling out. I'm taking some time right now to critisize myself do a quick debrief to try to understand why. I also want to lay out a new strategy for finishing more projects.   
   
 #### Contributing Factor 1: Spreading myself too thin  
@@ -163,8 +163,8 @@ This is the schedule for my next 3 weeks. I will self-critisize every day on thi
 
 ---  
 
-## 021 12 6 wrong date Let's Delete Time {#2021-12-6-wrong-date-let's-delete-time}  
-### Monday, December 06 2021  
+# 021 12 6 wrong date Let's Delete Time 
+## Monday, December 06 2021  
 <iframe width="765" height="430" src="https://www.youtube.com/embed/7uy0ldI_1HA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
   
 I've decided to run weekly experiments on things like food, sleep, excersise, and whatever else, in order to develop a lifestyle that can significantly increase my productivity and health.    
@@ -188,8 +188,8 @@ This experiment concluded a week ago. The main thing I think that was better was
 
 ---  
 
-## Weekly Goals {#2021-11-22-weekly-goals}  
-### Monday, November 22 2021  
+# Weekly Goals 
+## Monday, November 22 2021  
 Going to start posting some weekly goals here so I'm more inspired to do them!  
   
 #### 中文  
@@ -213,8 +213,8 @@ _I hope you have an excellent week, much love_
 
 ---  
 
-## Gone Polyphasic {#2021-11-06-gone-polyphasic}  
-### Saturday, November 06 2021  
+# Gone Polyphasic 
+## Saturday, November 06 2021  
 Keeping these blogs short so I do them more often. After a month long experiment, I dropped my Polyphasic sleep schedule. It ultimately concluded after I flew back to honduras, because it was to hot to sleep in my van during the day.   
   
 [Some rather detailed sleep notes!](https://www.monksevillair.com/src/blog/polyphasic/log_edited.html)    
@@ -223,8 +223,8 @@ Overall I enjoyed it very much, I was really productive during the night hours a
 
 ---  
 
-## 021 1 1 Wing Chu {#2021-1-1-wing-chun}  
-### Friday, January 01 2021  
+# 021 1 1 Wing Chu 
+## Friday, January 01 2021  
 #### 中文  
 - [ ] Take another Wing Chun class (explore other schools)  
 - [ ] Do an iTalki class every day   
@@ -244,8 +244,8 @@ _Dwelling on the future is as equally useless as dwelling on the past_
 
 ---  
 
-## Going Polyphasic {#2021-08-03-going-polyphasic}  
-### Tuesday, August 03 2021  
+# Going Polyphasic 
+## Tuesday, August 03 2021  
 ### Day 1  
 As persistent procrastination precipitates the looming demolition of my happiness, I stare blankly at my computer- The clock strikes 4 in the morning. I have an important deadline tomorrow, and I can't stop reading about polyphasic sleep.    
   
@@ -290,8 +290,8 @@ When it comes to napping, some improvement could be made to the alarm. Knowing t
 
 ---  
 
-## Theory of Permanent Discomfort {#2021-07-11-theory-of-permanent-discomfort}  
-### Sunday, July 11 2021  
+# Theory of Permanent Discomfort 
+## Sunday, July 11 2021  
   
 <img style="float: right;" margin="20px" width="35%" src="https://monksevillair.com/src/blog/2021-07-11-Theory-of-Permanent-Discomfort/trotsky.webp"  />  
   
@@ -326,8 +326,8 @@ This is Permanent Discomfort - to know that not all goals will be met and to use
 
 ---  
 
-## Building a Second Br {#2021-06-19-building-a-second-brain}  
-### Saturday, June 19 2021  
+# Building a Second Br 
+## Saturday, June 19 2021  
 After listening to the excellent "Building a Second Brain" podcast, I decided to build my own second brain. In fact, this website is automatically generated from the brain, which in short, is my notebook. I won't explain in detail all the ideas of the podcast here, but some of my favorite things I've taken away from it are _Projects over Categories_ and _Slow Burns_, or the concept of collecting ideas in notebooks whenever you have free time.     
   
 I wrote my whole album like this, randomly jotting down ideas for songs and critiques every time I heard it. I was left with _so_ many more ideas that just needed to be implemented, rather than having to think of fresh ideas while making music. For someone interested in notetaking, I can't recommend the podcast enough.    
@@ -385,8 +385,8 @@ Much more to come on this stuff, when it's more mature I'll make my second brain
 
 ---  
 
-## Weekly Goals {#2021-01-15-weekly-goals}  
-### Friday, January 15 2021  
+# Weekly Goals 
+## Friday, January 15 2021  
 #### 生活  
 - [ ] Nail down a better form of excersize  
 - [ ] elim all restaurants, processed food when eating alone  
@@ -407,8 +407,8 @@ Much more to come on this stuff, when it's more mature I'll make my second brain
 
 ---  
 
-## Life On The Hook {#2020-05-01-life-on-the-hook}  
-### Friday, May 01 2020  
+# Life On The Hook 
+## Friday, May 01 2020  
 I got the bright idea to find a spot to park my sailboat somewhere in the San Francisco Bay and see how long I could live out there. The adventure lasted far longer than I expected and with it brought moments of peace peppered with short periods of dread and general wetness. This is the story of a sailor, sailboat, sailrights, and <a href="https://eattheworld.bandcamp.com/track/sahalie">Sahalie</a>.    
   
 I can tell you what brought us to do this: free rent. This is the Bay Area, the highest cost of living in the world. The year before I bought my first sailboat and <a href="https://www.popularmechanics.com/adventure/outdoors/a18930170/diy-sailboat/">set it up with an electric motor</a>, partly to escape the high rent cost and mostly for the adventure. It was and excellent choice, and I scaled a serious learning curve getting that boat sail worthy.    
@@ -465,8 +465,8 @@ Arg an excellent experiment matey, alas, we turn home and head for the motherlan
 
 ---  
 
-## THREEDR Solo ESCs {#2019-03-14-threedr-solo-escs}  
-### Thursday, March 14 2019  
+# THREEDR Solo ESCs 
+## Thursday, March 14 2019  
 I use to work at 3D Robotics, and managed to hack every component of the Solo while I was there. I one point they purged all their old electronics and some of it went to me and some other intern friends. I got a ton of ESCs for the solo drone, and have been using them for any project that involves small brushless motors.    
   
 #### Pinout  
