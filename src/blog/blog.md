@@ -22,7 +22,7 @@ line-height: 1.6;
 }
 
 # HTML
-## Future Boat{#2022-06-24-future-boat}  
+## Future Boat {#2022-06-24-future-boat}  
 ### Friday, June 24 2022  
 I just posted three posts I wrote over the last couple months. They were sitting in my email as I plan to write an email bot to auto-post these when I send them to myself. Should eliminate the friction of opening github, and lets me write from anywhere. I'm also going to write more off-the-cuff, care even less about spelling, because I really want to post stuff and stop caring so much about perfection.    
   
@@ -40,7 +40,7 @@ Much sanding, polyester resin, vacuum pump, 2 layers of glass, peel ply... BAM y
 
 ---  
 
-## Presenting ROSWM Proof of Concept{#2022-05-10-presenting-roswm-proof-of-concept}  
+## Presenting ROSWM Proof of Concept {#2022-05-10-presenting-roswm-proof-of-concept}  
 ### Tuesday, May 10 2022  
 I present: ROSWM! An window manager for ROS2. What's it do? It listens to the currently published ROS2 topics running in your terminal windows and draws a directed graph between them! Like a living RQTgraph!    
   
@@ -58,7 +58,7 @@ https://github.com/imcnanie/roswm
 
 ---  
 
-## Grand Unifying Theory of Solarboat Building{#2022-05-01-grand-unifying-theory-of-solarboat-building}  
+## Grand Unifying Theory of Solarboat Building {#2022-05-01-grand-unifying-theory-of-solarboat-building}  
 ### Sunday, May 01 2022  
 Had a little grand unifying theory moment tonight, or should I say this morning 😉, as I write this locked outside of an apartment waiting to follow in the next car that opens garage so I can grab my keys and finally fall asleep.    
   
@@ -74,7 +74,7 @@ That's all for now, someone came out of the garage!
 
 ---  
 
-## Checking Out A Santa Barbarian Trimar{#2022-04-25-checking-out-a-santa-barbarian-trimaran}  
+## Checking Out A Santa Barbarian Trimar {#2022-04-25-checking-out-a-santa-barbarian-trimaran}  
 ### Monday, April 25 2022  
 I've got ambitions to cross the Pacific on a solar boat, so I'm looking around for seaworthy multihulls at a good price with no rig or engine. Found a nice Trimaran a few days ago. Good opportunity for a quick trip down to Santa Barbara to check it out! It's a 37ft Piver Searunner.    
   
@@ -97,7 +97,7 @@ New plan:
 
 ---  
 
-## Week One Van Project{#2022-03-29-week-one-van-project}  
+## Week One Van Project {#2022-03-29-week-one-van-project}  
 ### Tuesday, March 29 2022  
 I'm cheeting- it took 2 weeks, but I did completely redesign the van interior. Everything is built out of milk crates for maximum storage, cheapness and squareness! Still needs a lot of finishing and trim, rewiring, insulation, but I'm really happy with how much storage I have, it feels much more liveable.  
   
@@ -122,7 +122,7 @@ Final product:
 
 ---  
 
-## On Dilly Dallying{#2022-03-16-on-dilly-dallying}  
+## On Dilly Dallying {#2022-03-16-on-dilly-dallying}  
 ### Wednesday, March 16 2022  
 Today I found myself thinking about how much work I've been doing vs how much I feel I've accomplished. I feel like all my personal projects, except for music, are stalling out. I'm taking some time right now to critisize myself do a quick debrief to try to understand why. I also want to lay out a new strategy for finishing more projects.   
   
@@ -163,7 +163,7 @@ This is the schedule for my next 3 weeks. I will self-critisize every day on thi
 
 ---  
 
-## 021 12 6 wrong date Let's Delete Time{#2021-12-6-wrong-date-let's-delete-time}  
+## 021 12 6 wrong date Let's Delete Time {#2021-12-6-wrong-date-let's-delete-time}  
 ### Monday, December 06 2021  
 <iframe width="765" height="430" src="https://www.youtube.com/embed/7uy0ldI_1HA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
   
@@ -188,7 +188,7 @@ This experiment concluded a week ago. The main thing I think that was better was
 
 ---  
 
-## Weekly Goals{#2021-11-22-weekly-goals}  
+## Weekly Goals {#2021-11-22-weekly-goals}  
 ### Monday, November 22 2021  
 Going to start posting some weekly goals here so I'm more inspired to do them!  
   
@@ -213,7 +213,7 @@ _I hope you have an excellent week, much love_
 
 ---  
 
-## Gone Polyphasic{#2021-11-06-gone-polyphasic}  
+## Gone Polyphasic {#2021-11-06-gone-polyphasic}  
 ### Saturday, November 06 2021  
 Keeping these blogs short so I do them more often. After a month long experiment, I dropped my Polyphasic sleep schedule. It ultimately concluded after I flew back to honduras, because it was to hot to sleep in my van during the day.   
   
@@ -223,7 +223,7 @@ Overall I enjoyed it very much, I was really productive during the night hours a
 
 ---  
 
-## 021 1 1 Wing Chu{#2021-1-1-wing-chun}  
+## 021 1 1 Wing Chu {#2021-1-1-wing-chun}  
 ### Friday, January 01 2021  
 #### 中文  
 - [ ] Take another Wing Chun class (explore other schools)  
@@ -244,7 +244,7 @@ _Dwelling on the future is as equally useless as dwelling on the past_
 
 ---  
 
-## Going Polyphasic{#2021-08-03-going-polyphasic}  
+## Going Polyphasic {#2021-08-03-going-polyphasic}  
 ### Tuesday, August 03 2021  
 ### Day 1  
 As persistent procrastination precipitates the looming demolition of my happiness, I stare blankly at my computer- The clock strikes 4 in the morning. I have an important deadline tomorrow, and I can't stop reading about polyphasic sleep.    
@@ -290,7 +290,7 @@ When it comes to napping, some improvement could be made to the alarm. Knowing t
 
 ---  
 
-## Theory of Permanent Discomfort{#2021-07-11-theory-of-permanent-discomfort}  
+## Theory of Permanent Discomfort {#2021-07-11-theory-of-permanent-discomfort}  
 ### Sunday, July 11 2021  
   
 <img style="float: right;" margin="20px" width="35%" src="https://monksevillair.com/src/blog/2021-07-11-Theory-of-Permanent-Discomfort/trotsky.webp"  />  
@@ -326,7 +326,7 @@ This is Permanent Discomfort - to know that not all goals will be met and to use
 
 ---  
 
-## Building a Second Br{#2021-06-19-building-a-second-brain}  
+## Building a Second Br {#2021-06-19-building-a-second-brain}  
 ### Saturday, June 19 2021  
 After listening to the excellent "Building a Second Brain" podcast, I decided to build my own second brain. In fact, this website is automatically generated from the brain, which in short, is my notebook. I won't explain in detail all the ideas of the podcast here, but some of my favorite things I've taken away from it are _Projects over Categories_ and _Slow Burns_, or the concept of collecting ideas in notebooks whenever you have free time.     
   
@@ -385,7 +385,7 @@ Much more to come on this stuff, when it's more mature I'll make my second brain
 
 ---  
 
-## Weekly Goals{#2021-01-15-weekly-goals}  
+## Weekly Goals {#2021-01-15-weekly-goals}  
 ### Friday, January 15 2021  
 #### 生活  
 - [ ] Nail down a better form of excersize  
@@ -407,7 +407,7 @@ Much more to come on this stuff, when it's more mature I'll make my second brain
 
 ---  
 
-## Life On The Hook{#2020-05-01-life-on-the-hook}  
+## Life On The Hook {#2020-05-01-life-on-the-hook}  
 ### Friday, May 01 2020  
 I got the bright idea to find a spot to park my sailboat somewhere in the San Francisco Bay and see how long I could live out there. The adventure lasted far longer than I expected and with it brought moments of peace peppered with short periods of dread and general wetness. This is the story of a sailor, sailboat, sailrights, and <a href="https://eattheworld.bandcamp.com/track/sahalie">Sahalie</a>.    
   
@@ -465,7 +465,7 @@ Arg an excellent experiment matey, alas, we turn home and head for the motherlan
 
 ---  
 
-## THREEDR Solo ESCs{#2019-03-14-threedr-solo-escs}  
+## THREEDR Solo ESCs {#2019-03-14-threedr-solo-escs}  
 ### Thursday, March 14 2019  
 I use to work at 3D Robotics, and managed to hack every component of the Solo while I was there. I one point they purged all their old electronics and some of it went to me and some other intern friends. I got a ton of ESCs for the solo drone, and have been using them for any project that involves small brushless motors.    
   
