@@ -163,6 +163,56 @@ This is the schedule for my next 3 weeks. I will self-critisize every day on thi
 
 ---  
 
+## 021 12 6 wrong date Let's Delete Time  
+### Monday, December 06 2021  
+<iframe width="765" height="430" src="https://www.youtube.com/embed/7uy0ldI_1HA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+  
+I've decided to run weekly experiments on things like food, sleep, excersise, and whatever else, in order to develop a lifestyle that can significantly increase my productivity and health.    
+  
+There's also something new about the format, I'm going to implement these posts in the form of the scientific method, which will hopefully make things more relevant when evaluating which change was better and which was worse.    
+  
+Sometimes, the experiment may take longer than a week, in which case, I'll do a mid week update on the blog post. Just like my Polyphasic blog, I'll have subheadings for the weekly updates in that case.    
+  
+This week's experiment you ask? _Let's delete time._ What might it feel like to live in a timeless existence? I've already gone ahead and taped over the clock on my phone, deleted my lockscreen, and removed the clock from my computer, but every once in a while, a new clock unwittingly appears.    
+  
+So I'm using Saturday, today, as a "time cheat day" to eliminate the extra clocks and set up a calendar for the week with 1hr warnings before I need to make it to my event. This is a compromise, but it will allow me to not blow off everything in my life immediately. Down the road, I may find alternatives to hard scheduling, and perhaps I can set up or write something like Calendy that allows people to schedule time with me and gives me adequate warning.    
+  
+### 为什么/hypothesis  
+I think there could be stress benefits and improvements in prioritizing living in the moment over living for tomorrow. Having a "time cheat day" may force me to simultaneously think about my life from an objective place, and slice my weeks up to support long term goals.    
+  
+### Conclusion (11-21-2021)  
+This experiment concluded a week ago. The main thing I think that was better was not constantly watching the clock, minute by minute. People use to live by the clock tower- I think some buzzes from your watch to let you know the current hour would yield all the benefits of deleting time, but still make it possible to make appoints. I absolutely ruined my sleep schedule again by running this experiment, but I learned that I naturally will sleep 2hrs later every day. This leads me to next weeks experiment: it's submarine time baby!  
+  
+  
+超越时间  
+
+---  
+
+## Weekly Goals  
+### Monday, November 22 2021  
+Going to start posting some weekly goals here so I'm more inspired to do them!  
+  
+#### 中文  
+- [x] Take a Wing Chun class  
+  - _Wing Chun is a rather relaxing form of martial arts, it focus more on mastering a small number of efficient movements over hundreds of techniques. Truthfully, I chose Wing Chun because I'm completely inspired by the Ip Man Series and Bruce Lee. My hope is to find a school in the Bay Area the primarily teaches Chinese students, so I can make friends and practice my 中文。 Even the first technique I was taught seriously impressed me, running it for a while loosened up my hands a ton and I feel better playing guitar._  
+- [ ] Do an iTalki class every day  
+  - _Didn't do it even once!_    
+  
+#### 咖啡  
+- [ ] Order and brew a 5gal batch of cold brew  
+- [ ] Operate coffee robot 24/7  
+  - _Didn't do either of these!_    
+  
+#### 音乐  
+- [ ] Learn Misty  
+  - _Nope!_  
+- [x] Get a solo set together    
+  - _This was the most sucessful part of the week. I was traveling all over California, but I still managed to make this happen, and perform the set with good success! The 12 hours on Amtrak was an extremely good time to focus on putting the set together. Remaining comfortable with performing, even in the face of potential failure and embarrassment resulted in a pretty consistent euphoria. An important element in staying happy is to remain stress free in potentially stressful situations._    
+  
+_I hope you have an excellent week, much love_    
+
+---  
+
 ## Gone Polyphasic  
 ### Saturday, November 06 2021  
 Keeping these blogs short so I do them more often. After a month long experiment, I dropped my Polyphasic sleep schedule. It ultimately concluded after I flew back to honduras, because it was to hot to sleep in my van during the day.   
@@ -170,6 +220,27 @@ Keeping these blogs short so I do them more often. After a month long experiment
 [Some rather detailed sleep notes!](https://www.monksevillair.com/src/blog/polyphasic/log_edited.html)    
   
 Overall I enjoyed it very much, I was really productive during the night hours and sleeping more made the days feel relaxed. Contradictorily, I did sense my mood decrease and I was less excited about things than I usually am. But being more serious sometimes can be useful I suppose.  
+
+---  
+
+## 021 1 1 Wing Chu  
+### Friday, January 01 2021  
+#### 中文  
+- [ ] Take another Wing Chun class (explore other schools)  
+- [ ] Do an iTalki class every day   
+  - M [x] T [ ] W [ ] Th [ ] F [x] S [x] Su [ ]  
+  - _Even though I didn't do it every day, I'm already noticing an insane improvement in my listening. Also trying to speak at chinese restaurants is wearing away what little embarrasment juice I had left._  
+  
+#### 咖啡  
+- [ ] Order and brew a 5gal batch of cold brew  
+  - _Need to procure from wholesaler_  
+- [ ] Operate coffee robot 24/7  
+  
+#### 音乐  
+- [ ] Set up another gig  
+- [ ] Learn Misty  
+  
+_Dwelling on the future is as equally useless as dwelling on the past_    
 
 ---  
 
