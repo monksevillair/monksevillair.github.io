@@ -1,9 +1,0 @@
-import glob
-
-class blogGen:
-    def __init__(self):
-        # All files and directories ending with .txt with depth of 2 folders, ignoring names beginning with a dot:
-        print(glob.glob("/home/adam/*/*.md")) 
-
-if __name__ == '__main__':
-    b = blogGen()
