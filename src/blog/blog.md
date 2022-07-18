@@ -28,6 +28,17 @@ nice content
 
 ---  
 
+##  nice post 
+### Monday, July 18 2022  
+# HTML  
+![im1](im1.jpg)  
+nice  
+  
+![im2](im2.jpg)  
+heyheyhey  
+
+---  
+
 ## Future Boat 
 ### Friday, June 24 2022  
 I just posted three posts I wrote over the last couple months. They were sitting in my email as I plan to write an email bot to auto-post these when I send them to myself. Should eliminate the friction of opening github, and lets me write from anywhere. I'm also going to write more off-the-cuff, care even less about spelling, because I really want to post stuff and stop caring so much about perfection.    
