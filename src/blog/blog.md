@@ -43,7 +43,7 @@ heyheyhey
 ### Monday, July 18 2022  
 testing 123  
   
-![im1](./img1.jpg)  
+![im1]("https://monksevillair.com/src/blog/2022-07-18--crazy-br/img1.jpg")  
 
 ---  
 
