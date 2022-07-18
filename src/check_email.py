@@ -33,7 +33,7 @@ class parseMessage:
 
         for msg in msgs:
             if "`study`" in msg.subject:
-                study_dir = 'study/'+today.strftime("%m-%d-%y")+"-"+msg.subject.strip("`study`").replace(" ","-")
+                study_dir = 'study/'+today.strftime("%Y-%m-%d")+"-"+msg.subject.strip("`study`").replace(" ","-")
                 os.mkdir(study_dir)
                 with open(study_dir+'/main.md', 'w') as f:
                     f.write(msg.text)
