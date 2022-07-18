@@ -34,15 +34,25 @@ class parseMessage:
         for msg in msgs:
             if "`study`" in msg.subject:
                 study_dir = 'study/'+today.strftime("%Y-%m-%d")+"-"+msg.subject.strip("`study`").replace(" ","-")
-                os.mkdir(study_dir)
+                if not(os.path.exists(path) and os.path.isdir(path)):
+                    os.mkdir(study_dir)
                 with open(study_dir+'/main.md', 'w') as f:
                     f.write(msg.text)
 
+                for att in msg.attachments:
+                    with open(study_dir+'/{}'.format(att.filename), 'wb') as f:
+                        f.write(att.payload)
+
             if "`blog`" in msg.subject:
                 blog_dir = 'blog/'+today.strftime("%Y-%m-%d")+"-"+msg.subject.strip("`blog`").replace(" ","-")
-                os.mkdir(blog_dir)
+                if not(os.path.exists(path) and os.path.isdir(path)):
+                    os.mkdir(blog_dir)
                 with open(blog_dir+'/main.md', 'w') as f:
                     f.write(msg.text)
+                    
+                for att in msg.attachments:
+                    with open(blog_dir+'/{}'.format(att.filename), 'wb') as f:
+                        f.write(att.payload)
 
                     
                 '''import json
