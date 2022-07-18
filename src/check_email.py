@@ -39,7 +39,7 @@ class parseMessage:
                     f.write(msg.text)
 
             if "`blog`" in msg.subject:
-                blog_dir = 'blog/'+today.strftime("%m-%d-%y")+"-"+msg.subject.strip("`blog`").replace(" ","-")
+                blog_dir = 'blog/'+today.strftime("%Y-%m-%d")+"-"+msg.subject.strip("`blog`").replace(" ","-")
                 os.mkdir(blog_dir)
                 with open(blog_dir+'/main.md', 'w') as f:
                     f.write(msg.text)
