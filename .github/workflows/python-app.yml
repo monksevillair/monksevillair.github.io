@@ -44,6 +44,9 @@ jobs:
     - name: Update site
       run: |
         # stop the build if there are Python syntax errors or undefined names
+        cd src/
+        python check_email.py ${{ secrets.EMAIL }} ${{ secrets.PASSWORD }}
+        cd ..
         cd src/blog/
         python gen_blog.py
         cd ../..
