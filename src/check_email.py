@@ -34,7 +34,7 @@ class parseMessage:
         for msg in msgs:
             if "`study`" in msg.subject:
                 study_dir = 'study/'+today.strftime("%Y-%m-%d")+"-"+msg.subject.strip("`study`").replace(" ","-")
-                if not(os.path.exists(path) and os.path.isdir(path)):
+                if not(os.path.exists(study_dir) and os.path.isdir(study_dir)):
                     os.mkdir(study_dir)
                 with open(study_dir+'/main.md', 'w') as f:
                     f.write(msg.text)
@@ -45,7 +45,7 @@ class parseMessage:
 
             if "`blog`" in msg.subject:
                 blog_dir = 'blog/'+today.strftime("%Y-%m-%d")+"-"+msg.subject.strip("`blog`").replace(" ","-")
-                if not(os.path.exists(path) and os.path.isdir(path)):
+                if not(os.path.exists(blog_dir) and os.path.isdir(blog_dir)):
                     os.mkdir(blog_dir)
                 with open(blog_dir+'/main.md', 'w') as f:
                     f.write(msg.text)
