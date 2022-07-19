@@ -24,15 +24,7 @@ line-height: 1.6;
 # HTML
 ## Another Week Another Ridiculous Pl 
 ### Tuesday, July 19 2022  
-My despisal of multi-ton quadricycles continues, so I've decided to  
-spend the next week as a humble bicyclist. Since I am a van dweller,  
-this means I'll need a different place to stay. A perfect opportunity  
-to get my feet wet bike-camping! I still have lots of projects to  
-finish, so I'm thinking of finding somewhere to camp over the Golden  
-Gate, maybe up near Mt. Tam! I've been biking a lot more recently, but  
-it's mainly been demonstrating how much better shape I could get into,  
-and I'm pretty hyped about setting up some future long-term bike  
-trips!  
+My despisal of multi-ton quadricycles continues, so I've decided to spend the next week as a humble bicyclist. Since I am a van dweller, this means I'll need a different place to stay. A perfect opportunity to get my feet wet bike-camping! I still have lots of projects to finish, so I'm thinking of finding somewhere to camp over the Golden Gate, maybe up near Mt. Tam! I've been biking a lot more recently, but it's mainly been demonstrating how much better shape I could get into, and I'm pretty hyped about setting up some future long-term bike trips!  
   
 Here's the plan:  
 - 星期日 do camping research, setup bike!  
@@ -56,15 +48,7 @@ Smart things
 - Water Bottles  
 - Hammock w/ bug cover  
   
-In other news, the boat mold is turning out excellent. I love  
-peel-ply. Gives a wonderful fabric-feeling texture to the mold. My 3D  
-printed mold isn't too smooth, it's making me wonder if I can use  
-peel-ply on both sides of the mold. Also some _super_ important notes  
-when vacuum bagging: make sure you use absorptive cloth (i used paper  
-towels), otherwise the resin pools on the mold side and makes a thick  
-gel layer, which is just useless weight and looks bad. Also I made a  
-resin trap out of some pipe because I didn't want to screw up the  
-vacuum pump. Can't wait to make more stuff, this is a really fun art!  
+In other news, the boat mold is turning out excellent. I love peel-ply. Gives a wonderful fabric-feeling texture to the mold. My 3D printed mold isn't too smooth, it's making me wonder if I can use peel-ply on both sides of the mold. Also some _super_ important notes when vacuum bagging: make sure you use absorptive cloth (i used paper towels), otherwise the resin pools on the mold side and makes a thick gel layer, which is just useless weight and looks bad. Also I made a resin trap out of some pipe because I didn't want to screw up the vacuum pump. Can't wait to make more stuff, this is a really fun art!  
   
 <img width=60% src="https://monksevillair.com/src/blog/2022-07-19-Another-Week-Another-Ridiculous-Plan/im2.jpg"></img>  
   
