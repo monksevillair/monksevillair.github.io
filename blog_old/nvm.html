@@ -1,0 +1,590 @@
+<!-- generated from blog_old/nvm.md at 07-18-2022 19:32:45 EST -->
+<html>
+  <head>
+    <title>Blog
+</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/templates/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/templates/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/src/templates/images/favicon-16x16.png">
+    <link rel="manifest" href="/src/templates/images/site.webmanifest">
+    <style>
+      html, body {
+	  height: 100%; width: 100%; overflow-y: hidden;
+					       
+      }
+        
+      a {
+	  /*color: 9669FE;*/
+	  color: #fff;
+	  text-decoration: none;
+      }
+
+      hr {
+	  border: 7px solid #111;
+	  width: 150%;
+	    position: relative;
+
+	  left: -30px;
+
+	  /*position: absolute; */
+
+      }
+
+      a:hover {
+	      background-color: #0a0a0a;
+      }
+      
+      div {
+	  font-family: Arial, Geneva, Helvetica, sans-serif;
+      }
+      
+      body {
+	  /*background-color: #D0BCFE;*/
+	  background-color: #111;
+      }
+
+
+      .scroll br {
+	  display:block; 
+		content:"";
+	  margin-top:1.0em;
+	  line-height:230%;
+	  vertical-align:top;
+      }
+
+
+      h2 {
+	  margin: 0;
+      }
+      
+      vocab, code {
+	  unicode-bidi: embed;
+	  white-space: pre;
+	  /*white-space:normal;*/
+
+	  /*background: #111;*/
+	  /*border: 1px solid #ddd;*/
+	  /*border-left: 5px solid #0a0a0a;*/
+	  border-left: 5px solid #252525;
+	  color: #fff; /*#666;*/
+	  page-break-inside: avoid;
+	  font-family: monospace;
+	  font-size: 12px;
+	  line-height: 1.6;
+	  margin-bottom: 1.6em;
+	  max-width: 100%;
+	  overflow: auto;
+	  padding: 1em 1.5em;
+	  display: block;
+	  word-wrap: break-word;
+      }
+      
+      woop {
+	  font-size: x-large;
+	  /*color: 9669FE;*/
+	  color: #ebebeb;
+	  white-space: pre;
+	  white-space: pre-wrap;       /* Since CSS 2.1 */
+	  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+	  white-space: -pre-wrap;      /* Opera 4-6 */
+	  white-space: -o-pre-wrap;    /* Opera 7 */
+	  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+      }
+      
+      .container{
+          width: 100%;
+          height: 100%;
+      }
+      .container2{
+
+          height: 100%;
+				  width: 100%;
+      }      
+      .box{
+	  float: left;
+
+      }
+      
+      .stack-bottom {
+	  font-family: Arial, Geneva, Helvetica, sans-serif;
+          font-weight: bold;
+      }
+      .stack-top {
+	  font-size: xx-large;
+	  font-weight: bold;
+          margin: 20;
+	  width:275px;
+      }
+
+
+      .scroll {
+	  line-height: 1.5;
+	  /*scrollbar-width: none;*/
+	  font-size: large;
+	  /*color: 9669FE;*/
+	  color: #ebebeb;
+	  background-color: #0a0a0a;
+	  overflow: auto;
+	  max-height: 100vh;
+	  overflow-x: hidden;
+	  overflow-y: scroll;
+	  text-align: left;
+	  padding: 20px;
+	  /*margin-bottom: 80px;*/
+	  /*width: -webkit-calc(100% - 60px);*/
+	  /*width:    -moz-calc(100% - 60px);*/
+	  /*width:         calc(100% - 60px);*/
+	  width: 80%;
+		max-width: 800px;
+	  height: -webkit-calc(100% - 60px);
+	  height:    -moz-calc(100% - 60px);
+	  height:         calc(100% - 60px);
+	 
+      }
+
+
+			.table-row { width: 100%}
+      .table-cell2 { width: 100%; }
+      
+      .scroll a:link {
+	  color: #fff;
+	  /*background-color: #252525;*/
+
+	  /*font-weight: bolder;*/
+	  border-bottom:1px solid;
+      }
+
+      
+      .scroll a:hover {
+	  color: #eee;
+	  background-color: #0a0a0a;
+      }
+
+      ::-webkit-scrollbar {
+	  display:none;
+      }
+
+      .site_map {
+
+	  /*width:         175px;*/
+
+	 
+      }
+
+      
+      img {
+padding: 10px;
+margin: 5px;
+background-color: #252525; 
+}
+.img_div {
+padding: 10px;
+margin: 5px;
+background-color: #252525; 
+}
+.scroll {
+font-size: medium; 
+line-height: 1.6;
+}
+
+      
+    </style>
+  </head>
+  <body>
+    <table class="container">
+      <tr class="table-row">
+	<td class="table-cell">
+	  <div class="container2">
+	    <div class="box stack-top">
+<a style="background-color:#0a0a0a" href="../blog/blog.html">&nbspblog&nbsp</a></br>
+<a href="../espanol/espanol.html">&nbspespanol&nbsp</a></br>
+<a href="../index.html">&nbsphome&nbsp</a></br>
+<a href="../music/music.html">&nbspmusic&nbsp</a></br>
+<a href="../radio/radio.html">&nbspradio&nbsp</a></br>
+<a href="../study/study.html">&nbspstudy&nbsp</a></br>
+<a href="../transcriptions/transcriptions.html">&nbsptranscriptions&nbsp</a></br>
+	    </div>
+	</td>
+	<td class="table-cell2">
+	  <div class="scroll">
+
+	    <!-- used <pre> tag for text formatting -->
+	   <h2 id="another-week-another-rediculous-plan">Another Week, Another Rediculous Plan</h2>
+<h3 id="june-26-2022-0549">June 26, 2022 05:49</h3>
+<p>My despisal of multi-ton quadracycles continues, so I've decided to spend the next week as humble bicyclist. Since I am a van dweller, this means I'll need a different place to stay. A perfect opportunity for to get my feet wet bike-camping! I still have lots of projects to finish, so I'm thinking find somewhere to camp over the Golden Gate, maybe up near Mt. Tam! I've been biking a lot more recently, but it's mainly been demonstrating how much better shape I could get into, and I'm pretty hyped about setting up some future long-term bike trips!<br />
+Here's the plan:<br />
+- 星期日 do camping research, setup bike!<br />
+- 星期一 to 星期五 do the thing, only tenting it up, it may be painful!<br />
+Why?<br />
+- I know it will be painful, want to prove to myself I can do it<br />
+- I slightly don't want to do it, which is a good indication I should do it<br />
+- I have a sneaking suspicion that houses, vans, life-boxes isolate you from the world. I want to evaluate the limit of non-house dwelling.<br />
+- Get ripped (lol), feel good via exercise<br />
+- Need to get preped for longer bike trips<br />
+- Sunlight might fix my sleep schedule<br />
+Smart things<br />
+- Wear sunscreen<br />
+- Sunglasses<br />
+- Bike light<br />
+- High Viz<br />
+- Water Bottles<br />
+- Hammock w/ bug cover<br />
+In other news, the boat mold is turning out excellent. I love peel-ply. Gives a wonderfull fabric-feeling texture to the mold. My 3D printed mold isn't too smooth, it's making me wonder if I can use peel-ply on both sides of the mold. Also some <em>super</em> important notes when vacuum bagging: makes sure you use absorbative cloth (i used paper towels), otherwise the resin pools on the mold side and makes a thick gel layer, which is just useless weight and looks bad. Also I made a resin trap out of some pipe because didn't want to screw up the vacuum pump. Can't wait to make more stuff, this is a really fun art!<br />
+<img width=60% src="../src/blog/6-26-2022-another-rediculous-plan/im2.jpg"></img>  </p>
+<hr />
+<h2 id="future-sailboat-plans">Future Sailboat Plans</h2>
+<h3 id="june-24-2022-0723">June 24, 2022 07:23</h3>
+<p>I just posted three posts I wrote over the last couple months. They were sitting in my email as I plan to write an email bot to auto-post these when I send them to myself. Should eliminate the friction of opening github, and lets me write from anywhere. I'm also going to write more off-the-cuff, care even less about spelling, because I really want to post stuff and stop caring so much about perfection.<br />
+I designed and 3D printed a catamaran boat mold! Turns out, sailboats are just really heavy, and don't have enough surface area to run solar powered. Even if the boat is completely covered, with solar wings hanging off the edge, the max I could ever get is 10kw. OK for light wind in the Alameda channel, but not even close if you get out in the bay. Though I've puttered around out there on less.<br />
+My search for tri's and cat's was not going very well, and I was sub-happy to learn that many of these boats are overbuilt nonsense, filled with heavy and rediculous furniture. So I've opted to take the hard route and delete the idea of converting some 50's overbuilt cat, and instead increase my fiberglass chops! That's right, one day I'm going to cross an ocean in a homebuilt solar boat baby!<br />
+I decided first to build a scale model. A proper vacuum-bagged hull. I designed and 3D printed a hull (inspired by <a href="https://www.youtube.com/watch?v=HFhsh4V8SZA">RC test flights</a> video), but I'm cheap so I designed a mold that's symetrical on all sides so I can use half the material.<br />
+<img width=60% src="../src/blog/6-24-2022-future-boat/im1.jpg"></img><br />
+Much sanding, polyester resin, vacuum pump, 2 layers of glass, peel ply... BAM you got a hull. Can't wait to see if it releases from the mold tomorrow!!<br />
+<img width=60% src="../src/blog/6-24-2022-future-boat/im2.jpg"></img>  </p>
+<hr />
+<h2 id="grand-unifying-theory-of-solarboat-building">Grand Unifying Theory of Solarboat Building</h2>
+<h3 id="may-1-2022-0616">May 1, 2022 06:16</h3>
+<p>Had a little grand unifying theory moment tonight, or should I say this morning 😉, as I write this locked outside of an apartment waiting to follow in the next car that opens garage so I can grab my keys and finally fall asleep.<br />
+Realizing I have a perfectly fine sailboat I'm paying slip fees on, and another wood boat I built a few years ago with a friend from scratch, I came to the conclusion that I should build a 10kw outboard out of the ex-kittyhawk motors I happen to have access to!<br />
+Paired with some 100v batteries, bob's your uncle I've got myself a couple of electric boats and an excellent opportunity for some excersize lugging the outboard around.<br />
+I'm thinking I'll drop the mast on my sailboat, slice it down the middle like a rather elongated sandwich, then cut each piece in half to end up with 4 pieces I can bolt to the deck of the sailboat and lay solar panels on to make a 10kw array.<br />
+Trimaran can wait, I can use this boat as a test platform for the electric power system and as a living space so I can sell my van and aquire a bit of capital to make the project happen!<br />
+That's all for now, someone came out of the garage!  </p>
+<hr />
+<h2 id="presenting-roswm-proof-of-concept">Presenting: ROSWM (Proof of Concept)</h2>
+<h3 id="may-10-2022">May 10, 2022</h3>
+<p>I present: ROSWM! An window manager for ROS2. What's it do? It listens to the currently published ROS2 topics running in your terminal windows and draws a directed graph between them! Like a living RQTgraph!<br />
+It's a proof of concept, written in python because Wayland bindings for python are surprisingly even weirder than xlib. Just wanted to quickly throw something together to improve my ROS2 workflow! Plz appreciate the <em>lofi</em>.<br />
+Features I'd like to add:<br />
+- save graph, process list &amp; window locations to a ROS launch file, recall them later<br />
+- multiple desktops, multiple graphs for different parts of the robot like a kicad schematic<br />
+If anyone thinks this is a cool idea, feel free to make a PR to the repo or make suggestions!<br />
+https://github.com/imcnanie/roswm<br />
+<img width=60% src="https://github.com/imcnanie/roswm/raw/main/roswm.png"></img>  </p>
+<hr />
+<h2 id="checking-out-a-santa-barbarian-trimaran">Checking out a Santa-Barbarian Trimaran</h2>
+<h3 id="apr-25-2022-1538">Apr 25, 2022 15:38</h3>
+<p>I've got ambitions to cross the Pacific on a solar boat, so I'm looking around for seaworthy multihulls at a good price with no rig or engine. Found a nice Trimaran a few days ago. Good opportunity for a quick trip down to Santa Barbara to check it out! It's a 37ft Piver Searunner.<br />
+I'm starting to see these everywhere. Checked out another one in Alameda a few weeks ago, 25ft. Seems like some guy named Piver popularized these as wood core kits in the 70s?<br />
+So far I'm not impressed. These days, I think wood should never be a building material for a boat. It was fine in the 1700s back before we invented fiberglass...<br />
+But 50 years later every piece of wood on this thing is rotted. Which would be ok if it was just the deck. But the HULLS are rotted too. I did briefly entertain the idea of pulling out all the rotten wood and recoreing it with fiberglass, but it started to sound more and more like the ship of Theseus.<br />
+Now I know I'd much rather find something with a solid fiberglass hull. I want to build things that last a long time, not a big fan of engaging in the building of disposable objects!<br />
+Also... The boat was called the solar glow. if that ain't an omen....<br />
+New plan:
+- make a scale model<br />
+- check all the local boat yards and marinas for free cats/tris in the bay<br />
+<img width=60% src="../src/blog/6-24-2022-trimaran/im1.jpg"></img><br />
+<img width=60% src="../src/blog/6-24-2022-trimaran/im2.jpg"></img>  </p>
+<hr />
+<h2 id="week-1-van-project">Week 1: Van project</h2>
+<h3 id="march-29-2022">March 29, 2022</h3>
+<p>I'm cheeting- it took 2 weeks, but I did completely redesign the van interior. Everything is built out of milk crates for maximum storage, cheapness and squareness! Still needs a lot of finishing and trim, rewiring, insulation, but I'm really happy with how much storage I have, it feels much more liveable.
+Initial Sketch:<br />
+<img width=60% src="../src/blog/3-29-2022-van/sketch.png"></img><br />
+30 milkcrates from Urban Ore in Berkeley:<br />
+<img width=60% src="../src/blog/3-29-2022-van/PXL_20220321_214059558.jpg"></img><br />
+Final product:<br />
+<img width=60% src="../src/blog/3-29-2022-van/PXL_20220328_072345335.jpg"></img>  </p>
+<h3 id="improvements">Improvements</h3>
+<ul>
+<li>Started Pomedoroing myself, makes context switching a lot easier</li>
+<li>Feels much more liveable</li>
+</ul>
+<h3 id="to-improve">To Improve</h3>
+<ul>
+<li>Only take 1 week to blog</li>
+<li>Still not finished, lots of details left</li>
+<li>Spent a lot of time planning my future sailboat project instead of doing this project</li>
+<li>Can't get distracted by the exciting sailboat project, need to finish stirfry machine this week!!</li>
+</ul>
+<hr />
+<h2 id="on-dilly-dallying">On dilly-dallying</h2>
+<h3 id="wednesday-march-16-2022">Wednesday, March 16 2022</h3>
+<p>Today I found myself thinking about how much work I've been doing vs how much I feel I've accomplished. I feel like all my personal projects, except for music, are stalling out. I'm taking some time right now to critisize myself do a quick debrief to try to understand why. I also want to lay out a new strategy for finishing more projects. </p>
+<h4 id="contributing-factor-1-spreading-myself-too-thin">Contributing Factor 1: Spreading myself too thin</h4>
+<p>Things I do right now: 3x Classes, music sessions every other day, intermitent subcontracting, personal projects. The misc category of my notebook takes up the most time for some reason, things like getting groceries, coffee, buying food, driving places, meeting new people. I need to set aside some focus time and distraction time.</p>
+<h4 id="contributing-factor-2-lack-of-sleep">Contributing Factor 2: Lack of Sleep</h4>
+<p>I've always had a horrible sleep schedule, and have experienced that when I do wake up early I can accomplish much more. I would love to wake up at 8 for the rest of my life, and go to sleep at 12. Being chronically sleep deprived makes me unexcited to do work and counteracting sleep with caffine results in brain fog. This can be mitigated with smaller caffine doses spread throughout the day and by taking breaks and doing pushups :).</p>
+<h4 id="contributing-factor-3-random-adventures">Contributing Factor 3: Random adventures</h4>
+<p>I took a week long trip down the 1 in my van, spent some days in slab city, hopped a train. It was dope AF, but let's save the random adventures for the weekend.</p>
+<h4 id="possible-solutions">Possible solutions</h4>
+<ul>
+<li>Set aside all projects except the <b>1</b> project I want to focus on for that week</li>
+<li>Any distracting ideas acknowlege and set make a note for the future</li>
+<li>Come up with a weekly plan and generate a gantt chart from my calendar</li>
+<li>I need to be sure there are enough hours in the day to accomplish everything</li>
+<li>Self-critisize after completing my daily subtasks</li>
+<li>Set aside the weekends for socializing/random adventures/reading/excersize</li>
+</ul>
+<h4 id="projects-in-the-queue">Projects in the Queue</h4>
+<p>This is the schedule for my next 3 weeks. I will self-critisize every day on this blog. I will also take the weekends off for socializing/random adventures/reading.<br />
+- Finish my van (3/16/2022 - 3/23/2022)<br />
+  - Day 1: Wake @ 8, coffee, sketch out concept, order by priority (windows, insulation, sink, kitchen counter, shower, bed/couch, swivel seats), gen gantt &amp; post on blog<br />
+  - Don't be limited by currently available materials, be artistic<br />
+- Stirfry gantry robot (3/23/2022 - 3/30/2022)<br />
+  - clean/organize lab with milk-crates<br />
+- Solar powerd sailboat scale model (hobie 18) (3/30/2022 - 3/6/2022)<br />
+- Vegetable/meat dispenser/fridge (3/6/2022 - 3/13/2022)<br />
+- chinese language learning app idea (pimsleur 2.0)<br />
+- automated coffee 
+- auto post weight to blog, excersize routine, other embarassing things<br />
+- studio q vending machine
+- studio q radio 2.0
+- hydroponic system mini vegetables<br />
+- Solar powered catamaran (wait 'till an abandoned cat comes around)</p>
+<hr />
+<h2 id="weekly-goals">Weekly Goals</h2>
+<h3 id="wednesday-december-15-2021">Wednesday, December 15 2021</h3>
+<h4 id="_1">生活</h4>
+<ul>
+<li>[ ] Nail down a better form of excersize</li>
+<li>[ ] elim all restaurants, processed food when eating alone</li>
+</ul>
+<h4 id="_2">中文</h4>
+<ul>
+<li>[ ] Do an iTalki class every day </li>
+<li>M [ ] T [ ] W [ ] Th [ ] F [ ] S [ ] Su [ ]</li>
+</ul>
+<h4 id="_3">咖啡</h4>
+<ul>
+<li>[ ] Procure 1kilo of dank coffee beans</li>
+<li>[ ] Add load cell to coffee robot</li>
+</ul>
+<h4 id="_4">水培</h4>
+<ul>
+<li>[ ] Automate lights, fans, pump, measure temp</li>
+</ul>
+<h4 id="_5">音乐</h4>
+<h2 id="-learn-misty">- [ ] Learn Misty</h2>
+<h3 id="monday-december-1-2021">Monday, December 1 2021</h3>
+<h4 id="_6">中文</h4>
+<ul>
+<li>[ ] Take another Wing Chun class (explore other schools)</li>
+<li>[ ] Do an iTalki class every day </li>
+<li>M [x] T [ ] W [ ] Th [ ] F [x] S [x] Su [ ]</li>
+<li><em>Even though I didn't do it every day, I'm already noticing an insane improvement in my listening. Also trying to speak at chinese restaurants is wearing away what little embarrasment juice I had left.</em></li>
+</ul>
+<h4 id="_7">咖啡</h4>
+<ul>
+<li>[ ] Order and brew a 5gal batch of cold brew</li>
+<li><em>Need to procure from wholesaler</em></li>
+<li>[ ] Operate coffee robot 24/7</li>
+</ul>
+<h4 id="_8">音乐</h4>
+<ul>
+<li>[ ] Set up another gig</li>
+<li>[ ] Learn Misty
+<em>Dwelling on the future is as equally useless as dwelling on the past</em>  </li>
+</ul>
+<hr />
+<h2 id="weekly-goals_1">Weekly Goals</h2>
+<h3 id="monday-november-22-2021">Monday, November 22 2021</h3>
+<p>Going to start posting some weekly goals here so I'm more inspired to do them!</p>
+<h4 id="_9">中文</h4>
+<ul>
+<li>[x] Take a Wing Chun class</li>
+<li><em>Wing Chun is a rather relaxing form of martial arts, it focus more on mastering a small number of efficient movements over hundreds of techniques. Truthfully, I chose Wing Chun because I'm completely inspired by the Ip Man Series and Bruce Lee. My hope is to find a school in the Bay Area the primarily teaches Chinese students, so I can make friends and practice my 中文。 Even the first technique I was taught seriously impressed me, running it for a while loosened up my hands a ton and I feel better playing guitar.</em></li>
+<li>[ ] Do an iTalki class every day</li>
+<li><em>Didn't do it even once!</em>  </li>
+</ul>
+<h4 id="_10">咖啡</h4>
+<ul>
+<li>[ ] Order and brew a 5gal batch of cold brew</li>
+<li>[ ] Operate coffee robot 24/7</li>
+<li><em>Didn't do either of these!</em>  </li>
+</ul>
+<h4 id="_11">音乐</h4>
+<ul>
+<li>[ ] Learn Misty</li>
+<li><em>Nope!</em></li>
+<li>[x] Get a solo set together  </li>
+<li><em>This was the most sucessful part of the week. I was traveling all over California, but I still managed to make this happen, and perform the set with good success! The 12 hours on Amtrak was an extremely good time to focus on putting the set together. Remaining comfortable with performing, even in the face of potential failure and embarrassment resulted in a pretty consistent euphoria. An important element in staying happy is to remain stress free in potentially stressful situations.</em><br />
+<em>I hope you have an excellent week, much love</em>  </li>
+</ul>
+<hr />
+<h2 id="lets-delete-time">Let's Delete Time</h2>
+<iframe width="765" height="430" src="https://www.youtube.com/embed/7uy0ldI_1HA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>I've decided to run weekly experiments on things like food, sleep, excersise, and whatever else, in order to develop a lifestyle that can significantly increase my productivity and health.<br />
+There's also something new about the format, I'm going to implement these posts in the form of the scientific method, which will hopefully make things more relevant when evaluating which change was better and which was worse.<br />
+Sometimes, the experiment may take longer than a week, in which case, I'll do a mid week update on the blog post. Just like my Polyphasic blog, I'll have subheadings for the weekly updates in that case.<br />
+This week's experiment you ask? <em>Let's delete time.</em> What might it feel like to live in a timeless existence? I've already gone ahead and taped over the clock on my phone, deleted my lockscreen, and removed the clock from my computer, but every once in a while, a new clock unwittingly appears.<br />
+So I'm using Saturday, today, as a "time cheat day" to eliminate the extra clocks and set up a calendar for the week with 1hr warnings before I need to make it to my event. This is a compromise, but it will allow me to not blow off everything in my life immediately. Down the road, I may find alternatives to hard scheduling, and perhaps I can set up or write something like Calendy that allows people to schedule time with me and gives me adequate warning.  </p>
+<h3 id="hypothesis">为什么/hypothesis</h3>
+<p>I think there could be stress benefits and improvements in prioritizing living in the moment over living for tomorrow. Having a "time cheat day" may force me to simultaneously think about my life from an objective place, and slice my weeks up to support long term goals.  </p>
+<h3 id="conclusion-11-21-2021">Conclusion (11-21-2021)</h3>
+<p>This experiment concluded a week ago. The main thing I think that was better was not constantly watching the clock, minute by minute. People use to live by the clock tower- I think some buzzes from your watch to let you know the current hour would yield all the benefits of deleting time, but still make it possible to make appoints. I absolutely ruined my sleep schedule again by running this experiment, but I learned that I naturally will sleep 2hrs later every day. This leads me to next weeks experiment: it's submarine time baby!
+超越时间</p>
+<hr />
+<h2 id="gone-polyphasic">Gone Polyphasic</h2>
+<h3 id="11-6-2021">11-6-2021</h3>
+<p>Keeping these blogs short so I do them more often. After a month long experiment, I dropped my Polyphasic sleep schedule. It ultimately concluded after I flew back to honduras, because it was to hot to sleep in my van during the day. 
+<a href="https://www.monksevillair.com/src/blog/polyphasic/log_edited.html">Some rather detailed sleep notes!</a><br />
+Overall I enjoyed it very much, I was really productive during the night hours and sleeping more made the days feel relaxed. Contradictorily, I did sense my mood decrease and I was less excited about things than I usually am. But being more serious sometimes can be useful I suppose.</p>
+<hr />
+<h2 id="going-polyphasic">Going Polyphasic</h2>
+<h3 id="8-3-2021-day-1">8-3-2021 - Day 1</h3>
+<p>As persistent procrastination precipitates the looming demolition of my happiness, I stare blankly at my computer- The clock strikes 4 in the morning. I have an important deadline tomorrow, and I can't stop reading about polyphasic sleep.<br />
+Most nights I find myself with tasks unfinished, wondering if I should keep working or head in for a full 8 hours and resume the tasks in the morning. Usually, it's the former, and I'll end up cycling my sleep schedule around the clock, chasing the circadians until I'm waking up at 6 PM and all the coffee stores are closed. What a drag!<br />
+But tonight was different, it had to be, I'd delayed this project long enough and I was going to finish it. Like a message from [insert deity], Wikipedia gifted me the perfect answer: Everyman 3 Extended. A significantly more reasonable alternative to the Uberman Polyphasic sleep pattern, Everyman would replace my monophasic 8 hour sleep period with one 4.5 hour period peppered with 3 daytime 20-minute naps, making for 5.5 daily hours of sleep. And that was that! I worked until 6 PM last night and woke up at 10:30 AM.<br />
+And the project got finished! It may just be adrenalin, but it's the first time in a while I didn't feel stressed for time and had to search for things to do. It's why I'm writing a blog for the first time in almost a month!  </p>
+<h3 id="8-5-2021-day-3">8-5-2021 - Day 3</h3>
+<p>To be honest, I haven't done enough research into this Polyphasic sleep thing. It may be a horrible idea- it's been around for a while and there could certainly be some enlightening research on the subject that disqualifies it completely.<br />
+Knowing more is rapidly becoming a priority. I have read that most people before jumping into a polyphasic sleep schedule will plan out the transition ahead of time. I'm a bit too impulsive for that, but I will say that day 3 is going very well!<br />
+It's 3:38 in the morning as I write this. My sleep plan ended up looking like this:
+<center>
+<img width=60% src="../src/blog/polyphasic/sleep.svg" /></img><br />
+<em>This sleep graph is generated automatically from my calendar program by adding an [ALARM] tag to my TODOs</em>
+</center><br />
+Red zones mark my sleep periods. This is a pretty messed up perversion of Everyman 3 extended, but it felt the most natural to me. I tend to push my sleep schedule more and more into the night until I'm sleeping at 6 and waking at 3. It's very unideal. Now, I can get the best of both worlds by sleeping at dawn and waking up at 10 AM to get an early start on the day!  </p>
+<h4 id="unexpected-consequences-of-frequent-napping">Unexpected Consequences of Frequent Napping</h4>
+<p>By nap #7, I started to fall asleep quickly enough that I would actually dream. These are the kind of in-and-out of consciousness type of dreams I use to have after being totally sleep deprived during my early days in San Francisco. Put on a FlyLo album and drift through the textures of those beats.<br />
+I find that every time I nap (I've completed my 9th nap at this point) I relax enough that the best of the idea of the day will pop in my head. I need to cope with the thought of not writing down the idea until I finish the nap, and usually I've been able to remember it after the alarm goes off  </p>
+<h4 id="technology">Technology</h4>
+<p>An unexpected discovery from this experiment has been the time-to-sleep alarm. I've never before set an alarm when it's <em>time to sleep,</em> but it's fantastic! Even for a monophasic sleep pattern, I think it could be really helpful to be alerted when it's time to sleep.<br />
+It fits perfectly with my Digital Soviet Russia idea - even though I have the freedom to do anything and everything, I need to implement structure in my life to get the things I want to do done. The idea is to use technology to read my todos and automatically structure the day around them. With this sleep pattern I know exactly when I will have breaks, and partnered with Pomodoro, I can stay refreshed for the next task.  </p>
+<h4 id="fear-of-the-alarm">Fear of the Alarm</h4>
+<p>Something I've wondered about a lot is <em>fear of the alarm</em>. I read somewhere that the reason why people wake up a few minutes before the alarm clock rings is that the sound is extremely stressful to your brain. There must be a section of our brain that keeps time, and just seeing the notification "the alarm is set for 4 hours and 30 minutes from now" is enough to set this internal alarm clock just a few minutes ahead of the silicon one. I would love to experiment with this notification at some point and see what else I can trick my sleeping brain into doing.<br />
+When it comes to napping, some improvement could be made to the alarm. Knowing the alarm will ring so loudly and violently makes it harder to fall asleep. I bet alarm clocks are more abusive to our brains than we realize. An alarm clock should wake you up gently. Gives me ideas for a watch with a vibration motor that connects to my second brain, an auto-scheduling Pomodoro, and this polyphasic sleep timer.  </p>
+<h4 id="links">Links</h4>
+<ul>
+<li><a href="https://www.polyphasic.net/">polyphasic.net</a></li>
+<li><a href="http://www.ubersleepbook.com/">Puredoxyk's site, author of <em>Ubersleep</em></a></li>
+</ul>
+<hr />
+<h2 id="theory-of-permanent-discomfort">Theory of Permanent Discomfort</h2>
+<h3 id="7-11-2021">7-11-2021</h3>
+<p><img style="float: right;" margin="20px" width="35%" src="../src/blog/permanent_discomfort/trotsky.webp"  />
+Trotsky's <em>Permanent Revolution</em>, in a nutshell, is a theory on how to preserve classless society, also known as the Dictatorship of the Proletariat. Murdered by Ice Pick wielding NKVD agent Ramón Mercader at the order of fellow revolutionary Joseph Stalin, it is interesting to wonder whether Trotsky's ideas could have prevented the over-bureaucratization of the Soviet Union and consolidation of power that occurred after Stalin. Maybe, maybe not.  </p>
+<!--<center>
+![Trotsky](../src/blog/permanent_discomfort/trotsky.webp)  
+*what a guy*
+</center>  -->
+<p>On a much lighter note, <em>that kind</em> of literature has become a seed for my <em>Theory of Permanent Discomfort</em>. This is part of my Second Brain project, building a project-based notebook also does time tracking, generates invoices, and helps me improve my productivity.<br />
+For a month now, I've been setting eight daily tasks for myself to complete. That's it! How hard can it be to complete eight tasks? Well as it turns out, somewhat hard to do consistently. Before I wrote this program, I didn't realize how often I was getting distracted by new ideas and projects, and while I haven't improved much in the last month, I now have metrics to measure my progress in this area. Every day, I set up tasks in my notebook: 
+<center>
+<img width=60% src="../src/blog/permanent_discomfort/permanent_discomfort_tasklist_example.png"></img><br />
+<em>A global task list automatically generated from each project's TODO list</em>
+</center><br />
+As I check them off, a graph is generated that shows my progress that day and displays my average success rate for the previous two weeks:<br />
+<center>
+<img width=60% src="../src/blog/permanent_discomfort/task_graph.svg" /></img><br />
+<em>Chart shows completed tasks in the last two weeks, and the average completion %</em>
+</center><br />
+Now that I can measure my Target/Goal ratio, I can make tangible improvements based on my results. I learned from Keto that <em>you can't make improvements without a way to measure progress.</em> And as you can see I still have a lot of progress to make. After I make my goal of eight tasks per day, I hope to slowly shore up my productivity and in a year reach 16 completed tasks per day. I expect a critical piece will be managing context switching, which has improved significantly since I started to care about my notebook.<br />
+This brings us to the <em>carne importante</em> of this blog post, our <em>dénouement</em>: <em>The Theory of Permanent Discomfort</em>. Having run this experiment for a month now, I have noticed that I automatically poise tasks on the precipice of what is possible. I have consistently overreached and not made goals that I thought were attainable at the beginning of the day. So I have come to peace with the fact that I will not always make the goals, and allow the day to go uncompleted, even though I could modify the day's tasks to make me always succeed. Some days I find it exceptionally difficult to make all the goals, but having the metrics there keeps me motivated to make them.<br />
+This is Permanent Discomfort - to know that not all goals will be met and to use that bit of failure as motivation to achieve more the next day.  </p>
+<hr />
+<h2 id="building-a-second-brain">Building a Second Brain</h2>
+<h3 id="6-19-2021">6-19-2021</h3>
+<p>After listening to the excellent "Building a Second Brain" podcast, I decided to build my own second brain. In fact, this website is automatically generated from the brain, which in short, is my notebook. I won't explain in detail all the ideas of the podcast here, but some of my favorite things I've taken away from it are <em>Projects over Categories</em> and <em>Slow Burns</em>, or the concept of collecting ideas in notebooks whenever you have free time. <br />
+I wrote my whole album like this, randomly jotting down ideas for songs and critiques every time I heard it. I was left with <em>so</em> many more ideas that just needed to be implemented, rather than having to think of fresh ideas while making music. For someone interested in notetaking, I can't recommend the podcast enough.<br />
+After trying tons of notetaking apps, and an avid user of Google Keep, I've come to the conclusion that if you have the means (or not!), you should just write one yourself. You wouldn't want someone else designing your brain, would you? That almost sounds like...<br />
+I settled on these goals:<br />
+<code>- Markdown files, directory structure
+  - _TODO.md file in each directory
+- Calendar agregating todo lists, organize by date
+- Invoice generator based on todos
+  - time tracking by typing eg. <em>18:00-19:00</em> in a todo
+</code>
+The directory structure ends up looking like this:<br />
+<code>src/
+  gen_calendar.py
+  gen_invoice.py
+reading notes/
+future_projects/
+current_projects/
+  finished_projects/
+  proj1/
+    proj1_TODO.md
+    README.md
+  monksevillair.github.io/
+    monksevillair.github.io_TODO.md
+    src/
+      blog/
+      espanol/
+      music/
+      transcriptions/
+      index.html
+      README.md
+</code><br />
+More info on the website later, but with this structure, if want to make anything public, I can move a project into the monksevillair.github.io directory and it will go live on the next push. Everything is tracked with git, synced to my phone with <a href="https://syncthing.net/">syncthing</a>, although I'd like to pull and push from my phone soon.</p>
+<h4 id="calendar-app">Calendar App</h4>
+<p>I used Google calendar for a long time, and I still like it, but having it seperated from my TODOs was a huge barrier to having an effective calendar. I wanted to generate a calendar automatically from my TODO lists globally. <em>gen_calendar.py</em> automatically scans all the todo files</p>
+<h4 id="invoice-app">Invoice App</h4>
+<p>Many invoices and mucho dinero has been frittered as a result of my deep hatred for generating invoices. What better way to fix this problem than to generate them automatically from my todos? If I add eg. *18:00-19:00* to a TODO.md file, <em>gen_invoice.py</em> will add that todo to a global invoice maker</p>
+<h4 id="where-does-this-all-run">Where does this all run?</h4>
+<p>At the moment, in github actions. It's sick. The website generates and commits a new version every hr, which is how the background color changes. Eventually it will do other dynamic things. I use <a href="../.github/workflows/python-app.yml">this</a> workflow.<br />
+When editing locally I run this script which scans for files locally and runs the python scripts when a file changes:<br />
+<code>find ./ | entr sh -c "python3 ../src/calendar_todo.py &gt; calendar.html"</code><br />
+I plan to run these scripts on my Pixel 3a running Ubuntu Touch, which will also run the alarm and GPS tracking in my van. Soon there will be a map page logging my travels in my van, Allan Holdsworth.
+Much more to come on this stuff, when it's more mature I'll make my second brain public, maybe it would be useful for someone! Shout out to the Second Brain podcast!</p>
+<hr />
+<p></br></p>
+<h2 id="3dr-solo-escs">3DR Solo ESCs</h2>
+<p><img src="../src/blog/images/solo_esc_wiring.jpg" style="float: right;" width="30%" margin="20px" /></p>
+<h3 id="3-14-2019">3-14-2019</h3>
+<p>I use to work at 3D Robotics, and managed to hack every component of the Solo while I was there. I one point they purged all their old electronics and some of it went to me and some other intern friends. I got a ton of ESCs for the solo drone, and have been using them for any project that involves small brushless motors.  </p>
+<h4 id="pinout">Pinout</h4>
+<p><code>PWM: <span style="background-color: white; color: #000">&nbspwhite&nbsp</span>  5V: <span style="background-color: red;">&nbspred&nbsp</span>, GND: <span style="background-color: black;">&nbspblack&nbsp</span></code></p>
+<h4 id="links_1">Links</h4>
+<p><code>- <a href="https://github.com/imcnanie/brushed-esc-nfet">Brushed ESC Firmware</a>
+- <a href="https://github.com/sim-/tgy">SimonK Brushless Firmware</a></code></p>
+<hr />
+<p></br></p>
+<h2 id="life-on-the-hook">Life on the Hook</h2>
+<h3 id="5-1-2020">5-1-2020</h3>
+<p>I got the bright idea to find a spot to park my sailboat somewhere in the San Francisco Bay and see how long I could live out there. The adventure lasted far longer than I expected and with it brought moments of peace peppered with short periods of dread and general wetness. This is the story of a sailor, sailboat, sailrights, and <a href="https://eattheworld.bandcamp.com/track/sahalie">Sahalie</a>.<br />
+I can tell you what brought us to do this: free rent. This is the Bay Area, the highest cost of living in the world. The year before I bought my first sailboat and <a href="https://www.popularmechanics.com/adventure/outdoors/a18930170/diy-sailboat/">set it up with an electric motor</a>, partly to escape the high rent cost and mostly for the adventure. It was and excellent choice, and I scaled a serious learning curve getting that boat sail worthy.<br />
+<img src="../src/blog/Sailboat/Cover.jpg" title="Cover Image"  width="95%" margin="20px" />  </p>
+<h3>A Small Survey With A Big Soda</h3>
+<p>My friend <a href="http://bigsodamusic.com/">Big Soda</a>, a fellow boat dweller and an incredible musician, joined me for the first day of surveying. Armed with an 8' PVC pipe, we set to probe out our target location in San Leandro Bay - a small bay that joins the south Alameda channel to the San Francisco Bay. We identified this location on USCG Chart 18649 as part of General Anchorage 9, meaning no restrictions for anchoring. I even called around the Coast Guard Offices and confirmed this was an OK spot to anchor long term! Alright!
+The only caveats - much of the area is 1ft deep at low tide, with a few deep spots at around 7ft deep. Our boats have drafts of 6ft and 5ft. From our survey we found we had a 50ft diameter valley we could park our boats in and not strike ground. This isn't enough room to have good scope, so we decided we'd set up 4 large danforth anchors on the corners of the boats. This has the major disadvantage of not allowing the boats to swing into the direction of the current, putting a lot of force on the anchors and cleats. However, this area is pretty protected, and while we were there, we made it through a couple of 30mph wind storms with no dragging. But this method of mooring was absolutely a big unknown.<br />
+<img src="../src/blog/Sailboat/panels%20prius.jpg" title="Panels in the Prius"style="float: right;" width="50%" margin="20px" />
+<img src="../src/blog/Sailboat/Solar.jpg" title="Panels Strapped to boat transom"style="float: right;" width="50%" margin="20px" /><br />
+</br>
+</br></p>
+<h3>Patiently Preparing Allan Holdsworth's Red Herring</h3>
+<p>We need ropes, anchors, chain, solar, reverse osmosis, inverter, internet beaming, transport boats, food, refregeration, hot water. Welll - at least some of that. Our vigor was great for our productivity - but looking back we could have used a bit more time preparing. Hard to say though, part of the fun was using my battery powered soldering iron to finish the solar system while we were anchored. I ended up strapping two huge <a href="http://www.solardesigntool.com/components/module-panel-solar/Itek-Energy/2783/iT-295-HE/specification-data-sheet.html">295W Itek Residential Solar Panels</a> to the back of my Sailboat. I got them from a local solar retailer that had a surplus of used panels - $100 with a warantee! Incredibly they fit perfectly in the back of my prius, and even came with stacking feet.
+</br>
+</br>
+I installed a propane water heater for the shower, and we set off. Opening bridges with the VHF was an exciting experience.
+</br>
+<img src="../src/blog/Sailboat/bridge%20opening.jpg" title="Boat Bridge Opening"style="float: right;" width="50%" margin="20px" /></p>
+<h3>30 Days and 30 Nights</h3>
+<p>We took off on the night of December 1st, 2019. High tide was against us, since we'd gotten a late start. At 3 knots we navigated the Park St, Fruitvale St, and High St bridges by the light of the moon and streetlights. It was loads of fun, but it takes focus to hold the boat in place while the bridge was opening under a quick tide.
+We took Big Soda's 1961 Seafarer 31 that night, since it had a shallower draft we could feel out our little deep spot and if we got stuck, maybe get stuck less. When we finally made it to our Google Maps markers from our survey, we dropped anchor and packed up for the night. We took we woke up several times that night to check our depth with a skillet tied to a rope, anchor tension, and our GPS drift. I can't recommend enough having an anchor alarm for this type of boating, it helps with peace of mind.
+But my god what a beautiful spot it was at low tide:
+</br>
+</br>
+Those little black spots were thousands of birds, and over the hours you could watch the land rise out of the sea and trap our boat in a puddle. At certain times it was treacherous. The metal stakes that marked the edges of the channel threatend to pop our inflatable dinghies when you couldn't see them at mid-tide, there were times you couldn't row against the tide, and when I did get stuck in the mud, stepping in it sucked in my leg up to my boot.
+Absolutely one of the best places I've anchored, and a hidden treasure of the bay area if you plan well.</p>
+<h3>Is that a helicopter?</h3>
+<p>Several days later I was woken up by a helicopter circling the boat, spouting unintelligible band-passed questions. I crawled up on deck and sat there looking up at it. Is that for me? Are the messing with me? Looking closer it was definitely a Coast Guard Helicopter - they probably they thought I was in trouble. After giving them several thumbs up they took off, but I was definitely concerned about what the hell they were up to.
+</br>
+</br>
+I took my dinghy to shore and later that day I gave a call to Coast Guard Island, which is right down the channel. They told me an SOS signal was being sent from my location - and they were making their way to my boat right now. There were no other boats around, and this made no sense, but I jumped back in the dinghy and planed over there. The Coast Guard Officers were super cool, they helped me tear apart the boat for a supposedly water activated SOS life jacket. I had torn the boat apart several times before, and I had the sneaking suspicion they just wanted to see if I had drugs. 
+</br><img src="../src/blog/Sailboat/lowtide.jpg" title="low tide at sunset"style="float: right;" width="50%" margin="20px" /></p>
+<h3>Busted by the Cops</h3>
+<p>December 21, 2019. Big Soda and I get woken up by a man shouting "This is the Police" over the load speaker. We scrambled out on deck, and sure enough there was the East Bay Regional Park Police, and they asked us to board the boat. Initially I refused, but at some point I let them on (fatal mistake) and they ticketed me for a ripped life preserver. They also issued us an illegal camping permit. I showed them the USCG maps, that is was clearly marked as Anchorage 9, but they wouldn't have a bit of it. We were out February 1st, or they'd tow the boats. <a href="../src/blog/Sailboat/2019%20San%20Leandro%20Bay%20Jurisdiction%20Report.pdf">I made a jurisdiction map</a>, and presented it to them, but they still wouldn't budge. I heard from one of the officers that out the people with houses on shore were complaining about us, and a woman from the parks department had been begging them for a week to get us out.
+</br>
+</br>
+Arg an excellent experiment matey, alas, we turn home and head for the motherland.
+</br>
+</br>
+<img src="../src/blog/Sailboat/anchored.jpg" title="anchored"style="float: right;" width="95%" margin="20px" /></p> 
+	 
+	  </div>	  
+	</td>
+	<td class="table-cell2">
+	  <div class="site_map">     
+
+	    
+	    
+	  </div>	  
+	</td>
+      </tr>
+    </table>	
+      </div>
+    </div>
+  </body>
+</html>
