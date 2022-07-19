@@ -58,7 +58,7 @@ line-height: 1.6;
                 console.log(iconImage);
               }
             }
-            mp3s.push({'icon': iconImage, 'title': `${file.name}`, 'file': `${file.path}`});
+            mp3s.push({'icon': iconImage, 'title': `${file.name}`, 'file': "https://github.com/monksevillair/monksevillair.github.io/blob/master/s"+`${file.path}`});
           }
           //console.log(file);
           //htmlString += `${file.name}`; 
