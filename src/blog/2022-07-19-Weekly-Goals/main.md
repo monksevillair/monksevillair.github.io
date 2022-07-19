@@ -19,6 +19,7 @@ gelcoat
 - Been slacking on training, go sleep somewhere awesome in the forest
 
 ## Ideas for next week
+- Get a song a week super tight and do some dope shows
 - Transcribe Havona
   - amazing renditions: [Evan Marion](
 https://www.youtube.com/watch?v=J7n8iyb8afk) [Domi & JD Beck](
