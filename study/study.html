@@ -1,7 +1,7 @@
-<!-- generated from study/study.md at 07-19-2022 00:07:48 EST -->
+<!-- generated from study/study.md at 07-19-2022 00:17:52 EST -->
 <html>
   <head>
-    <title>Blogs en Espanol
+    <title>        
 </title>
     <link rel="apple-touch-icon" sizes="180x180" href="/src/templates/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/src/templates/images/favicon-32x32.png">
@@ -175,8 +175,14 @@
       img {
 padding: 10px;
 margin: 5px;
-background-color: #0a0a0a;
+background-color: #252525; 
 }
+.img_div {
+padding: 10px;
+margin: 5px;
+background-color: #252525; 
+}
+        
 .scroll {
 font-size: medium; 
 line-height: 1.6;
@@ -204,15 +210,45 @@ line-height: 1.6;
 	  <div class="scroll">
 
 	    <!-- used <pre> tag for text formatting -->
-	   <h2 id="6-16-2021">6-16-2021</h2>
-<p>Hoy nos despertamos para encontrar agua por todo el suelo. Una gran tormenta había ocurrido la noche anterior. Pero no problemo, con unas toallas, limpiamos el agua y comenzamos el día. Tuve una llamada en línea y luego preparé el desayuno.
-<vocab>toallas: towels
-limpiamos: we clean
-comenzamos: we began
-Tuve una llamada en línea: I had an online call
-y luego: and the
-</vocab></p>
-<hr /> 
+	   <h2 id="david-mueller-neural-network-loss-landscape">David Mueller Neural Network Loss Landscape</h2>
+<h3 id="tuesday-july-19-2022">Tuesday, July 19 2022</h3>
+<p>https://damueller.com/#/blog-post/NNLLs<br />
+- Why NN's find generalizable solutions?<br />
+  - gradient descent can traverse a complex or simple loss landscape with<br />
+fewer local minima<br />
+  - can't look at all possible weight settings must use GD<br />
+  - skip, residual connections, higher overparameterization, result in<br />
+smoother loss landscapes<br />
+<img alt="local minima" src="" title="https://monksevillair.com/src/study/2022-07-19-David-Mueller-Neural-Network-Loss-Landscape/im1.png" /><br />
+  - NN pref data that is generalizable over random<br />
+- GD Alg ( SGD stochastic gradient descent (into madness))<br />
+  - start @ rand point, move down gradient ideally reducing error<br />
+  - saddle points are a problem: https://arxiv.org/pdf/1406.2572.pdf<br />
+  - gradient descent doesn't often encounter local minima with modern NN<br />
+    - can usually find a global minimizer<br />
+  - GD can be used as universal func approximator<br />
+    - can memorize entire dataset<br />
+- "There is no guarantee that this solution would actually generalize to<br />
+data outside of the training data!"<br />
+  - you  </p>
+<h2 id="wide-basins-and-implicit-regularization">Wide Basins and Implicit Regularization</h2>
+<ul>
+<li>wide basins are easier to generalize than narrow basin  </li>
+<li>generalizable NN pref flatter basins  </li>
+<li>less noise in a flatter basin  </li>
+<li>what is a basin? (basin of attraction)  </li>
+<li>set of initial points that converge to some attracting set  </li>
+<li>several points that converge together as the system evolves through time  </li>
+</ul>
+<p>__left off at Why might SGD prefer basins that are flatter?_  </p>
+<h2 id="intrinsic-dimensionality">Intrinsic Dimensionality</h2>
+<h2 id="mode-connectivity-and-basins">Mode Connectivity and Basins</h2>
+<h2 id="the-2-phases-of-training-dynamics-of-sgd">The 2 Phases of Training &amp; Dynamics of SGD</h2>
+<h2 id="to-explore">To Explore</h2>
+<h2 id="-stochastic-differential-equation-sde">- Stochastic Differential Equation (SDE)</h2>
+<h2 id="esting">esting</h2>
+<h3 id="monday-july-18-2022">Monday, July 18 2022</h3>
+<h2 id="testing123">testing123</h2> 
 	 
 	  </div>	  
 	</td>
