@@ -9,7 +9,7 @@ class yuyanGen:
 
         lines = '''
 # Title
-Yuyan
+语言
         
 # Style
 img {
@@ -35,8 +35,8 @@ line-height: 1.6;
 
         #id_tag = '''# {title} {{#{tag}}}  \r\n'''
         id_tag = '''## {title} \r\n'''
-        base = "\"https://monksevillair.com/src/yuyan"
-        base2 = "https://monksevillair.com/yuyan"
+        base = "\"https://monksevillair.com/src/语言"
+        base2 = "https://monksevillair.com/语言"
         
         for b in sorted(yuyans)[::-1]:
             with open(b) as f:
@@ -56,7 +56,7 @@ line-height: 1.6;
                 lines += "\r\n"+ "---  "+ "\r\n\r\n"
                 
         print(lines)
-        f = open("yuyan.md", "w")
+        f = open("语言.md", "w")
         f.write(lines)
         f.close()
         
