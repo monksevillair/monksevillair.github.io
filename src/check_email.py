@@ -36,7 +36,7 @@ class parseMessage:
                 topic = msg.subject.split("`")[1]
                 topic_dir = topic+'/'+today.strftime("%Y-%m-%d")+"-"+msg.subject.strip(topic).strip("`").replace(" ","-")
                 if not(os.path.exists(topic_dir) and os.path.isdir(topic_dir)):
-                    os.mkdir(topic_dir,exist_ok=True)
+                    os.mkdirs(topic_dir)
                 with open(topic_dir+'/main.md', 'w') as f:
                     f.write(msg.text)
 
