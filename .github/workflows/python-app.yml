@@ -55,6 +55,9 @@ jobs:
         cd src/study/
         python gen_study.py
         cd ../..
+        cd src/语言/
+        python gen_语言.py
+        cd ../..
         cd src
         python gen_page.py
         cd ..
