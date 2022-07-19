@@ -22,6 +22,37 @@ line-height: 1.6;
 }
 
 # HTML
+## Weekly Goals 
+### Tuesday, July 19 2022  
+## 音乐  
+- Finish and master playing [SMiLE](  
+https://www.youtube.com/watch?v=SmRppchB8vs) transcription  
+- Everyday Record Notes & Analyze in DAW, Perfect that timing  
+- Practice Lydians, relative dorians, majors & locrians on piano  
+  
+## 船  
+- get tons of fiberglass bits, fill hull with bits & styrofoam  
+- make two more hulls out of styrofoam, meta hulls, crossbar attachments &  
+gelcoat  
+  
+## 中文  
+- use anki 中文 vox interpreter extension every day  
+  
+## 学习  
+- Finish Neural Network & Gradient descent article  
+  
+## 自行车  
+- Been slacking on training, go sleep somewhere awesome in the forest  
+  
+## Ideas for next week  
+- Transcribe Havona  
+  - amazing renditions: [Evan Marion](  
+https://www.youtube.com/watch?v=J7n8iyb8afk) [Domi & JD Beck](  
+https://www.youtube.com/watch?v=J7n8iyb8afk) [Jaco](  
+https://www.youtube.com/watch?v=sMQUFvv0WRY)  
+
+---  
+
 ## Another Week Another Ridiculous Pl 
 ### Tuesday, July 19 2022  
 My despisal of multi-ton quadricycles continues, so I've decided to spend the next week as a humble bicyclist. Since I am a van dweller, this means I'll need a different place to stay. A perfect opportunity to get my feet wet bike-camping! I still have lots of projects to finish, so I'm thinking of finding somewhere to camp over the Golden Gate, maybe up near Mt. Tam! I've been biking a lot more recently, but it's mainly been demonstrating how much better shape I could get into, and I'm pretty hyped about setting up some future long-term bike trips!  
