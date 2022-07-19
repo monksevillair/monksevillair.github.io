@@ -52,6 +52,9 @@ jobs:
         cd src/blog/
         python gen_blog.py
         cd ../..
+        cd src/study/
+        python gen_study.py
+        cd ../..
         cd src
         python gen_page.py
         cd ..
