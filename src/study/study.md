@@ -22,6 +22,60 @@ line-height: 1.6;
 }
 
 # HTML
+## Fwd: `study` West System Cold Molded Bo 
+### Wednesday, July 20 2022  
+### Vicem Yachts - Cold Molding Method  
+- https://www.youtube.com/watch?v=6TuXUyweVyE  
+- layer veneers at 90degrees  
+- Vicem Yachts  
+- cnc foam  
+- keel made from mahogany  
+- keel, cnc battens, stringers super simple mold  
+![mold]("https://monksevillair.com/src/study/2022-07-20-Fwd:-`study`-West-System-Cold-Molded-Boa/im1.png")  
+- transom, stiffeners, chine clamp, spray rail  
+- 45deg angle, galvanized nails  
+![veneers]("https://monksevillair.com/src/study/2022-07-20-Fwd:-`study`-West-System-Cold-Molded-Boa/im2.png")  
+- epoxy, stainless staples  
+- 10oz eglass on inside and out  
+- deck made from thin plywood  
+- mirror finish  
+  - undercoat, epoxy fairing, longboard and machine sanding, multiple coats  
+of epoxy primer and polyurethane paint  
+- longboard sanding  
+![longboard sanding]("https://monksevillair.com/src/study/2022-07-20-Fwd:-`study`-West-System-Cold-Molded-Boa/im3.png")  
+  
+#### Review  
+- still very intricate, could be more computerized  
+  
+### Boats from trees  
+https://www.youtube.com/watch?v=6ZIzJEaIX7U  
+- insane sawmill  
+ ![insane sawmill]("https://monksevillair.com/src/study/2022-07-20-Fwd:-`study`-West-System-Cold-Molded-Boa/im4.png")  
+- interesting rigid spiral conveyor  
+ ![spiral conveyor]("https://monksevillair.com/src/study/2022-07-20-Fwd:-`study`-West-System-Cold-Molded-Boa/im5.png")  
+- planers are great  
+- laminate several layers of veneer, bend around steel mold  
+ ![bending veneers]("https://monksevillair.com/src/study/2022-07-20-Fwd:-`study`-West-System-Cold-Molded-Boa/im6.png")  
+ ![interesting round shapes]("https://monksevillair.com/src/study/2022-07-20-Fwd:-`study`-West-System-Cold-Molded-Boa/im7.png")  
+- modern take on traditional boat building  
+  - these guys do keyed planks for first layer instead of criss-crosses  
+veneers  
+- stainless staples, fiberglass, absorbative material, vacuum bag  
+ ![stainless staples, fiberglass, absorbative material, vacuum  
+bag]("https://monksevillair.com/src/study/2022-07-20-Fwd:-`study`-West-System-Cold-Molded-Boa/im8.png")  
+- some kinda bondo/clay type juice, plank sanding  
+- mark waterline with laser, flipit  
+- staple gun is a useful tool  
+  
+#### Review  
+- wood structures are easy to manually mold into the shape you like, but in  
+the age of computers strikes me as not the most efficient way to get the  
+task done  
+  - respect to the artisanalness  
+  - useful techniques for something highly aesthetic!  
+
+---  
+
 ## David Mueller Neural Network Loss Landscape 
 ### Tuesday, July 19 2022  
 https://damueller.com/#/blog-post/NNLLs  
