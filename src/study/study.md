@@ -63,10 +63,10 @@ vacuum cavity forms
 - cnc foam  
 - keel made from mahogany  
 - keel, cnc battens, stringers super simple mold  
-![mold](""https://monksevillair.com/src/study/2022-07-20-Fwd:-`study`-West-System-Cold-Molded-Boa/im1.png")  
+![mold]("./im1.png")  
 - transom, stiffeners, chine clamp, spray rail  
 - 45deg angle, galvanized nails  
-![veneers](""https://monksevillair.com/src/study/2022-07-20-Fwd:-`study`-West-System-Cold-Molded-Boa/im2.png")  
+![veneers]("./im2.png")  
 - epoxy, stainless staples  
 - 10oz eglass on inside and out  
 - deck made from thin plywood  
@@ -74,7 +74,7 @@ vacuum cavity forms
   - undercoat, epoxy fairing, longboard and machine sanding, multiple coats  
 of epoxy primer and polyurethane paint  
 - longboard sanding  
-![longboard sanding](""https://monksevillair.com/src/study/2022-07-20-Fwd:-`study`-West-System-Cold-Molded-Boa/im3.png")  
+![longboard sanding]("./im3.png")  
   
 #### Review  
 - still very intricate, could be more computerized  
@@ -82,19 +82,19 @@ of epoxy primer and polyurethane paint
 ### Boats from trees  
 https://www.youtube.com/watch?v=6ZIzJEaIX7U  
 - insane sawmill  
- ![insane sawmill](""https://monksevillair.com/src/study/2022-07-20-Fwd:-`study`-West-System-Cold-Molded-Boa/im4.png")  
+ ![insane sawmill]("./im4.png")  
 - interesting rigid spiral conveyor  
- ![spiral conveyor](""https://monksevillair.com/src/study/2022-07-20-Fwd:-`study`-West-System-Cold-Molded-Boa/im5.png")  
+ ![spiral conveyor]("./im5.png")  
 - planers are great  
 - laminate several layers of veneer, bend around steel mold  
- ![bending veneers](""https://monksevillair.com/src/study/2022-07-20-Fwd:-`study`-West-System-Cold-Molded-Boa/im6.png")  
- ![interesting round shapes](""https://monksevillair.com/src/study/2022-07-20-Fwd:-`study`-West-System-Cold-Molded-Boa/im7.png")  
+ ![bending veneers]("./im6.png")  
+ ![interesting round shapes]("./im7.png")  
 - modern take on traditional boat building  
   - these guys do keyed planks for first layer instead of criss-crosses  
 veneers  
 - stainless staples, fiberglass, absorbative material, vacuum bag  
  ![stainless staples, fiberglass, absorbative material, vacuum  
-bag](""https://monksevillair.com/src/study/2022-07-20-Fwd:-`study`-West-System-Cold-Molded-Boa/im8.png")  
+bag]("./im8.png")  
 - some kinda bondo/clay type juice, plank sanding  
 - mark waterline with laser, flipit  
 - staple gun is a useful tool  
@@ -117,7 +117,7 @@ fewer local minima
   - can't look at all possible weight settings must use GD  
   - skip, residual connections, higher overparameterization, result in  
 smoother loss landscapes  
-![local minima](""https://monksevillair.com/src/study/2022-07-19-David-Mueller-Neural-Network-Loss-Landscape/im1.png")  
+![local minima]("./im1.png")  
   - NN pref data that is generalizable over random  
 - GD Alg ( SGD stochastic gradient descent (into madness))  
   - start @ rand point, move down gradient ideally reducing error  
