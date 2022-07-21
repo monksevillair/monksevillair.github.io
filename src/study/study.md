@@ -45,6 +45,15 @@ vacuum cavity forms
 
 ---  
 
+## study` Excellent Piano Practice Technique 
+### Thursday, July 21 2022  
+ https://www.youtube.com/watch?v=MUvPx-ZaYmA  
+- todo, attempt & notate  
+- analyze over mindless practicing  
+- play in every key  
+
+---  
+
 ## Fwd: `study` West System Cold Molded Bo 
 ### Wednesday, July 20 2022  
 ### Vicem Yachts - Cold Molding Method  
