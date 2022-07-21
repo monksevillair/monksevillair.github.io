@@ -1,4 +1,4 @@
-<!-- generated from study/study.md at 07-21-2022 15:45:06 EST -->
+<!-- generated from study/study.md at 07-21-2022 15:58:15 EST -->
 <html>
   <head>
     <title>        
@@ -233,8 +233,78 @@ vacuum cavity forms  </li>
 <li>could make a variable pitch prop with a huge hub!  </li>
 </ul>
 <hr />
-<h2 id="study-excellent-piano-practice-technique">study` Excellent Piano Practice Technique</h2>
+<h2 id="studydavid-mueller-neural-network-loss-landscape">study`David Mueller Neural Network Loss Landscape</h2>
 <h3 id="thursday-july-21-2022_1">Thursday, July 21 2022</h3>
+<p>https://damueller.com/#/blog-post/NNLLs<br />
+- Why NN's find generalizable solutions?<br />
+  - gradient descent can traverse a complex or simple loss landscape with<br />
+fewer local minima<br />
+  - can't look at all possible weight settings must use GD<br />
+  - skip, residual connections, higher overparameterization, result in<br />
+smoother loss landscapes<br />
+<img alt="local minima" src="https://monksevillair.com/src/study/2022-07-21-study`David-Mueller-Neural-Network-Loss-Landscape/im1.png" /><br />
+  - NN pref data that is generalizable over random<br />
+- GD Alg ( SGD stochastic gradient descent (into madness))<br />
+  - start @ rand point, move down gradient ideally reducing error<br />
+  - saddle points are a problem: https://arxiv.org/pdf/1406.2572.pdf<br />
+  - gradient descent doesn't often encounter local minima with modern NN<br />
+    - can usually find a global minimizer<br />
+  - GD can be used as universal func approximator<br />
+    - can memorize entire dataset<br />
+- "There is no guarantee that this solution would actually generalize to<br />
+data outside of the training data!"<br />
+  - you  </p>
+<h3 id="wide-basins-and-implicit-regularization">Wide Basins and Implicit Regularization</h3>
+<ul>
+<li>wide basins are easier to generalize than narrow basin  </li>
+<li>generalizable NN pref flatter basins  </li>
+<li>less noise in a flatter basin  </li>
+<li>what is a basin? (basin of attraction)  </li>
+<li>set of initial points that converge to some attracting set  </li>
+<li>several points that converge together as the system evolves through time  </li>
+<li>wider the basin, more like we are to find it during noisey optimization  </li>
+</ul>
+<h4 id="temperature-of-sgd">Temperature of SGD</h4>
+<ul>
+<li>determines amount of noise present  </li>
+<li>flat minima prefered to sharp minima  </li>
+<li>this is why networks do not overfit  </li>
+</ul>
+<h3 id="intrinsic-dimensionality">Intrinsic Dimensionality</h3>
+<ul>
+<li>often the more parameters, the better we generalize  </li>
+<li>you can fix your optimization to a random subspace, move only within that<br />
+subspace and still find a good solution  </li>
+<li>goldilocks zone, region of particularly high positive curvature within<br />
+loss landscape  </li>
+<li>large ratio of positive eigenvalues in their hessians  </li>
+<li><strong>The lottery ticket hypothesis suggests that in any dense, randomly<br />
+initialized feed-forward network there exists a subnetwork (the winning<br />
+lottery ticket) which can be trained, with all other weights set to 0, and<br />
+still achieve comparable accuracy to the original full network</strong>  </li>
+<li>damn  </li>
+</ul>
+<h3 id="mode-connectivity-and-basins">Mode Connectivity and Basins</h3>
+<ul>
+<li>Wormholes  </li>
+<li>two independently trained NN can be traverse without incurring a higher<br />
+loss than the originals  </li>
+<li>tunnels between local minima  </li>
+</ul>
+<p>LEFT OFF AT: built upon these findings to propose a large-scale model  </p>
+<h3 id="phases-of-training-dynamics-of-sgd">Phases of Training &amp; Dynamics of SGD</h3>
+<h3 id="to-explore">To Explore</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Stochastic_differential_equation">Stochastic Differential Equation (SDE)</a>  </li>
+<li>flat minima, sharp minima  </li>
+<li>noise optimization  </li>
+<li><a href="https://en.wikipedia.org/wiki/Hessian_matrix">Hessian Matrix</a>  </li>
+<li>Eigenvalues  </li>
+</ul>
+<h3 id="tags">Tags</h3>
+<hr />
+<h2 id="study-excellent-piano-practice-technique">study` Excellent Piano Practice Technique</h2>
+<h3 id="thursday-july-21-2022_2">Thursday, July 21 2022</h3>
 <p>https://www.youtube.com/watch?v=MUvPx-ZaYmA<br />
 - todo, attempt &amp; notate<br />
 - analyze over mindless practicing<br />
@@ -316,7 +386,7 @@ smoother loss landscapes<br />
 - "There is no guarantee that this solution would actually generalize to<br />
 data outside of the training data!"<br />
   - you  </p>
-<h2 id="wide-basins-and-implicit-regularization">Wide Basins and Implicit Regularization</h2>
+<h2 id="wide-basins-and-implicit-regularization_1">Wide Basins and Implicit Regularization</h2>
 <ul>
 <li>wide basins are easier to generalize than narrow basin  </li>
 <li>generalizable NN pref flatter basins  </li>
@@ -326,10 +396,10 @@ data outside of the training data!"<br />
 <li>several points that converge together as the system evolves through time  </li>
 </ul>
 <p>__left off at Why might SGD prefer basins that are flatter?_  </p>
-<h2 id="intrinsic-dimensionality">Intrinsic Dimensionality</h2>
-<h2 id="mode-connectivity-and-basins">Mode Connectivity and Basins</h2>
+<h2 id="intrinsic-dimensionality_1">Intrinsic Dimensionality</h2>
+<h2 id="mode-connectivity-and-basins_1">Mode Connectivity and Basins</h2>
 <h2 id="the-2-phases-of-training-dynamics-of-sgd">The 2 Phases of Training &amp; Dynamics of SGD</h2>
-<h2 id="to-explore">To Explore</h2>
+<h2 id="to-explore_1">To Explore</h2>
 <h2 id="-stochastic-differential-equation-sde">- Stochastic Differential Equation (SDE)</h2>
 <h2 id="esting">esting</h2>
 <h3 id="monday-july-18-2022">Monday, July 18 2022</h3>
