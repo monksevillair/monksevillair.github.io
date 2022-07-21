@@ -100,7 +100,7 @@ Smart things
   
 In other news, the boat mold is turning out excellent. I love peel-ply. Gives a wonderful fabric-feeling texture to the mold. My 3D printed mold isn't too smooth, it's making me wonder if I can use peel-ply on both sides of the mold. Also some _super_ important notes when vacuum bagging: make sure you use absorptive cloth (i used paper towels), otherwise the resin pools on the mold side and makes a thick gel layer, which is just useless weight and looks bad. Also I made a resin trap out of some pipe because I didn't want to screw up the vacuum pump. Can't wait to make more stuff, this is a really fun art!  
   
-<img width=60% src="https://monksevillair.com/src/blog/2022-07-19-Another-Week-Another-Ridiculous-Plan/im2.jpg"></img>  
+<img width=60% src=""https://monksevillair.com/src/blog/2022-07-19-Another-Week-Another-Ridiculous-Plan/im2.jpg"></img>  
   
 ---  
 
@@ -116,11 +116,11 @@ My search for tri's and cat's was not going very well, and I was sub-happy to le
   
 I decided first to build a scale model. A proper vacuum-bagged hull. I designed and 3D printed a hull (inspired by [RC test flights](https://www.youtube.com/watch?v=HFhsh4V8SZA) video), but I'm cheap so I designed a mold that's symetrical on all sides so I can use half the material.    
   
-<img width=60% src="https://monksevillair.com/src/blog/2022-06-24-Future-Boat/im1.jpg"></img>    
+<img width=60% src=""https://monksevillair.com/src/blog/2022-06-24-Future-Boat/im1.jpg"></img>    
   
 Much sanding, polyester resin, vacuum pump, 2 layers of glass, peel ply... BAM you got a hull. Can't wait to see if it releases from the mold tomorrow!!    
   
-<img width=60% src="https://monksevillair.com/src/blog/2022-06-24-Future-Boat/im2.jpg"></img>    
+<img width=60% src=""https://monksevillair.com/src/blog/2022-06-24-Future-Boat/im2.jpg"></img>    
 
 ---  
 
@@ -138,7 +138,7 @@ If anyone thinks this is a cool idea, feel free to make a PR to the repo or make
   
 https://github.com/imcnanie/roswm    
   
-<img width=60% src="https://monksevillair.com/src/blog/2022-05-10-Presenting-ROSWM-Proof-of-Concept/roswm.png"></img>    
+<img width=60% src=""https://monksevillair.com/src/blog/2022-05-10-Presenting-ROSWM-Proof-of-Concept/roswm.png"></img>    
 
 ---  
 
@@ -176,8 +176,8 @@ New plan:
 - make a scale model    
 - check all the local boat yards and marinas for free cats/tris in the bay    
   
-<img width=60% src="https://monksevillair.com/src/blog/2022-04-25-Checking-Out-A-Santa-Barbarian-Trimaran/im1.jpg"></img>    
-<img width=60% src="https://monksevillair.com/src/blog/2022-04-25-Checking-Out-A-Santa-Barbarian-Trimaran/im2.jpg"></img>    
+<img width=60% src=""https://monksevillair.com/src/blog/2022-04-25-Checking-Out-A-Santa-Barbarian-Trimaran/im1.jpg"></img>    
+<img width=60% src=""https://monksevillair.com/src/blog/2022-04-25-Checking-Out-A-Santa-Barbarian-Trimaran/im2.jpg"></img>    
 
 ---  
 
@@ -186,13 +186,13 @@ New plan:
 I'm cheeting- it took 2 weeks, but I did completely redesign the van interior. Everything is built out of milk crates for maximum storage, cheapness and squareness! Still needs a lot of finishing and trim, rewiring, insulation, but I'm really happy with how much storage I have, it feels much more liveable.  
   
 Initial Sketch:    
-<img width=60% src="https://monksevillair.com/src/blog/2022-03-29-Week-One-Van-Project/sketch.png"></img>    
+<img width=60% src=""https://monksevillair.com/src/blog/2022-03-29-Week-One-Van-Project/sketch.png"></img>    
   
 30 milkcrates from Urban Ore in Berkeley:    
-<img width=60% src="https://monksevillair.com/src/blog/2022-03-29-Week-One-Van-Project/PXL_20220321_214059558.jpg"></img>    
+<img width=60% src=""https://monksevillair.com/src/blog/2022-03-29-Week-One-Van-Project/PXL_20220321_214059558.jpg"></img>    
   
 Final product:    
-<img width=60% src="https://monksevillair.com/src/blog/2022-03-29-Week-One-Van-Project/PXL_20220328_072345335.jpg"></img>    
+<img width=60% src=""https://monksevillair.com/src/blog/2022-03-29-Week-One-Van-Project/PXL_20220328_072345335.jpg"></img>    
   
 ### Improvements  
 - Started Pomedoroing myself, makes context switching a lot easier  
@@ -347,7 +347,7 @@ Knowing more is rapidly becoming a priority. I have read that most people before
 It's 3:38 in the morning as I write this. My sleep plan ended up looking like this:  
   
 <center>  
-<img width=60% src="https://monksevillair.com/src/blog/2021-08-03-Going-Polyphasic/sleep.svg" /></img>    
+<img width=60% src=""https://monksevillair.com/src/blog/2021-08-03-Going-Polyphasic/sleep.svg" /></img>    
 *This sleep graph is generated automatically from my calendar program by adding an [ALARM] tag to my TODOs*  
 </center>    
   
@@ -377,12 +377,12 @@ When it comes to napping, some improvement could be made to the alarm. Knowing t
 ## Theory of Permanent Discomfort 
 ### Sunday, July 11 2021  
   
-<img style="float: right;" margin="20px" width="35%" src="https://monksevillair.com/src/blog/2021-07-11-Theory-of-Permanent-Discomfort/trotsky.webp"  />  
+<img style="float: right;" margin="20px" width="35%" src=""https://monksevillair.com/src/blog/2021-07-11-Theory-of-Permanent-Discomfort/trotsky.webp"  />  
   
 Trotsky's *Permanent Revolution*, in a nutshell, is a theory on how to preserve classless society, also known as the Dictatorship of the Proletariat. Murdered by Ice Pick wielding NKVD agent Ramón Mercader at the order of fellow revolutionary Joseph Stalin, it is interesting to wonder whether Trotsky's ideas could have prevented the over-bureaucratization of the Soviet Union and consolidation of power that occurred after Stalin. Maybe, maybe not.    
   
 <!--<center>  
-![Trotsky](./trotsky.webp)    
+![Trotsky]("https://monksevillair.com/src/blog/2021-07-11-Theory-of-Permanent-Discomfort/trotsky.webp)    
 *what a guy*  
 </center>  -->  
   
@@ -391,14 +391,14 @@ On a much lighter note, *that kind* of literature has become a seed for my *Theo
 For a month now, I've been setting eight daily tasks for myself to complete. That's it! How hard can it be to complete eight tasks? Well as it turns out, somewhat hard to do consistently. Before I wrote this program, I didn't realize how often I was getting distracted by new ideas and projects, and while I haven't improved much in the last month, I now have metrics to measure my progress in this area. Every day, I set up tasks in my notebook:   
   
 <center>  
-<img width=60% src="https://monksevillair.com/src/blog/2021-07-11-Theory-of-Permanent-Discomfort/permanent_discomfort_tasklist_example.png"></img>    
+<img width=60% src=""https://monksevillair.com/src/blog/2021-07-11-Theory-of-Permanent-Discomfort/permanent_discomfort_tasklist_example.png"></img>    
 *A global task list automatically generated from each project's TODO list*  
 </center>    
   
 As I check them off, a graph is generated that shows my progress that day and displays my average success rate for the previous two weeks:    
   
 <center>  
-<img width=60% src="https://monksevillair.com/src/blog/2021-07-11-Theory-of-Permanent-Discomfort/task_graph.svg" /></img>    
+<img width=60% src=""https://monksevillair.com/src/blog/2021-07-11-Theory-of-Permanent-Discomfort/task_graph.svg" /></img>    
 *Chart shows completed tasks in the last two weeks, and the average completion %*  
 </center>    
   
@@ -457,11 +457,11 @@ I used Google calendar for a long time, and I still like it, but having it seper
 Many invoices and mucho dinero has been frittered as a result of my deep hatred for generating invoices. What better way to fix this problem than to generate them automatically from my todos? If I add eg. \*18:00-19:00\* to a TODO.md file, *gen_invoice.py* will add that todo to a global invoice maker  
   
 #### Where does this all run?  
-At the moment, in github actions. It's sick. The website generates and commits a new version every hr, which is how the background color changes. Eventually it will do other dynamic things. I use [this](~/.github/workflows/python-app.yml) workflow.    
+At the moment, in github actions. It's sick. The website generates and commits a new version every hr, which is how the background color changes. Eventually it will do other dynamic things. I use [this](https://monksevillair.com/.github/workflows/python-app.yml) workflow.    
   
 When editing locally I run this script which scans for files locally and runs the python scripts when a file changes:    
   
-<code>find ./ | entr sh -c "python3 ../src/calendar_todo.py > calendar.html"</code>    
+<code>find "https://monksevillair.com/src/blog/2021-06-19-Building-a-Second-Brain/ | entr sh -c "python3 ."https://monksevillair.com/src/blog/2021-06-19-Building-a-Second-Brain/src/calendar_todo.py > calendar.html"</code>    
   
 I plan to run these scripts on my Pixel 3a running Ubuntu Touch, which will also run the alarm and GPS tracking in my van. Soon there will be a map page logging my travels in my van, Allan Holdsworth.  
   
@@ -497,15 +497,15 @@ I got the bright idea to find a spot to park my sailboat somewhere in the San Fr
   
 I can tell you what brought us to do this: free rent. This is the Bay Area, the highest cost of living in the world. The year before I bought my first sailboat and <a href="https://www.popularmechanics.com/adventure/outdoors/a18930170/diy-sailboat/">set it up with an electric motor</a>, partly to escape the high rent cost and mostly for the adventure. It was and excellent choice, and I scaled a serious learning curve getting that boat sail worthy.    
   
-<img src="https://monksevillair.com/src/blog/2020-05-01-Life-On-The-Hook/Cover.jpg" title="Cover Image"  width="95%" margin="20px" />    
+<img src=""https://monksevillair.com/src/blog/2020-05-01-Life-On-The-Hook/Cover.jpg" title="Cover Image"  width="95%" margin="20px" />    
   
 <h3>A Small Survey With A Big Soda</h3>  
   
 My friend <a href="http://bigsodamusic.com/">Big Soda</a>, a fellow boat dweller and an incredible musician, joined me for the first day of surveying. Armed with an 8' PVC pipe, we set to probe out our target location in San Leandro Bay - a small bay that joins the south Alameda channel to the San Francisco Bay. We identified this location on USCG Chart 18649 as part of General Anchorage 9, meaning no restrictions for anchoring. I even called around the Coast Guard Offices and confirmed this was an OK spot to anchor long term! Alright!  
   
 The only caveats - much of the area is 1ft deep at low tide, with a few deep spots at around 7ft deep. Our boats have drafts of 6ft and 5ft. From our survey we found we had a 50ft diameter valley we could park our boats in and not strike ground. This isn't enough room to have good scope, so we decided we'd set up 4 large danforth anchors on the corners of the boats. This has the major disadvantage of not allowing the boats to swing into the direction of the current, putting a lot of force on the anchors and cleats. However, this area is pretty protected, and while we were there, we made it through a couple of 30mph wind storms with no dragging. But this method of mooring was absolutely a big unknown.    
-<img src="https://monksevillair.com/src/blog/2020-05-01-Life-On-The-Hook/panels%20prius.jpg" title="Panels in the Prius"style="float: right;" width="50%" margin="20px" />  
-<img src="https://monksevillair.com/src/blog/2020-05-01-Life-On-The-Hook/Solar.jpg" title="Panels Strapped to boat transom"style="float: right;" width="50%" margin="20px" />    
+<img src=""https://monksevillair.com/src/blog/2020-05-01-Life-On-The-Hook/panels%20prius.jpg" title="Panels in the Prius"style="float: right;" width="50%" margin="20px" />  
+<img src=""https://monksevillair.com/src/blog/2020-05-01-Life-On-The-Hook/Solar.jpg" title="Panels Strapped to boat transom"style="float: right;" width="50%" margin="20px" />    
   
 </br>  
 </br>  
@@ -517,7 +517,7 @@ We need ropes, anchors, chain, solar, reverse osmosis, inverter, internet beamin
   
 I installed a propane water heater for the shower, and we set off. Opening bridges with the VHF was an exciting experience.  
 </br>  
-<img src="https://monksevillair.com/src/blog/2020-05-01-Life-On-The-Hook/bridge%20opening.jpg" title="Boat Bridge Opening"style="float: right;" width="50%" margin="20px" />  
+<img src=""https://monksevillair.com/src/blog/2020-05-01-Life-On-The-Hook/bridge%20opening.jpg" title="Boat Bridge Opening"style="float: right;" width="50%" margin="20px" />  
 <h3>30 Days and 30 Nights</h3>  
 We took off on the night of December 1st, 2019. High tide was against us, since we'd gotten a late start. At 3 knots we navigated the Park St, Fruitvale St, and High St bridges by the light of the moon and streetlights. It was loads of fun, but it takes focus to hold the boat in place while the bridge was opening under a quick tide.  
   
@@ -536,16 +536,16 @@ Several days later I was woken up by a helicopter circling the boat, spouting un
 </br>  
 </br>  
 I took my dinghy to shore and later that day I gave a call to Coast Guard Island, which is right down the channel. They told me an SOS signal was being sent from my location - and they were making their way to my boat right now. There were no other boats around, and this made no sense, but I jumped back in the dinghy and planed over there. The Coast Guard Officers were super cool, they helped me tear apart the boat for a supposedly water activated SOS life jacket. I had torn the boat apart several times before, and I had the sneaking suspicion they just wanted to see if I had drugs.   
-</br><img src="https://monksevillair.com/src/blog/2020-05-01-Life-On-The-Hook/lowtide.jpg" title="low tide at sunset"style="float: right;" width="50%" margin="20px" />  
+</br><img src=""https://monksevillair.com/src/blog/2020-05-01-Life-On-The-Hook/lowtide.jpg" title="low tide at sunset"style="float: right;" width="50%" margin="20px" />  
 <h3>Busted by the Cops</h3>  
-December 21, 2019. Big Soda and I get woken up by a man shouting "This is the Police" over the load speaker. We scrambled out on deck, and sure enough there was the East Bay Regional Park Police, and they asked us to board the boat. Initially I refused, but at some point I let them on (fatal mistake) and they ticketed me for a ripped life preserver. They also issued us an illegal camping permit. I showed them the USCG maps, that is was clearly marked as Anchorage 9, but they wouldn't have a bit of it. We were out February 1st, or they'd tow the boats. <a href="https://monksevillair.com/src/blog/2020-05-01-Life-On-The-Hook/2019%20San%20Leandro%20Bay%20Jurisdiction%20Report.pdf">I made a jurisdiction map</a>, and presented it to them, but they still wouldn't budge. I heard from one of the officers that out the people with houses on shore were complaining about us, and a woman from the parks department had been begging them for a week to get us out.  
+December 21, 2019. Big Soda and I get woken up by a man shouting "This is the Police" over the load speaker. We scrambled out on deck, and sure enough there was the East Bay Regional Park Police, and they asked us to board the boat. Initially I refused, but at some point I let them on (fatal mistake) and they ticketed me for a ripped life preserver. They also issued us an illegal camping permit. I showed them the USCG maps, that is was clearly marked as Anchorage 9, but they wouldn't have a bit of it. We were out February 1st, or they'd tow the boats. <a href=""https://monksevillair.com/src/blog/2020-05-01-Life-On-The-Hook/2019%20San%20Leandro%20Bay%20Jurisdiction%20Report.pdf">I made a jurisdiction map</a>, and presented it to them, but they still wouldn't budge. I heard from one of the officers that out the people with houses on shore were complaining about us, and a woman from the parks department had been begging them for a week to get us out.  
 </br>  
 </br>  
 Arg an excellent experiment matey, alas, we turn home and head for the motherland.  
 </br>  
 </br>  
   
-<img src="https://monksevillair.com/src/blog/2020-05-01-Life-On-The-Hook/anchored.jpg" title="anchored"style="float: right;" width="95%" margin="20px" />  
+<img src=""https://monksevillair.com/src/blog/2020-05-01-Life-On-The-Hook/anchored.jpg" title="anchored"style="float: right;" width="95%" margin="20px" />  
 
 ---  
 
