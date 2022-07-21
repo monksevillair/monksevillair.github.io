@@ -35,7 +35,7 @@ line-height: 1.6;
 
         #id_tag = '''# {title} {{#{tag}}}  \r\n'''
         id_tag = '''## {title} \r\n'''
-        base = "\"https://monksevillair.com/src/blog"
+        base = "(https://monksevillair.com/src/blog"
         base2 = "https://monksevillair.com/blog"
         
         for b in sorted(blogs)[::-1]:
@@ -49,8 +49,8 @@ line-height: 1.6;
                 lines += "### "+ str(date.strftime("%A, %B %d %Y")) + "  \r\n"
 
                 for lll in f.readlines():
-                    ll = lll.replace("./",base+b.strip("main.md"))
-                    l = ll.replace("~/","https://monksevillair.com/")
+                    ll = lll.replace("(./",base+b.strip("main.md"))
+                    l = ll.replace("(~/","(https://monksevillair.com/")
                     lines += l.strip("\r").strip("\n") + "  \r\n"
                     
                 lines += "\r\n"+ "---  "+ "\r\n\r\n"
