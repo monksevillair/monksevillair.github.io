@@ -22,6 +22,12 @@ line-height: 1.6;
 }
 
 # HTML
+## study` mo 
+### Friday, July 22 2022  
+https://www.youtube.com/watch?v=C2w45qRc3aU  
+
+---  
+
 ## study`Surface Piercing Propeller 
 ### Thursday, July 21 2022  
 #### Surface piercing props by Paul Kamen  
