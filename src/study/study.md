@@ -22,6 +22,12 @@ line-height: 1.6;
 }
 
 # HTML
+## study`diff eqs with haskell 
+### Saturday, July 23 2022  
+https://iagoleal.com/posts/calculus-symbolic-ode/  
+
+---  
+
 ## study` mo 
 ### Friday, July 22 2022  
 https://www.youtube.com/watch?v=C2w45qRc3aU  
