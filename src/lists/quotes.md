@@ -11,3 +11,4 @@
 - "A guy walks into a psychiatrist's office and says, hey doc, my brother's crazy! He thinks he's a chicken. Then the doc says, why don't you turn him in? Then the guy says, I would but I need the eggs" -_Annie Hall_
 - "Die young, stay pretty" -Blondie
 - "You either die a hero, or you live long enough to see yourself become a villain" -Batman
+- "From now on you need never await temporal attestation to your thought. You think the truth. You do not have the right to eliminate yourself. You do not belong to you. You belong to the Universe. Your significance will remain forever obscure to you, but you may assume that you are fulfilling your role if you apply yourself to converting your experiences to the highest advantage of others." - The Aliens to Buckminster Fuller
