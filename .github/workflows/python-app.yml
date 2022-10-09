@@ -58,6 +58,9 @@ jobs:
         cd src/语言/
         python gen_语言.py
         cd ../..
+        cd src/jazz/
+        python gen_jazz.py
+        cd ../..
         cd src
         python gen_page.py
         cd ..
