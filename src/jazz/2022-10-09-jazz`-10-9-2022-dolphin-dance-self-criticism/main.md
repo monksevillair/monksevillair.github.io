@@ -1,0 +1,7 @@
+- counterpoint is good
+- keep coming back to the same note after cray phrases for legitimatization
+- dynamics
+- go down for chillness, going with gravity
+- go up to build tension
+- 4th interval D-G good for mixolydian
+- 5th interval G-D good for Ionian
