@@ -1,151 +1,167 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <!-- Ensure proper scaling on mobile devices -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monk's Evil Lair</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/src/templates/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/src/templates/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/src/templates/images/favicon-16x16.png">
-    <link rel="manifest" href="/src/templates/images/site.webmanifest">
+    <meta charset="UTF-8" />
+    <!-- Ensures proper scaling on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monk's Evil Lair - Force Directed Graph</title>
+    <!-- Include D3 (v7) from CDN -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
-      /* Basic resets and overall styling */
+      /* Fullscreen and background */
       html, body {
         margin: 0;
         padding: 0;
-        height: 100%;
         width: 100%;
+        height: 100%;
         background-color: #111;
-        overflow-x: hidden;
+        overflow: hidden;
       }
-      
-      a {
-        color: #fff;
-        text-decoration: none;
-      }
-      
-      a:hover {
-        background-color: #0a0a0a;
-      }
-      
-      hr {
-        border: 7px solid #111;
-        width: 150%;
-        position: relative;
-        left: -30px;
-      }
-      
-      /* Flex container for layout */
-      .container {
-        display: flex;
-        flex-wrap: wrap;
-        height: 100%;
+      svg {
         width: 100%;
+        height: 100%;
       }
-      
-      /* Navigation (left-hand) section */
-      .stack-top {
-        font-family: Arial, Geneva, Helvetica, sans-serif;
-        font-size: xx-large;
-        font-weight: bold;
-        margin: 20px;
-        width: 275px;
+      /* Link styling (the lines connecting nodes) */
+      .link {
+        stroke: #666;
+        stroke-width: 2px;
       }
-      
-      /* Main content area */
-      .scroll {
-        font-family: Arial, Geneva, Helvetica, sans-serif;
-        font-size: large;
-        color: #e4e4e4;
-        background-color: #0a0a0a;
-        padding: 20px;
-        max-width: 800px;
-        margin: 20px auto;
-        overflow-y: auto;
-        height: calc(100vh - 60px);
+      /* Non-central nodes: circles and text */
+      .node circle {
+        fill: #0a0a0a;
+        stroke: #fff;
+        stroke-width: 2px;
       }
-      
-      /* Optional site map area */
-      .site_map {
-        /* Customize as needed */
+      .node text {
+        fill: #fff;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        pointer-events: none;
+        text-anchor: middle;
+        dominant-baseline: central;
       }
-      
-      /* Animations */
+      /* The central logo: rotate continuously */
       .rotate {
-        transform-origin: 52% 52%;
-        animation: rotation 8s infinite linear;
+        transform-origin: center;
+        animation: spin 8s linear infinite;
       }
-      @keyframes rotation {
-        from {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(-359deg);
-        }
-      }
-      
-      .quote {
-        font-weight: bold;
-        font-style: italic;
-        text-align: right;
-      }
-      
-      /* Media Queries for Mobile */
-      @media (max-width: 768px) {
-        /* Stack elements vertically on smaller screens */
-        .container {
-          flex-direction: column;
-          align-items: center;
-        }
-        .stack-top {
-          width: 100%;
-          text-align: center;
-          font-size: large;
-        }
-        .scroll {
-          width: 95%;
-          height: auto;
-          margin: 10px auto;
-        }
-        /* Adjust site map or hide if not needed */
-        .site_map {
-          width: 95%;
-          margin: 10px auto;
-        }
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to   { transform: rotate(360deg); }
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <!-- Navigation / Sidebar -->
-      <div class="stack-top">
-        <a href="/blog2/">&nbsp;blog&nbsp;</a><br>
-        <a style="background-color:#0a0a0a" href="index.html">&nbsp;home&nbsp;</a><br>
-        <a href="jazz/jazz.html">&nbsp;jazz&nbsp;</a><br>
-        <a href="music/music.html">&nbsp;music&nbsp;</a><br>
-        <a href="radio/radio.html">&nbsp;radio&nbsp;</a><br>
-        <a href="study/study.html">&nbsp;study&nbsp;</a><br>
-        <a href="transcriptions/transcriptions.html">&nbsp;transcriptions&nbsp;</a><br>
-        <a href="语言/语言.html">&nbsp;语言&nbsp;</a><br>
-      </div>
-      
-      <!-- Main Content Area -->
-      <div class="scroll">
-        <center>
-          <a href="./music/music.html">
-            <img src="./src/templates/images/dozehilz.png" class="rotate" width="400" alt="Rotating Image">
-          </a>
-        </center>
-        <div class="quote">
-          <p>"You either die a hero, or you live long enough to see yourself become a villain" -Batman</p>
-        </div>
-      </div>
-      
-      <!-- Optional Site Map Area -->
-      <div class="site_map">
-        <!-- Add any site map or extra content here -->
-      </div>
-    </div>
+    <svg></svg>
+    <script>
+      // Get viewport dimensions
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+
+      // Define nodes:
+      // The central node (isCenter = true) displays the logo image.
+      // Other nodes represent categories.
+      const nodes = [
+        { id: "center", fx: width / 2, fy: height / 2, isCenter: true },
+        { id: "blog" },
+        { id: "home" },
+        { id: "jazz" },
+        { id: "music" },
+        { id: "radio" },
+        { id: "study" },
+        { id: "transcriptions" },
+        { id: "语言" }
+      ];
+
+      // Define links from the center node to every other node.
+      const links = nodes
+        .filter(d => !d.isCenter)
+        .map(d => ({ source: "center", target: d.id }));
+
+      // Create the force simulation.
+      const simulation = d3.forceSimulation(nodes)
+        .force("link", d3.forceLink(links).id(d => d.id).distance(150))
+        .force("charge", d3.forceManyBody().strength(-300))
+        .force("center", d3.forceCenter(width / 2, height / 2))
+        .on("tick", ticked);
+
+      // Select the SVG element.
+      const svg = d3.select("svg");
+
+      // Create the link elements.
+      const link = svg.append("g")
+        .attr("class", "links")
+        .selectAll("line")
+        .data(links)
+        .enter()
+        .append("line")
+        .attr("class", "link");
+
+      // Create groups for nodes.
+      const node = svg.append("g")
+        .attr("class", "nodes")
+        .selectAll("g")
+        .data(nodes)
+        .enter()
+        .append("g")
+        .attr("class", "node")
+        .call(d3.drag()
+          .on("start", dragstarted)
+          .on("drag", dragged)
+          .on("end", dragended));
+
+      // For the central node, append an image.
+      node.filter(d => d.isCenter)
+        .append("image")
+          .attr("xlink:href", "./src/templates/images/dozehilz.png")
+          .attr("width", 100)
+          .attr("height", 100)
+          .attr("x", -50)  // center the image relative to node position
+          .attr("y", -50)
+          .attr("class", "rotate");
+
+      // For non-central nodes, append a circle and text label.
+      const nonCenter = node.filter(d => !d.isCenter);
+      nonCenter.append("circle")
+          .attr("r", 40);
+      nonCenter.append("text")
+          .text(d => d.id);
+
+      // Update positions on each simulation tick.
+      function ticked() {
+        link
+          .attr("x1", d => d.source.x)
+          .attr("y1", d => d.source.y)
+          .attr("x2", d => d.target.x)
+          .attr("y2", d => d.target.y);
+        node.attr("transform", d => `translate(${d.x},${d.y})`);
+      }
+
+      // Drag event handlers.
+      function dragstarted(event, d) {
+        if (!event.active) simulation.alphaTarget(0.3).restart();
+        d.fx = d.x;
+        d.fy = d.y;
+      }
+      function dragged(event, d) {
+        d.fx = event.x;
+        d.fy = event.y;
+      }
+      function dragended(event, d) {
+        if (!event.active) simulation.alphaTarget(0);
+        // Remove fixed positions on drag end so that nodes return to equilibrium.
+        d.fx = null;
+        d.fy = null;
+      }
+
+      // Ensure the simulation adapts when the window is resized.
+      window.addEventListener("resize", () => {
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        simulation.force("center", d3.forceCenter(width / 2, height / 2));
+        simulation.alpha(1).restart();
+        svg.attr("width", width).attr("height", height);
+      });
+    </script>
   </body>
 </html>
