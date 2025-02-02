@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Blog</title>
+  <style>
+    /* Reset and basic styling */
+    body {
+      margin: 0;
+      padding: 20px;
+      background-color: #000;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+    /* Center container for better readability on mobile */
+    .container {
+      max-width: 600px;
+      margin: auto;
+    }
+    a {
+      color: #1e90ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="content">
+    Loading...
+  </div>
+
+  <!-- Marked.js for Markdown to HTML conversion -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    // URL of the Markdown file
+    const mdUrl = 'https://raw.githubusercontent.com/monksevillair/monksevillair.github.io/refs/heads/master/blog2/blog.md';
+
+    // Fetch the Markdown file and render it
+    fetch(mdUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.text();
+      })
+      .then(markdown => {
+        // Convert markdown to HTML and insert into the page
+        document.getElementById('content').innerHTML = marked.parse(markdown);
+      })
+      .catch(error => {
+        console.error('Error fetching Markdown:', error);
+        document.getElementById('content').textContent = 'Failed to load blog content.';
+      });
+  </script>
+</body>
+</html>
