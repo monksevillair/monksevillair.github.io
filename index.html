@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- Ensure proper scaling on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monk's Evil Lair</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/templates/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/templates/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/src/templates/images/favicon-16x16.png">
+    <link rel="manifest" href="/src/templates/images/site.webmanifest">
+    <style>
+      /* Basic resets and overall styling */
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #111;
+        overflow-x: hidden;
+      }
+      
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+      
+      a:hover {
+        background-color: #0a0a0a;
+      }
+      
+      hr {
+        border: 7px solid #111;
+        width: 150%;
+        position: relative;
+        left: -30px;
+      }
+      
+      /* Flex container for layout */
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+        width: 100%;
+      }
+      
+      /* Navigation (left-hand) section */
+      .stack-top {
+        font-family: Arial, Geneva, Helvetica, sans-serif;
+        font-size: xx-large;
+        font-weight: bold;
+        margin: 20px;
+        width: 275px;
+      }
+      
+      /* Main content area */
+      .scroll {
+        font-family: Arial, Geneva, Helvetica, sans-serif;
+        font-size: large;
+        color: #e4e4e4;
+        background-color: #0a0a0a;
+        padding: 20px;
+        max-width: 800px;
+        margin: 20px auto;
+        overflow-y: auto;
+        height: calc(100vh - 60px);
+      }
+      
+      /* Optional site map area */
+      .site_map {
+        /* Customize as needed */
+      }
+      
+      /* Animations */
+      .rotate {
+        transform-origin: 52% 52%;
+        animation: rotation 8s infinite linear;
+      }
+      @keyframes rotation {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(-359deg);
+        }
+      }
+      
+      .quote {
+        font-weight: bold;
+        font-style: italic;
+        text-align: right;
+      }
+      
+      /* Media Queries for Mobile */
+      @media (max-width: 768px) {
+        /* Stack elements vertically on smaller screens */
+        .container {
+          flex-direction: column;
+          align-items: center;
+        }
+        .stack-top {
+          width: 100%;
+          text-align: center;
+          font-size: large;
+        }
+        .scroll {
+          width: 95%;
+          height: auto;
+          margin: 10px auto;
+        }
+        /* Adjust site map or hide if not needed */
+        .site_map {
+          width: 95%;
+          margin: 10px auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navigation / Sidebar -->
+      <div class="stack-top">
+        <a href="/blog2/">&nbsp;blog&nbsp;</a><br>
+        <a style="background-color:#0a0a0a" href="index.html">&nbsp;home&nbsp;</a><br>
+        <a href="jazz/jazz.html">&nbsp;jazz&nbsp;</a><br>
+        <a href="music/music.html">&nbsp;music&nbsp;</a><br>
+        <a href="radio/radio.html">&nbsp;radio&nbsp;</a><br>
+        <a href="study/study.html">&nbsp;study&nbsp;</a><br>
+        <a href="transcriptions/transcriptions.html">&nbsp;transcriptions&nbsp;</a><br>
+        <a href="语言/语言.html">&nbsp;语言&nbsp;</a><br>
+      </div>
+      
+      <!-- Main Content Area -->
+      <div class="scroll">
+        <center>
+          <a href="./music/music.html">
+            <img src="./src/templates/images/dozehilz.png" class="rotate" width="400" alt="Rotating Image">
+          </a>
+        </center>
+        <div class="quote">
+          <p>"You either die a hero, or you live long enough to see yourself become a villain" -Batman</p>
+        </div>
+      </div>
+      
+      <!-- Optional Site Map Area -->
+      <div class="site_map">
+        <!-- Add any site map or extra content here -->
+      </div>
+    </div>
+  </body>
+</html>
