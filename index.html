@@ -26,21 +26,24 @@
         stroke: #666;
         stroke-width: 2px;
       }
-      /* Non-central nodes: circles and text */
+      /* Node styling */
       .node circle {
-        fill: #0a0a0a;
+        fill: #000;  /* Black background for bubbles */
         stroke: #fff;
         stroke-width: 2px;
       }
       .node text {
-        fill: #fff;
+        fill: #fff;  /* White text */
         font-family: Arial, sans-serif;
         font-size: 14px;
         pointer-events: none;
         text-anchor: middle;
         dominant-baseline: central;
       }
-      /* The central logo: rotate continuously */
+      /* Central node (spinning logo) */
+      .center-image {
+        pointer-events: none; /* Do not capture clicks on the image */
+      }
       .rotate {
         transform-origin: center;
         animation: spin 8s linear infinite;
@@ -49,31 +52,35 @@
         from { transform: rotate(0deg); }
         to   { transform: rotate(360deg); }
       }
+      /* Make cursor a pointer for clickable nodes */
+      .clickable {
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
     <svg></svg>
     <script>
       // Get viewport dimensions
-      const width = window.innerWidth;
-      const height = window.innerHeight;
+      let width = window.innerWidth;
+      let height = window.innerHeight;
 
       // Define nodes:
       // The central node (isCenter = true) displays the logo image.
-      // Other nodes represent categories.
+      // Other nodes represent categories with their respective URLs.
       const nodes = [
-        { id: "center", fx: width / 2, fy: height / 2, isCenter: true },
-        { id: "blog" },
-        { id: "home" },
-        { id: "jazz" },
-        { id: "music" },
-        { id: "radio" },
-        { id: "study" },
-        { id: "transcriptions" },
-        { id: "语言" }
+        { id: "center", isCenter: true },
+        { id: "blog", url: "/blog2/" },
+        { id: "home", url: "index.html" },
+        { id: "jazz", url: "jazz/jazz.html" },
+        { id: "music", url: "music/music.html" },
+        { id: "radio", url: "radio/radio.html" },
+        { id: "study", url: "study/study.html" },
+        { id: "transcriptions", url: "transcriptions/transcriptions.html" },
+        { id: "语言", url: "语言/语言.html" }
       ];
 
-      // Define links from the center node to every other node.
+      // Define links: every non-center node is linked to the center node.
       const links = nodes
         .filter(d => !d.isCenter)
         .map(d => ({ source: "center", target: d.id }));
@@ -104,7 +111,7 @@
         .data(nodes)
         .enter()
         .append("g")
-        .attr("class", "node")
+        .attr("class", d => "node" + (!d.isCenter && d.url ? " clickable" : ""))
         .call(d3.drag()
           .on("start", dragstarted)
           .on("drag", dragged)
@@ -116,9 +123,9 @@
           .attr("xlink:href", "./src/templates/images/dozehilz.png")
           .attr("width", 100)
           .attr("height", 100)
-          .attr("x", -50)  // center the image relative to node position
+          .attr("x", -50)  // Center the image relative to the node's position.
           .attr("y", -50)
-          .attr("class", "rotate");
+          .attr("class", "center-image rotate");
 
       // For non-central nodes, append a circle and text label.
       const nonCenter = node.filter(d => !d.isCenter);
@@ -127,8 +134,22 @@
       nonCenter.append("text")
           .text(d => d.id);
 
+      // Add click handler to non-center nodes.
+      nonCenter.on("click", (event, d) => {
+        if(d.url) {
+          window.location.href = d.url;
+        }
+      });
+
       // Update positions on each simulation tick.
       function ticked() {
+        // Force the center node to remain at the center.
+        nodes.forEach(d => {
+          if(d.isCenter) {
+            d.x = width / 2;
+            d.y = height / 2;
+          }
+        });
         link
           .attr("x1", d => d.source.x)
           .attr("y1", d => d.source.y)
@@ -139,25 +160,29 @@
 
       // Drag event handlers.
       function dragstarted(event, d) {
+        // Do not allow dragging of the center node.
+        if(d.isCenter) return;
         if (!event.active) simulation.alphaTarget(0.3).restart();
         d.fx = d.x;
         d.fy = d.y;
       }
       function dragged(event, d) {
+        if(d.isCenter) return;
         d.fx = event.x;
         d.fy = event.y;
       }
       function dragended(event, d) {
+        if(d.isCenter) return;
         if (!event.active) simulation.alphaTarget(0);
         // Remove fixed positions on drag end so that nodes return to equilibrium.
         d.fx = null;
         d.fy = null;
       }
 
-      // Ensure the simulation adapts when the window is resized.
+      // Update simulation on window resize.
       window.addEventListener("resize", () => {
-        const width = window.innerWidth;
-        const height = window.innerHeight;
+        width = window.innerWidth;
+        height = window.innerHeight;
         simulation.force("center", d3.forceCenter(width / 2, height / 2));
         simulation.alpha(1).restart();
         svg.attr("width", width).attr("height", height);
