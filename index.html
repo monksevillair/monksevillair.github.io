@@ -1,192 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- Ensures proper scaling on mobile devices -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Monk's Evil Lair - Force Directed Graph</title>
-    <!-- Include D3 (v7) from CDN -->
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monk's Evil Lair</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/templates/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/templates/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/src/templates/images/favicon-16x16.png">
+    <link rel="manifest" href="/src/templates/images/site.webmanifest">
     <style>
-      /* Fullscreen and background */
-      html, body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #111;
-        overflow: hidden;
-      }
-      svg {
-        width: 100%;
-        height: 100%;
-      }
-      /* Link styling (the lines connecting nodes) */
-      .link {
-        stroke: #666;
-        stroke-width: 2px;
-      }
-      /* Node styling */
-      .node circle {
-        fill: #000;  /* Black background for bubbles */
-        stroke: #fff;
-        stroke-width: 2px;
-      }
-      .node text {
-        fill: #fff;  /* White text */
-        font-family: Arial, sans-serif;
-        font-size: 14px;
-        pointer-events: none;
-        text-anchor: middle;
-        dominant-baseline: central;
-      }
-      /* Central node (spinning logo) */
-      .center-image {
-        pointer-events: none; /* Do not capture clicks on the image */
-      }
-      .rotate {
-        transform-origin: center;
-        animation: spin 8s linear infinite;
-      }
-      @keyframes spin {
-        from { transform: rotate(0deg); }
-        to   { transform: rotate(360deg); }
-      }
-      /* Make cursor a pointer for clickable nodes */
-      .clickable {
-        cursor: pointer;
-      }
-    </style>
-  </head>
-  <body>
-    <svg></svg>
-    <script>
-      // Get viewport dimensions
-      let width = window.innerWidth;
-      let height = window.innerHeight;
-
-      // Define nodes:
-      // The central node (isCenter = true) displays the logo image.
-      // Other nodes represent categories with their respective URLs.
-      const nodes = [
-        { id: "center", isCenter: true },
-        { id: "blog", url: "/blog2/" },
-        { id: "home", url: "index.html" },
-        { id: "jazz", url: "jazz/jazz.html" },
-        { id: "music", url: "music/music.html" },
-        { id: "radio", url: "radio/radio.html" },
-        { id: "study", url: "study/study.html" },
-        { id: "transcriptions", url: "transcriptions/transcriptions.html" },
-        { id: "语言", url: "语言/语言.html" }
-      ];
-
-      // Define links: every non-center node is linked to the center node.
-      const links = nodes
-        .filter(d => !d.isCenter)
-        .map(d => ({ source: "center", target: d.id }));
-
-      // Create the force simulation.
-      const simulation = d3.forceSimulation(nodes)
-        .force("link", d3.forceLink(links).id(d => d.id).distance(150))
-        .force("charge", d3.forceManyBody().strength(-300))
-        .force("center", d3.forceCenter(width / 2, height / 2))
-        .on("tick", ticked);
-
-      // Select the SVG element.
-      const svg = d3.select("svg");
-
-      // Create the link elements.
-      const link = svg.append("g")
-        .attr("class", "links")
-        .selectAll("line")
-        .data(links)
-        .enter()
-        .append("line")
-        .attr("class", "link");
-
-      // Create groups for nodes.
-      const node = svg.append("g")
-        .attr("class", "nodes")
-        .selectAll("g")
-        .data(nodes)
-        .enter()
-        .append("g")
-        .attr("class", d => "node" + (!d.isCenter && d.url ? " clickable" : ""))
-        .call(d3.drag()
-          .on("start", dragstarted)
-          .on("drag", dragged)
-          .on("end", dragended));
-
-      // For the central node, append an image.
-      node.filter(d => d.isCenter)
-        .append("image")
-          .attr("xlink:href", "./src/templates/images/dozehilz.png")
-          .attr("width", 100)
-          .attr("height", 100)
-          .attr("x", -50)  // Center the image relative to the node's position.
-          .attr("y", -50)
-          .attr("class", "center-image rotate");
-
-      // For non-central nodes, append a circle and text label.
-      const nonCenter = node.filter(d => !d.isCenter);
-      nonCenter.append("circle")
-          .attr("r", 40);
-      nonCenter.append("text")
-          .text(d => d.id);
-
-      // Add click handler to non-center nodes.
-      nonCenter.on("click", (event, d) => {
-        if(d.url) {
-          window.location.href = d.url;
+        :root {
+            --background-color: #111;
+            --text-color: #e4e4e4;
+            --link-hover-bg: #0a0a0a;
+            --border-color: #252525;
         }
-      });
 
-      // Update positions on each simulation tick.
-      function ticked() {
-        // Force the center node to remain at the center.
-        nodes.forEach(d => {
-          if(d.isCenter) {
-            d.x = width / 2;
-            d.y = height / 2;
-          }
-        });
-        link
-          .attr("x1", d => d.source.x)
-          .attr("y1", d => d.source.y)
-          .attr("x2", d => d.target.x)
-          .attr("y2", d => d.target.y);
-        node.attr("transform", d => `translate(${d.x},${d.y})`);
-      }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-      // Drag event handlers.
-      function dragstarted(event, d) {
-        // Do not allow dragging of the center node.
-        if(d.isCenter) return;
-        if (!event.active) simulation.alphaTarget(0.3).restart();
-        d.fx = d.x;
-        d.fy = d.y;
-      }
-      function dragged(event, d) {
-        if(d.isCenter) return;
-        d.fx = event.x;
-        d.fy = event.y;
-      }
-      function dragended(event, d) {
-        if(d.isCenter) return;
-        if (!event.active) simulation.alphaTarget(0);
-        // Remove fixed positions on drag end so that nodes return to equilibrium.
-        d.fx = null;
-        d.fy = null;
-      }
+        html, body {
+            height: 100%;
+            width: 100%;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: Arial, Geneva, Helvetica, sans-serif;
+            overflow-x: hidden;
+        }
 
-      // Update simulation on window resize.
-      window.addEventListener("resize", () => {
-        width = window.innerWidth;
-        height = window.innerHeight;
-        simulation.force("center", d3.forceCenter(width / 2, height / 2));
-        simulation.alpha(1).restart();
-        svg.attr("width", width).attr("height", height);
-      });
-    </script>
-  </body>
+        .container {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+        }
+
+        /* Navigation Styles */
+        .nav-menu {
+            padding: 1rem;
+            background-color: var(--background-color);
+            min-width: 200px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                width: 100%;
+                padding: 0.5rem;
+            }
+        }
+
+        .nav-menu a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 0.8rem 1rem;
+            font-size: 1.2rem;
+            transition: background-color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            background-color: var(--link-hover-bg);
+        }
+
+        /* Content Styles */
+        .content {
+            flex: 1;
+            padding: 2rem;
+            overflow-y: auto;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 1rem;
+            }
+        }
+
+        /* Rotating Image */
+        .rotating-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 2rem auto;
+        }
+
+        @keyframes rotation {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(-359deg); }
+        }
+
+        .rotate {
+            animation: rotation 8s infinite linear;
+        }
+
+        /* Quote Styles */
+        .quote {
+            font-weight: bold;
+            font-style: italic;
+            text-align: right;
+            margin-top: 2rem;
+            padding: 1rem;
+            border-left: 4px solid var(--border-color);
+        }
+
+        /* Code/Vocab Styles */
+        .code-block {
+            background-color: var(--link-hover-bg);
+            border-left: 5px solid var(--border-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="nav-menu">
+            <a href="blog/blog.html">blog</a>
+            <a href="index.html" style="background-color: var(--link-hover-bg)">home</a>
+            <a href="jazz/jazz.html">jazz</a>
+            <a href="music/music.html">music</a>
+            <a href="radio/radio.html">radio</a>
+            <a href="study/study.html">study</a>
+            <a href="transcriptions/transcriptions.html">transcriptions</a>
+            <a href="语言/语言.html">语言</a>
+        </nav>
+        
+        <main class="content">
+            <a href="./music/music.html">
+                <img src="./src/templates/images/dozehilz.png" class="rotating-image rotate" alt="Rotating Image">
+            </a>
+            
+            <div class="quote">
+                <p>"You either die a hero, or you live long enough to see yourself become a villain" -Batman</p>
+            </div>
+        </main>
+    </div>
+</body>
 </html>
