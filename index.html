@@ -4,16 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monk's Evil Lair</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/src/templates/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/src/templates/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/src/templates/images/favicon-16x16.png">
-    <link rel="manifest" href="/src/templates/images/site.webmanifest">
     <style>
         :root {
             --background-color: #111;
             --text-color: #e4e4e4;
             --link-hover-bg: #0a0a0a;
-            --border-color: #252525;
         }
 
         * {
@@ -22,75 +17,75 @@
             box-sizing: border-box;
         }
 
-        html, body {
-            height: 100%;
-            width: 100%;
+        body {
             background-color: var(--background-color);
             color: var(--text-color);
             font-family: Arial, Geneva, Helvetica, sans-serif;
-            overflow-x: hidden;
+            line-height: 1.6;
+            min-height: 100vh;
+            position: relative;
         }
 
-        .container {
-            display: flex;
-            flex-direction: row;
-            height: 100%;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-        }
-
-        /* Navigation Styles */
-        .nav-menu {
-            padding: 1rem;
-            background-color: var(--background-color);
-            min-width: 200px;
-        }
-
-        @media (max-width: 768px) {
-            .nav-menu {
-                width: 100%;
-                padding: 0.5rem;
-            }
-        }
-
-        .nav-menu a {
-            display: block;
-            color: #fff;
-            text-decoration: none;
-            padding: 0.8rem 1rem;
-            font-size: 1.2rem;
-            transition: background-color 0.3s;
-        }
-
-        .nav-menu a:hover {
-            background-color: var(--link-hover-bg);
-        }
-
-        /* Content Styles */
         .content {
-            flex: 1;
+            max-width: 600px;
             padding: 2rem;
-            overflow-y: auto;
-            max-width: 800px;
-            margin: 0 auto;
+        }
+
+        .image-container {
+            position: fixed;
+            top: 50%;
+            right: 2rem;
+            transform: translateY(-50%);
+            width: 200px;
+            z-index: 10;
         }
 
         @media (max-width: 768px) {
-            .content {
-                padding: 1rem;
+            .image-container {
+                position: static;
+                transform: none;
+                width: 150px;
+                margin: 2rem auto;
             }
         }
 
-        /* Rotating Image */
+        h2 {
+            font-size: 1rem;
+            text-transform: lowercase;
+            margin: 2rem 0 0.5rem 0;
+            font-weight: normal;
+            color: #666;
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            margin: 0.5rem 0;
+        }
+
+        a {
+            color: var(--text-color);
+            text-decoration: none;
+            border-bottom: 1px solid #333;
+            padding-bottom: 1px;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--text-color);
+        }
+
         .rotating-image {
-            max-width: 100%;
+            width: 100%;
             height: auto;
             display: block;
-            margin: 2rem auto;
         }
 
         @keyframes rotation {
@@ -101,51 +96,35 @@
         .rotate {
             animation: rotation 8s infinite linear;
         }
-
-        /* Quote Styles */
-        .quote {
-            font-weight: bold;
-            font-style: italic;
-            text-align: right;
-            margin-top: 2rem;
-            padding: 1rem;
-            border-left: 4px solid var(--border-color);
-        }
-
-        /* Code/Vocab Styles */
-        .code-block {
-            background-color: var(--link-hover-bg);
-            border-left: 5px solid var(--border-color);
-            padding: 1rem;
-            margin: 1rem 0;
-            font-family: monospace;
-            white-space: pre-wrap;
-            overflow-x: auto;
-        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <nav class="nav-menu">
-            <a href="blog/blog.html">blog</a>
-            <a href="index.html" style="background-color: var(--link-hover-bg)">home</a>
-            <a href="jazz/jazz.html">jazz</a>
-            <a href="music/music.html">music</a>
-            <a href="radio/radio.html">radio</a>
-            <a href="study/study.html">study</a>
-            <a href="transcriptions/transcriptions.html">transcriptions</a>
-            <a href="语言/语言.html">语言</a>
-        </nav>
-        
-        <main class="content">
-            <a href="./music/music.html">
-                <img src="./src/templates/images/dozehilz.png" class="rotating-image rotate" alt="Rotating Image">
-            </a>
-            
-            <div class="quote">
-                <p>"You either die a hero, or you live long enough to see yourself become a villain" -Batman</p>
-            </div>
-        </main>
+    <main class="content">
+        <h2>what i'm working on:</h2>
+        <ul>
+            <li><a href="/underwater_city.html">underwater city</a></li>
+            <li><a href="https://glyphrobot.com">GLYPH</a></li>
+        </ul>
+
+        <h2>side doodles:</h2>
+        <ul>
+            <li><a href="https://github.com/imcnanie/neopkm">neopkm</a></li>
+            <li><a href="/music.html">music</a></li>
+        </ul>
+
+        <h2>media:</h2>
+        <ul>
+            <li><a href="https://www.popularmechanics.com/adventure/outdoors/a18930170/diy-sailboat/">pop mech</a></li>
+        </ul>
+
+        <h2>contact:</h2>
+        <p><a href="mailto:monksevillair@gmail.com">monksevillair@gmail.com</a></p>
+    </main>
+
+    <div class="image-container">
+        <a href="./music/music.html">
+            <img src="./src/templates/images/dozehilz.png" class="rotating-image rotate" alt="Rotating Image">
+        </a>
     </div>
 </body>
 </html>
