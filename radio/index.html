@@ -3,76 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evil Lair Radio</title>
+    <title>KLON Radio</title>
     <style>
+        :root {
+            --background: #121212;
+            --surface: #282828;
+            --primary: #1DB954;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B3B3B3;
+            --hover: #404040;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--background);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 20px;
             max-width: 800px;
             margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--primary);
+        }
+
+        .player-container {
+            background: var(--surface);
+            border-radius: 12px;
             padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
-        .playlist {
-            list-style: none;
-            padding: 0;
+
+        .now-playing-info {
+            text-align: center;
+            margin-bottom: 15px;
         }
-        .playlist li {
-            padding: 10px;
-            margin: 5px 0;
-            background: #f0f0f0;
-            cursor: pointer;
+
+        .now-playing-title {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--text-primary);
         }
-        .playlist li:hover {
-            background: #e0e0e0;
+
+        .now-playing-status {
+            font-size: 14px;
+            color: var(--text-secondary);
         }
+
         audio {
             width: 100%;
-            margin: 20px 0;
+            margin: 10px 0;
+            border-radius: 8px;
         }
-        .now-playing {
-            background: #d0d0d0 !important;
+
+        audio::-webkit-media-controls-panel {
+            background: var(--surface);
         }
+
         .timeline-container {
-            margin: 20px 0;
-            padding: 10px;
-            background: #f5f5f5;
-            border-radius: 4px;
+            background: var(--surface);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
         }
-        
+
         .timeline-bar {
-            height: 10px;
-            background: #e0e0e0;
-            border-radius: 5px;
+            height: 6px;
+            background: var(--hover);
+            border-radius: 3px;
             overflow: hidden;
             position: relative;
         }
-        
+
         .timeline-progress {
             height: 100%;
-            width: 100%;
-            background: #4CAF50;
+            background: var(--primary);
             transform-origin: left;
             transition: transform 1s linear;
         }
-        
+
         .timeline-label {
             font-size: 12px;
-            color: #666;
-            margin-top: 5px;
+            color: var(--text-secondary);
+            margin-top: 8px;
             text-align: center;
+        }
+
+        .playlist {
+            list-style: none;
+            background: var(--surface);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .playlist li {
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--background);
+            cursor: pointer;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+        }
+
+        .playlist li:last-child {
+            border-bottom: none;
+        }
+
+        .playlist li:hover {
+            background: var(--hover);
+        }
+
+        .playlist li.now-playing {
+            background: var(--hover);
+            color: var(--primary);
+        }
+
+        .playlist li.now-playing::before {
+            content: "▶";
+            margin-right: 10px;
+            font-size: 12px;
+        }
+
+        .test-button {
+            background: var(--primary);
+            color: var(--text-primary);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: opacity 0.2s;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        .test-button:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .player-container {
+                padding: 15px;
+            }
+
+            .playlist li {
+                padding: 12px 15px;
+            }
+        }
+
+        /* Custom scrollbar for Webkit browsers */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--background);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--hover);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+
+        .persistent-playback {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: var(--text-primary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .persistent-playback.visible {
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
-    <h1>My Music Playlist</h1>
-    <audio id="audioPlayer" controls>
-        Your browser does not support the audio element.
-    </audio>
+    <div class="persistent-playback" id="persistentPlayback">
+        Audio will continue playing in background
+    </div>
     
-    <div class="timeline-container">
-        <div class="timeline-bar">
-            <div id="timelineProgress" class="timeline-progress"></div>
+    <h1>KLON RADIO</h1>
+    
+    <div class="player-container">
+        <div class="now-playing-info">
+            <div class="now-playing-title" id="nowPlayingTitle">Select a track</div>
+            <div class="now-playing-status" id="nowPlayingStatus">Ready to play</div>
         </div>
-        <div id="timelineLabel" class="timeline-label">Next interlude in: 2:00</div>
+
+        <audio id="audioPlayer" controls>
+            Your browser does not support the audio element.
+        </audio>
+        
+        <div class="timeline-container">
+            <div class="timeline-bar">
+                <div id="timelineProgress" class="timeline-progress"></div>
+            </div>
+            <div id="timelineLabel" class="timeline-label">Next interlude in: 2:00</div>
+        </div>
     </div>
     
     <ul id="playlist" class="playlist">
@@ -344,12 +498,56 @@
             // Add test button for interludes
             const testButton = document.createElement('button');
             testButton.textContent = 'Test Interlude';
-            testButton.style.margin = '10px';
-            testButton.onclick = () => {
-                console.log('Manually triggering interlude');
-                playInterlude();
-            };
-            document.body.insertBefore(testButton, playlist);
+            testButton.className = 'test-button';
+            document.querySelector('.player-container').appendChild(testButton);
+
+            function updateNowPlaying(song) {
+                const title = document.getElementById('nowPlayingTitle');
+                const status = document.getElementById('nowPlayingStatus');
+                title.textContent = song.replace(/^src_radio_mp3_|-mix001\.mp3$/g, '');
+                status.textContent = isInterludePlaying ? 'Interlude Playing' : 'Now Playing';
+            }
+
+            // Add this new function near the top
+            function handleVisibilityChange() {
+                if (document.hidden) {
+                    // Page is hidden
+                    audioContext.resume().catch(console.error);
+                    if (audioPlayer.paused && currentSong) {
+                        audioPlayer.play().catch(console.error);
+                    }
+                    if (isInterludePlaying && interludeAudio.paused) {
+                        interludeAudio.play().catch(console.error);
+                    }
+                }
+            }
+
+            // Add visibility change listener
+            document.addEventListener('visibilitychange', handleVisibilityChange);
+
+            // Also add these handlers to both audio elements
+            audioPlayer.addEventListener('pause', () => {
+                if (!document.hidden && currentSong) {
+                    audioPlayer.play().catch(console.error);
+                }
+            });
+
+            interludeAudio.addEventListener('pause', () => {
+                if (!document.hidden && isInterludePlaying) {
+                    interludeAudio.play().catch(console.error);
+                }
+            });
+
+            function showPersistentPlayback() {
+                const indicator = document.getElementById('persistentPlayback');
+                indicator.classList.add('visible');
+                setTimeout(() => {
+                    indicator.classList.remove('visible');
+                }, 3000);
+            }
+
+            // Call this when starting playback
+            audioPlayer.addEventListener('play', showPersistentPlayback);
         });
     </script>
 </body>
