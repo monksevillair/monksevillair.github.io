@@ -1,30 +1,44 @@
+name: News to Radio Broadcast
+
+on:
+  schedule:
+    - cron: "0 * * * *"  # Runs every hour
+  workflow_dispatch:  # Allows manual trigger from GitHub Actions UI
+
 jobs:
-  generate-lists:
+  news-to-radio:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with:
-          node-version: 18
-
-      - name: Ensure package.json exists
-        run: test -f package.json || echo '{}' > package.json
+          python-version: "3.10"  # ✅ Use a valid version (3.10, 3.11, or 3.12)
 
       - name: Install dependencies
         run: |
-          if [ -f package.json ]; then npm install; else echo "Skipping npm install"; fi
+          pip install requests feedparser python-dotenv anthropic openai
 
-      - name: Run script to generate lists
-        run: node radio/generate_lists.js
+      - name: Set up environment variables
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: echo "Environment variables set."
 
-      - name: Commit and push changes
+      - name: Run news2radio.py
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        working-directory: radio  # Forces execution inside radio/
+        run: python news2radio.py
+
+      - name: Commit and push new broadcasts
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add songs.json broadcasts.json
-          git commit -m "Update songs and broadcasts list" || echo "No changes to commit"
+          git add radio/broadcasts/
+          git commit -m "Automated update: New radio broadcast" || echo "No changes to commit"
           git push
