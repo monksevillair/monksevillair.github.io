@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dystopiagram</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    
+    <!-- Dependencies -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/lucide@0.263.1/dist/umd/lucide.min.js"></script>
+    <!-- Ensure scripts are loaded -->
+    <script>
+        function waitForDependencies() {
+            return new Promise((resolve) => {
+                const check = () => {
+                    if (window.React && window.ReactDOM && window.lucide) {
+                        resolve();
+                    } else {
+                        setTimeout(check, 50);
+                    }
+                };
+                check();
+            });
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <style>
+        .icon {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+        .icon.filled {
+            fill: currentColor;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script>
+        async function initializeApp() {
+            await waitForDependencies();
+            
+            const { useState, useEffect, useCallback, useRef } = React;
+        const { createRoot } = ReactDOM;
+        
+        // Create Icon Components
+        const createIcon = (iconName) => {
+            return function IconComponent({ className, onClick }) {
+                const ref = React.useRef(null);
+                
+                React.useEffect(() => {
+                    if (ref.current) {
+                        lucide.createIcons({
+                            icons: {
+                                [iconName]: ref.current
+                            }
+                        });
+                    }
+                }, []);
+                
+                return React.createElement('i', {
+                    'data-lucide': iconName,
+                    className,
+                    onClick,
+                    ref
+                });
+            };
+        };
+
+        const Heart = createIcon('heart');
+        const MessageCircle = createIcon('message-circle');
+        const Bookmark = createIcon('bookmark');
+        const MoreHorizontal = createIcon('more-horizontal');
+
+        const propagandaMessages = [
+            'OBEY',
+            'CONSUME',
+            'MARRY AND REPRODUCE',
+            'NO INDEPENDENT THOUGHT',
+            'STAY ASLEEP',
+            'SUBMIT',
+            'WATCH TV',
+            'DO NOT QUESTION AUTHORITY',
+            'CONFORM',
+            'BUY',
+            'THIS IS YOUR GOD',
+            'NO IMAGINATION'
+        ];
+
+        const captions = [
+            "following orders like a good citizen 👁️ #obey #peace",
+            "shopping spree because the billboards told me to 🛍️ #consume #buy",
+            "just got married! time to reproduce 👶 #family #duty",
+            "watching my favorite show, only 8 hours today 📺 #tv #entertainment",
+            "no thoughts head empty just like they want 🤖 #conform #submit",
+            "this new product is literally god 🙏 #blessed #consume"
+        ];
+
+        const comments = [
+            "watching TV right now, you should too 📺",
+            "just bought this without thinking, as intended 🛍️",
+            "reproduction is your duty to society 👶",
+            "independent thought is dangerous, stay safe 🤖",
+            "the billboards know what's best for us 👁️",
+            "marriage and babies are mandatory 💒",
+            "this ad tells me what I need ✨",
+            "imagination leads to questioning, avoid it ⚠️",
+            "authority knows best, just submit 🙏"
+        ];
+
+        const generateSVG = (message) => {
+            const randomPattern = Math.floor(Math.random() * 4);
+            const baseSize = 48;
+            const scaleFactor = Math.min(1, 8 / Math.max(1, message.length / 4));
+            const fontSize = Math.floor(baseSize * scaleFactor);
+            const maxFontSize = 42;
+            const minFontSize = 24;
+            const finalFontSize = Math.min(maxFontSize, Math.max(minFontSize, fontSize));
+            
+            const words = message.split(' ');
+            let lines = [];
+            let currentLine = '';
+            
+            words.forEach(word => {
+                if (currentLine.length + word.length > 12) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine += (currentLine ? ' ' : '') + word;
+                }
+            });
+            if (currentLine) {
+                lines.push(currentLine);
+            }
+            
+            if (lines.length === 0) {
+                lines = [message];
+            }
+
+            return React.createElement('svg', {
+                viewBox: '0 0 400 400',
+                className: 'w-full'
+            }, [
+                React.createElement('rect', {
+                    key: 'background',
+                    width: 400,
+                    height: 400,
+                    fill: randomPattern % 2 === 0 ? 'white' : 'black'
+                }),
+                ...lines.map((line, i) => 
+                    React.createElement('text', {
+                        key: i,
+                        x: 200,
+                        y: 200 + (i - (lines.length-1)/2) * finalFontSize,
+                        textAnchor: 'middle',
+                        dominantBaseline: 'middle',
+                        fill: randomPattern % 2 === 0 ? 'black' : 'white',
+                        fontSize: finalFontSize,
+                        fontWeight: 900,
+                        fontFamily: 'Impact, sans-serif',
+                        style: { letterSpacing: '0.1em' }
+                    }, line)
+                ),
+                randomPattern === 0 && React.createElement('rect', {
+                    key: 'border',
+                    x: 20,
+                    y: 20,
+                    width: 360,
+                    height: 360,
+                    fill: 'none',
+                    stroke: 'black',
+                    strokeWidth: 2
+                })
+            ].filter(Boolean));
+        };
+
+        const Post = ({ message }) => {
+            const [liked, setLiked] = useState(false);
+            const [saved, setSaved] = useState(false);
+            const [showComments, setShowComments] = useState(false);
+            const [likeCount] = useState(Math.floor(Math.random() * 10000) + 1000);
+            const [commentCount] = useState(Math.floor(Math.random() * 100) + 10);
+            const [postComments] = useState(
+                Array(commentCount).fill(null).map(() => ({
+                    username: `citizen${Math.floor(Math.random() * 1000)}`,
+                    comment: comments[Math.floor(Math.random() * comments.length)]
+                }))
+            );
+            
+            return React.createElement('div', {
+                className: 'max-w-xl mx-auto bg-white border border-gray-300 mb-8'
+            }, [
+                // Header
+                React.createElement('div', {
+                    key: 'header',
+                    className: 'p-4 flex items-center justify-between border-b border-gray-300'
+                }, [
+                    React.createElement('div', {
+                        key: 'user',
+                        className: 'flex items-center'
+                    }, [
+                        React.createElement('div', {
+                            key: 'avatar',
+                            className: 'w-8 h-8 bg-gray-200 rounded-full'
+                        }),
+                        React.createElement('span', {
+                            key: 'username',
+                            className: 'ml-3 font-semibold'
+                        }, `citizen${Math.floor(Math.random() * 10000)}`)
+                    ]),
+                    React.createElement(MoreHorizontal, {
+                        key: 'more',
+                        className: 'icon text-gray-500'
+                    })
+                ]),
+                
+                // Image
+                React.createElement('div', {
+                    key: 'image',
+                    className: 'aspect-square'
+                }, generateSVG(message)),
+                
+                // Actions and Comments
+                React.createElement('div', {
+                    key: 'content',
+                    className: 'p-4'
+                }, [
+                    React.createElement('div', {
+                        key: 'actions',
+                        className: 'flex justify-between mb-4'
+                    }, [
+                        React.createElement('div', {
+                            key: 'left-actions',
+                            className: 'flex space-x-4'
+                        }, [
+                            React.createElement(Heart, {
+                                key: 'heart',
+                                className: `icon ${liked ? 'text-red-500 filled' : ''}`,
+                                onClick: () => setLiked(!liked)
+                            }),
+                            React.createElement(MessageCircle, {
+                                key: 'comment',
+                                className: 'icon',
+                                onClick: () => setShowComments(!showComments)
+                            })
+                        ]),
+                        React.createElement(Bookmark, {
+                            key: 'bookmark',
+                            className: `icon ${saved ? 'filled' : ''}`,
+                            onClick: () => setSaved(!saved)
+                        })
+                    ]),
+                    
+                    React.createElement('div', {
+                        key: 'likes',
+                        className: 'mb-2 font-semibold'
+                    }, `${likeCount.toLocaleString()} obedient citizens`),
+                    
+                    React.createElement('div', {
+                        key: 'caption',
+                        className: 'mb-2'
+                    }, [
+                        React.createElement('span', {
+                            key: 'caption-username',
+                            className: 'font-semibold mr-2'
+                        }, `citizen${Math.floor(Math.random() * 10000)}`),
+                        React.createElement('span', {
+                            key: 'caption-text'
+                        }, captions[Math.floor(Math.random() * captions.length)])
+                    ]),
+                    
+                    React.createElement('div', {
+                        key: 'comment-toggle',
+                        className: 'text-gray-500 cursor-pointer mb-2',
+                        onClick: () => setShowComments(!showComments)
+                    }, `View all ${commentCount} compliant responses`),
+                    
+                    showComments && React.createElement('div', {
+                        key: 'comments',
+                        className: 'space-y-2'
+                    }, postComments.map((comment, idx) => 
+                        React.createElement('div', {
+                            key: idx
+                        }, [
+                            React.createElement('span', {
+                                key: 'comment-username',
+                                className: 'font-semibold mr-2'
+                            }, comment.username),
+                            React.createElement('span', {
+                                key: 'comment-text'
+                            }, comment.comment)
+                        ])
+                    ))
+                ].filter(Boolean))
+            ]);
+        };
+
+        const DystopianInstagram = () => {
+            const [posts, setPosts] = useState([]);
+            const [loading, setLoading] = useState(false);
+            const loadingRef = useRef(null);
+            
+            const generatePost = useCallback(() => {
+                const message = propagandaMessages[Math.floor(Math.random() * propagandaMessages.length)];
+                return {
+                    id: Math.random().toString(36).substr(2, 9),
+                    message
+                };
+            }, []);
+
+            const loadMorePosts = useCallback(() => {
+                if (!loading) {
+                    setLoading(true);
+                    setTimeout(() => {
+                        const newPosts = Array(10).fill(null).map(generatePost);
+                        setPosts(prevPosts => [...prevPosts, ...newPosts]);
+                        setLoading(false);
+                    }, 1000);
+                }
+            }, [loading, generatePost]);
+
+            useEffect(() => {
+                const initialPosts = Array(15).fill(null).map(generatePost);
+                setPosts(initialPosts);
+
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        if (entries[0].isIntersecting && !loading) {
+                            loadMorePosts();
+                        }
+                    },
+                    { 
+                        rootMargin: '500px',
+                        threshold: 0.1 
+                    }
+                );
+
+                if (loadingRef.current) {
+                    observer.observe(loadingRef.current);
+                }
+
+                return () => observer.disconnect();
+            }, [loadMorePosts, generatePost, loading]);
+
+            return React.createElement('div', {
+                className: 'bg-gray-100 min-h-screen py-8'
+            }, [
+                ...posts.map(post => 
+                    React.createElement(Post, {
+                        key: post.id,
+                        message: post.message
+                    })
+                ),
+                React.createElement('div', {
+                    key: 'loading',
+                    ref: loadingRef,
+                    className: 'flex justify-center p-4 text-gray-500'
+                }, loading ? 'Loading more propaganda...' : 'Scroll for more compliance')
+            ]);
+        };
+
+        // Render the app
+        const root = createRoot(document.getElementById('root'));
+        root.render(React.createElement(DystopianInstagram));
+        }
+
+        // Start the app when the document is ready
+        document.addEventListener('DOMContentLoaded', initializeApp);
+    </script>
+</body>
+</html>
