@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dystopian Social Feed</title>
-    <link href="https://cdn.jsdelivr.net/npm/lucide-static@0.321.0/font/lucide.min.css" rel="stylesheet">
     <style>
+        /* Previous CSS styles remain the same until the icon styles */
         body { 
             margin: 0; 
             font-family: system-ui, -apple-system, sans-serif;
@@ -66,13 +66,14 @@
             align-items: center;
             justify-content: center;
         }
-        .action-btn i {
-            font-size: 24px;
+        .action-btn svg {
+            width: 24px;
+            height: 24px;
         }
         .action-btn:hover {
             color: #ccc;
         }
-        .action-btn.liked i {
+        .action-btn.liked svg {
             color: #ff4444;
             fill: #ff4444;
         }
@@ -126,41 +127,49 @@
     <div class="container" id="feed"></div>
 
     <script>
-        const messages = [
-            'OBEY',
-            'CONSUME',
-            'MARRY AND REPRODUCE',
-            'NO INDEPENDENT THOUGHT',
-            'STAY ASLEEP',
-            'SUBMIT',
-            'WATCH TV',
-            'DO NOT QUESTION AUTHORITY',
-            'CONFORM',
-            'BUY',
-            'THIS IS YOUR GOD',
-            'NO IMAGINATION'
-        ];
+        let feedData = {
+            messages: [],
+            captions: [],
+            comments: []
+        };
 
-        const captions = [
-            "following orders like a good citizen 👁️ #obey #peace",
-            "shopping spree because the billboards told me to 🛍️ #consume #buy",
-            "just got married! time to reproduce 👶 #family #duty",
-            "watching my favorite show, only 8 hours today 📺 #tv #entertainment",
-            "no thoughts head empty just like they want 🤖 #conform #submit",
-            "this new product is literally god 🙏 #blessed #consume"
-        ];
+        // Load SVG icons
+        const icons = {
+            heart: '',
+            heartSolid: '',
+            messageCircle: '',
+            bookmark: '',
+            bookmarkSolid: '',
+            moreHorizontal: ''
+        };
 
-        const comments = [
-            "watching TV right now, you should too 📺",
-            "just bought this without thinking, as intended 🛍️",
-            "reproduction is your duty to society 👶",
-            "independent thought is dangerous, stay safe 🤖",
-            "the billboards know what's best for us 👁️",
-            "marriage and babies are mandatory 💒",
-            "this ad tells me what I need ✨",
-            "imagination leads to questioning, avoid it ⚠️",
-            "authority knows best, just submit 🙏"
-        ];
+        // Function to load SVG content
+        async function loadSVG(name) {
+            const response = await fetch(`${name}.svg`);
+            return await response.text();
+        }
+
+        // Function to load all required resources
+        async function loadResources() {
+            try {
+                // Load JSON data
+                const dataResponse = await fetch('data.json');
+                feedData = await dataResponse.json();
+
+                // Load SVG icons
+                icons.heart = await loadSVG('heart');
+                icons.heartSolid = await loadSVG('heart-solid');
+                icons.messageCircle = await loadSVG('message-circle');
+                icons.bookmark = await loadSVG('bookmark');
+                icons.bookmarkSolid = await loadSVG('bookmark-solid');
+                icons.moreHorizontal = await loadSVG('more-horizontal');
+
+                // Initialize feed after resources are loaded
+                addPosts(10);
+            } catch (error) {
+                console.error('Error loading resources:', error);
+            }
+        }
 
         function generateSVG(message) {
             const pattern = Math.floor(Math.random() * 4);
@@ -228,7 +237,7 @@
                     <span class="username">citizen${Math.floor(Math.random() * 10000)}</span>
                 </div>
                 <button class="action-btn more-btn" aria-label="More options">
-                    <i class="lucide-more-horizontal"></i>
+                    ${icons.moreHorizontal}
                 </button>
             `;
             
@@ -241,105 +250,18 @@
             actions.innerHTML = `
                 <div class="action-group">
                     <button class="action-btn like-btn" aria-label="Like">
-                        <i class="lucide-heart"></i>
+                        ${icons.heart}
                     </button>
                     <button class="action-btn comment-btn" aria-label="Comment">
-                        <i class="lucide-message-circle"></i>
+                        ${icons.messageCircle}
                     </button>
                 </div>
                 <button class="action-btn save-btn" aria-label="Save">
-                    <i class="lucide-bookmark"></i>
+                    ${icons.bookmark}
                 </button>
             `;
             
             const info = document.createElement('div');
             info.className = 'info';
             info.innerHTML = `
-                <div class="likes">${(Math.floor(Math.random() * 10000) + 1000).toLocaleString()} obedient citizens</div>
-                <div class="caption">
-                    <span class="caption-username">citizen${Math.floor(Math.random() * 10000)}</span>
-                    ${captions[Math.floor(Math.random() * captions.length)]}
-                </div>
-                <div class="timestamp">${Math.floor(Math.random() * 23) + 1} HOURS AGO</div>
-            `;
-
-            const commentSection = document.createElement('div');
-            commentSection.className = 'comments';
-            commentSection.style.display = 'none';
-            commentSection.innerHTML = Array(3).fill().map(() => `
-                <div class="comment">
-                    <span class="comment-username">citizen${Math.floor(Math.random() * 1000)}</span>
-                    ${comments[Math.floor(Math.random() * comments.length)]}
-                </div>
-            `).join('');
-
-            post.appendChild(header);
-            post.appendChild(content);
-            post.appendChild(actions);
-            post.appendChild(info);
-            post.appendChild(commentSection);
-
-            // Add event listeners
-            const likeBtn = actions.querySelector('.like-btn');
-            likeBtn.addEventListener('click', function() {
-                const icon = this.querySelector('i');
-                this.classList.toggle('liked');
-                icon.classList.toggle('lucide-heart');
-                icon.classList.toggle('lucide-heart-solid');
-            });
-
-            const saveBtn = actions.querySelector('.save-btn');
-            saveBtn.addEventListener('click', function() {
-                const icon = this.querySelector('i');
-                icon.classList.toggle('lucide-bookmark');
-                icon.classList.toggle('lucide-bookmark-solid');
-            });
-
-            const commentBtn = actions.querySelector('.comment-btn');
-            commentBtn.addEventListener('click', function() {
-                commentSection.style.display = commentSection.style.display === 'none' ? 'block' : 'none';
-            });
-
-            return post;
-        }
-
-        let loading = false;
-        const feed = document.getElementById('feed');
-        
-        function addPosts(count) {
-            for (let i = 0; i < count; i++) {
-                const message = messages[Math.floor(Math.random() * messages.length)];
-                feed.appendChild(createPost(message));
-            }
-        }
-
-        // Add initial posts
-        addPosts(10);
-
-        // Add loading indicator
-        const loadingDiv = document.createElement('div');
-        loadingDiv.className = 'loading';
-        loadingDiv.textContent = 'Scroll for more compliance';
-        feed.appendChild(loadingDiv);
-
-        // Set up intersection observer for infinite scroll
-        const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting && !loading) {
-                loading = true;
-                loadingDiv.textContent = 'Loading more propaganda...';
-                
-                setTimeout(() => {
-                    addPosts(8);
-                    loading = false;
-                    loadingDiv.textContent = 'Scroll for more compliance';
-                }, 400);
-            }
-        }, { 
-            rootMargin: '500px 0px',
-            threshold: 0.1
-        });
-
-        observer.observe(loadingDiv);
-    </script>
-</body>
-</html>
+                <div class="likes">${(
