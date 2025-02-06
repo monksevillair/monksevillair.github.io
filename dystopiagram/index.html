@@ -3,155 +3,340 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dystopian Social Feed</title>
-    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
-    
+    <title>Dystopiagram</title>
+    <link href="https://cdn.jsdelivr.net/npm/lucide-static@0.321.0/font/lucide.min.css" rel="stylesheet">
     <style>
-        /* Base styles */
-        body { margin: 0; font-family: system-ui, -apple-system, sans-serif; }
-        .container { max-width: 600px; margin: 0 auto; padding: 16px; }
-        .post { background: white; border: 1px solid #ddd; margin-bottom: 24px; border-radius: 8px; }
-        .header { padding: 12px; border-bottom: 1px solid #ddd; display: flex; align-items: center; }
-        .avatar { width: 32px; height: 32px; border-radius: 50%; background: #eee; }
-        .username { margin-left: 12px; font-weight: 600; }
-        .content { aspect-ratio: 1; }
-        .actions { padding: 12px; display: flex; justify-content: space-between; }
-        .action-btn { background: none; border: none; cursor: pointer; padding: 8px; }
-        .action-btn.active { color: #ff4444; }
-        .comments { padding: 12px; }
-        .comment { margin-bottom: 8px; }
-        .feed { background: #f0f2f5; min-height: 100vh; padding: 16px 0; }
-        .loading { text-align: center; padding: 16px; color: #666; }
+        body { 
+            margin: 0; 
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #000;
+            color: #fff;
+        }
+        .container { 
+            max-width: 600px; 
+            margin: 0 auto; 
+            padding: 16px;
+        }
+        .post { 
+            background: #111; 
+            border: 1px solid #333; 
+            margin-bottom: 24px;
+        }
+        .header { 
+            padding: 14px; 
+            border-bottom: 1px solid #333; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+        .avatar { 
+            width: 32px; 
+            height: 32px; 
+            border-radius: 50%; 
+            background: #333;
+        }
+        .username { 
+            margin-left: 12px; 
+            font-weight: 600;
+            color: #fff;
+        }
+        .content { 
+            aspect-ratio: 1;
+        }
+        .actions { 
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .action-group {
+            display: flex;
+            gap: 16px;
+        }
+        .action-btn { 
+            background: none; 
+            border: none; 
+            cursor: pointer; 
+            padding: 8px 0;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .action-btn i {
+            font-size: 24px;
+        }
+        .action-btn:hover {
+            color: #ccc;
+        }
+        .action-btn.liked i {
+            color: #ff4444;
+            fill: #ff4444;
+        }
+        .info { 
+            padding: 0 16px 16px;
+        }
+        .likes { 
+            font-weight: 600; 
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        .caption { 
+            margin-bottom: 8px;
+            line-height: 1.4;
+            color: #eee;
+        }
+        .caption-username {
+            font-weight: 600;
+            margin-right: 6px;
+            color: #fff;
+        }
+        .timestamp {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        .comments { 
+            padding: 0 16px 16px;
+        }
+        .comment {
+            margin-bottom: 8px;
+            line-height: 1.4;
+            color: #eee;
+        }
+        .comment-username {
+            font-weight: 600;
+            margin-right: 6px;
+            color: #fff;
+        }
+        .loading {
+            text-align: center;
+            padding: 16px;
+            color: #666;
+        }
+        .hashtag {
+            color: #1da1f2;
+        }
     </style>
 </head>
 <body>
-    <div id="root"></div>
+    <div class="container" id="feed"></div>
 
     <script>
-        const { useState, useEffect, useCallback, useRef } = React;
-        const { createRoot } = ReactDOM;
-
         const messages = [
-            'OBEY', 'CONSUME', 'CONFORM', 'SUBMIT', 'WATCH TV', 'BUY',
-            'NO INDEPENDENT THOUGHT', 'STAY ASLEEP', 'THIS IS YOUR GOD'
+            'OBEY',
+            'CONSUME',
+            'MARRY AND REPRODUCE',
+            'NO INDEPENDENT THOUGHT',
+            'STAY ASLEEP',
+            'SUBMIT',
+            'WATCH TV',
+            'DO NOT QUESTION AUTHORITY',
+            'CONFORM',
+            'BUY',
+            'THIS IS YOUR GOD',
+            'NO IMAGINATION'
         ];
 
-        const generateSVG = (message) => {
-            const dark = Math.random() > 0.5;
-            return React.createElement('svg', {
-                viewBox: '0 0 400 400',
-                style: { width: '100%', height: '100%' }
-            }, [
-                React.createElement('rect', {
-                    key: 'bg',
-                    width: 400,
-                    height: 400,
-                    fill: dark ? 'black' : 'white'
-                }),
-                React.createElement('text', {
-                    key: 'text',
-                    x: 200,
-                    y: 200,
-                    textAnchor: 'middle',
-                    dominantBaseline: 'middle',
-                    fill: dark ? 'white' : 'black',
-                    fontSize: 48,
-                    fontWeight: 'bold',
-                    fontFamily: 'Impact'
-                }, message)
-            ]);
-        };
+        const captions = [
+            "following orders like a good citizen 👁️ #obey #peace",
+            "shopping spree because the billboards told me to 🛍️ #consume #buy",
+            "just got married! time to reproduce 👶 #family #duty",
+            "watching my favorite show, only 8 hours today 📺 #tv #entertainment",
+            "no thoughts head empty just like they want 🤖 #conform #submit",
+            "this new product is literally god 🙏 #blessed #consume"
+        ];
 
-        function Post({ message }) {
-            const [liked, setLiked] = useState(false);
-            const [showComments, setShowComments] = useState(false);
+        const comments = [
+            "watching TV right now, you should too 📺",
+            "just bought this without thinking, as intended 🛍️",
+            "reproduction is your duty to society 👶",
+            "independent thought is dangerous, stay safe 🤖",
+            "the billboards know what's best for us 👁️",
+            "marriage and babies are mandatory 💒",
+            "this ad tells me what I need ✨",
+            "imagination leads to questioning, avoid it ⚠️",
+            "authority knows best, just submit 🙏"
+        ];
 
-            return React.createElement('div', { className: 'post' }, [
-                React.createElement('div', { key: 'header', className: 'header' }, [
-                    React.createElement('div', { key: 'avatar', className: 'avatar' }),
-                    React.createElement('span', { key: 'username', className: 'username' }, 
-                        'citizen' + Math.floor(Math.random() * 10000)
-                    )
-                ]),
-                React.createElement('div', { key: 'content', className: 'content' },
-                    generateSVG(message)
-                ),
-                React.createElement('div', { key: 'actions', className: 'actions' }, [
-                    React.createElement('button', {
-                        key: 'like',
-                        className: `action-btn ${liked ? 'active' : ''}`,
-                        onClick: () => setLiked(!liked)
-                    }, '❤️'),
-                    React.createElement('button', {
-                        key: 'comment',
-                        className: 'action-btn',
-                        onClick: () => setShowComments(!showComments)
-                    }, '💬')
-                ]),
-                showComments && React.createElement('div', { key: 'comments', className: 'comments' }, [
-                    React.createElement('div', { key: 'c1', className: 'comment' }, 'Compliance is happiness'),
-                    React.createElement('div', { key: 'c2', className: 'comment' }, 'I love following orders')
-                ])
-            ]);
-        }
-
-        function Feed() {
-            const [posts, setPosts] = useState([]);
-            const [loading, setLoading] = useState(false);
-            const loadingRef = useRef(null);
-
-            const generatePost = useCallback(() => ({
-                id: Math.random().toString(36).substr(2),
-                message: messages[Math.floor(Math.random() * messages.length)]
-            }), []);
-
-            const loadMore = useCallback(() => {
-                if (!loading) {
-                    setLoading(true);
-                    setTimeout(() => {
-                        setPosts(p => [...p, ...Array(5).fill().map(generatePost)]);
-                        setLoading(false);
-                    }, 500);
+        function generateSVG(message) {
+            const pattern = Math.floor(Math.random() * 4);
+            
+            const words = message.split(' ');
+            const lines = [];
+            let currentLine = '';
+            
+            words.forEach(word => {
+                if (currentLine.length + word.length > 12) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine += (currentLine ? ' ' : '') + word;
                 }
-            }, [loading, generatePost]);
-
-            useEffect(() => {
-                setPosts(Array(10).fill().map(generatePost));
-
-                const observer = new IntersectionObserver(
-                    entries => entries[0].isIntersecting && loadMore(),
-                    { rootMargin: '100px' }
-                );
-
-                if (loadingRef.current) {
-                    observer.observe(loadingRef.current);
-                }
-
-                return () => observer.disconnect();
-            }, [loadMore]);
-
-            return React.createElement('div', { className: 'feed' }, [
-                React.createElement('div', { key: 'container', className: 'container' }, [
-                    ...posts.map(post => 
-                        React.createElement(Post, { key: post.id, message: post.message })
-                    ),
-                    React.createElement('div', {
-                        key: 'loading',
-                        ref: loadingRef,
-                        className: 'loading'
-                    }, loading ? 'Loading more propaganda...' : 'Scroll for more compliance')
-                ])
-            ]);
-        }
-
-        // Wait for React to load
-        window.onload = () => {
-            if (React && ReactDOM) {
-                const root = createRoot(document.getElementById('root'));
-                root.render(React.createElement(Feed));
+            });
+            if (currentLine) {
+                lines.push(currentLine);
             }
-        };
+
+            const maxLineLength = Math.max(...lines.map(line => line.length));
+            const baseSize = 36;
+            const scaleFactor = Math.min(1, 8 / Math.max(lines.length, maxLineLength / 8));
+            const fontSize = Math.min(baseSize * scaleFactor, 42);
+            const lineHeight = fontSize * 1.2;
+            
+            const textElements = lines.map((line, i) => `
+                <text 
+                    x="200" 
+                    y="${200 + (i - (lines.length-1)/2) * lineHeight}" 
+                    text-anchor="middle" 
+                    dominant-baseline="middle"
+                    fill="white"
+                    font-size="${fontSize}"
+                    font-weight="bold"
+                    font-family="Impact"
+                    style="letter-spacing: 0.05em"
+                >${line}</text>
+            `).join('');
+
+            return `
+                <svg viewBox="0 0 400 400" style="width: 100%; height: 100%">
+                    <rect width="400" height="400" fill="#222"/>
+                    ${textElements}
+                    ${pattern === 0 ? `
+                        <rect x="20" y="20" width="360" height="360" 
+                            fill="none" 
+                            stroke="white" 
+                            stroke-width="2"
+                        />
+                    ` : ''}
+                </svg>
+            `;
+        }
+
+        function createPost(message) {
+            const post = document.createElement('div');
+            post.className = 'post';
+            
+            const header = document.createElement('div');
+            header.className = 'header';
+            header.innerHTML = `
+                <div class="header-left">
+                    <div class="avatar"></div>
+                    <span class="username">citizen${Math.floor(Math.random() * 10000)}</span>
+                </div>
+                <button class="action-btn more-btn" aria-label="More options">
+                    <i class="lucide-more-horizontal"></i>
+                </button>
+            `;
+            
+            const content = document.createElement('div');
+            content.className = 'content';
+            content.innerHTML = generateSVG(message);
+            
+            const actions = document.createElement('div');
+            actions.className = 'actions';
+            actions.innerHTML = `
+                <div class="action-group">
+                    <button class="action-btn like-btn" aria-label="Like">
+                        <i class="lucide-heart"></i>
+                    </button>
+                    <button class="action-btn comment-btn" aria-label="Comment">
+                        <i class="lucide-message-circle"></i>
+                    </button>
+                </div>
+                <button class="action-btn save-btn" aria-label="Save">
+                    <i class="lucide-bookmark"></i>
+                </button>
+            `;
+            
+            const info = document.createElement('div');
+            info.className = 'info';
+            info.innerHTML = `
+                <div class="likes">${(Math.floor(Math.random() * 10000) + 1000).toLocaleString()} obedient citizens</div>
+                <div class="caption">
+                    <span class="caption-username">citizen${Math.floor(Math.random() * 10000)}</span>
+                    ${captions[Math.floor(Math.random() * captions.length)]}
+                </div>
+                <div class="timestamp">${Math.floor(Math.random() * 23) + 1} HOURS AGO</div>
+            `;
+
+            const commentSection = document.createElement('div');
+            commentSection.className = 'comments';
+            commentSection.style.display = 'none';
+            commentSection.innerHTML = Array(3).fill().map(() => `
+                <div class="comment">
+                    <span class="comment-username">citizen${Math.floor(Math.random() * 1000)}</span>
+                    ${comments[Math.floor(Math.random() * comments.length)]}
+                </div>
+            `).join('');
+
+            post.appendChild(header);
+            post.appendChild(content);
+            post.appendChild(actions);
+            post.appendChild(info);
+            post.appendChild(commentSection);
+
+            // Add event listeners
+            const likeBtn = actions.querySelector('.like-btn');
+            likeBtn.addEventListener('click', function() {
+                const icon = this.querySelector('i');
+                this.classList.toggle('liked');
+                icon.classList.toggle('lucide-heart');
+                icon.classList.toggle('lucide-heart-solid');
+            });
+
+            const saveBtn = actions.querySelector('.save-btn');
+            saveBtn.addEventListener('click', function() {
+                const icon = this.querySelector('i');
+                icon.classList.toggle('lucide-bookmark');
+                icon.classList.toggle('lucide-bookmark-solid');
+            });
+
+            const commentBtn = actions.querySelector('.comment-btn');
+            commentBtn.addEventListener('click', function() {
+                commentSection.style.display = commentSection.style.display === 'none' ? 'block' : 'none';
+            });
+
+            return post;
+        }
+
+        let loading = false;
+        const feed = document.getElementById('feed');
+        
+        function addPosts(count) {
+            for (let i = 0; i < count; i++) {
+                const message = messages[Math.floor(Math.random() * messages.length)];
+                feed.appendChild(createPost(message));
+            }
+        }
+
+        // Add initial posts
+        addPosts(10);
+
+        // Add loading indicator
+        const loadingDiv = document.createElement('div');
+        loadingDiv.className = 'loading';
+        loadingDiv.textContent = 'Scroll for more compliance';
+        feed.appendChild(loadingDiv);
+
+        // Set up intersection observer for infinite scroll
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting && !loading) {
+                loading = true;
+                loadingDiv.textContent = 'Loading more propaganda...';
+                
+                setTimeout(() => {
+                    addPosts(5);
+                    loading = false;
+                    loadingDiv.textContent = 'Scroll for more compliance';
+                }, 500);
+            }
+        }, { rootMargin: '100px' });
+
+        observer.observe(loadingDiv);
     </script>
 </body>
 </html>
