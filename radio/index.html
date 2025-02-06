@@ -6,12 +6,12 @@
     <title>KLON Radio</title>
     <style>
         :root {
-            --background: #121212;
-            --surface: #282828;
-            --primary: #1DB954;
-            --text-primary: #FFFFFF;
-            --text-secondary: #B3B3B3;
-            --hover: #404040;
+            --background: #000000;
+            --surface: #1a0000;
+            --primary: #ff0000;
+            --text-primary: #ffffff;
+            --text-secondary: #ff3333;
+            --hover: #330000;
         }
 
         * {
@@ -31,10 +31,13 @@
         }
 
         h1 {
-            font-size: 24px;
+            font-size: 28px;
             margin-bottom: 20px;
             text-align: center;
             color: var(--primary);
+            text-shadow: 0 0 10px var(--primary);
+            font-weight: bold;
+            letter-spacing: 2px;
         }
 
         .player-container {
@@ -91,6 +94,7 @@
             background: var(--primary);
             transform-origin: left;
             transition: transform 1s linear;
+            box-shadow: 0 0 10px var(--primary);
         }
 
         .timeline-label {
@@ -128,6 +132,7 @@
         .playlist li.now-playing {
             background: var(--hover);
             color: var(--primary);
+            text-shadow: 0 0 5px var(--primary);
         }
 
         .playlist li.now-playing::before {
@@ -151,6 +156,7 @@
 
         .test-button:hover {
             opacity: 0.8;
+            box-shadow: 0 0 10px var(--primary);
         }
 
         @media (max-width: 600px) {
@@ -197,6 +203,7 @@
             opacity: 0;
             transition: opacity 0.3s;
             pointer-events: none;
+            box-shadow: 0 0 10px var(--primary);
         }
 
         .persistent-playback.visible {
@@ -209,7 +216,7 @@
         Audio will continue playing in background
     </div>
     
-    <h1>KLON RADIO</h1>
+    <h1>EVIL LAIR RADIO</h1>
     
     <div class="player-container">
         <div class="now-playing-info">
