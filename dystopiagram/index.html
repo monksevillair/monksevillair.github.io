@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dystopian Social Feed</title>
     <style>
-        /* Previous CSS styles remain the same until the icon styles */
         body { 
             margin: 0; 
             font-family: system-ui, -apple-system, sans-serif;
@@ -127,6 +126,12 @@
     <div class="container" id="feed"></div>
 
     <script>
+        // Initialize loading state indicator
+        const loadingElement = document.createElement('div');
+        loadingElement.className = 'loading';
+        loadingElement.textContent = 'Loading feed...';
+        document.getElementById('feed').appendChild(loadingElement);
+
         let feedData = {
             messages: [],
             captions: [],
@@ -164,10 +169,18 @@
                 icons.bookmarkSolid = await loadSVG('bookmark-solid');
                 icons.moreHorizontal = await loadSVG('more-horizontal');
 
-                // Initialize feed after resources are loaded
+                // Remove loading indicator
+                document.getElementById('feed').removeChild(loadingElement);
+                
+                // Initialize feed
                 addPosts(10);
+                
+                // Set up infinite scroll
+                setupInfiniteScroll();
             } catch (error) {
                 console.error('Error loading resources:', error);
+                loadingElement.textContent = 'Error loading feed. Please refresh the page.';
+                loadingElement.style.color = '#ff4444';
             }
         }
 
@@ -263,5 +276,102 @@
             
             const info = document.createElement('div');
             info.className = 'info';
+            const randomLikes = Math.floor(Math.random() * 10000) + 1000;
+            const randomCaption = feedData.captions[Math.floor(Math.random() * feedData.captions.length)];
             info.innerHTML = `
-                <div class="likes">${(
+                <div class="likes">${randomLikes.toLocaleString()} obedient citizens</div>
+                <div class="caption">
+                    <span class="caption-username">citizen${Math.floor(Math.random() * 10000)}</span>
+                    ${randomCaption}
+                </div>
+                <div class="timestamp">${Math.floor(Math.random() * 23) + 1} HOURS AGO</div>
+            `;
+
+            const commentSection = document.createElement('div');
+            commentSection.className = 'comments';
+            commentSection.style.display = 'none';
+            
+            // Add 3 random comments
+            const commentHTML = Array(3).fill().map(() => {
+                const randomComment = feedData.comments[Math.floor(Math.random() * feedData.comments.length)];
+                return `
+                    <div class="comment">
+                        <span class="comment-username">citizen${Math.floor(Math.random() * 10000)}</span>
+                        ${randomComment}
+                    </div>
+                `;
+            }).join('');
+            
+            commentSection.innerHTML = commentHTML;
+
+            post.appendChild(header);
+            post.appendChild(content);
+            post.appendChild(actions);
+            post.appendChild(info);
+            post.appendChild(commentSection);
+
+            // Add event listeners
+            const likeBtn = actions.querySelector('.like-btn');
+            likeBtn.addEventListener('click', function() {
+                this.classList.toggle('liked');
+                this.innerHTML = this.classList.contains('liked') ? icons.heartSolid : icons.heart;
+            });
+
+            const saveBtn = actions.querySelector('.save-btn');
+            saveBtn.addEventListener('click', function() {
+                this.innerHTML = this.classList.contains('saved') ? icons.bookmark : icons.bookmarkSolid;
+                this.classList.toggle('saved');
+            });
+
+            const commentBtn = actions.querySelector('.comment-btn');
+            commentBtn.addEventListener('click', function() {
+                commentSection.style.display = commentSection.style.display === 'none' ? 'block' : 'none';
+            });
+
+            return post;
+        }
+
+        function addPosts(count) {
+            const feed = document.getElementById('feed');
+            for (let i = 0; i < count; i++) {
+                const message = feedData.messages[Math.floor(Math.random() * feedData.messages.length)];
+                feed.appendChild(createPost(message));
+            }
+        }
+
+        function setupInfiniteScroll() {
+            const feed = document.getElementById('feed');
+            
+            // Add loading indicator
+            const loadingDiv = document.createElement('div');
+            loadingDiv.className = 'loading';
+            loadingDiv.textContent = 'Scroll for more compliance';
+            feed.appendChild(loadingDiv);
+
+            let loading = false;
+
+            // Set up intersection observer for infinite scroll
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting && !loading) {
+                    loading = true;
+                    loadingDiv.textContent = 'Loading more propaganda...';
+                    
+                    setTimeout(() => {
+                        addPosts(8);
+                        loading = false;
+                        loadingDiv.textContent = 'Scroll for more compliance';
+                    }, 400);
+                }
+            }, { 
+                rootMargin: '500px 0px',
+                threshold: 0.1
+            });
+
+            observer.observe(loadingDiv);
+        }
+
+        // Start loading resources
+        loadResources();
+    </script>
+</body>
+</html>
