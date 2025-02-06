@@ -1,0 +1,43 @@
+name: News to Radio Broadcast
+
+on:
+  schedule:
+    - cron: "0 * * * *"  # Runs every hour
+  workflow_dispatch:  # Allows manual trigger from GitHub Actions UI
+
+jobs:
+  news-to-radio:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10  # Use a compatible Python version
+
+      - name: Install dependencies
+        run: |
+          pip install requests feedparser python-dotenv anthropic openai
+
+      - name: Set up environment variables
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: echo "Environment variables set."
+
+      - name: Run news2radio.py
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python radio/news2radio.py
+
+      - name: Commit and push new broadcasts
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add radio/broadcasts/
+          git commit -m "Automated update: New radio broadcast" || echo "No changes to commit"
+          git push
