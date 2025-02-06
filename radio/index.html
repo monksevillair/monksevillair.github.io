@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evil Lair Radio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .playlist {
+            list-style: none;
+            padding: 0;
+        }
+        .playlist li {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f0f0f0;
+            cursor: pointer;
+        }
+        .playlist li:hover {
+            background: #e0e0e0;
+        }
+        audio {
+            width: 100%;
+            margin: 20px 0;
+        }
+        .now-playing {
+            background: #d0d0d0 !important;
+        }
+        .timeline-container {
+            margin: 20px 0;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 4px;
+        }
+        
+        .timeline-bar {
+            height: 10px;
+            background: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .timeline-progress {
+            height: 100%;
+            width: 100%;
+            background: #4CAF50;
+            transform-origin: left;
+            transition: transform 1s linear;
+        }
+        
+        .timeline-label {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Music Playlist</h1>
+    <audio id="audioPlayer" controls>
+        Your browser does not support the audio element.
+    </audio>
+    
+    <div class="timeline-container">
+        <div class="timeline-bar">
+            <div id="timelineProgress" class="timeline-progress"></div>
+        </div>
+        <div id="timelineLabel" class="timeline-label">Next interlude in: 2:00</div>
+    </div>
+    
+    <ul id="playlist" class="playlist">
+        <!-- Songs will be loaded here dynamically -->
+    </ul>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const playlist = document.getElementById('playlist');
+            const audioPlayer = document.getElementById('audioPlayer');
+            let currentSong = null;
+            let interludeAudio = new Audio();
+            let fadeInterval = null;
+            const FADE_DURATION = 3000; // 3 seconds fade
+            const INTERLUDE_INTERVAL = 30 * 1000; // 30 seconds for testing
+            const MUSIC_FULL_VOLUME = 1.0;
+            const MUSIC_LOWERED_VOLUME = 0.05; // Changed from 0.15 to 0.05 (5% volume during interludes)
+            const INTERLUDE_VOLUME = 1.6; // Interludes still play 60% louder than normal music
+            const timelineProgress = document.getElementById('timelineProgress');
+            const timelineLabel = document.getElementById('timelineLabel');
+            let timelineInterval;
+            let lastInterludeTime = Date.now();
+            let isInterludePlaying = false; // Add flag to track interlude state
+
+            // Add Web Audio API context and nodes
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            let interludeSource = null;
+            let interludeCompressor = null;
+            let interludeLowpass = null;
+            let interludeHighpass = null;
+            let interludeGain = null;
+
+            function setupRadioEffect() {
+                // Create audio nodes
+                interludeSource = audioContext.createMediaElementSource(interludeAudio);
+                interludeCompressor = audioContext.createDynamicsCompressor();
+                interludeLowpass = audioContext.createBiquadFilter();
+                interludeHighpass = audioContext.createBiquadFilter();
+                interludeGain = audioContext.createGain();
+
+                // Configure compressor for that heavily compressed radio sound
+                interludeCompressor.threshold.value = -50;  // Start compressing at -50dB
+                interludeCompressor.knee.value = 40;        // Soft knee
+                interludeCompressor.ratio.value = 12;       // Heavy compression
+                interludeCompressor.attack.value = 0;       // Fast attack
+                interludeCompressor.release.value = 0.25;   // Quick release
+
+                // Configure filters for radio-like frequency response
+                interludeLowpass.type = 'lowpass';
+                interludeLowpass.frequency.value = 4000;    // Cut high frequencies
+                interludeLowpass.Q.value = 1;
+
+                interludeHighpass.type = 'highpass';
+                interludeHighpass.frequency.value = 500;    // Cut low frequencies
+                interludeHighpass.Q.value = 1;
+
+                // Connect the nodes
+                interludeSource
+                    .connect(interludeHighpass)
+                    .connect(interludeLowpass)
+                    .connect(interludeCompressor)
+                    .connect(interludeGain)
+                    .connect(audioContext.destination);
+            }
+
+            function fadeAudio(audioElement, startVol, endVol, duration) {
+                const steps = 20;
+                const volumeStep = (endVol - startVol) / steps;
+                const stepTime = duration / steps;
+                let currentStep = 0;
+
+                clearInterval(fadeInterval);
+                fadeInterval = setInterval(() => {
+                    currentStep++;
+                    const newVolume = startVol + (volumeStep * currentStep);
+                    audioElement.volume = Math.min(Math.max(newVolume, 0), 1);
+
+                    if (currentStep >= steps) {
+                        clearInterval(fadeInterval);
+                        if (endVol === 0) {
+                            audioElement.pause();
+                        }
+                    }
+                }, stepTime);
+            }
+
+            function updateTimeline() {
+                // If interlude is playing, show full 30 seconds
+                if (isInterludePlaying) {
+                    timelineProgress.style.transform = 'scaleX(1)';
+                    timelineLabel.textContent = 'Interlude playing...';
+                    return;
+                }
+
+                const now = Date.now();
+                const timeSinceLastInterlude = now - lastInterludeTime;
+                const timeUntilNext = INTERLUDE_INTERVAL - timeSinceLastInterlude;
+                
+                // Update progress bar
+                const progress = (timeSinceLastInterlude / INTERLUDE_INTERVAL) * 100;
+                timelineProgress.style.transform = `scaleX(${1 - progress/100})`;
+                
+                // Update label
+                const seconds = Math.floor(timeUntilNext / 1000);
+                const minutes = Math.floor(seconds / 60);
+                const remainingSeconds = seconds % 60;
+                timelineLabel.textContent = `Next interlude in: ${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+            }
+
+            // Alternative approach using JSON files
+            async function loadAudioLists() {
+                try {
+                    const [songsResponse, interludesResponse] = await Promise.all([
+                        fetch('songs.json'),
+                        fetch('broadcasts.json')
+                    ]);
+                    
+                    if (!songsResponse.ok || !interludesResponse.ok) {
+                        throw new Error('Failed to load audio lists');
+                    }
+
+                    const songs = await songsResponse.json();
+                    const interludes = await interludesResponse.json();
+                    
+                    return { songs, interludes };
+                } catch (error) {
+                    console.error('Error loading audio lists:', error);
+                    // Fallback to hardcoded lists
+                    return {
+                        songs: ['song1.mp3', 'song2.mp3'],
+                        interludes: ['interlude1.mp3', 'interlude2.mp3']
+                    };
+                }
+            }
+
+            // Then in your DOMContentLoaded:
+            const { songs, interludes } = await loadAudioLists();
+
+            // Update the audio source paths to use relative paths
+            function playSong(song) {
+                audioPlayer.src = `songs/${song}`; // Using relative path
+                audioPlayer.volume = isInterludePlaying ? MUSIC_LOWERED_VOLUME : MUSIC_FULL_VOLUME;
+                audioPlayer.play();
+            }
+
+            async function playInterlude() {
+                console.log('Attempting to play interlude...');
+                console.log('Current interludes:', interludes);
+                
+                if (interludes.length === 0 || isInterludePlaying) {
+                    console.log('Skipping interlude - length:', interludes.length, 'isPlaying:', isInterludePlaying);
+                    return;
+                }
+                
+                isInterludePlaying = true;
+                timelineProgress.style.transform = 'scaleX(1)';
+                
+                const randomInterlude = interludes[Math.floor(Math.random() * interludes.length)];
+                console.log('Selected interlude:', randomInterlude);
+                interludeAudio.src = `broadcasts/${randomInterlude}`; // Using relative path
+                
+                // Add error handling for audio loading
+                interludeAudio.onerror = (e) => {
+                    console.error('Error loading interlude audio:', e);
+                    isInterludePlaying = false;
+                };
+
+                try {
+                    // Setup radio effect if not already done
+                    if (!interludeSource) {
+                        console.log('Setting up radio effect...');
+                        await audioContext.resume(); // Important: Resume audio context
+                        setupRadioEffect();
+                    }
+                    
+                    console.log('Fading music to low volume...');
+                    fadeAudio(audioPlayer, audioPlayer.volume, MUSIC_LOWERED_VOLUME, FADE_DURATION);
+                    
+                    setTimeout(() => {
+                        console.log('Playing interlude...');
+                        interludeGain.gain.value = INTERLUDE_VOLUME;
+                        
+                        // Add play() error handling
+                        interludeAudio.play().catch(error => {
+                            console.error('Failed to play interlude:', error);
+                            isInterludePlaying = false;
+                        });
+                        
+                        interludeAudio.onended = () => {
+                            console.log('Interlude ended, restoring music...');
+                            interludeAudio.pause();
+                            fadeAudio(audioPlayer, MUSIC_LOWERED_VOLUME, MUSIC_FULL_VOLUME, FADE_DURATION);
+                            
+                            isInterludePlaying = false;
+                            lastInterludeTime = Date.now();
+                            timelineProgress.style.transform = 'scaleX(1)';
+                        };
+                    }, FADE_DURATION);
+                } catch (error) {
+                    console.error('Error in playInterlude:', error);
+                    isInterludePlaying = false;
+                }
+            }
+
+            // Create playlist items
+            songs.forEach(song => {
+                const li = document.createElement('li');
+                li.textContent = song;
+                li.onclick = () => {
+                    // Remove highlight from previous song
+                    const previousPlaying = playlist.querySelector('.now-playing');
+                    if (previousPlaying) {
+                        previousPlaying.classList.remove('now-playing');
+                    }
+                    
+                    // Highlight current song
+                    li.classList.add('now-playing');
+                    currentSong = song;
+                    
+                    // Only stop interlude if it's manually clicked, not auto-next
+                    if (!isInterludePlaying) {
+                        // Play selected song at full volume
+                        playSong(song);
+                    } else {
+                        // If interlude is playing, load next song but keep volume low
+                        playSong(song);
+                    }
+                };
+                playlist.appendChild(li);
+            });
+
+            // Play first song by default - Updated with safety checks
+            if (songs.length > 0) {
+                playSong(songs[0]);
+                currentSong = songs[0];
+            }
+
+            // Clear any existing interval before setting up a new one
+            clearInterval(timelineInterval);
+            
+            // Start timeline updates
+            updateTimeline();
+            timelineInterval = setInterval(updateTimeline, 1000);
+
+            // Schedule interludes - check isInterludePlaying flag
+            setInterval(() => {
+                if (!isInterludePlaying) {
+                    const timeSinceLastInterlude = Date.now() - lastInterludeTime;
+                    if (timeSinceLastInterlude >= INTERLUDE_INTERVAL) {
+                        playInterlude();
+                    }
+                }
+            }, 1000); // Check every second
+
+            // Handle song endings - Updated to preserve interlude state
+            audioPlayer.onended = () => {
+                const currentLi = playlist.querySelector('.now-playing');
+                if (currentLi) {
+                    const nextLi = currentLi.nextElementSibling || playlist.firstElementChild;
+                    if (nextLi) {
+                        // Use click handler but maintain current volume based on interlude state
+                        const currentVolume = audioPlayer.volume;
+                        nextLi.click();
+                        audioPlayer.volume = currentVolume;
+                    }
+                }
+            };
+
+            // Add test button for interludes
+            const testButton = document.createElement('button');
+            testButton.textContent = 'Test Interlude';
+            testButton.style.margin = '10px';
+            testButton.onclick = () => {
+                console.log('Manually triggering interlude');
+                playInterlude();
+            };
+            document.body.insertBefore(testButton, playlist);
+        });
+    </script>
+</body>
+</html> 
