@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dystopiagram</title>
+    <title>Dystopian Social Feed</title>
     <link href="https://cdn.jsdelivr.net/npm/lucide-static@0.321.0/font/lucide.min.css" rel="stylesheet">
     <style>
         body { 
@@ -329,12 +329,15 @@
                 loadingDiv.textContent = 'Loading more propaganda...';
                 
                 setTimeout(() => {
-                    addPosts(5);
+                    addPosts(8);
                     loading = false;
                     loadingDiv.textContent = 'Scroll for more compliance';
-                }, 500);
+                }, 400);
             }
-        }, { rootMargin: '100px' });
+        }, { 
+            rootMargin: '500px 0px',
+            threshold: 0.1
+        });
 
         observer.observe(loadingDiv);
     </script>
