@@ -16,7 +16,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.10  # Use a compatible Python version
+          python-version: "3.10"  # ✅ Use a valid version (3.10, 3.11, or 3.12)
 
       - name: Install dependencies
         run: |
