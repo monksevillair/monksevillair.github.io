@@ -1,0 +1,35 @@
+name: Generate Song and Broadcast Lists
+
+on:
+  push:
+    paths:
+      - 'radio/songs/**'       # Runs when files inside radio/songs/ change
+      - 'radio/broadcasts/**'   # Runs when files inside radio/broadcasts/ change
+  workflow_dispatch:  # Allows manual trigger from GitHub Actions UI
+
+jobs:
+  generate-lists:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18  # Adjust if needed
+
+      - name: Install dependencies
+        run: npm install  # Only if package.json exists
+
+      - name: Run script to generate lists
+        run: node radio/generate_lists.js  # Executes your script
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add songs.json broadcasts.json
+          git commit -m "Update songs and broadcasts list" || echo "No changes to commit"
+          git push
