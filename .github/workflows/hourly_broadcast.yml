@@ -33,7 +33,7 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         working-directory: radio  # Forces execution inside radio/
-        run: python radio/news2radio.py
+        run: python news2radio.py
 
       - name: Commit and push new broadcasts
         run: |
