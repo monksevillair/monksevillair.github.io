@@ -15,16 +15,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18  # Adjust if needed
-
-      - name: Install dependencies
-        run: npm install  # Only if package.json exists
-
       - name: Run script to generate lists
-        run: node radio/generate_lists.js  # Executes your script
+        run: node radio/generate_lists.js  # Executes your script without dependencies
 
       - name: Commit and push changes
         run: |
