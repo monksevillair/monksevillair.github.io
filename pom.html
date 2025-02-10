@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTC Pomodoro Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f4f8;
+        }
+        .timer {
+            font-size: 4rem;
+            margin: 20px;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .status {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #4a5568;
+        }
+    </style>
+</head>
+<body>
+    <div class="timer" id="timer">25:00</div>
+    <div class="status" id="status">Work Time</div>
+
+    <script>
+        const WORK_TIME = 25 * 60; // 25 minutes in seconds
+        const BREAK_TIME = 5 * 60; // 5 minutes in seconds
+        let audioContext = null;
+
+        function createAudioContext() {
+            audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        }
+
+        function playSound(isWork) {
+            if (!audioContext) createAudioContext();
+            
+            const now = audioContext.currentTime;
+            const oscillator1 = audioContext.createOscillator();
+            const oscillator2 = audioContext.createOscillator();
+            const oscillator3 = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+
+            // Create a peaceful triad
+            oscillator1.frequency.value = isWork ? 392 : 440; // G4 or A4
+            oscillator2.frequency.value = isWork ? 493.88 : 554.37; // B4 or C#5
+            oscillator3.frequency.value = isWork ? 587.33 : 659.25; // D5 or E5
+
+            oscillator1.connect(gainNode);
+            oscillator2.connect(gainNode);
+            oscillator3.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+
+            gainNode.gain.setValueAtTime(0, now);
+            gainNode.gain.linearRampToValueAtTime(0.2, now + 0.1);
+            gainNode.gain.linearRampToValueAtTime(0, now + 2);
+
+            oscillator1.start(now);
+            oscillator2.start(now);
+            oscillator3.start(now);
+
+            oscillator1.stop(now + 2);
+            oscillator2.stop(now + 2);
+            oscillator3.stop(now + 2);
+        }
+
+        function updateTimer() {
+            const now = Math.floor(Date.now() / 1000);
+            const cycleLength = WORK_TIME + BREAK_TIME;
+            const secondsInCycle = now % cycleLength;
+            const prevSecondsInCycle = ((now - 1) % cycleLength);
+            
+            if (secondsInCycle < WORK_TIME) {
+                const remaining = WORK_TIME - secondsInCycle;
+                document.getElementById('timer').textContent = formatTime(remaining);
+                document.getElementById('status').textContent = 'Work Time';
+                
+                // Play sound when transitioning from break to work
+                if (prevSecondsInCycle >= WORK_TIME) {
+                    playSound(true);
+                }
+            } else {
+                const remaining = cycleLength - secondsInCycle;
+                document.getElementById('timer').textContent = formatTime(remaining);
+                document.getElementById('status').textContent = 'Break Time';
+                
+                // Play sound when transitioning from work to break
+                if (prevSecondsInCycle < WORK_TIME) {
+                    playSound(false);
+                }
+            }
+        }
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = seconds % 60;
+            return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+        }
+
+        // Initialize and start timer
+        updateTimer();
+        setInterval(updateTimer, 1000);
+
+        // Initialize audio context on first user interaction
+        document.addEventListener('click', () => {
+            if (!audioContext) createAudioContext();
+        }, { once: true });
+    </script>
+</body>
+</html> 
