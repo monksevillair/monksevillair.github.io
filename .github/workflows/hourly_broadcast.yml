@@ -2,7 +2,7 @@ name: News to Radio Broadcast
 
 on:
   schedule:
-    - cron: "0 * * * *"  # Runs every hour
+    - cron: "0 */3 * * *"  # Runs every 3 hours
   workflow_dispatch:  # Allows manual trigger from GitHub Actions UI
 
 jobs:
