@@ -248,11 +248,11 @@
                 const branchName = 'master'; // or 'main', ensure this matches your repo
                 const directoryPath = 'mc';
                 const jsonUrl = `https://raw.githubusercontent.com/${githubUser}/${repoName}/${branchName}/${directoryPath}/${dateStringForAPI}.json`;
-                // Example URL for May 6, 2025, would be:
-                // https://raw.githubusercontent.com/monksevillair/monksevillair.github.io/master/mc/6_5_2025.json
 
                 try {
-                    const response = await fetch(jsonUrl);
+                    // Added { cache: 'no-store' } to the fetch options
+                    const response = await fetch(jsonUrl, { cache: 'no-store' });
+
                     if (!response.ok) {
                         if (response.status === 404) {
                             throw new Error(`JSON file for ${dateStringForAPI}.json not found. There might be no news for this day.`);
@@ -291,22 +291,17 @@
                                     commentsToggle.addEventListener('click', () => {
                                         const isVisible = commentsSection.style.display === 'block';
                                         commentsSection.style.display = isVisible ? 'none' : 'block';
-                                        // Load comments only when first expanding, if not already loaded
                                         if (!isVisible && commentsSection.children.length === 0) {
                                             const renderedComments = renderComments(post.comments);
                                             commentsSection.appendChild(renderedComments);
                                         } else if (!isVisible && commentsSection.children.length > 0 && commentsSection.firstChild && commentsSection.firstChild.className !== 'comment' && commentsSection.firstChild.className !== 'comments-container') {
-                                            // This condition handles re-opening if it previously said "No comments to show" or similar
-                                            commentsSection.innerHTML = ''; // Clear any placeholder
+                                            commentsSection.innerHTML = ''; 
                                             const renderedComments = renderComments(post.comments);
                                             commentsSection.appendChild(renderedComments);
                                         }
                                     });
                                 } else {
                                      commentsToggle.style.cursor = 'default';
-                                     // Optionally, you can make it non-clickable or update text
-                                     // commentsToggle.textContent = `${post.comments_count || 0} comments (none to show)`;
-                                     // commentsToggle.addEventListener('click', (e) => e.preventDefault()); // Prevent click action
                                 }
                             }
                         });
