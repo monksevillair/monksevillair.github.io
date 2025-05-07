@@ -41,9 +41,12 @@ jobs:
           # Add youtube_interests.json and the daily .json files
           # Paths are now relative to the working-directory (mc/)
           git add youtube_interests.json
-          # Add all files matching the pattern DD_MM_YYYY.json (or D_M_YYYY.json)
-          # This regex tries to match one or two digits for day/month, and four for year.
+          
+          # Add all NEW files matching the date pattern
           git ls-files --others --exclude-standard | grep -E '^[0-9]{1,2}_[0-9]{1,2}_[0-9]{4}\.json$' | xargs -r git add
+          
+          # Also add CHANGES to existing date files
+          git diff --name-only | grep -E '^[0-9]{1,2}_[0-9]{1,2}_[0-9]{4}\.json$' | xargs -r git add
           
           # Check if there are changes to commit
           if git diff --staged --quiet; then
