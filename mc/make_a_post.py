@@ -74,6 +74,25 @@ def get_todays_json_filename():
     now = datetime.now()
     return f"{now.day}_{now.month}_{now.year}.json"
 
+def load_todays_posts(filename):
+    """Loads posts from today's JSON file."""
+    posts = []
+    try:
+        with open(filename, 'r') as f:
+            content = f.read()
+            if content.strip(): # Check if file is not empty
+                data = json.loads(content)
+                if isinstance(data, list):
+                    posts = data
+                else:
+                    print(f"Warning: Content in {filename} is not a list. Starting with an empty list of posts for context.")
+            # If file is empty or only whitespace, posts remains []
+    except FileNotFoundError:
+        print(f"Info: Today's post file '{filename}' not found. Assuming no posts yet for context.")
+    except json.JSONDecodeError:
+        print(f"Error: Could not decode JSON from '{filename}'. Assuming no posts yet for context.")
+    return posts
+
 def fetch_recent_interests_from_url(url):
     """Fetches text content from a given URL."""
     print(f"Fetching recent interests from: {url}")
@@ -145,18 +164,36 @@ def refine_mutable_prompt_with_gemini(current_mutable_prompt_desc, recent_intere
         print(f"Error during Gemini mutable prompt refinement: {e}")
         return current_mutable_prompt_desc # Fallback to original
 
-def generate_search_query_with_gemini(interests_description):
+def generate_search_query_with_gemini(interests_description, todays_posts_summary=""):
     """
-    Generates a focused search query using the Gemini API based on user interests.
+    Generates a focused search query using the Gemini API based on user interests,
+    aiming for variety based on today's existing posts.
     """
-    print("Asking Gemini to generate a focused search query based on your interests...")
+    print("Asking Gemini to generate a focused search query based on your interests and today's existing posts...")
+
+    diversification_prompt_part = (
+        "To ensure a varied and eclectic collection of discoveries for today, "
+        "please generate a search query that explores a *different* aspect of my interests "
+        "or a *new, complementary topic* to what has already been covered. "
+        "Avoid significant repetition with the themes from today's existing posts."
+    )
+    if todays_posts_summary and todays_posts_summary != "No posts yet today.":
+        diversification_prompt_part = (
+            f"Here are summaries of posts already generated today:\n{todays_posts_summary}\n\n"
+            "Considering these, to ensure a varied and eclectic collection of discoveries for today, "
+            "please generate a search query that explores a *different* aspect of my interests "
+            "or a *new, complementary topic*. Aim to find something that adds novelty or a new perspective "
+            "relative to the posts already listed."
+        )
+
     prompt = (
         f"My comprehensive interest profile is: {interests_description}\n\n"
+        f"{diversification_prompt_part}\n\n"
         "I need a highly focused search query (ideally 2-4 words) for a niche, text-focused search engine like Marginalia, which surfaces unique and often technical or non-mainstream content. "
-        "From my detailed interests above, please identify a *specific sub-topic, a particular technology, a distinct problem, or a niche research area*. "
+        "From my detailed interests above, and keeping in mind the goal of diversification, please identify a *specific sub-topic, a particular technology, a distinct problem, or a niche research area*. "
         "Then, formulate a concise search query that targets this *narrow aspect* directly. "
-        "The goal is to find in-depth information or overlooked resources on that specific point, rather than a general overview of my broader interests. "
-        "For example, if my interests include 'underwater robotics and AI for coral reef monitoring', a focused query might be 'AUV coral mapping' or 'AI fish species identification' rather than 'underwater AI robotics'.\n"
+        "The goal is to find in-depth information or overlooked resources on that specific point, rather than a general overview of my broader interests or topics already covered today. "
+        "For example, if my interests include 'underwater robotics and AI for coral reef monitoring', and today's posts are about 'AUV coral mapping', a good new query might be 'acoustic modem design for UUVs' or 'biofouling prevention on marine sensors', rather than another query about mapping or AI for reefs.\n"
         "Respond with ONLY the search query itself, without any extra explanation or quotation marks."
     )
 
@@ -246,9 +283,10 @@ def search_marginalia(query):
         # print(f"Response content: {response.text}")
     return [] # Return empty list on error
 
-def select_most_relevant_result_with_gemini(search_query, results_list, interests_description):
+def select_most_relevant_result_with_gemini(search_query, results_list, interests_description, todays_posts_summary=""):
     """
-    Uses Gemini to select the most relevant search result based on user interests and search query.
+    Uses Gemini to select the most relevant search result, considering diversity based on today's posts
+    and attempting to filter out AI spam.
     """
     if not results_list:
         print("No Marginalia results to select from.")
@@ -257,11 +295,20 @@ def select_most_relevant_result_with_gemini(search_query, results_list, interest
         print("Only one Marginalia result found, selecting it by default.")
         return results_list[0]
 
-    print(f"\nAsking Gemini to select the most relevant result for query '{search_query}' based on interests...")
+    print(f"\nAsking Gemini to select the most relevant result for query '{search_query}' based on interests and today's context...")
+
+    diversification_context = ""
+    if todays_posts_summary and todays_posts_summary != "No posts yet today.":
+        diversification_context = (
+            f"For context, here are summaries of topics already posted today:\n{todays_posts_summary}\n\n"
+            "When selecting, please favor a result that might offer a new angle or complementary information "
+            "to ensure a diverse set of findings for the day.\n"
+        )
 
     prompt_parts = [
         f"My primary interests are: {interests_description}\n\n",
         f"I performed a search for: '{search_query}'.\n",
+        diversification_context,
         "Here are the top search results from Marginalia:\n\n"
     ]
 
@@ -272,9 +319,11 @@ def select_most_relevant_result_with_gemini(search_query, results_list, interest
         prompt_parts.append(f"  URL: {result.get('url', 'N/A')}\n\n")
 
     prompt_parts.append(
-        "Considering my interests and the search query, which of these results (e.g., 'Result 1', 'Result 2', etc.) "
-        "is the most relevant and interesting? Please respond with only the identifier (e.g., 'Result X'). "
-        "If none seem particularly relevant, respond with 'None'."
+        "Considering my interests, the search query, and the goal of building a varied collection of posts (avoiding too much overlap with existing topics if possible), "
+        "which of these results (e.g., 'Result 1', 'Result 2', etc.) "
+        "is the most relevant AND interesting? Please respond with only the identifier (e.g., 'Result X'). "
+        "If none seem particularly relevant or if they are too similar to existing posts, respond with 'None'.\n"
+        "Additionally, try to discern and deprioritize results that seem like low-quality, generic, or AI-generated spam/content farms. Favor unique, insightful, or human-authored content."
     )
     prompt = "".join(prompt_parts)
 
@@ -336,27 +385,42 @@ def select_most_relevant_result_with_gemini(search_query, results_list, interest
     print("Selection by Gemini failed. Defaulting to the first result if available.")
     return results_list[0] if results_list else None
 
-def generate_title_with_gemini(search_query, marginalia_result):
+def generate_title_with_gemini(search_query, marginalia_result, existing_titles_str=""):
     """
-    Generates a post title using the Gemini API based on search query and a Marginalia result.
+    Generates a post title using the Gemini API, aiming for distinctiveness, quirkiness,
+    and a Hacker News-style from existing titles.
     """
     if not marginalia_result:
         return None
+
+    title_context = "When crafting this new title, try to make it distinct and complementary, contributing to an overall eclectic and interesting set of posts for the day."
+    if existing_titles_str and existing_titles_str != "No existing titles for today.":
+        title_context = (
+            f"Here are the titles of posts already generated today:\n{existing_titles_str}\n\n"
+            "When crafting this new title, try to make it distinct and complementary to these existing titles, "
+            "contributing to an overall eclectic and interesting set of posts for the day."
+        )
 
     prompt = (
         f"Based on the search query '{search_query}' and the following search result from Marginalia:\n"
         f"URL: {marginalia_result.get('url', 'N/A')}\n"
         f"Title: {marginalia_result.get('title', 'N/A')}\n"
         f"Description: {marginalia_result.get('description', 'N/A')}\n\n"
-        "Please generate a concise and engaging title for a new blog post about this topic. "
-        "The title should be suitable for a JSON data entry and should not contain any special formatting "
-        "or quotation marks that would break JSON structure. Just the plain text of the title."
+        f"{title_context}\n\n"
+        "Please generate a quirky, intriguing, and Hacker News-style title for a new blog post about this topic. "
+        "The title should spark curiosity and hint at the core interesting aspect of the content, often with a slightly informal or clever angle. "
+        "It should be suitable for a JSON data entry and must not contain any special formatting or quotation marks that would break JSON structure. "
+        "Just the plain text of the title. Think of titles you'd see on HN that make you want to click!"
     )
 
     payload = {
         "contents": [{
             "parts": [{"text": prompt}]
-        }]
+        }],
+        "generationConfig": {
+            "maxOutputTokens": 70, # Slightly more room for creative/quirky titles
+            "temperature": 0.75     # Encourage more variability and "quirkiness"
+        }
     }
     headers = {
         'Content-Type': 'application/json'
@@ -396,13 +460,20 @@ def generate_title_with_gemini(search_query, marginalia_result):
         # print(f"Response content: {response.text}") # For debugging
     return None
 
-def generate_hn_style_comment_with_gemini(search_query, selected_interest_description, marginalia_result):
+def generate_hn_style_comment_with_gemini(search_query, selected_interest_description, marginalia_result, todays_posts_summary=""):
     """
-    Generates a single Hacker News-style comment about the article's relevance and interest,
-    expecting a JSON response with a single key.
+    Generates a single Hacker News-style comment, considering context from other posts today.
     """
     if not marginalia_result:
         return None
+
+    comment_context = "When writing this comment, consider how it can add a unique perspective or touch upon an angle, making the overall set of discussions more varied and interesting."
+    if todays_posts_summary and todays_posts_summary != "No posts yet today.":
+        comment_context = (
+            f"For context, here are themes/titles from other posts made today:\n{todays_posts_summary}\n\n"
+            "When writing this comment about the current article, consider how it can add a unique perspective or touch upon an angle "
+            "that complements or contrasts with the themes from other posts today, making the overall set of discussions more varied and interesting."
+        )
 
     prompt = (
         f"My guiding interest profile for this task is: \"{selected_interest_description.strip()}\"\n\n"
@@ -411,8 +482,9 @@ def generate_hn_style_comment_with_gemini(search_query, selected_interest_descri
         f"Title: {marginalia_result.get('title', 'N/A')}\n"
         f"URL: {marginalia_result.get('url', 'N/A')}\n"
         f"Description: {marginalia_result.get('description', 'N/A')}\n\n"
-        "Please generate a single, insightful comment about this article, written in the style of a Hacker News (HN) commentator. "
-        "The comment should briefly explain why this article is interesting or relevant, particularly considering my stated interests and the search query. "
+        f"{comment_context}\n\n"
+        "Please generate a single, insightful comment about THIS article, written in the style of a Hacker News (HN) commentator. "
+        "The comment should briefly explain why THIS article is interesting or relevant, particularly considering my stated interests and the search query. "
         "It can offer a concise take, connect to broader ideas, or highlight a key takeaway. Aim for a tone that is informed, slightly informal, and engaging. "
         "Respond ONLY with a single JSON object containing one key: \"hn_comment\", where the value is the text of your comment (1-3 sentences).\n\n"
         "Ensure your entire response is a valid JSON object and nothing else."
@@ -569,7 +641,27 @@ if __name__ == "__main__":
     elif not recent_interests_text:
         print("Info: Could not fetch recent interests from URL. Mutable prompt will not be refined based on external notes for this session.")
 
+    # --- Load today's posts for context ---
+    todays_json_filename = get_todays_json_filename()
+    todays_posts_data = load_todays_posts(todays_json_filename)
+    
+    todays_posts_summary_str = "No posts yet today."
+    if todays_posts_data:
+        post_summaries = []
+        for post in todays_posts_data:
+            title = post.get('title', "N/A")
+            # url_snippet = post.get('url', '')[:50] + "..." if post.get('url') else "N/A"
+            # post_summaries.append(f"- Title: \"{title}\" (URL: {url_snippet})")
+            post_summaries.append(f"- \"{title}\"") # Simpler summary with just titles
+        if post_summaries:
+            todays_posts_summary_str = "\n".join(post_summaries)
 
+    existing_titles_list_str = "No existing titles for today."
+    if todays_posts_data:
+        titles = [f"- \"{post.get('title', 'N/A')}\"" for post in todays_posts_data if post.get('title')]
+        if titles:
+            existing_titles_list_str = "\n".join(titles)
+    
     # --- Prompt Selection for current run: Combine immutable and mutable if available ---
     immutable_prompts = all_prompts_data.get("immutable_prompts", [])
     # Use the potentially updated mutable prompts for selection
@@ -610,25 +702,39 @@ if __name__ == "__main__":
     print(f"{selected_interest_description.strip()}")
     print(f"--------------------------------------------------\n")
 
-    # Step 0: Generate search query with Gemini based on the selected interest
-    search_query = generate_search_query_with_gemini(selected_interest_description)
+    # Step 0: Generate search query with Gemini based on the selected interest and today's posts
+    search_query = generate_search_query_with_gemini(selected_interest_description, todays_posts_summary_str)
 
     if search_query:
         # Step 1: Search Marginalia
         marginalia_results = search_marginalia(search_query)
 
         if marginalia_results:
-            # Step 2a: Select the most relevant result
-            selected_result = select_most_relevant_result_with_gemini(search_query, marginalia_results, selected_interest_description)
+            # Step 2a: Select the most relevant result, considering today's posts for diversity
+            selected_result = select_most_relevant_result_with_gemini(
+                search_query, 
+                marginalia_results, 
+                selected_interest_description,
+                todays_posts_summary_str
+            )
             
             if selected_result:
                 print(f"\nProceeding with selected result: {selected_result.get('title', 'N/A')}")
-                # Step 2b: Generate title
-                generated_title = generate_title_with_gemini(search_query, selected_result)
+                # Step 2b: Generate title, considering existing titles
+                generated_title = generate_title_with_gemini(
+                    search_query, 
+                    selected_result,
+                    existing_titles_list_str
+                )
                 
                 if generated_title:
-                    # Step 2c: Generate HN-style comment
-                    hn_comment = generate_hn_style_comment_with_gemini(search_query, selected_interest_description, selected_result)
+                    # Step 2c: Generate HN-style comment, considering today's posts
+                    hn_comment = generate_hn_style_comment_with_gemini(
+                        search_query, 
+                        selected_interest_description, 
+                        selected_result,
+                        todays_posts_summary_str
+                    )
                     
                     post_url = selected_result.get('url', 'N/A')
                     add_post_to_daily_json(
