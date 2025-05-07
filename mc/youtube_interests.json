@@ -1,0 +1,14 @@
+{
+  "immutable_prompts": [
+    {
+      "id": "underwater_city_development_stable",
+      "description": "My ultimate goal is to one day build an underwater city, and I am focused on collecting the skills, connecting with people, and understanding the resources necessary to achieve this. I am deeply interested in the multidisciplinary aspects of creating and inhabiting underwater environments. This encompasses robotics for subsea construction and maintenance, the unique challenges of underwater architecture and structural engineering, and innovations in materials science like 3D concrete printing for marine applications. My interests also include the geology of the underwater world, the integration of marine ecosystems (including diverse fish populations) with human-made structures, and the human experience of exploring these environments through scuba diving and freediving. I am keen on learning about seasteading concepts and practical implementations as potential pathways or related endeavors. I'm looking for technical papers, case studies, project proposals, and discussions that contribute to this long-term vision."
+    }
+  ],
+  "mutable_prompts": [
+    {
+      "id": "underwater_city_robotics_evolving",
+      "description": "Current research focus: The integration of advanced underwater welding techniques with stainless steel applications in volcanic seafloor environments for subsea construction. This exploration delves into the material properties and corrosion resistance of stainless steel under extreme underwater conditions, innovative welding methods for creating durable subsea structures, and the unique geological challenges presented by volcanic seafloor terrain. The study extends to the complex logistics of underwater construction projects near active volcanic zones, including equipment deployment, material transportation, and workforce management. Additionally, it examines the economic implications of such projects, particularly how tariffs on crucial materials like stainless steel affect overall feasibility and cost-effectiveness. This multifaceted approach aims to develop resilient underwater habitats capable of withstanding volcanic activity, advancing the long-term vision of sustainable underwater cities while considering practical economic and logistical constraints."
+    }
+  ]
+}
