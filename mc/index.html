@@ -238,7 +238,7 @@
                 // prevDayButton can always be enabled, unless you want a lower limit.
             }
 
-            async function fetchPostsForDate(dateToFetch) {
+           async function fetchPostsForDate(dateToFetch) {
                 postsList.innerHTML = `<p class="loading">Loading Monk's Evil News for ${dateToFetch.toLocaleDateString()}...</p>`;
                 updateCurrentDateDisplay();
 
@@ -250,7 +250,6 @@
                 const jsonUrl = `https://raw.githubusercontent.com/${githubUser}/${repoName}/${branchName}/${directoryPath}/${dateStringForAPI}.json`;
 
                 try {
-                    // Added { cache: 'no-store' } to the fetch options
                     const response = await fetch(jsonUrl, { cache: 'no-store' });
 
                     if (!response.ok) {
@@ -263,15 +262,20 @@
                     postsList.innerHTML = ''; // Clear loading message
 
                     if (posts && posts.length > 0) {
-                        posts.forEach((post, index) => {
+                        // Create a reversed copy of the posts array for display
+                        const postsToDisplay = posts.slice().reverse();
+
+                        postsToDisplay.forEach((post, index) => { // Iterate over the reversed array
                             const postElement = document.createElement('div');
                             postElement.className = 'post';
 
                             const domain = post.url ? `(<a href="${post.url}" target="_blank" rel="noopener noreferrer" class="post-domain">${getDomain(post.url)}</a>)` : '';
-                            const postId = post.id || `${dateStringForAPI}-${index}`; // Unique ID for comment sections across dates
+                            // The 'index' here is for the reversed array, which is fine for postId uniqueness if post.id is missing.
+                            // The actual post.id from the object is used if present.
+                            const postId = post.id || `${dateStringForAPI}-${index}`; 
 
                             postElement.innerHTML = `
-                                <span class="post-rank">${index + 1}.</span>
+                                <span class="post-rank">${index + 1}.</span> {/* Rank based on new display order */}
                                 <a href="${post.url || '#'}" target="_blank" rel="noopener noreferrer" class="post-title">${post.title || 'No Title'}</a>
                                 ${domain}
                                 <div class="post-meta">
