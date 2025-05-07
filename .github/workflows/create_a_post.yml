@@ -29,15 +29,15 @@ jobs:
         env:
           MARGINALIA_API_KEY: ${{ secrets.MARGINALIA_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python mc/make_a_post.py # Updated script path
+        working-directory: ./mc # Set working directory to mc
+        run: python make_a_post.py # Script path is now relative to mc/
 
       - name: Commit and push changes
         run: |
           git config --global user.name 'GitHub Actions Bot'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          # Add prompts.json and any other .json files (like DD_MM_YYYY.json)
-          # Assumes these files are created/modified in the root of the repository
-          git add prompts.json *.json 
+          # Add prompts.json and any other .json files from the mc/ directory
+          git add mc/prompts.json mc/*.json 
           # Check if there are changes to commit
           if git diff --staged --quiet; then
             echo "No changes to commit."
