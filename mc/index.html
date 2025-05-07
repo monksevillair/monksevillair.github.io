@@ -26,12 +26,39 @@
             padding: 10px;
             margin-bottom: 15px;
             border-radius: 3px;
+            color: #ffffff; /* White text for header elements */
         }
         .header a {
             color: #ffffff; /* White text on purple */
             text-decoration: none;
             font-weight: bold;
             font-size: 1.2em;
+        }
+        #date-navigation {
+            text-align: center;
+            margin-top: 10px;
+            padding: 5px 0;
+        }
+        #date-navigation button {
+            background-color: #5C3E9D; /* Darker purple for buttons */
+            color: #ffffff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        #date-navigation button:disabled {
+            background-color: #4a4a4a;
+            cursor: not-allowed;
+        }
+        #date-navigation button:hover:not(:disabled) {
+            background-color: #7655C7; /* Lighter purple on hover */
+        }
+        #current-date-display {
+            margin: 0 15px;
+            font-weight: bold;
+            color: #f0f0f0; /* Bright white for the date */
         }
         .post {
             margin-bottom: 10px;
@@ -84,7 +111,6 @@
         .comments-toggle {
             cursor: pointer;
         }
-
         .comments-section {
             margin-top: 10px;
             padding-left: 10px; /* Initial indent for comments section */
@@ -130,6 +156,11 @@
     <div class="container">
         <div class="header">
             <a href="#">Monk's Evil News</a>
+            <div id="date-navigation">
+                <button id="prev-day-button">◄ Previous Day</button>
+                <span id="current-date-display"></span>
+                <button id="next-day-button">Next Day ►</button>
+            </div>
         </div>
         <div id="posts-list">
             <p class="loading">Loading Monk's Evil News...</p>
@@ -139,21 +170,29 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const postsList = document.getElementById('posts-list');
-            const loadingMessage = document.querySelector('.loading');
+            const prevDayButton = document.getElementById('prev-day-button');
+            const nextDayButton = document.getElementById('next-day-button');
+            const currentDateDisplay = document.getElementById('current-date-display');
 
-            function getFormattedDate() {
-                const today = new Date();
-                // For May 6, 2025, this will be 6_5_2025 (D_M_YYYY)
-                // Current date based on your context: Tuesday, May 6, 2025
-                const day = today.getDate(); // 6
-                const month = today.getMonth() + 1; // 5 (May)
-                const year = today.getFullYear(); // 2025
-                return `${day}_${month}_${year}`;
+            const actualToday = new Date(); // The true current date for navigation limits
+            let displayedDate = new Date(); // Date for which posts are currently shown, starts with today
+
+            function updateCurrentDateDisplay() {
+                currentDateDisplay.textContent = displayedDate.toLocaleDateString(undefined, {
+                    weekday: 'short', year: 'numeric', month: 'short', day: 'numeric'
+                });
+            }
+
+            function getFormattedDateForAPI(date) {
+                const day = date.getDate();
+                const month = date.getMonth() + 1; // JavaScript months are 0-indexed
+                const year = date.getFullYear();
+                return `${day}_${month}_${year}`; // Format D_M_YYYY
             }
 
             function getDomain(url) {
                 try {
-                    if (!url || !url.startsWith('http')) return ''; // Basic check
+                    if (!url || !(url.startsWith('http://') || url.startsWith('https://'))) return '';
                     return (new URL(url)).hostname.replace(/^www\./, '');
                 } catch (e) {
                     console.warn('Invalid URL for getDomain:', url, e);
@@ -163,7 +202,9 @@
 
             function renderComments(comments, level = 0) {
                 if (!comments || comments.length === 0) {
+                    // Return an empty container or a message if preferred, but for now, an empty div is fine.
                     const noCommentsDiv = document.createElement('div');
+                    // noCommentsDiv.textContent = "No sub-comments."; // Optional: message for empty nested comments
                     return noCommentsDiv;
                 }
                 const commentsContainer = document.createElement('div');
@@ -186,30 +227,40 @@
                 return commentsContainer;
             }
 
-            async function fetchPosts() {
-                const dateString = getFormattedDate();
+            function updateNavigationButtons() {
+                const todayForComparison = new Date(actualToday);
+                todayForComparison.setHours(0, 0, 0, 0);
+
+                const displayedDateForComparison = new Date(displayedDate);
+                displayedDateForComparison.setHours(0, 0, 0, 0);
+
+                nextDayButton.disabled = displayedDateForComparison.getTime() >= todayForComparison.getTime();
+                // prevDayButton can always be enabled, unless you want a lower limit.
+            }
+
+            async function fetchPostsForDate(dateToFetch) {
+                postsList.innerHTML = `<p class="loading">Loading Monk's Evil News for ${dateToFetch.toLocaleDateString()}...</p>`;
+                updateCurrentDateDisplay();
+
+                const dateStringForAPI = getFormattedDateForAPI(dateToFetch);
                 const githubUser = 'monksevillair';
                 const repoName = 'monksevillair.github.io';
-                const branchName = 'master'; // or 'main'
+                const branchName = 'master'; // or 'main', ensure this matches your repo
                 const directoryPath = 'mc';
-
-                const jsonUrl = `https://raw.githubusercontent.com/${githubUser}/${repoName}/${branchName}/${directoryPath}/${dateString}.json`;
-                // Example URL for today (May 6, 2025):
+                const jsonUrl = `https://raw.githubusercontent.com/${githubUser}/${repoName}/${branchName}/${directoryPath}/${dateStringForAPI}.json`;
+                // Example URL for May 6, 2025, would be:
                 // https://raw.githubusercontent.com/monksevillair/monksevillair.github.io/master/mc/6_5_2025.json
 
                 try {
                     const response = await fetch(jsonUrl);
                     if (!response.ok) {
                         if (response.status === 404) {
-                           throw new Error(`JSON file for today (${dateString}.json) not found. Make sure it's uploaded to the '${directoryPath}' directory in your GitHub repo (URL: ${jsonUrl}).`);
+                            throw new Error(`JSON file for ${dateStringForAPI}.json not found. There might be no news for this day.`);
                         }
                         throw new Error(`HTTP error! status: ${response.status} when fetching ${jsonUrl}`);
                     }
                     const posts = await response.json();
-
-                    if (loadingMessage) {
-                        loadingMessage.remove();
-                    }
+                    postsList.innerHTML = ''; // Clear loading message
 
                     if (posts && posts.length > 0) {
                         posts.forEach((post, index) => {
@@ -217,6 +268,7 @@
                             postElement.className = 'post';
 
                             const domain = post.url ? `(<a href="${post.url}" target="_blank" rel="noopener noreferrer" class="post-domain">${getDomain(post.url)}</a>)` : '';
+                            const postId = post.id || `${dateStringForAPI}-${index}`; // Unique ID for comment sections across dates
 
                             postElement.innerHTML = `
                                 <span class="post-rank">${index + 1}.</span>
@@ -224,48 +276,62 @@
                                 ${domain}
                                 <div class="post-meta">
                                     ${post.points || 0} points by ${post.author || 'anon'} ${post.time_ago || ''} |
-                                    <span class="comments-toggle" data-postid="${post.id || index}">${post.comments_count || 0} comments</span>
+                                    <span class="comments-toggle" data-postid="${postId}">${post.comments_count || 0} comments</span>
                                 </div>
-                                <div id="comments-for-${post.id || index}" class="comments-section" style="display: none;"></div>
+                                <div id="comments-for-${postId}" class="comments-section" style="display: none;"></div>
                             `;
                             postsList.appendChild(postElement);
 
-                            const commentsToggle = postElement.querySelector('.comments-toggle');
-                            const commentsSection = postElement.querySelector(`#comments-for-${post.id || index}`);
+                            const commentsToggle = postElement.querySelector(`.comments-toggle[data-postid="${postId}"]`);
+                            const commentsSection = postElement.querySelector(`#comments-for-${postId}`);
 
-                            if (commentsToggle && commentsSection && post.comments && post.comments.length > 0) {
-                                commentsToggle.style.cursor = 'pointer';
-                                commentsToggle.addEventListener('click', () => {
-                                    const isVisible = commentsSection.style.display === 'block';
-                                    commentsSection.style.display = isVisible ? 'none' : 'block';
-                                    if (!isVisible && commentsSection.children.length === 0) { 
-                                        const renderedComments = renderComments(post.comments);
-                                        commentsSection.appendChild(renderedComments);
-                                    } else if (!isVisible && commentsSection.children.length > 0 && commentsSection.firstChild && commentsSection.firstChild.textContent === 'No comments yet.'){
-                                        commentsSection.innerHTML = ''; 
-                                        const renderedComments = renderComments(post.comments);
-                                        commentsSection.appendChild(renderedComments);
-                                    }
-                                });
-                            } else if (commentsToggle) {
-                                commentsToggle.style.cursor = 'default'; 
-                                if (post.comments_count === 0 || !post.comments || post.comments.length === 0) {
-                                    commentsToggle.addEventListener('click', (e) => e.preventDefault());
+                            if (commentsToggle && commentsSection) {
+                                if (post.comments_count > 0 && post.comments && post.comments.length > 0) {
+                                    commentsToggle.style.cursor = 'pointer';
+                                    commentsToggle.addEventListener('click', () => {
+                                        const isVisible = commentsSection.style.display === 'block';
+                                        commentsSection.style.display = isVisible ? 'none' : 'block';
+                                        // Load comments only when first expanding, if not already loaded
+                                        if (!isVisible && commentsSection.children.length === 0) {
+                                            const renderedComments = renderComments(post.comments);
+                                            commentsSection.appendChild(renderedComments);
+                                        } else if (!isVisible && commentsSection.children.length > 0 && commentsSection.firstChild && commentsSection.firstChild.className !== 'comment' && commentsSection.firstChild.className !== 'comments-container') {
+                                            // This condition handles re-opening if it previously said "No comments to show" or similar
+                                            commentsSection.innerHTML = ''; // Clear any placeholder
+                                            const renderedComments = renderComments(post.comments);
+                                            commentsSection.appendChild(renderedComments);
+                                        }
+                                    });
+                                } else {
+                                     commentsToggle.style.cursor = 'default';
+                                     // Optionally, you can make it non-clickable or update text
+                                     // commentsToggle.textContent = `${post.comments_count || 0} comments (none to show)`;
+                                     // commentsToggle.addEventListener('click', (e) => e.preventDefault()); // Prevent click action
                                 }
                             }
                         });
                     } else {
-                        postsList.innerHTML = '<p class="error">No posts found for today. Check back later!</p>';
+                        postsList.innerHTML = `<p class="error">No posts found for ${dateToFetch.toLocaleDateString()}.</p>`;
                     }
-
                 } catch (error) {
                     console.error('Error fetching posts:', error);
-                    if (loadingMessage) loadingMessage.remove();
-                    postsList.innerHTML = `<p class="error">Could not load posts. ${error.message}</p>`;
+                    postsList.innerHTML = `<p class="error">Could not load posts for ${dateToFetch.toLocaleDateString()}. ${error.message}</p>`;
                 }
+                updateNavigationButtons();
             }
 
-            fetchPosts();
+            prevDayButton.addEventListener('click', () => {
+                displayedDate.setDate(displayedDate.getDate() - 1);
+                fetchPostsForDate(displayedDate);
+            });
+
+            nextDayButton.addEventListener('click', () => {
+                displayedDate.setDate(displayedDate.getDate() + 1);
+                fetchPostsForDate(displayedDate);
+            });
+
+            // Initial Load
+            fetchPostsForDate(displayedDate);
         });
     </script>
 </body>
