@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple News Aggregator</title>
+    <style>
+        body {
+            font-family: Verdana, Geneva, sans-serif;
+            background-color: #f6f6ef;
+            margin: 0;
+            padding: 8px;
+            font-size: 10pt;
+            color: #828282;
+        }
+        .container {
+            width: 85%;
+            margin: auto;
+            background-color: #f6f6ef;
+        }
+        .post {
+            margin-bottom: 7px;
+            padding-bottom: 5px;
+        }
+        .post-title {
+            font-size: 10pt;
+            color: #000000;
+            text-decoration: none;
+        }
+        .post-title:visited {
+            color: #828282;
+        }
+        .post-domain {
+            font-size: 8pt;
+            color: #828282;
+            margin-left: 4px;
+        }
+        .post-meta {
+            font-size: 7pt;
+            color: #828282;
+        }
+        .comments-container {
+            margin-top: 10px;
+            padding-left: 20px; /* Indent comments */
+        }
+        .comment {
+            margin-top: 5px;
+            border-left: 1px solid #ddd;
+            padding-left: 10px;
+            font-size: 9pt;
+        }
+        .comment-meta {
+            font-size: 7pt;
+            color: #828282;
+            margin-bottom: 3px;
+        }
+        .comment-text {
+            color: #000000;
+            overflow-wrap: break-word;
+        }
+        .comment .comments-container { /* Nested comments further indented */
+            padding-left: 15px;
+        }
+        .loading, .error {
+            text-align: center;
+            padding: 20px;
+            font-size: 12pt;
+        }
+        .header {
+            background-color: #ff6600;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        .header a {
+            color: #000000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="#">Simple News - Today's Posts</a>
+        </div>
+        <div id="posts-list">
+            <p class="loading">Loading posts...</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const postsList = document.getElementById('posts-list');
+            const loadingMessage = document.querySelector('.loading');
+
+            function getFormattedDate() {
+                const today = new Date();
+                const day = today.getDate();
+                const month = today.getMonth() + 1; // JavaScript months are 0-indexed
+                const year = today.getFullYear();
+                return `${day}_${month}_${year}`;
+            }
+
+            function getDomain(url) {
+                try {
+                    return (new URL(url)).hostname.replace('www.', '');
+                } catch (e) {
+                    return '';
+                }
+            }
+
+            function renderComments(comments, level = 0) {
+                if (!comments || comments.length === 0) {
+                    return '';
+                }
+                const commentsContainer = document.createElement('div');
+                commentsContainer.className = 'comments-container';
+                if (level > 0) {
+                    commentsContainer.style.marginLeft = `${level * 15}px`;
+                }
+
+                comments.forEach(comment => {
+                    const commentDiv = document.createElement('div');
+                    commentDiv.className = 'comment';
+                    commentDiv.innerHTML = `
+                        <div class="comment-meta">
+                            ${comment.author || 'anon'} | ${comment.time_ago || ''}
+                        </div>
+                        <div class="comment-text">${comment.text || ''}</div>
+                    `;
+                    if (comment.comments && comment.comments.length > 0) {
+                        commentDiv.appendChild(renderComments(comment.comments, level + 1));
+                    }
+                    commentsContainer.appendChild(commentDiv);
+                });
+                return commentsContainer;
+            }
+
+            async function fetchPosts() {
+                const dateString = getFormattedDate();
+                // Construct the base path relative to where index.html is served from.
+                // Assumes index.html and YYYY_MM_DD.json are in the same directory.
+                // For GitHub Pages, if index.html is at /mc/index.html, then json is at /mc/D_M_YYYY.json
+                const githubUser = 'monksevillair';
+                const repoName = 'monksevillair.github.io';
+                const branchName = 'master'; // or 'main' if that's your default branch
+                const directoryPath = 'mc'; // The directory where index.html and the JSON files are.
+
+                const jsonUrl = `https://raw.githubusercontent.com/${githubUser}/${repoName}/${branchName}/${directoryPath}/${dateString}.json`;
+
+                try {
+                    const response = await fetch(jsonUrl);
+                    if (!response.ok) {
+                        if (response.status === 404) {
+                           throw new Error(`JSON file for today (${dateString}.json) not found at ${jsonUrl}. Make sure it's uploaded to the '${directoryPath}' directory in your GitHub repo.`);
+                        }
+                        throw new Error(`HTTP error! status: ${response.status} when fetching ${jsonUrl}`);
+                    }
+                    const posts = await response.json();
+
+                    if (loadingMessage) {
+                        loadingMessage.remove();
+                    }
+
+                    if (posts && posts.length > 0) {
+                        posts.forEach((post, index) => {
+                            const postElement = document.createElement('div');
+                            postElement.className = 'post';
+
+                            const domain = post.url ? `(<a href="${post.url}" target="_blank" class="post-domain">${getDomain(post.url)}</a>)` : '';
+
+                            postElement.innerHTML = `
+                                ${index + 1}.
+                                <a href="${post.url || '#'}" target="_blank" class="post-title">${post.title || 'No Title'}</a>
+                                ${domain}
+                                <div class="post-meta">
+                                    ${post.points || 0} points by ${post.author || 'anon'} ${post.time_ago || ''} |
+                                    <span class="comments-toggle" data-postid="${post.id}">${post.comments_count || 0} comments</span>
+                                </div>
+                                <div id="comments-for-${post.id}" class="comments-section" style="display: none;"></div>
+                            `;
+                            postsList.appendChild(postElement);
+
+                            const commentsToggle = postElement.querySelector('.comments-toggle');
+                            const commentsSection = postElement.querySelector(`#comments-for-${post.id}`);
+
+                            if (commentsToggle && commentsSection && post.comments && post.comments.length > 0) {
+                                commentsToggle.style.cursor = 'pointer';
+                                commentsToggle.addEventListener('click', () => {
+                                    const isVisible = commentsSection.style.display === 'block';
+                                    commentsSection.style.display = isVisible ? 'none' : 'block';
+                                    if (!isVisible && !commentsSection.hasChildNodes()) { // Load comments only once
+                                        const renderedComments = renderComments(post.comments);
+                                        commentsSection.appendChild(renderedComments);
+                                    }
+                                });
+                            } else if (commentsToggle) {
+                                // No comments or toggle shouldn't be clickable if no comments section
+                                commentsToggle.style.cursor = 'default';
+                            }
+                        });
+                    } else {
+                        postsList.innerHTML = '<p class="error">No posts found for today.</p>';
+                    }
+
+                } catch (error) {
+                    console.error('Error fetching posts:', error);
+                    if (loadingMessage) loadingMessage.remove();
+                    postsList.innerHTML = `<p class="error">Could not load posts. ${error.message}</p>`;
+                }
+            }
+
+            fetchPosts();
+        });
+    </script>
+</body>
+</html>
