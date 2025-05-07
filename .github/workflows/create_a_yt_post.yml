@@ -29,16 +29,17 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         # If your script and json files are in a subdirectory (e.g., mc/), uncomment and set working-directory:
-        # working-directory: ./mc
+        working-directory: ./mc
         run: python ai_yt_2_post.py
 
       - name: Commit and push changes
+        working-directory: ./mc
         run: |
           git config --global user.name 'GitHub Actions Bot'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           
           # Add youtube_interests.json and the daily .json files
-          # Adjust path if using a working-directory, e.g., git add mc/youtube_interests.json mc/*_*.json
+          # Paths are now relative to the working-directory (mc/)
           git add youtube_interests.json
           # Add all files matching the pattern DD_MM_YYYY.json (or D_M_YYYY.json)
           # This regex tries to match one or two digits for day/month, and four for year.
