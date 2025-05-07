@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "title": "My First Awesome Post",
+    "url": "https://example.com/link1",
+    "points": 123,
+    "author": "user_a",
+    "time_ago": "3 hours ago",
+    "comments_count": 2,
+    "comments": [
+      {
+        "id": "c1",
+        "author": "commenter_x",
+        "text": "This is a great point!",
+        "time_ago": "2 hours ago",
+        "comments": [
+          {
+            "id": "c1_1",
+            "author": "replier_z",
+            "text": "Indeed, I agree.",
+            "time_ago": "1 hour ago"
+          }
+        ]
+      },
+      {
+        "id": "c2",
+        "author": "commenter_y",
+        "text": "Thanks for sharing.",
+        "time_ago": "1 hour ago"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Another Interesting Discussion",
+    "url": "https://anotherexample.dev/article",
+    "points": 98,
+    "author": "user_b",
+    "time_ago": "5 hours ago",
+    "comments_count": 0,
+    "comments": []
+  }
+]
