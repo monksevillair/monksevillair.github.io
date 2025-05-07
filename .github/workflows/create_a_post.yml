@@ -1,0 +1,47 @@
+name: Run Make A Post Script Hourly
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Runs at the start of every hour
+  workflow_dispatch: # Allows manual triggering from the Actions tab
+  push: # Optional: Triggers on push to main, useful for testing workflow changes
+    branches:
+      - main # Adjust if your default branch is master or other
+
+jobs:
+  run_script_and_commit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Required to push changes back to the repository
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x' # The script uses python3
+
+      - name: Install dependencies
+        run: pip install requests python-dotenv
+
+      - name: Run Python script
+        env:
+          MARGINALIA_API_KEY: ${{ secrets.MARGINALIA_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python mc/make_a_post.py # Updated script path
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          # Add prompts.json and any other .json files (like DD_MM_YYYY.json)
+          # Assumes these files are created/modified in the root of the repository
+          git add prompts.json *.json 
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Automated update: Run mc/make_a_post.py script"
+            git push
+          fi
