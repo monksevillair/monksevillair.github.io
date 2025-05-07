@@ -1,0 +1,14 @@
+{
+  "immutable_prompts": [
+    {
+      "id": "underwater_city_development_stable",
+      "description": "My ultimate goal is to one day build an underwater city, and I am focused on collecting the skills, connecting with people, and understanding the resources necessary to achieve this. I am deeply interested in the multidisciplinary aspects of creating and inhabiting underwater environments. This encompasses robotics for subsea construction and maintenance, the unique challenges of underwater architecture and structural engineering, and innovations in materials science like 3D concrete printing for marine applications. My interests also include the geology of the underwater world, the integration of marine ecosystems (including diverse fish populations) with human-made structures, and the human experience of exploring these environments through scuba diving and freediving. I am keen on learning about seasteading concepts and practical implementations as potential pathways or related endeavors. I'm looking for technical papers, case studies, project proposals, and discussions that contribute to this long-term vision."
+    }
+  ],
+  "mutable_prompts": [
+    {
+      "id": "underwater_city_robotics_evolving",
+      "description": "My current research focus is on the practical engineering challenges of constructing large-scale underwater infrastructure, specifically exploring the material science aspects of welding stainless steel in high-pressure, underwater environments. This includes investigating the logistical complexities of transporting and deploying materials for underwater construction,  considering the unique challenges posed by underwater volcanoes and their geological impact on infrastructure stability.  I am also interested in the economic effects of tariffs on the procurement of materials and the overall cost-effectiveness of underwater construction projects.  This research seeks to understand the practical application of engineering principles in extreme environments, focusing on the material science, logistics, and economic factors that influence the feasibility and sustainability of such projects."
+    }
+  ]
+}
