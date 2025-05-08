@@ -275,7 +275,7 @@
                             const postId = post.id || `${dateStringForAPI}-${index}`; 
 
                             postElement.innerHTML = `
-                                <span class="post-rank">${index + 1}.</span> {/* Rank based on new display order */}
+                                <span class="post-rank">${index + 1}.</span> 
                                 <a href="${post.url || '#'}" target="_blank" rel="noopener noreferrer" class="post-title">${post.title || 'No Title'}</a>
                                 ${domain}
                                 <div class="post-meta">
