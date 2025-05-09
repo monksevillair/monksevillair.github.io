@@ -3,37 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Building an Underwater City</title>
+    <title>Underwater City Archives - Scrolling Depths</title>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
         :root {
-            /* Pastel Pixel Art Palette */
+            /* Pastel Pixel Art Palette (same as before) */
             --sky-top: #b3e5fc; /* Light Pastel Sky Blue */
             --sky-bottom: #e1f5fe; /* Lighter Pastel Sky Blue */
             --sun-core: #fff59d; /* Pastel Yellow */
-            --sun-glow: rgba(255, 249, 196, 0.5); /* Lighter yellow glow */
+            --sun-glow: rgba(255, 249, 196, 0.5);
 
             --water-surface: #81d4fa; /* Bright Pastel Cyan */
             --water-interface-highlight: #e0f7fa;
             --water-shallows: #4fc3f7; /* Medium Pastel Blue */
             --water-mid: #29b6f6;
             --water-deep: #039be5;
-            --water-abyss: #01579b; /* Darkest Blue */
+            --water-abyss: #01579b;
             --water-abyss-darker: #003c6c;
 
-            --sand: #fff9c4; /* Very Light Pastel Yellow for sandy bottom illusion */
-
-            --habitat-light-strong: #fffde7; /* Creamy white light */
+            --habitat-light-strong: #fffde7;
             --habitat-light-glow: rgba(255, 253, 231, 0.6);
-            --habitat-structure: #bdbdbd; /* Grey for structures */
+            --habitat-structure: #bdbdbd;
             --habitat-structure-dark: #757575;
 
             --text-light: #f5f5f5;
             --text-dark: #263238;
-            --text-link: #ffecb3; /* Light yellow for links on dark bg */
+            --text-link: #ffecb3;
             --text-link-hover: #fff9c4;
 
-            --font-pixel: 'Press Start 2P', 'Courier New', Courier, monospace; /* Example pixel font */
+            --font-pixel: 'Press Start 2P', 'Courier New', Courier, monospace;
             --font-main: 'Verdana', sans-serif;
         }
 
@@ -43,56 +41,49 @@
             margin: 0;
             font-family: var(--font-main);
             color: var(--text-light);
-            /* Base background - deepest ocean */
-            background-color: var(--water-abyss-darker);
-            /* overflow-x: hidden; */ /* Prevent horizontal scroll if any elements are too wide */
+            background-color: var(--water-abyss-darker); /* Fallback, actual bg is layers */
+            position: relative; /* For stacking context of background and content */
         }
 
-        /* --- Layered Background --- */
+        /* --- Layered SCROLLING Background --- */
         .background-layers {
-            position: fixed;
+            position: absolute; /* Scrolls with body, positioned at the very back */
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            z-index: -10;
-            overflow: hidden; /* Prevent scrollbars on layers */
+            /* Height will be determined by the tallest element inside, e.g., water gradient */
+            /* min-height: 100vh; ensure it's at least viewport high */
+            z-index: -1; /* Behind main-container */
+            overflow: hidden; /* Clip any oversized habitat parts if necessary */
         }
 
         .bg-sky {
-            position: absolute;
-            top: 0;
-            left: 0;
+            position: relative; /* Part of normal flow within background-layers */
             width: 100%;
-            height: 40vh; /* Sky portion */
+            height: 40vh; /* Sky portion height */
             background: linear-gradient(to bottom, var(--sky-top), var(--sky-bottom));
-            z-index: -9;
         }
 
         .bg-sun {
-            position: absolute;
-            top: 5vh; /* Position sun in the sky */
+            position: absolute; /* Relative to background-layers or bg-sky */
+            top: 5vh;
             left: 15%;
-            width: 80px; /* Pixel sun size */
-            height: 80px;
+            width: 80px; height: 80px;
             background-color: var(--sun-core);
-            border-radius: 0; /* Sharp edges for pixel look */
+            border-radius: 0;
             box-shadow:
-                0 0 0 10px var(--sun-core), /* Make it thicker */
-                0 0 20px 20px var(--sun-glow), /* Glow effect */
-                /* Pixelated rays (simple approach) */
-                0 -60px 0 -20px var(--sun-core), /* Top ray */
-                0 60px 0 -20px var(--sun-core),  /* Bottom ray */
-                -60px 0 0 -20px var(--sun-core),/* Left ray */
-                60px 0 0 -20px var(--sun-core); /* Right ray */
-            z-index: -8;
+                0 0 0 10px var(--sun-core),
+                0 0 20px 20px var(--sun-glow),
+                0 -60px 0 -20px var(--sun-core),
+                0 60px 0 -20px var(--sun-core),
+                -60px 0 0 -20px var(--sun-core),
+                60px 0 0 -20px var(--sun-core);
         }
-         /* Simple blocky clouds */
         .bg-cloud {
             position: absolute;
             background-color: #ffffff;
-            border-radius: 0; /* Sharp edges */
-            box-shadow: 3px 3px 0px var(--sky-bottom); /* Pixel shadow */
+            border-radius: 0;
+            box-shadow: 3px 3px 0px var(--sky-bottom);
         }
         .bg-cloud-1 { top: 10vh; left: 60%; width: 100px; height: 30px; }
         .bg-cloud-1::before { content:''; position:absolute; top:-10px; left:20px; width:60px; height:30px; background: #fff; box-shadow: 3px 3px 0px var(--sky-bottom); }
@@ -100,31 +91,26 @@
 
 
         .bg-water-gradient {
-            position: absolute;
-            top: 0; /* Start from top to allow sky to show through gradient transparency */
-            left: 0;
+            position: relative; /* Part of normal flow, below sky */
             width: 100%;
-            height: 400vh; /* Make it very tall to scroll through */
+            height: 3000px; /* Tall enough for deep scrolling, adjust as needed */
             background: linear-gradient(to bottom,
-                transparent 0%,       /* Allow sky to show */
-                transparent 35vh,     /* Start water surface slightly below sky top */
-                var(--water-surface) 38vh, /* Water interface */
-                var(--water-shallows) 55vh,
-                var(--water-mid) 80vh,
-                var(--water-deep) 120vh,
-                var(--water-abyss) 200vh,
-                var(--water-abyss-darker) 300vh
+                var(--water-surface) 0%, /* Starts immediately after sky effectively */
+                var(--water-shallows) 15%, /* Percentages are of this element's height */
+                var(--water-mid) 30%,
+                var(--water-deep) 50%,
+                var(--water-abyss) 75%,
+                var(--water-abyss-darker) 100%
             );
-            z-index: -7;
+             margin-top: -2px; /* Slight overlap to ensure no gap with sky due to rounding */
         }
 
-        /* Underwater Habitats - simple blocky shapes */
+        /* Underwater Habitats - positioned absolutely within .background-layers */
         .bg-habitat {
             position: absolute;
             background-color: var(--habitat-structure);
-            border-radius: 0; /* Sharp edges */
-            box-shadow: 5px 5px 0px var(--habitat-structure-dark); /* Pixel shadow */
-            z-index: -6;
+            border-radius: 0;
+            box-shadow: 5px 5px 0px var(--habitat-structure-dark);
         }
         .bg-habitat::before { /* Light source */
             content: '';
@@ -135,169 +121,121 @@
             box-shadow: 0 0 15px 10px var(--habitat-light-glow), inset 0 0 5px var(--sun-core);
         }
 
-        /* Position habitats at different depths */
-        .habitat-1 { top: 70vh; left: 10%; width: 150px; height: 80px; }
+        /* Position habitats at different depths (top values are from top of background-layers) */
+        /* Sky is ~40vh. Water starts effectively after that. */
+        .habitat-1 { top: 70vh; left: 10%; width: 150px; height: 80px; } /* Shallow */
         .habitat-1::before { top: 10px; left: 10px; }
-        .habitat-2 { top: 120vh; left: 70%; width: 120px; height: 100px; }
+        .habitat-2 { top: 120vh; left: 70%; width: 120px; height: 100px; } /* Mid */
         .habitat-2::before { bottom: 15px; right: 15px; width:30px; height:30px;}
-        .habitat-3 { top: 180vh; left: 25%; width: 200px; height: 60px; opacity: 0.8; }
+        .habitat-3 { top: 180vh; left: 25%; width: 200px; height: 60px; opacity: 0.8; } /* Deep */
         .habitat-3::before { top: 50%; left: 50%; transform: translate(-50%, -50%); }
-        .habitat-4 { top: 250vh; left: 50%; width: 100px; height: 100px; opacity: 0.6; }
+        .habitat-4 { top: 250vh; left: 50%; width: 100px; height: 100px; opacity: 0.6; } /* Abyss */
         .habitat-4::before { top: 5px; left: 5px; }
 
 
         /* --- Main Content Area --- */
         .main-container {
-            max-width: 700px; /* Narrower for better readability */
+            max-width: 700px;
             margin: 0 auto;
-            padding: 15vh 20px 50px 20px; /* Top padding to start below sun/sky */
-            position: relative; /* To scroll over fixed backgrounds */
+            padding: 15vh 20px 50px 20px; /* Top padding to start "below" initial sky view */
+            position: relative; /* Sits on top of .background-layers */
             z-index: 1;
+            min-height: 100vh; /* Ensure it pushes body height for scrolling */
         }
 
         .page-title {
             font-family: var(--font-pixel);
             text-align: center;
-            font-size: 2em; /* Adjusted for pixel font */
+            font-size: 2em;
             color: var(--sun-core);
             text-shadow: 2px 2px 0px var(--water-abyss-darker), 4px 4px 0px var(--habitat-structure-dark);
             margin-bottom: 40px;
             padding: 15px;
-            background-color: rgba(1, 87, 155, 0.5); /* Dark blue semi-transparent */
+            background-color: rgba(1, 87, 155, 0.5);
             border: 3px solid var(--water-mid);
-            border-radius: 0; /* Pixel style */
+            border-radius: 0;
         }
 
-        .post-list {
-            list-style: none;
-            padding: 0;
-        }
-
+        .post-list { list-style: none; padding: 0; }
         .post-item {
-            margin-bottom: 15px; /* Space between collapsed items */
-            border-radius: 0; /* Pixel style */
+            margin-bottom: 15px;
+            border-radius: 0;
             border: 2px solid var(--water-deep);
-            background-color: rgba(3, 155, 229, 0.3); /* Semi-transparent item bg */
-            box-shadow: 3px 3px 0px rgba(1, 87, 155, 0.7); /* Pixel shadow */
-            overflow: hidden; /* For max-height transition */
+            background-color: rgba(3, 155, 229, 0.3);
+            box-shadow: 3px 3px 0px rgba(1, 87, 155, 0.7);
+            overflow: hidden;
         }
-
         .post-header {
             padding: 12px 18px;
             cursor: pointer;
-            background-color: rgba(2, 119, 189, 0.6); /* Slightly darker header */
+            background-color: rgba(2, 119, 189, 0.6);
             color: var(--text-light);
             font-size: 1.1em;
-            font-weight: bold; /* Less bold with pixel font, or use normal */
-            font-family: var(--font-pixel); /* Pixel font for headers */
+            font-family: var(--font-pixel);
             display: flex;
             justify-content: space-between;
             align-items: center;
             transition: background-color 0.2s;
             border-bottom: 2px solid transparent;
         }
-        .post-header:hover {
-            background-color: rgba(3, 169, 244, 0.7);
-        }
+        .post-header:hover { background-color: rgba(3, 169, 244, 0.7); }
         .post-header.active {
             background-color: rgba(79, 195, 247, 0.7);
             border-bottom-color: var(--water-shallows);
         }
-
-        .post-header::after { /* Expand/collapse indicator - pixel style */
-            content: '[+]'; /* Pixel-like indicator */
+        .post-header::after {
+            content: '[+]';
             font-family: var(--font-pixel);
             font-size: 1em;
             color: var(--sun-core);
             margin-left: 10px;
         }
-        .post-header.active::after {
-            content: '[-]';
-        }
+        .post-header.active::after { content: '[-]'; }
 
         .post-content-wrapper {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s ease-in-out;
-            background-color: rgba(1, 87, 155, 0.4); /* Darker for content readability */
-            border-top: 2px dashed var(--water-mid); /* Separator when open */
+            background-color: rgba(1, 87, 155, 0.4);
+            border-top: 2px dashed var(--water-mid);
         }
-
-        .post-content {
-            padding: 15px 20px;
-            color: var(--text-light);
-            line-height: 1.7;
-        }
+        .post-content { padding: 15px 20px; color: var(--text-light); line-height: 1.7; }
         .post-content.loading, .post-content.error {
-            text-align: center;
-            font-style: italic;
-            padding: 25px 15px;
-            font-family: var(--font-pixel);
+            text-align: center; font-style: italic; padding: 25px 15px; font-family: var(--font-pixel);
         }
-        .post-content.error {
-            color: #ffcdd2; /* Light red pastel */
-            background-color: rgba(176, 0, 32, 0.4);
-        }
+        .post-content.error { color: #ffcdd2; background-color: rgba(176, 0, 32, 0.4); }
 
-        /* Markdown Content Styling within .post-content */
+        /* Markdown Content Styling (same as before) */
         .post-content h1, .post-content h2, .post-content h3 {
-            font-family: var(--font-pixel);
-            color: var(--text-link-hover);
-            border-bottom: 2px solid var(--water-shallows);
-            padding-bottom: 0.2em;
-            margin-top: 1.2em;
-            margin-bottom: 0.8em;
-            text-shadow: 1px 1px 0 var(--water-abyss-darker);
+            font-family: var(--font-pixel); color: var(--text-link-hover);
+            border-bottom: 2px solid var(--water-shallows); padding-bottom: 0.2em;
+            margin-top: 1.2em; margin-bottom: 0.8em; text-shadow: 1px 1px 0 var(--water-abyss-darker);
         }
-         .post-content h1 {font-size: 1.5em;}
-         .post-content h2 {font-size: 1.3em;}
-         .post-content h3 {font-size: 1.1em;}
-
+        .post-content h1 {font-size: 1.5em;} .post-content h2 {font-size: 1.3em;} .post-content h3 {font-size: 1.1em;}
         .post-content p { margin-bottom: 1em; }
         .post-content a {
-            color: var(--text-link);
-            text-decoration: underline;
-            text-decoration-style: dashed;
-            text-decoration-color: var(--water-shallows);
+            color: var(--text-link); text-decoration: underline;
+            text-decoration-style: dashed; text-decoration-color: var(--water-shallows);
         }
-        .post-content a:hover {
-            color: var(--text-link-hover);
-            background-color: rgba(79, 195, 247, 0.3);
-        }
+        .post-content a:hover { color: var(--text-link-hover); background-color: rgba(79, 195, 247, 0.3); }
         .post-content code {
-            font-family: var(--font-pixel);
-            background-color: rgba(0,0,0,0.3);
-            padding: 0.2em 0.3em;
-            font-size: 0.9em;
-            border: 1px solid var(--water-deep);
-            color: #80deea; /* Cyan pastel */
+            font-family: var(--font-pixel); background-color: rgba(0,0,0,0.3);
+            padding: 0.2em 0.3em; font-size: 0.9em; border: 1px solid var(--water-deep); color: #80deea;
         }
         .post-content pre {
-            font-family: var(--font-pixel);
-            background-color: rgba(0,0,0,0.4);
-            padding: 10px;
-            border: 2px solid var(--water-deep);
-            overflow-x: auto;
-            font-size: 0.85em;
+            font-family: var(--font-pixel); background-color: rgba(0,0,0,0.4); padding: 10px;
+            border: 2px solid var(--water-deep); overflow-x: auto; font-size: 0.85em;
             box-shadow: inset 2px 2px 0px rgba(0,0,0,0.2);
         }
         .post-content blockquote {
-            border-left: 3px solid var(--text-link);
-            padding-left: 10px;
-            margin-left: 0;
-            color: #cfd8dc; /* Bluish grey pastel */
-            background-color: rgba(38, 50, 56, 0.3); /* Dark blue-grey */
-            font-style: italic;
+            border-left: 3px solid var(--text-link); padding-left: 10px; margin-left: 0;
+            color: #cfd8dc; background-color: rgba(38, 50, 56, 0.3); font-style: italic;
         }
         .post-content ul, .post-content ol { padding-left: 25px; }
         .post-content li { margin-bottom: 0.4em; }
         .post-content img {
-            max-width: 100%;
-            height: auto;
-            border: 2px solid var(--water-mid);
-            image-rendering: pixelated; /* Keep pixel art crisp if scaled by browser */
-            image-rendering: -moz-crisp-edges;
-            image-rendering: crisp-edges;
+            max-width: 100%; height: auto; border: 2px solid var(--water-mid);
+            image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges;
         }
         .post-content table { border-collapse: collapse; width: auto; margin-bottom: 1em; border: 2px solid var(--water-deep);}
         .post-content th, .post-content td { border: 1px solid var(--water-deep); padding: 6px 8px; font-size:0.9em}
@@ -308,16 +246,16 @@
 <body>
 
     <div class="background-layers">
-        <div class="bg-sky"></div>
-        <div class="bg-sun"></div>
-        <div class="bg-cloud bg-cloud-1"></div>
-        <div class="bg-cloud bg-cloud-2"></div>
+        <div class="bg-sky">
+             <div class="bg-sun"></div> <div class="bg-cloud bg-cloud-1"></div>
+             <div class="bg-cloud bg-cloud-2"></div>
+        </div>
         <div class="bg-water-gradient"></div>
         <div class="bg-habitat habitat-1"></div>
         <div class="bg-habitat habitat-2"></div>
         <div class="bg-habitat habitat-3"></div>
         <div class="bg-habitat habitat-4"></div>
-        </div>
+    </div>
 
     <div class="main-container">
         <h1 class="page-title">Deep Sea Logs</h1>
@@ -334,7 +272,7 @@
 
         const postListUl = document.getElementById('post-list-ul');
         const contentCache = new Map();
-        let currentlyOpenItem = null; // To handle accordion behavior (optional)
+        let currentlyOpenItem = null;
 
         async function fetchAndDisplayFiles() {
             try {
@@ -345,12 +283,18 @@
                 const files = await response.json();
                 postListUl.innerHTML = '';
 
-                const markdownFiles = files.filter(file => file.name.endsWith('.md') && file.type === 'file');
+                let markdownFiles = files.filter(file => file.name.endsWith('.md') && file.type === 'file');
 
                 if (markdownFiles.length === 0) {
                     postListUl.innerHTML = '<li style="text-align: center; padding: 20px; font-family: var(--font-pixel);">No log entries found.</li>';
                     return;
                 }
+
+                // Sort files alphabetically descending by name (proxy for "most recent")
+                // e.g., Z-post.md will come before A-post.md
+                markdownFiles.sort((a, b) => b.name.localeCompare(a.name));
+
+                const autoOpenFileName = markdownFiles.length > 0 ? markdownFiles[0].name : null;
 
                 markdownFiles.forEach(file => {
                     const listItem = document.createElement('li');
@@ -358,7 +302,7 @@
 
                     const header = document.createElement('div');
                     header.className = 'post-header';
-                    header.textContent = file.name.replace(/\.md$/i, '').replace(/[-_]/g, ' '); // Cleaner title
+                    header.textContent = file.name.replace(/\.md$/i, '').replace(/[-_]/g, ' ');
                     header.dataset.fileName = file.name;
                     header.dataset.downloadUrl = file.download_url;
 
@@ -374,52 +318,59 @@
                     listItem.appendChild(contentWrapper);
                     postListUl.appendChild(listItem);
 
-                    header.addEventListener('click', async () => {
-                        const isActive = header.classList.contains('active');
-
+                    const expandItem = async () => {
                         // Accordion: Close other open items
                         if (currentlyOpenItem && currentlyOpenItem !== listItem) {
                             currentlyOpenItem.querySelector('.post-header').classList.remove('active');
                             currentlyOpenItem.querySelector('.post-content-wrapper').style.maxHeight = '0px';
                         }
 
+                        header.classList.add('active');
+                        currentlyOpenItem = listItem;
+
+                        if (contentCache.has(file.name)) {
+                            contentDiv.innerHTML = contentCache.get(file.name);
+                        } else {
+                            contentDiv.innerHTML = '<p class="loading">Receiving data...</p>';
+                            try {
+                                const mdResponse = await fetch(file.download_url);
+                                if (!mdResponse.ok) throw new Error(`Connection unstable: ${mdResponse.status}`);
+                                const markdownText = await mdResponse.text();
+                                const htmlContent = marked.parse(markdownText);
+                                contentCache.set(file.name, htmlContent);
+                                contentDiv.innerHTML = htmlContent;
+                            } catch (err) {
+                                console.error('Error fetching/rendering MD:', err);
+                                const errorHtml = `<p class="error">Transmission error: ${err.message}.</p>`;
+                                contentDiv.innerHTML = errorHtml;
+                            }
+                        }
+                        // Set max-height after content is set
+                        setTimeout(() => {
+                            if(header.classList.contains('active')) {
+                                 contentWrapper.style.maxHeight = contentDiv.scrollHeight + "px";
+                            }
+                        }, 50);
+                    };
+
+                    header.addEventListener('click', async () => {
+                        const isActive = header.classList.contains('active');
                         if (isActive) {
                             header.classList.remove('active');
                             contentWrapper.style.maxHeight = '0px';
                             currentlyOpenItem = null;
                         } else {
-                            header.classList.add('active');
-                            currentlyOpenItem = listItem;
-
-                            if (contentCache.has(file.name)) {
-                                contentDiv.innerHTML = contentCache.get(file.name);
-                            } else {
-                                contentDiv.innerHTML = '<p class="loading">Receiving data...</p>';
-                                try {
-                                    const mdResponse = await fetch(file.download_url);
-                                    if (!mdResponse.ok) throw new Error(`Connection unstable: ${mdResponse.status}`);
-                                    const markdownText = await mdResponse.text();
-                                    const htmlContent = marked.parse(markdownText);
-                                    contentCache.set(file.name, htmlContent);
-                                    contentDiv.innerHTML = htmlContent;
-                                } catch (err) {
-                                    console.error('Error fetching/rendering MD:', err);
-                                    const errorHtml = `<p class="error">Transmission error: ${err.message}.</p>`;
-                                    contentDiv.innerHTML = errorHtml;
-                                    // Optionally cache the error message to prevent re-fetch attempts on this item for a while
-                                    // contentCache.set(file.name, errorHtml);
-                                }
-                            }
-                            // Set max-height after content is potentially set
-                            // Use scrollHeight to make the wrapper fit the content.
-                            // Add a small delay if content is fetched to allow DOM to update.
-                            setTimeout(() => {
-                                if(header.classList.contains('active')) { // Ensure it's still supposed to be open
-                                     contentWrapper.style.maxHeight = contentDiv.scrollHeight + "px";
-                                }
-                            }, 50); // Small delay for DOM render after fetch
+                            await expandItem();
                         }
                     });
+
+                    // Auto-open the "most recent" post
+                    if (file.name === autoOpenFileName) {
+                        // Use a timeout to ensure this runs after the current event loop cycle,
+                        // allowing all elements to be in the DOM and event listeners attached.
+                        // Also, to ensure the expandItem logic doesn't conflict with manual clicks.
+                        setTimeout(() => expandItem(), 100);
+                    }
                 });
 
             } catch (error) {
@@ -435,9 +386,7 @@
             marked.setOptions({
                 gfm: true,
                 breaks: true,
-                sanitize: false, // Set to true if MD content is from untrusted external sources.
-                                 // For your own GitHub files, false is usually okay.
-                                 // Using DOMPurify after marked.parse() is preferred for sanitization.
+                sanitize: false,
             });
             fetchAndDisplayFiles();
         }
