@@ -1,1 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Files in underwatercity</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            margin: 20px;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        #file-list-container {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        #file-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #file-list li {
+            padding: 10px;
+            margin-bottom: 8px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            font-weight: 500;
+        }
+        #file-list li:hover {
+            background-color: #ced4da;
+        }
+        #file-list li.active {
+            background-color: #007bff;
+            color: white;
+        }
+        #content-display-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            min-height: 100px;
+        }
+        .status-message {
+            font-style: italic;
+            color: #555;
+            padding: 10px;
+            text-align: center;
+        }
+        .error-message {
+            color: #d9534f;
+            font-weight: bold;
+            padding: 10px;
+            background-color: #f2dede;
+            border: 1px solid #ebccd1;
+            border-radius: 4px;
+            text-align: center;
+        }
+        /* Basic Markdown styling */
+        #content-display h1,
+        #content-display h2,
+        #content-display h3,
+        #content-display h4,
+        #content-display h5,
+        #content-display h6 {
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            color: #2c3e50;
+        }
+        #content-display p {
+            margin-bottom: 1em;
+        }
+        #content-display ul,
+        #content-display ol {
+            margin-left: 25px;
+            margin-bottom: 1em;
+        }
+        #content-display code {
+            background-color: #f0f0f0;
+            padding: 0.2em 0.4em;
+            margin: 0;
+            font-size: 85%;
+            border-radius: 3px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        }
+        #content-display pre {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 85%;
+        }
+        #content-display pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+        #content-display a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        #content-display a:hover {
+            text-decoration: underline;
+        }
+        #content-display blockquote {
+            border-left: 4px solid #ccc;
+            padding-left: 10px;
+            color: #666;
+            margin-left: 0;
+            margin-right: 0;
+        }
+        #content-display img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        #content-display table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 1em;
+        }
+        #content-display th, #content-display td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        #content-display th {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
 
+    <div id="file-list-container">
+        <h1>Markdown Files in 'underwatercity'</h1>
+        <div id="file-list">
+            <ul id="md-files">
+                <li class="status-message">Loading files...</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="content-display-container">
+        <h2>Rendered Content:</h2>
+        <div id="content-display">
+            <p class="status-message">Select a file from the list above to view its content here.</p>
+        </div>
+    </div>
+
+    <script>
+        const repoOwner = 'monksevillair';
+        const repoName = 'monksevillair.github.io';
+        const directoryPath = 'underwatercity';
+        // Construct the API URL for the directory contents
+        const GITHUB_API_URL = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${directoryPath}`;
+
+        const mdFilesListElement = document.getElementById('md-files');
+        const contentDisplayElement = document.getElementById('content-display');
+        let activeListItem = null;
+
+        async function fetchAndDisplayFiles() {
+            try {
+                const response = await fetch(GITHUB_API_URL);
+                if (!response.ok) {
+                    throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
+                }
+                const files = await response.json();
+
+                mdFilesListElement.innerHTML = ''; // Clear "Loading files..." or any previous error
+
+                // Filter for .md files and ensure they are files (not directories)
+                const markdownFiles = files.filter(file => file.name.endsWith('.md') && file.type === 'file');
+
+                if (markdownFiles.length === 0) {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = 'No Markdown files found in this directory.';
+                    listItem.className = 'status-message';
+                    mdFilesListElement.appendChild(listItem);
+                    return;
+                }
+
+                markdownFiles.forEach(file => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = file.name;
+                    // Use file.download_url for fetching raw content directly
+                    listItem.dataset.downloadUrl = file.download_url;
+                    listItem.dataset.fileName = file.name;
+
+                    listItem.addEventListener('click', () => {
+                        if (activeListItem) {
+                            activeListItem.classList.remove('active');
+                        }
+                        listItem.classList.add('active');
+                        activeListItem = listItem;
+                        fetchAndRenderMarkdown(file.download_url, file.name);
+                    });
+                    mdFilesListElement.appendChild(listItem);
+                });
+
+            } catch (error) {
+                console.error('Error fetching file list:', error);
+                mdFilesListElement.innerHTML = `<li class="error-message">Error loading files: ${error.message}</li>`;
+            }
+        }
+
+        async function fetchAndRenderMarkdown(downloadUrl, fileName) {
+            contentDisplayElement.innerHTML = `<p class="status-message">Fetching and rendering ${fileName}...</p>`;
+            try {
+                const response = await fetch(downloadUrl);
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch Markdown content: ${response.status} ${response.statusText}`);
+                }
+                const markdownText = await response.text();
+
+                if (typeof marked === 'undefined') {
+                    contentDisplayElement.innerHTML = `<p class="error-message">Error: Marked.js library not loaded. Please check the script tag.</p>`;
+                    return;
+                }
+                // Convert Markdown to HTML using Marked.js
+                // For security, if the markdown can come from untrusted sources,
+                // you should use a sanitizer like DOMPurify on the output of marked.parse().
+                // For your own files, this is generally safe.
+                // marked.setOptions({ gfm: true, breaks: true }); // Optional: enable GitHub Flavored Markdown and line breaks
+                contentDisplayElement.innerHTML = marked.parse(markdownText);
+
+            } catch (error) {
+                console.error('Error fetching or rendering Markdown:', error);
+                contentDisplayElement.innerHTML = `<p class="error-message">Error loading content for ${fileName}: ${error.message}</p>`;
+            }
+        }
+
+        // Initial load of file list
+        fetchAndDisplayFiles();
+    </script>
+
+</body>
+</html>
