@@ -1,9 +1,9 @@
 # Building an Underwater City
 Preliminary plans for building an underwater city.
 
-1. Generate significant capital to aquire necessary resources.
-3. Build an underwater hotel
-4. Live full time underwater
+1. Generate significant capital to aquire necessary resources by mapping the Ocean with ROVs
+2. Build human submarine modules capable of ocean exploration, science, and permanent habitation
+3. Live full time underwater, explore the new frontier of the underwater world!
 
 
 1. Generate significant capital to aquire necessary resources.
