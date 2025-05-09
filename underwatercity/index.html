@@ -3,165 +3,338 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markdown Files in underwatercity</title>
+    <title>Building an Underwater City</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
+        :root {
+            /* Pastel Pixel Art Palette */
+            --sky-top: #b3e5fc; /* Light Pastel Sky Blue */
+            --sky-bottom: #e1f5fe; /* Lighter Pastel Sky Blue */
+            --sun-core: #fff59d; /* Pastel Yellow */
+            --sun-glow: rgba(255, 249, 196, 0.5); /* Lighter yellow glow */
+
+            --water-surface: #81d4fa; /* Bright Pastel Cyan */
+            --water-interface-highlight: #e0f7fa;
+            --water-shallows: #4fc3f7; /* Medium Pastel Blue */
+            --water-mid: #29b6f6;
+            --water-deep: #039be5;
+            --water-abyss: #01579b; /* Darkest Blue */
+            --water-abyss-darker: #003c6c;
+
+            --sand: #fff9c4; /* Very Light Pastel Yellow for sandy bottom illusion */
+
+            --habitat-light-strong: #fffde7; /* Creamy white light */
+            --habitat-light-glow: rgba(255, 253, 231, 0.6);
+            --habitat-structure: #bdbdbd; /* Grey for structures */
+            --habitat-structure-dark: #757575;
+
+            --text-light: #f5f5f5;
+            --text-dark: #263238;
+            --text-link: #ffecb3; /* Light yellow for links on dark bg */
+            --text-link-hover: #fff9c4;
+
+            --font-pixel: 'Press Start 2P', 'Courier New', Courier, monospace; /* Example pixel font */
+            --font-main: 'Verdana', sans-serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-            margin: 20px;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        #file-list-container {
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-        #file-list ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        #file-list li {
-            padding: 10px;
-            margin-bottom: 8px;
-            background-color: #e9ecef;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.2s ease-in-out;
-            font-weight: 500;
-        }
-        #file-list li:hover {
-            background-color: #ced4da;
-        }
-        #file-list li.active {
-            background-color: #007bff;
-            color: white;
-        }
-        #content-display-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            min-height: 100px;
-        }
-        .status-message {
-            font-style: italic;
-            color: #555;
-            padding: 10px;
-            text-align: center;
-        }
-        .error-message {
-            color: #d9534f;
-            font-weight: bold;
-            padding: 10px;
-            background-color: #f2dede;
-            border: 1px solid #ebccd1;
-            border-radius: 4px;
-            text-align: center;
-        }
-        /* Basic Markdown styling */
-        #content-display h1,
-        #content-display h2,
-        #content-display h3,
-        #content-display h4,
-        #content-display h5,
-        #content-display h6 {
-            margin-top: 1.5em;
-            margin-bottom: 0.5em;
-            color: #2c3e50;
-        }
-        #content-display p {
-            margin-bottom: 1em;
-        }
-        #content-display ul,
-        #content-display ol {
-            margin-left: 25px;
-            margin-bottom: 1em;
-        }
-        #content-display code {
-            background-color: #f0f0f0;
-            padding: 0.2em 0.4em;
             margin: 0;
-            font-size: 85%;
-            border-radius: 3px;
-            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-family: var(--font-main);
+            color: var(--text-light);
+            /* Base background - deepest ocean */
+            background-color: var(--water-abyss-darker);
+            /* overflow-x: hidden; */ /* Prevent horizontal scroll if any elements are too wide */
         }
-        #content-display pre {
-            background-color: #f0f0f0;
+
+        /* --- Layered Background --- */
+        .background-layers {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -10;
+            overflow: hidden; /* Prevent scrollbars on layers */
+        }
+
+        .bg-sky {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40vh; /* Sky portion */
+            background: linear-gradient(to bottom, var(--sky-top), var(--sky-bottom));
+            z-index: -9;
+        }
+
+        .bg-sun {
+            position: absolute;
+            top: 5vh; /* Position sun in the sky */
+            left: 15%;
+            width: 80px; /* Pixel sun size */
+            height: 80px;
+            background-color: var(--sun-core);
+            border-radius: 0; /* Sharp edges for pixel look */
+            box-shadow:
+                0 0 0 10px var(--sun-core), /* Make it thicker */
+                0 0 20px 20px var(--sun-glow), /* Glow effect */
+                /* Pixelated rays (simple approach) */
+                0 -60px 0 -20px var(--sun-core), /* Top ray */
+                0 60px 0 -20px var(--sun-core),  /* Bottom ray */
+                -60px 0 0 -20px var(--sun-core),/* Left ray */
+                60px 0 0 -20px var(--sun-core); /* Right ray */
+            z-index: -8;
+        }
+         /* Simple blocky clouds */
+        .bg-cloud {
+            position: absolute;
+            background-color: #ffffff;
+            border-radius: 0; /* Sharp edges */
+            box-shadow: 3px 3px 0px var(--sky-bottom); /* Pixel shadow */
+        }
+        .bg-cloud-1 { top: 10vh; left: 60%; width: 100px; height: 30px; }
+        .bg-cloud-1::before { content:''; position:absolute; top:-10px; left:20px; width:60px; height:30px; background: #fff; box-shadow: 3px 3px 0px var(--sky-bottom); }
+        .bg-cloud-2 { top: 15vh; left: 30%; width: 120px; height: 40px; }
+
+
+        .bg-water-gradient {
+            position: absolute;
+            top: 0; /* Start from top to allow sky to show through gradient transparency */
+            left: 0;
+            width: 100%;
+            height: 400vh; /* Make it very tall to scroll through */
+            background: linear-gradient(to bottom,
+                transparent 0%,       /* Allow sky to show */
+                transparent 35vh,     /* Start water surface slightly below sky top */
+                var(--water-surface) 38vh, /* Water interface */
+                var(--water-shallows) 55vh,
+                var(--water-mid) 80vh,
+                var(--water-deep) 120vh,
+                var(--water-abyss) 200vh,
+                var(--water-abyss-darker) 300vh
+            );
+            z-index: -7;
+        }
+
+        /* Underwater Habitats - simple blocky shapes */
+        .bg-habitat {
+            position: absolute;
+            background-color: var(--habitat-structure);
+            border-radius: 0; /* Sharp edges */
+            box-shadow: 5px 5px 0px var(--habitat-structure-dark); /* Pixel shadow */
+            z-index: -6;
+        }
+        .bg-habitat::before { /* Light source */
+            content: '';
+            position: absolute;
+            width: 20px; height: 20px;
+            background-color: var(--habitat-light-strong);
+            border-radius: 0;
+            box-shadow: 0 0 15px 10px var(--habitat-light-glow), inset 0 0 5px var(--sun-core);
+        }
+
+        /* Position habitats at different depths */
+        .habitat-1 { top: 70vh; left: 10%; width: 150px; height: 80px; }
+        .habitat-1::before { top: 10px; left: 10px; }
+        .habitat-2 { top: 120vh; left: 70%; width: 120px; height: 100px; }
+        .habitat-2::before { bottom: 15px; right: 15px; width:30px; height:30px;}
+        .habitat-3 { top: 180vh; left: 25%; width: 200px; height: 60px; opacity: 0.8; }
+        .habitat-3::before { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .habitat-4 { top: 250vh; left: 50%; width: 100px; height: 100px; opacity: 0.6; }
+        .habitat-4::before { top: 5px; left: 5px; }
+
+
+        /* --- Main Content Area --- */
+        .main-container {
+            max-width: 700px; /* Narrower for better readability */
+            margin: 0 auto;
+            padding: 15vh 20px 50px 20px; /* Top padding to start below sun/sky */
+            position: relative; /* To scroll over fixed backgrounds */
+            z-index: 1;
+        }
+
+        .page-title {
+            font-family: var(--font-pixel);
+            text-align: center;
+            font-size: 2em; /* Adjusted for pixel font */
+            color: var(--sun-core);
+            text-shadow: 2px 2px 0px var(--water-abyss-darker), 4px 4px 0px var(--habitat-structure-dark);
+            margin-bottom: 40px;
             padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-            font-size: 85%;
+            background-color: rgba(1, 87, 155, 0.5); /* Dark blue semi-transparent */
+            border: 3px solid var(--water-mid);
+            border-radius: 0; /* Pixel style */
         }
-        #content-display pre code {
-            background-color: transparent;
+
+        .post-list {
+            list-style: none;
             padding: 0;
         }
-        #content-display a {
-            color: #007bff;
-            text-decoration: none;
+
+        .post-item {
+            margin-bottom: 15px; /* Space between collapsed items */
+            border-radius: 0; /* Pixel style */
+            border: 2px solid var(--water-deep);
+            background-color: rgba(3, 155, 229, 0.3); /* Semi-transparent item bg */
+            box-shadow: 3px 3px 0px rgba(1, 87, 155, 0.7); /* Pixel shadow */
+            overflow: hidden; /* For max-height transition */
         }
-        #content-display a:hover {
+
+        .post-header {
+            padding: 12px 18px;
+            cursor: pointer;
+            background-color: rgba(2, 119, 189, 0.6); /* Slightly darker header */
+            color: var(--text-light);
+            font-size: 1.1em;
+            font-weight: bold; /* Less bold with pixel font, or use normal */
+            font-family: var(--font-pixel); /* Pixel font for headers */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.2s;
+            border-bottom: 2px solid transparent;
+        }
+        .post-header:hover {
+            background-color: rgba(3, 169, 244, 0.7);
+        }
+        .post-header.active {
+            background-color: rgba(79, 195, 247, 0.7);
+            border-bottom-color: var(--water-shallows);
+        }
+
+        .post-header::after { /* Expand/collapse indicator - pixel style */
+            content: '[+]'; /* Pixel-like indicator */
+            font-family: var(--font-pixel);
+            font-size: 1em;
+            color: var(--sun-core);
+            margin-left: 10px;
+        }
+        .post-header.active::after {
+            content: '[-]';
+        }
+
+        .post-content-wrapper {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+            background-color: rgba(1, 87, 155, 0.4); /* Darker for content readability */
+            border-top: 2px dashed var(--water-mid); /* Separator when open */
+        }
+
+        .post-content {
+            padding: 15px 20px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        .post-content.loading, .post-content.error {
+            text-align: center;
+            font-style: italic;
+            padding: 25px 15px;
+            font-family: var(--font-pixel);
+        }
+        .post-content.error {
+            color: #ffcdd2; /* Light red pastel */
+            background-color: rgba(176, 0, 32, 0.4);
+        }
+
+        /* Markdown Content Styling within .post-content */
+        .post-content h1, .post-content h2, .post-content h3 {
+            font-family: var(--font-pixel);
+            color: var(--text-link-hover);
+            border-bottom: 2px solid var(--water-shallows);
+            padding-bottom: 0.2em;
+            margin-top: 1.2em;
+            margin-bottom: 0.8em;
+            text-shadow: 1px 1px 0 var(--water-abyss-darker);
+        }
+         .post-content h1 {font-size: 1.5em;}
+         .post-content h2 {font-size: 1.3em;}
+         .post-content h3 {font-size: 1.1em;}
+
+        .post-content p { margin-bottom: 1em; }
+        .post-content a {
+            color: var(--text-link);
             text-decoration: underline;
+            text-decoration-style: dashed;
+            text-decoration-color: var(--water-shallows);
         }
-        #content-display blockquote {
-            border-left: 4px solid #ccc;
+        .post-content a:hover {
+            color: var(--text-link-hover);
+            background-color: rgba(79, 195, 247, 0.3);
+        }
+        .post-content code {
+            font-family: var(--font-pixel);
+            background-color: rgba(0,0,0,0.3);
+            padding: 0.2em 0.3em;
+            font-size: 0.9em;
+            border: 1px solid var(--water-deep);
+            color: #80deea; /* Cyan pastel */
+        }
+        .post-content pre {
+            font-family: var(--font-pixel);
+            background-color: rgba(0,0,0,0.4);
+            padding: 10px;
+            border: 2px solid var(--water-deep);
+            overflow-x: auto;
+            font-size: 0.85em;
+            box-shadow: inset 2px 2px 0px rgba(0,0,0,0.2);
+        }
+        .post-content blockquote {
+            border-left: 3px solid var(--text-link);
             padding-left: 10px;
-            color: #666;
             margin-left: 0;
-            margin-right: 0;
+            color: #cfd8dc; /* Bluish grey pastel */
+            background-color: rgba(38, 50, 56, 0.3); /* Dark blue-grey */
+            font-style: italic;
         }
-        #content-display img {
+        .post-content ul, .post-content ol { padding-left: 25px; }
+        .post-content li { margin-bottom: 0.4em; }
+        .post-content img {
             max-width: 100%;
             height: auto;
-            border-radius: 4px;
+            border: 2px solid var(--water-mid);
+            image-rendering: pixelated; /* Keep pixel art crisp if scaled by browser */
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
         }
-        #content-display table {
-            border-collapse: collapse;
-            width: 100%;
-            margin-bottom: 1em;
-        }
-        #content-display th, #content-display td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        #content-display th {
-            background-color: #f2f2f2;
-        }
+        .post-content table { border-collapse: collapse; width: auto; margin-bottom: 1em; border: 2px solid var(--water-deep);}
+        .post-content th, .post-content td { border: 1px solid var(--water-deep); padding: 6px 8px; font-size:0.9em}
+        .post-content th { background-color: rgba(3,155,229,0.4); font-family: var(--font-pixel); }
+
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
 
-    <div id="file-list-container">
-        <h1>Markdown Files in 'underwatercity'</h1>
-        <div id="file-list">
-            <ul id="md-files">
-                <li class="status-message">Loading files...</li>
-            </ul>
+    <div class="background-layers">
+        <div class="bg-sky"></div>
+        <div class="bg-sun"></div>
+        <div class="bg-cloud bg-cloud-1"></div>
+        <div class="bg-cloud bg-cloud-2"></div>
+        <div class="bg-water-gradient"></div>
+        <div class="bg-habitat habitat-1"></div>
+        <div class="bg-habitat habitat-2"></div>
+        <div class="bg-habitat habitat-3"></div>
+        <div class="bg-habitat habitat-4"></div>
         </div>
-    </div>
 
-    <div id="content-display-container">
-        <h2>Rendered Content:</h2>
-        <div id="content-display">
-            <p class="status-message">Select a file from the list above to view its content here.</p>
-        </div>
+    <div class="main-container">
+        <h1 class="page-title">Deep Sea Logs</h1>
+        <ul class="post-list" id="post-list-ul">
+            <li style="text-align: center; padding: 20px; font-family: var(--font-pixel);">Scanning for log entries...</li>
+        </ul>
     </div>
 
     <script>
         const repoOwner = 'monksevillair';
         const repoName = 'monksevillair.github.io';
         const directoryPath = 'underwatercity';
-        // Construct the API URL for the directory contents
         const GITHUB_API_URL = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${directoryPath}`;
 
-        const mdFilesListElement = document.getElementById('md-files');
-        const contentDisplayElement = document.getElementById('content-display');
-        let activeListItem = null;
+        const postListUl = document.getElementById('post-list-ul');
+        const contentCache = new Map();
+        let currentlyOpenItem = null; // To handle accordion behavior (optional)
 
         async function fetchAndDisplayFiles() {
             try {
@@ -170,72 +343,104 @@
                     throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
                 }
                 const files = await response.json();
+                postListUl.innerHTML = '';
 
-                mdFilesListElement.innerHTML = ''; // Clear "Loading files..." or any previous error
-
-                // Filter for .md files and ensure they are files (not directories)
                 const markdownFiles = files.filter(file => file.name.endsWith('.md') && file.type === 'file');
 
                 if (markdownFiles.length === 0) {
-                    const listItem = document.createElement('li');
-                    listItem.textContent = 'No Markdown files found in this directory.';
-                    listItem.className = 'status-message';
-                    mdFilesListElement.appendChild(listItem);
+                    postListUl.innerHTML = '<li style="text-align: center; padding: 20px; font-family: var(--font-pixel);">No log entries found.</li>';
                     return;
                 }
 
                 markdownFiles.forEach(file => {
                     const listItem = document.createElement('li');
-                    listItem.textContent = file.name;
-                    // Use file.download_url for fetching raw content directly
-                    listItem.dataset.downloadUrl = file.download_url;
-                    listItem.dataset.fileName = file.name;
+                    listItem.className = 'post-item';
 
-                    listItem.addEventListener('click', () => {
-                        if (activeListItem) {
-                            activeListItem.classList.remove('active');
+                    const header = document.createElement('div');
+                    header.className = 'post-header';
+                    header.textContent = file.name.replace(/\.md$/i, '').replace(/[-_]/g, ' '); // Cleaner title
+                    header.dataset.fileName = file.name;
+                    header.dataset.downloadUrl = file.download_url;
+
+                    const contentWrapper = document.createElement('div');
+                    contentWrapper.className = 'post-content-wrapper';
+
+                    const contentDiv = document.createElement('div');
+                    contentDiv.className = 'post-content';
+                    contentDiv.innerHTML = '<p class="loading">Awaiting transmission...</p>';
+
+                    contentWrapper.appendChild(contentDiv);
+                    listItem.appendChild(header);
+                    listItem.appendChild(contentWrapper);
+                    postListUl.appendChild(listItem);
+
+                    header.addEventListener('click', async () => {
+                        const isActive = header.classList.contains('active');
+
+                        // Accordion: Close other open items
+                        if (currentlyOpenItem && currentlyOpenItem !== listItem) {
+                            currentlyOpenItem.querySelector('.post-header').classList.remove('active');
+                            currentlyOpenItem.querySelector('.post-content-wrapper').style.maxHeight = '0px';
                         }
-                        listItem.classList.add('active');
-                        activeListItem = listItem;
-                        fetchAndRenderMarkdown(file.download_url, file.name);
+
+                        if (isActive) {
+                            header.classList.remove('active');
+                            contentWrapper.style.maxHeight = '0px';
+                            currentlyOpenItem = null;
+                        } else {
+                            header.classList.add('active');
+                            currentlyOpenItem = listItem;
+
+                            if (contentCache.has(file.name)) {
+                                contentDiv.innerHTML = contentCache.get(file.name);
+                            } else {
+                                contentDiv.innerHTML = '<p class="loading">Receiving data...</p>';
+                                try {
+                                    const mdResponse = await fetch(file.download_url);
+                                    if (!mdResponse.ok) throw new Error(`Connection unstable: ${mdResponse.status}`);
+                                    const markdownText = await mdResponse.text();
+                                    const htmlContent = marked.parse(markdownText);
+                                    contentCache.set(file.name, htmlContent);
+                                    contentDiv.innerHTML = htmlContent;
+                                } catch (err) {
+                                    console.error('Error fetching/rendering MD:', err);
+                                    const errorHtml = `<p class="error">Transmission error: ${err.message}.</p>`;
+                                    contentDiv.innerHTML = errorHtml;
+                                    // Optionally cache the error message to prevent re-fetch attempts on this item for a while
+                                    // contentCache.set(file.name, errorHtml);
+                                }
+                            }
+                            // Set max-height after content is potentially set
+                            // Use scrollHeight to make the wrapper fit the content.
+                            // Add a small delay if content is fetched to allow DOM to update.
+                            setTimeout(() => {
+                                if(header.classList.contains('active')) { // Ensure it's still supposed to be open
+                                     contentWrapper.style.maxHeight = contentDiv.scrollHeight + "px";
+                                }
+                            }, 50); // Small delay for DOM render after fetch
+                        }
                     });
-                    mdFilesListElement.appendChild(listItem);
                 });
 
             } catch (error) {
                 console.error('Error fetching file list:', error);
-                mdFilesListElement.innerHTML = `<li class="error-message">Error loading files: ${error.message}</li>`;
+                postListUl.innerHTML = `<li style="text-align: center; padding: 20px; font-family: var(--font-pixel);" class="error">System error: ${error.message}</li>`;
             }
         }
 
-        async function fetchAndRenderMarkdown(downloadUrl, fileName) {
-            contentDisplayElement.innerHTML = `<p class="status-message">Fetching and rendering ${fileName}...</p>`;
-            try {
-                const response = await fetch(downloadUrl);
-                if (!response.ok) {
-                    throw new Error(`Failed to fetch Markdown content: ${response.status} ${response.statusText}`);
-                }
-                const markdownText = await response.text();
-
-                if (typeof marked === 'undefined') {
-                    contentDisplayElement.innerHTML = `<p class="error-message">Error: Marked.js library not loaded. Please check the script tag.</p>`;
-                    return;
-                }
-                // Convert Markdown to HTML using Marked.js
-                // For security, if the markdown can come from untrusted sources,
-                // you should use a sanitizer like DOMPurify on the output of marked.parse().
-                // For your own files, this is generally safe.
-                // marked.setOptions({ gfm: true, breaks: true }); // Optional: enable GitHub Flavored Markdown and line breaks
-                contentDisplayElement.innerHTML = marked.parse(markdownText);
-
-            } catch (error) {
-                console.error('Error fetching or rendering Markdown:', error);
-                contentDisplayElement.innerHTML = `<p class="error-message">Error loading content for ${fileName}: ${error.message}</p>`;
-            }
+        // Initialize
+        if (typeof marked === 'undefined') {
+            postListUl.innerHTML = `<li style="text-align: center; padding: 20px; font-family: var(--font-pixel);" class="error">CRITICAL: Marked.js library offline.</li>`;
+        } else {
+            marked.setOptions({
+                gfm: true,
+                breaks: true,
+                sanitize: false, // Set to true if MD content is from untrusted external sources.
+                                 // For your own GitHub files, false is usually okay.
+                                 // Using DOMPurify after marked.parse() is preferred for sanitization.
+            });
+            fetchAndDisplayFiles();
         }
-
-        // Initial load of file list
-        fetchAndDisplayFiles();
     </script>
 
 </body>
