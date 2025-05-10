@@ -12,7 +12,6 @@ Preliminary plans for building an underwater city.
 | Underwater House                                   | Underwater City                                   |
 | :-------------------------------------------------: | :-------------------------------------------------: |
 | <img src="underwater house 1.png" alt="Underwater House" width="300"/> | <img src="underwatercity1.png" alt="Underwater City" width="300"/> |
-| Caption: Underwater House                           | Caption: Underwater City                            |
 
 ---
 
