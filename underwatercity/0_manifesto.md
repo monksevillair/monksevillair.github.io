@@ -2,11 +2,14 @@
 
 Preliminary plans for building an underwater city.
 
-![Concept of an Underwater City](./underwatercity1.jpg)
+
 
 1. Generate significant capital to acquire necessary resources by mapping the Ocean with ROVs  
 2. Build human submarine modules capable of ocean exploration, science, and permanent habitation  
 3. Live full time underwater, explore the new frontier of the underwater world!
+
+![Concept of an Underwater City](./underwatercity1.png)
+![Concept of an Underwater City](./underwater house 1.png)
 
 ---
 
