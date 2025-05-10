@@ -42,7 +42,10 @@
     }
     .bg-cloud { position: absolute; background-color: #fff; box-shadow: 3px 3px 0px var(--sky-bottom); }
     .bg-cloud-1 { top: 10vh; left: 60%; width: 100px; height: 30px; }
-    .bg-cloud-1::before { content: ''; position: absolute; top: -10px; left: 20px; width: 60px; height: 30px; background: #fff; box-shadow: 3px 3px 0px var(--sky-bottom); }
+    .bg-cloud-1::before {
+      content: ''; position: absolute; top: -10px; left: 20px; width: 60px; height: 30px;
+      background: #fff; box-shadow: 3px 3px 0px var(--sky-bottom);
+    }
     .bg-cloud-2 { top: 15vh; left: 30%; width: 120px; height: 40px; }
     .bg-water-gradient {
       position: relative; width: 100%; height: 3500px;
@@ -55,7 +58,9 @@
         var(--water-abyss-darker) 100%);
       margin-top: -2px;
     }
-    .bg-habitat { position: absolute; background-color: var(--habitat-structure); box-shadow: 5px 5px 0px var(--habitat-structure-dark); }
+    .bg-habitat {
+      position: absolute; background-color: var(--habitat-structure); box-shadow: 5px 5px 0px var(--habitat-structure-dark);
+    }
     .bg-habitat::before {
       content: ''; position: absolute; width: 20px; height: 20px;
       background-color: var(--habitat-light-strong);
@@ -75,23 +80,29 @@
     }
     .page-title {
       font-family: var(--font-pixel); text-align: center; font-size: 2em; color: var(--sun-core);
-      text-shadow: 2px 2px 0px var(--water-abyss-darker), 4px 4px 0px var(--habitat-structure-dark);
-      margin-bottom: 40px; padding: 15px; background-color: rgba(1,87,155,0.5); border: 3px solid var(--water-mid);
+      text-shadow:
+        2px 2px 0px var(--water-abyss-darker),
+        4px 4px 0px var(--habitat-structure-dark);
+      margin-bottom: 40px; padding: 15px; background-color: rgba(1,87,155,0.5);
+      border: 3px solid var(--water-mid); border-radius: 0;
     }
 
     .post-list { list-style: none; padding: 0; }
     .post-item {
       margin-bottom: 15px; border: 2px solid var(--water-deep);
-      background-color: rgba(3,155,229,0.3); box-shadow: 3px 3px 0px rgba(1,87,155,0.7); overflow: hidden;
+      background-color: rgba(3,155,229,0.3); box-shadow: 3px 3px 0px rgba(1,87,155,0.7);
+      overflow: hidden;
     }
     .post-header {
       padding: 12px 18px; cursor: pointer; background-color: rgba(2,119,189,0.6);
       color: var(--text-light); font-family: var(--font-pixel); font-size: 1.1em;
-      display: flex; justify-content: space-between; align-items: center; transition: background-color 0.2s;
-      border-bottom: 2px solid transparent;
+      display: flex; justify-content: space-between; align-items: center;
+      transition: background-color 0.2s; border-bottom: 2px solid transparent;
     }
     .post-header:hover { background-color: rgba(3,169,244,0.7); }
-    .post-header.active { background-color: rgba(79,195,247,0.7); border-bottom-color: var(--water-shallows); }
+    .post-header.active {
+      background-color: rgba(79,195,247,0.7); border-bottom-color: var(--water-shallows);
+    }
     .post-content-wrapper {
       max-height: 0; overflow: hidden; transition: max-height 0.5s ease-in-out;
       background-color: rgba(1,87,155,0.4); border-top: 2px dashed var(--water-mid);
@@ -102,23 +113,30 @@
     .post-content.loading, .post-content.error {
       text-align: center; font-style: italic; padding: 25px 15px; font-family: var(--font-pixel);
     }
-    .post-content.error { color: #ffcdd2; background-color: rgba(176,0,32,0.4); }
+    .post-content.error {
+      color: #ffcdd2; background-color: rgba(176,0,32,0.4);
+    }
 
     /* Native <details>/<summary> styling */
     details {
-      margin: 1em 0; background: rgba(1,87,155,0.4); border: 1px solid var(--water-mid);
-      padding: 0.5em;
+      margin: 1em 0; background: rgba(1,87,155,0.4);
+      border: 1px solid var(--water-mid); padding: 0.5em; border-radius: 0;
     }
     summary {
-      cursor: pointer; font-family: var(--font-pixel); font-size: 1.1em; outline: none; list-style: none;
+      cursor: pointer; font-family: var(--font-pixel); font-size: 1.1em;
+      outline: none; list-style: none;
     }
     summary::-webkit-details-marker { display: none; }
     summary::before { content: "► "; color: var(--sun-core); }
     details[open] summary::before { content: "▼ "; }
 
     /* Highlight current/closest day */
-    .post-content li.current-day { background-color: rgba(255,235,59,0.3); }
-    .post-content li.closest-day { background-color: rgba(255,235,59,0.15); }
+    .post-content li.current-day {
+      background-color: rgba(255,235,59,0.3);
+    }
+    .post-content li.closest-day {
+      background-color: rgba(255,235,59,0.15);
+    }
 
     /* Markdown content styling */
     .post-content h1, .post-content h2 {
@@ -132,30 +150,36 @@
     }
     .post-content a:hover { color: var(--text-link-hover); background-color: rgba(79,195,247,0.3); }
     .post-content code {
-      font-family: var(--font-pixel); background: rgba(0,0,0,0.3); padding: 0.2em 0.3em; font-size: 0.9em;
-      border: 1px solid var(--water-deep); color: #80deea;
+      font-family: var(--font-pixel); background: rgba(0,0,0,0.3);
+      padding: 0.2em 0.3em; font-size: 0.9em; border: 1px solid var(--water-deep);
+      color: #80deea;
     }
     .post-content pre {
-      font-family: var(--font-pixel); background: rgba(0,0,0,0.4); padding:10px; border:2px solid var(--water-deep);
-      overflow-x:auto; font-size:0.85em; box-shadow: inset 2px 2px 0 rgba(0,0,0,0.2);
+      font-family: var(--font-pixel); background: rgba(0,0,0,0.4);
+      padding:10px; border:2px solid var(--water-deep); overflow-x:auto;
+      font-size:0.85em; box-shadow: inset 2px 2px 0 rgba(0,0,0,0.2);
     }
     .post-content blockquote {
-      border-left:3px solid var(--text-link); padding-left:10px; margin:0; color:#cfd8dc;
-      background: rgba(38,50,56,0.3); font-style:italic;
+      border-left:3px solid var(--text-link); padding-left:10px; margin:0;
+      color:#cfd8dc; background:rgba(38,50,56,0.3); font-style:italic;
     }
     .post-content ul, .post-content ol { padding-left:25px; }
     .post-content li { margin-bottom:0.4em; }
     .post-content img {
       max-width:80%; height:auto; border:2px solid var(--water-mid);
       margin:15px auto; display:block;
-      image-rendering: pixelated; -moz-crisp-edges; crisp-edges;
+      image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges;
       box-shadow: 3px 3px 0 var(--habitat-structure-dark);
     }
     .post-content table {
       border-collapse:collapse; margin-bottom:1em; border:2px solid var(--water-deep);
     }
-    .post-content th, .post-content td { border:1px solid var(--water-deep); padding:6px 8px; font-size:0.9em; }
-    .post-content th { background:rgba(3,155,229,0.4); font-family:var(--font-pixel); }
+    .post-content th, .post-content td {
+      border:1px solid var(--water-deep); padding:6px 8px; font-size:0.9em;
+    }
+    .post-content th {
+      background:rgba(3,155,229,0.4); font-family:var(--font-pixel);
+    }
   </style>
 </head>
 <body>
@@ -182,18 +206,13 @@
   </div>
 
   <script>
-    // Open the details closest to today and highlight the matching <li>
     function openClosestInContent(container) {
       const today = new Date();
-      const options = { month: 'long', day: 'numeric', year: 'numeric' };
-      const todayStr = today.toLocaleDateString('en-US', options);
+      const opts = { month: 'long', day: 'numeric', year: 'numeric' };
+      const todayStr = today.toLocaleDateString('en-US', opts).replace(/\u00A0/g,' ');
 
       const items = Array.from(container.querySelectorAll('li'));
-      let exact = null;
-      items.forEach(li => {
-        const text = li.textContent.replace(/\u00A0/g, ' ');
-        if (text.includes(todayStr)) exact = li;
-      });
+      let exact = items.find(li => li.textContent.replace(/\u00A0/g,' ').includes(todayStr));
 
       if (exact) {
         exact.classList.add('current-day');
@@ -203,21 +222,19 @@
           el = el.parentElement;
         }
       } else {
-        const dateRegex = /[A-Za-z]+[ \u00A0]+\d{1,2},[ \u00A0]+\d{4}/g;
+        const dateRe = /[A-Za-z]+[ \u00A0]+\d{1,2},[ \u00A0]+\d{4}/g;
         let best = null;
         items.forEach(li => {
           const text = li.textContent;
-          const matches = text.match(dateRegex);
-          if (matches) {
-            matches.forEach(ds => {
-              const norm = ds.replace(/\u00A0/g, ' ');
-              const d = new Date(norm);
-              if (!isNaN(d)) {
-                const diff = Math.abs(d - today);
-                if (!best || diff < best.diff) best = { li, diff };
-              }
-            });
-          }
+          const matches = text.match(dateRe);
+          if (matches) matches.forEach(ds => {
+            const norm = ds.replace(/\u00A0/g,' ');
+            const d = new Date(norm);
+            if (!isNaN(d)) {
+              const diff = Math.abs(d - today);
+              if (!best || diff < best.diff) best = { li, diff };
+            }
+          });
         });
         if (best) {
           best.li.classList.add('closest-day');
@@ -228,22 +245,18 @@
           }
         }
       }
-
-      // Scroll the highlighted item into view
       const highlighted = container.querySelector('.current-day, .closest-day');
-      if (highlighted) {
-        highlighted.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
+      if (highlighted) highlighted.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
-    const repoOwner = 'monksevillair',
-          repoName  = 'monksevillair.github.io',
-          directory = 'underwatercity',
-          apiUrl    = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${directory}`;
+    const repoOwner = 'monksevillair';
+    const repoName  = 'monksevillair.github.io';
+    const directory = 'underwatercity';
+    const apiUrl    = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${directory}`;
 
-    const postListUl = document.getElementById('post-list-ul');
+    const postListUl   = document.getElementById('post-list-ul');
     const contentCache = new Map();
-    let currentlyOpenItem = null;
+    let currentlyOpen  = null;
 
     async function fetchAndDisplay() {
       try {
@@ -258,7 +271,7 @@
           : '<li style="text-align:center; padding:20px; font-family:var(--font-pixel);">No log entries found.</li>';
 
         files.forEach((file, idx) => {
-          const li = document.createElement('li');
+          const li  = document.createElement('li');
           li.className = 'post-item';
 
           const hdr = document.createElement('div');
@@ -277,61 +290,55 @@
           postListUl.appendChild(li);
 
           const expandItem = async (auto=false) => {
-            if (!auto && currentlyOpenItem && currentlyOpenItem !== li) {
-              const prevHdr = currentlyOpenItem.querySelector('.post-header');
-              const prevWrap = currentlyOpenItem.querySelector('.post-content-wrapper');
-              prevHdr.classList.remove('active');
-              prevWrap.style.maxHeight = '0px';
+            if (!auto && currentlyOpen && currentlyOpen !== li) {
+              const ph = currentlyOpen.querySelector('.post-header');
+              const pw = currentlyOpen.querySelector('.post-content-wrapper');
+              ph.classList.remove('active');
+              pw.style.maxHeight = '0px';
             }
             hdr.classList.add('active');
-            currentlyOpenItem = li;
+            currentlyOpen = li;
 
-            if (contentCache.has(file.name)) {
-              contentDiv.innerHTML = contentCache.get(file.name);
-              openClosestInContent(contentDiv);
-            } else {
+            if (!contentCache.has(file.name)) {
               contentDiv.innerHTML = '<p class="loading">Receiving data…</p>';
               wrap.style.maxHeight = '150px';
-              try {
-                const mdText = await fetch(file.download_url).then(r => r.text());
-                const html = marked.parse(mdText);
-                contentCache.set(file.name, html);
-                contentDiv.innerHTML = html;
-                openClosestInContent(contentDiv);
-              } catch (err) {
-                contentDiv.innerHTML = `<p class="error">Transmission error: ${err.message}</p>`;
-              }
+              const md = await fetch(file.download_url).then(r => r.text());
+              const html = marked.parse(md);
+              contentCache.set(file.name, html);
+              contentDiv.innerHTML = html;
+            } else {
+              contentDiv.innerHTML = contentCache.get(file.name);
             }
 
             setTimeout(() => {
-              if (hdr.classList.contains('active')) {
-                wrap.style.maxHeight = contentDiv.scrollHeight + 'px';
-              }
-            }, 200);
+              openClosestInContent(contentDiv);
+              wrap.style.maxHeight = contentDiv.scrollHeight + 'px';
+            }, 50);
           };
 
           hdr.addEventListener('click', () => {
             if (hdr.classList.contains('active')) {
               hdr.classList.remove('active');
               wrap.style.maxHeight = '0px';
-              if (currentlyOpenItem === li) currentlyOpenItem = null;
+              if (currentlyOpen === li) currentlyOpen = null;
             } else {
               expandItem();
             }
           });
 
-          // auto-open the newest file
           if (idx === 0) setTimeout(() => expandItem(true), 300);
         });
       } catch (err) {
-        postListUl.innerHTML = `<li style="text-align:center; padding:20px; font-family:var(--font-pixel);" class="error">System error: ${err.message}</li>`;
+        postListUl.innerHTML = `<li style="text-align:center; padding:20px; font-family:var(--font-pixel);" class="error">
+          System error: ${err.message}
+        </li>`;
       }
     }
 
     if (typeof marked === 'undefined') {
       postListUl.innerHTML = '<li style="text-align:center; padding:20px; font-family:var(--font-pixel);" class="error">CRITICAL: marked.js offline.</li>';
     } else {
-      marked.setOptions({ gfm:true, breaks:true, sanitize:false });
+      marked.setOptions({ gfm: true, breaks: true, sanitize: false });
       fetchAndDisplay();
     }
   </script>
