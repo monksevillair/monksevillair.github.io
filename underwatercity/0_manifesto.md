@@ -16,7 +16,7 @@ Preliminary plans for building an underwater city.
 ---
 
 <details>
-<summary>Year 27: Learn CNC Plasma Cutting and Welding, begin designing a long‑range ROV, start an underwater city Discord, actively use Twitter and gather a community</summary>
+<summary>Year 27: Learn CNC Plasma Cutting and Welding, begin designing a long‑range ROV, start an underwater city Discord, actively use Twitter and gather a community, fix up van and sell it</summary>
 
 <details>
 <summary>May 2025</summary>
