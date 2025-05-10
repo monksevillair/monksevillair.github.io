@@ -77,7 +77,7 @@ Preliminary plans for building an underwater city.
 </details>
 
 <details>
-<summary>June 2025</summary>
+<summary>June 2025 Move to Key Largo? Key Largo CC</summary>
 
 Immerse yourself in **Introduction to Welding** and **Introduction to Metalworking**, focus on fundamentals, and launch your underwater city Discord server.
 
