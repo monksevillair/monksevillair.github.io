@@ -1,12 +1,12 @@
 # Path to an Underwater Future: Near-Term Focus & Long-Term Vision
 
-My immediate focus for this month (May 2025) is to design and build out a complete interior for my van to make it highly sellable. This is a significant project that will be my top priority. In parallel, I will be researching opportunities in Key Largo (diving, underwater habitat involvement, scuba/dance classes) to prepare for my next steps once the van is sold. The van sale will fund this transition, which is a foundational step towards my ultimate goal of building an underwater city.
+My immediate focus for this month (May 2025) is to complete and upgrade my van's interior to make it highly sellable. While some major components (cabinets, bathroom, shower, toilet) are already in place, I'll be concentrating on specific enhancements. In order of importance, these are: replacing the floors, upgrading the lighting, building a 1-person bed with bike storage, finishing the wood wall paneling, constructing a small kitchen area, and adding trim to finish the gaps. This will be my top priority. In parallel, I will be researching opportunities in Key Largo (diving, underwater habitat involvement, scuba/dance classes) to prepare for my next steps once the van is sold. The van sale will fund this transition, a foundational step towards my ultimate goal of building an underwater city.
 
 ## The Ultimate Goal: Building an Underwater City
 
 Preliminary plans for building an underwater city.
 
-1.  **Generate significant capital to acquire necessary resources:** Initially, this will involve strategic life changes (like building out and selling the van, then relocating to a hub for marine activities). Longer-term, this could involve mapping the Ocean with ROVs.
+1.  **Generate significant capital to acquire necessary resources:** Initially, this will involve strategic life changes (like completing and selling the van, then relocating to a hub for marine activities). Longer-term, this could involve mapping the Ocean with ROVs.
 2.  **Build human submarine modules:** These will be capable of ocean exploration, science, and permanent habitation.
 3.  **Live full time underwater:** Explore the new frontier of the underwater world!
 
@@ -17,40 +17,47 @@ Preliminary plans for building an underwater city.
 ---
 
 <details>
-<summary>Year 27 (2025): Van Interior Build & Sale, Prepare for Key Largo</summary>
+<summary>Year 27 (2025): Van Interior Upgrade & Sale, Prepare for Key Largo</summary>
 
-**Primary Focus:** Design and execute a full interior build-out for the van to maximize its sale value. Successfully sell the van.
+**Primary Focus:** Execute targeted upgrades and completions for the van interior (floors, lighting, bed, walls, small kitchen, trim) to maximize its sale value. Successfully sell the van.
 
 **Secondary Focus (Concurrent):** Thoroughly research and plan for relocation to Key Largo, including identifying diving opportunities, underwater habitat projects, and relevant community college courses (scuba, dance).
 
 **Tertiary Focus (Time Permitting):** Continue preliminary research and community building for the long-range ROV and underwater city concept (e.g., Discord, Twitter).
 
 <details>
-<summary>May 2025: Intensive Van Interior Build & Key Largo Research</summary>
+<summary>May 2025: Van Upgrades & Key Largo Research</summary>
 
 **Overall Goals for May:**
-* **Van:** Finalize interior design, procure materials, and make significant progress on the van build (framing, insulation, paneling, basic structures). Aim to have the van ready for finishing touches by month-end.
+* **Van:** Make significant progress on the prioritized list of interior upgrades. Aim to complete flooring, lighting, and bed construction, with wall paneling well underway.
 * **Key Largo:** Conduct comprehensive research into Key Largo opportunities, making initial contacts and gathering information for a potential move post-van sale.
 
 <details>
-<summary>Week ending May 11, 2025 (Rest of This Weekend)</summary>
+<summary>Week ending May 11, 2025 (Rest of This Weekend - Current Date: Saturday, May 10)</summary>
 
 - **Saturday, May 10, 2025 (Today):**
-    - **Van (Priority):** Begin detailed design of the van interior layout. Research build styles, materials (e.g., wood types, insulation, flooring, hardware), and create a comprehensive budget. Measure interior dimensions accurately. Develop a preliminary materials list.
+    - **Van (Priority Tasks):**
+        - **Flooring (Task 1):** Research suitable nicer flooring options (e.g., vinyl plank, engineered hardwood, rubber). Measure floor area accurately. Obtain cost estimates and identify local suppliers.
+        - **Lighting (Task 2):** Brainstorm and research "better lighting" options (e.g., LED puck lights, strip LEDs, dimmable fixtures). Assess current wiring – can it be reused/adapted or is new wiring needed? Sketch a basic lighting plan.
+        - **Bed Design (Task 3):** Start designing the 1-person bed. Crucially, measure your bike(s) to determine the required clearance for underneath storage. Sketch out frame ideas and consider materials (wood, metal).
     - **Key Largo Research (Secondary):** Conduct initial online searches for dive centers, community colleges (course catalogs for scuba/dance), and general information about living in Key Largo.
 - **Sunday, May 11, 2025:**
-    - **Van (Priority):** Finalize van interior design plans and materials list. Start sourcing materials (online orders, identify local suppliers). If feasible, begin any necessary demolition of existing van interior or prepare surfaces for the new build.
+    - **Van (Priority Tasks):**
+        - **Flooring (Task 1):** Finalize flooring choice. If a decision is made and materials can be sourced today (check store hours/online availability for quick shipping), purchase them. Plan for old floor removal.
+        - **Lighting (Task 2):** Finalize lighting plan & fixture choices. Purchase new lights and any necessary wiring, switches, or connectors.
+        - **Bed Design (Task 3):** Refine bed design and create a materials list for construction.
+        - **Wall Paneling (Task 4):** Inspect areas needing wood wall covering. Measure these sections and estimate the quantity of wood paneling required. Research wood types and finishes.
     - **Key Largo Research (Secondary):** Broad search for marine conservation groups, underwater habitat restoration projects, or related volunteer opportunities in the Florida Keys.
 
 </details>
 
 <details>
-<summary>Week of May 12–18, 2025 (Van Build Phase 1: Prep, Framing & Insulation)</summary>
+<summary>Week of May 12–18, 2025 (Focus: Flooring, Lighting Installation, Bed Frame Construction)</summary>
 
 - **Van (Primary Focus Daily):**
-    - **Monday-Wednesday:** Procure initial batch of materials. Complete any remaining demolition/prep. Begin constructing the interior framework (e.g., for bed, storage, kitchenette if planned). Start installing insulation.
-    - **Thursday-Friday:** Continue framing and insulation. If electrical wiring is part of the plan, begin rough-in (consult resources if inexperienced).
-    - **Saturday-Sunday:** Aim to complete primary framing, insulation, and any sub-flooring. Double-check all measurements and structural integrity.
+    - **Flooring (Task 1):** Remove existing flooring. Prepare the subfloor (clean, level if needed). Begin installing the new flooring. This is often a multi-day task.
+    - **Lighting (Task 2):** Once flooring allows for easier movement/access, or in parallel if feasible, begin installing the new lighting fixtures. Run any new wiring carefully and safely (consult electrician or guides if unsure).
+    - **Bed (Task 3):** Start sourcing materials for the bed. Begin construction of the bed frame, prioritizing the bike storage dimensions.
 - **Key Largo Research (Evening/Breaks):**
     - Compile a detailed list of dive shops in Key Largo with contact info, course offerings, and potential job/internship notes.
     - Identify 2-3 specific underwater habitat projects or marine conservation organizations that seem like a good fit.
@@ -59,12 +66,12 @@ Preliminary plans for building an underwater city.
 </details>
 
 <details>
-<summary>Week of May 19–25, 2025 (Van Build Phase 2: Paneling, Flooring & Basic Structures)</summary>
+<summary>Week of May 19–25, 2025 (Focus: Complete Bed, Wall Paneling, Start Kitchen Planning)</summary>
 
 - **Van (Primary Focus Daily):**
-    - **Monday-Wednesday:** Begin installing wall and ceiling paneling. Install chosen flooring material.
-    - **Thursday-Friday:** Start building out fixed structures based on your design (e.g., bed platform, galley cabinets, seating/storage units).
-    - **Saturday-Sunday:** Continue assembly of interior structures. Ensure everything is securely fastened.
+    - **Bed (Task 3):** Complete the construction of the bed, ensuring it's sturdy and the bike storage is functional.
+    - **Wall Paneling (Task 4):** Purchase wood paneling materials if not already acquired. Begin installing the wood paneling on the remaining wall sections.
+    - **Small Kitchen (Task 5):** Start designing the small kitchen area. Consider sink size (if any), space for a portable cooktop, counter space, and basic storage. Measure the allocated area.
 - **Key Largo Research (Evening/Breaks):**
     - Draft initial inquiry emails to selected dive shops and habitat projects/organizations in Key Largo.
     - Compare community college options based on course specifics (scuba certifications offered, dance styles, schedules), costs, and campus location/accessibility.
@@ -72,12 +79,12 @@ Preliminary plans for building an underwater city.
 </details>
 
 <details>
-<summary>Week of May 26–31, 2025 (Van Build Phase 3: Major Construction Nearing Completion)</summary>
+<summary>Week of May 26–31, 2025 (Focus: Kitchen Build, Wall Paneling Completion, Trim Planning)</summary>
 
 - **Van (Primary Focus Daily):**
-    - **Monday (Memorial Day) - Wednesday:** Continue with construction of larger interior components. Focus on completing the main build elements. Address any complex assembly tasks.
-    - **Thursday-Friday:** Work on integrating elements. Start planning for finishing touches (paint, stain, hardware) for early June.
-    - **Saturday:** Assess progress. Make a list of remaining tasks for the build completion (likely early June). Organize tools and materials.
+    - **Small Kitchen (Task 5):** Begin construction of the small kitchen unit based on your design. This may involve building a small counter, shelving, or fitting a pre-made unit.
+    - **Wall Paneling (Task 4):** Aim to complete the installation of all wood wall paneling.
+    - **Trim (Task 6):** Assess all areas where trim will be needed to cover gaps (around floor edges, wall junctions, ceiling, around windows/doors). Start planning material choices and measure lengths required.
 - **Key Largo Research (Evening/Breaks):**
     - Send out inquiry emails to Key Largo contacts if not already done. Follow up if no response after a reasonable time.
     - Consolidate all Key Largo research. Start outlining a preliminary budget and checklist for relocation, contingent on van sale.
@@ -87,14 +94,16 @@ Preliminary plans for building an underwater city.
 </details>
 
 <details>
-<summary>June 2025: Complete Van Build, Sell Van, Transition to Key Largo</summary>
+<summary>June 2025: Finish Van Upgrades, Sell Van, Transition to Key Largo</summary>
 
-- **Van Build & Sale (First 1-2 Weeks Estimated):**
-    - Complete all finishing touches on the van interior (sanding, painting/staining, installing hardware, fixtures, final cleaning).
-    - Take high-quality photos and create a compelling sales listing.
+- **Van Upgrades & Sale (First 2-3 Weeks Estimated):**
+    - **Small Kitchen (Task 5):** Complete kitchen build and installation.
+    - **Trim (Task 6):** Purchase and install all trim pieces.
+    - Final Touches: Any painting, sealing, hardware installation for new components. Thoroughly clean the entire van.
+    - Photography & Listing: Take high-quality photos of the upgraded interior. Create a compelling sales listing highlighting all features, especially the new upgrades and existing amenities.
     - List van for sale on multiple platforms. Manage inquiries and showings.
     - Negotiate and finalize sale, including all paperwork.
-- **Key Largo Transition (Latter Half of June, contingent on van sale):**
+- **Key Largo Transition (Latter Half of June / Early July, contingent on van sale):**
     - Once van is sold and funds are available:
         - Execute move to Key Largo.
         - Secure short-term accommodation upon arrival.
