@@ -3,239 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Underwater City Archives - Scrolling Depths</title>
+    <title>Underwater City Archives - Advanced Collapse</title>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
+        /* ... (Keep existing styles from previous version, then add/modify for collapsibles) ... */
         :root {
-            /* Pastel Pixel Art Palette (same as before) */
-            --sky-top: #b3e5fc; /* Light Pastel Sky Blue */
-            --sky-bottom: #e1f5fe; /* Lighter Pastel Sky Blue */
-            --sun-core: #fff59d; /* Pastel Yellow */
-            --sun-glow: rgba(255, 249, 196, 0.5);
-
-            --water-surface: #81d4fa; /* Bright Pastel Cyan */
-            --water-interface-highlight: #e0f7fa;
-            --water-shallows: #4fc3f7; /* Medium Pastel Blue */
-            --water-mid: #29b6f6;
-            --water-deep: #039be5;
-            --water-abyss: #01579b;
-            --water-abyss-darker: #003c6c;
-
-            --habitat-light-strong: #fffde7;
-            --habitat-light-glow: rgba(255, 253, 231, 0.6);
-            --habitat-structure: #bdbdbd;
-            --habitat-structure-dark: #757575;
-
-            --text-light: #f5f5f5;
-            --text-dark: #263238;
-            --text-link: #ffecb3;
-            --text-link-hover: #fff9c4;
-
+            /* ... (Keep existing color vars) ... */
             --font-pixel: 'Press Start 2P', 'Courier New', Courier, monospace;
             --font-main: 'Verdana', sans-serif;
         }
 
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-        body {
+
+        body { /* Keep previous body styles */
             margin: 0;
             font-family: var(--font-main);
             color: var(--text-light);
-            background-color: var(--water-abyss-darker); /* Fallback, actual bg is layers */
-            position: relative; /* For stacking context of background and content */
+            background-color: var(--water-abyss-darker);
+            position: relative;
         }
 
-        /* --- Layered SCROLLING Background --- */
-        .background-layers {
-            position: absolute; /* Scrolls with body, positioned at the very back */
-            top: 0;
-            left: 0;
-            width: 100%;
-            /* Height will be determined by the tallest element inside, e.g., water gradient */
-            /* min-height: 100vh; ensure it's at least viewport high */
-            z-index: -1; /* Behind main-container */
-            overflow: hidden; /* Clip any oversized habitat parts if necessary */
+        .background-layers { /* Keep previous styles */
+            position: absolute; top: 0; left: 0; width: 100%;
+            z-index: -1; overflow: hidden;
         }
-
-        .bg-sky {
-            position: relative; /* Part of normal flow within background-layers */
-            width: 100%;
-            height: 40vh; /* Sky portion height */
-            background: linear-gradient(to bottom, var(--sky-top), var(--sky-bottom));
-        }
-
+        .bg-sky { position: relative; width: 100%; height: 40vh; background: linear-gradient(to bottom, var(--sky-top), var(--sky-bottom)); }
         .bg-sun {
-            position: absolute; /* Relative to background-layers or bg-sky */
-            top: 5vh;
-            left: 15%;
-            width: 80px; height: 80px;
-            background-color: var(--sun-core);
-            border-radius: 0;
-            box-shadow:
-                0 0 0 10px var(--sun-core),
-                0 0 20px 20px var(--sun-glow),
-                0 -60px 0 -20px var(--sun-core),
-                0 60px 0 -20px var(--sun-core),
-                -60px 0 0 -20px var(--sun-core),
-                60px 0 0 -20px var(--sun-core);
+            position: absolute; top: 5vh; left: 15%; width: 80px; height: 80px;
+            background-color: var(--sun-core); border-radius: 0;
+            box-shadow: 0 0 0 10px var(--sun-core), 0 0 20px 20px var(--sun-glow), 0 -60px 0 -20px var(--sun-core), 0 60px 0 -20px var(--sun-core), -60px 0 0 -20px var(--sun-core), 60px 0 0 -20px var(--sun-core);
         }
-        .bg-cloud {
-            position: absolute;
-            background-color: #ffffff;
-            border-radius: 0;
-            box-shadow: 3px 3px 0px var(--sky-bottom);
-        }
+        .bg-cloud { position: absolute; background-color: #ffffff; border-radius: 0; box-shadow: 3px 3px 0px var(--sky-bottom); }
         .bg-cloud-1 { top: 10vh; left: 60%; width: 100px; height: 30px; }
         .bg-cloud-1::before { content:''; position:absolute; top:-10px; left:20px; width:60px; height:30px; background: #fff; box-shadow: 3px 3px 0px var(--sky-bottom); }
         .bg-cloud-2 { top: 15vh; left: 30%; width: 120px; height: 40px; }
-
-
         .bg-water-gradient {
-            position: relative; /* Part of normal flow, below sky */
-            width: 100%;
-            height: 3000px; /* Tall enough for deep scrolling, adjust as needed */
-            background: linear-gradient(to bottom,
-                var(--water-surface) 0%, /* Starts immediately after sky effectively */
-                var(--water-shallows) 15%, /* Percentages are of this element's height */
-                var(--water-mid) 30%,
-                var(--water-deep) 50%,
-                var(--water-abyss) 75%,
-                var(--water-abyss-darker) 100%
-            );
-             margin-top: -2px; /* Slight overlap to ensure no gap with sky due to rounding */
+            position: relative; width: 100%; height: 3000px;
+            background: linear-gradient(to bottom, var(--water-surface) 0%, var(--water-shallows) 15%, var(--water-mid) 30%, var(--water-deep) 50%, var(--water-abyss) 75%, var(--water-abyss-darker) 100%);
+            margin-top: -2px;
         }
-
-        /* Underwater Habitats - positioned absolutely within .background-layers */
-        .bg-habitat {
-            position: absolute;
-            background-color: var(--habitat-structure);
-            border-radius: 0;
-            box-shadow: 5px 5px 0px var(--habitat-structure-dark);
+        .bg-habitat { position: absolute; background-color: var(--habitat-structure); border-radius: 0; box-shadow: 5px 5px 0px var(--habitat-structure-dark); }
+        .bg-habitat::before {
+            content: ''; position: absolute; width: 20px; height: 20px; background-color: var(--habitat-light-strong);
+            border-radius: 0; box-shadow: 0 0 15px 10px var(--habitat-light-glow), inset 0 0 5px var(--sun-core);
         }
-        .bg-habitat::before { /* Light source */
-            content: '';
-            position: absolute;
-            width: 20px; height: 20px;
-            background-color: var(--habitat-light-strong);
-            border-radius: 0;
-            box-shadow: 0 0 15px 10px var(--habitat-light-glow), inset 0 0 5px var(--sun-core);
+        .habitat-1 { top: 70vh; left: 10%; width: 150px; height: 80px; } .habitat-1::before { top: 10px; left: 10px; }
+        .habitat-2 { top: 120vh; left: 70%; width: 120px; height: 100px; } .habitat-2::before { bottom: 15px; right: 15px; width:30px; height:30px;}
+        .habitat-3 { top: 180vh; left: 25%; width: 200px; height: 60px; opacity: 0.8; } .habitat-3::before { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .habitat-4 { top: 250vh; left: 50%; width: 100px; height: 100px; opacity: 0.6; } .habitat-4::before { top: 5px; left: 5px; }
+
+        .main-container { /* Keep previous styles */
+            max-width: 700px; margin: 0 auto; padding: 15vh 20px 50px 20px;
+            position: relative; z-index: 1; min-height: 100vh;
         }
-
-        /* Position habitats at different depths (top values are from top of background-layers) */
-        /* Sky is ~40vh. Water starts effectively after that. */
-        .habitat-1 { top: 70vh; left: 10%; width: 150px; height: 80px; } /* Shallow */
-        .habitat-1::before { top: 10px; left: 10px; }
-        .habitat-2 { top: 120vh; left: 70%; width: 120px; height: 100px; } /* Mid */
-        .habitat-2::before { bottom: 15px; right: 15px; width:30px; height:30px;}
-        .habitat-3 { top: 180vh; left: 25%; width: 200px; height: 60px; opacity: 0.8; } /* Deep */
-        .habitat-3::before { top: 50%; left: 50%; transform: translate(-50%, -50%); }
-        .habitat-4 { top: 250vh; left: 50%; width: 100px; height: 100px; opacity: 0.6; } /* Abyss */
-        .habitat-4::before { top: 5px; left: 5px; }
-
-
-        /* --- Main Content Area --- */
-        .main-container {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 15vh 20px 50px 20px; /* Top padding to start "below" initial sky view */
-            position: relative; /* Sits on top of .background-layers */
-            z-index: 1;
-            min-height: 100vh; /* Ensure it pushes body height for scrolling */
-        }
-
-        .page-title {
-            font-family: var(--font-pixel);
-            text-align: center;
-            font-size: 2em;
-            color: var(--sun-core);
+        .page-title { /* Keep previous styles */
+            font-family: var(--font-pixel); text-align: center; font-size: 2em; color: var(--sun-core);
             text-shadow: 2px 2px 0px var(--water-abyss-darker), 4px 4px 0px var(--habitat-structure-dark);
-            margin-bottom: 40px;
-            padding: 15px;
-            background-color: rgba(1, 87, 155, 0.5);
-            border: 3px solid var(--water-mid);
-            border-radius: 0;
+            margin-bottom: 40px; padding: 15px; background-color: rgba(1, 87, 155, 0.5);
+            border: 3px solid var(--water-mid); border-radius: 0;
         }
 
         .post-list { list-style: none; padding: 0; }
-        .post-item {
-            margin-bottom: 15px;
-            border-radius: 0;
-            border: 2px solid var(--water-deep);
-            background-color: rgba(3, 155, 229, 0.3);
-            box-shadow: 3px 3px 0px rgba(1, 87, 155, 0.7);
+        .post-item { /* Keep previous styles */
+            margin-bottom: 15px; border-radius: 0; border: 2px solid var(--water-deep);
+            background-color: rgba(3, 155, 229, 0.3); box-shadow: 3px 3px 0px rgba(1, 87, 155, 0.7);
             overflow: hidden;
         }
-        .post-header {
-            padding: 12px 18px;
-            cursor: pointer;
-            background-color: rgba(2, 119, 189, 0.6);
-            color: var(--text-light);
-            font-size: 1.1em;
-            font-family: var(--font-pixel);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background-color 0.2s;
-            border-bottom: 2px solid transparent;
+        .post-header { /* Keep previous styles */
+            padding: 12px 18px; cursor: pointer; background-color: rgba(2, 119, 189, 0.6);
+            color: var(--text-light); font-size: 1.1em; font-family: var(--font-pixel);
+            display: flex; justify-content: space-between; align-items: center;
+            transition: background-color 0.2s; border-bottom: 2px solid transparent;
         }
         .post-header:hover { background-color: rgba(3, 169, 244, 0.7); }
-        .post-header.active {
-            background-color: rgba(79, 195, 247, 0.7);
-            border-bottom-color: var(--water-shallows);
-        }
-        .post-header::after {
-            content: '[+]';
-            font-family: var(--font-pixel);
-            font-size: 1em;
-            color: var(--sun-core);
-            margin-left: 10px;
-        }
+        .post-header.active { background-color: rgba(79, 195, 247, 0.7); border-bottom-color: var(--water-shallows); }
+        .post-header::after { content: '[+]'; font-family: var(--font-pixel); font-size: 1em; color: var(--sun-core); margin-left: 10px; }
         .post-header.active::after { content: '[-]'; }
 
-        .post-content-wrapper {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-in-out;
-            background-color: rgba(1, 87, 155, 0.4);
-            border-top: 2px dashed var(--water-mid);
+        .post-content-wrapper { /* Keep previous styles */
+            max-height: 0; overflow: hidden; transition: max-height 0.5s ease-in-out;
+            background-color: rgba(1, 87, 155, 0.4); border-top: 2px dashed var(--water-mid);
         }
         .post-content { padding: 15px 20px; color: var(--text-light); line-height: 1.7; }
-        .post-content.loading, .post-content.error {
-            text-align: center; font-style: italic; padding: 25px 15px; font-family: var(--font-pixel);
-        }
+        .post-content.loading, .post-content.error { text-align: center; font-style: italic; padding: 25px 15px; font-family: var(--font-pixel); }
         .post-content.error { color: #ffcdd2; background-color: rgba(176, 0, 32, 0.4); }
 
-        /* Markdown Content Styling (same as before) */
-        .post-content h1, .post-content h2, .post-content h3 {
+        /* Styles for collapsible sections within post-content */
+        .collapsible-header {
+            cursor: pointer;
+            padding: 8px 10px;
+            margin-top: 10px;
+            background-color: rgba(79, 195, 247, 0.2); /* Lighter than post header */
+            border: 1px solid var(--water-shallows);
+            border-radius: 0;
+            font-family: var(--font-pixel);
+            font-size: 0.9em;
+            color: var(--text-link-hover);
+            display: block; /* Make it block for easier styling */
+        }
+        .collapsible-header:hover {
+            background-color: rgba(79, 195, 247, 0.4);
+        }
+        .collapsible-header::before {
+            content: '[+] ';
+            font-family: var(--font-pixel);
+        }
+        .collapsible-header.open::before {
+            content: '[-] ';
+        }
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out;
+            padding-left: 20px; /* Indent content */
+            border-left: 2px dashed var(--water-mid);
+            margin-left: 5px; /* Align with header padding */
+            margin-bottom: 5px;
+        }
+
+        /* Markdown Content Styling (some might be overridden by collapsible styling) */
+        .post-content h1, .post-content h2 { /* Main headings in MD */
             font-family: var(--font-pixel); color: var(--text-link-hover);
             border-bottom: 2px solid var(--water-shallows); padding-bottom: 0.2em;
             margin-top: 1.2em; margin-bottom: 0.8em; text-shadow: 1px 1px 0 var(--water-abyss-darker);
         }
-        .post-content h1 {font-size: 1.5em;} .post-content h2 {font-size: 1.3em;} .post-content h3 {font-size: 1.1em;}
+        /* H3, H4, etc., if used as collapsible headers, will be styled by .collapsible-header */
+        .post-content h3.collapsible-header,
+        .post-content h4.collapsible-header,
+        .post-content div.collapsible-header /* For custom list-item based collapsibles */
+        {
+            font-size: 1em; /* Adjust as needed */
+            margin-bottom: 0;
+        }
+
         .post-content p { margin-bottom: 1em; }
-        .post-content a {
-            color: var(--text-link); text-decoration: underline;
-            text-decoration-style: dashed; text-decoration-color: var(--water-shallows);
-        }
+        .post-content a { color: var(--text-link); text-decoration: underline; text-decoration-style: dashed; text-decoration-color: var(--water-shallows); }
         .post-content a:hover { color: var(--text-link-hover); background-color: rgba(79, 195, 247, 0.3); }
-        .post-content code {
-            font-family: var(--font-pixel); background-color: rgba(0,0,0,0.3);
-            padding: 0.2em 0.3em; font-size: 0.9em; border: 1px solid var(--water-deep); color: #80deea;
-        }
-        .post-content pre {
-            font-family: var(--font-pixel); background-color: rgba(0,0,0,0.4); padding: 10px;
-            border: 2px solid var(--water-deep); overflow-x: auto; font-size: 0.85em;
-            box-shadow: inset 2px 2px 0px rgba(0,0,0,0.2);
-        }
-        .post-content blockquote {
-            border-left: 3px solid var(--text-link); padding-left: 10px; margin-left: 0;
-            color: #cfd8dc; background-color: rgba(38, 50, 56, 0.3); font-style: italic;
-        }
+        .post-content code { font-family: var(--font-pixel); background-color: rgba(0,0,0,0.3); padding: 0.2em 0.3em; font-size: 0.9em; border: 1px solid var(--water-deep); color: #80deea; }
+        .post-content pre { font-family: var(--font-pixel); background-color: rgba(0,0,0,0.4); padding: 10px; border: 2px solid var(--water-deep); overflow-x: auto; font-size: 0.85em; box-shadow: inset 2px 2px 0px rgba(0,0,0,0.2); }
+        .post-content blockquote { border-left: 3px solid var(--text-link); padding-left: 10px; margin-left: 0; color: #cfd8dc; background-color: rgba(38, 50, 56, 0.3); font-style: italic; }
         .post-content ul, .post-content ol { padding-left: 25px; }
         .post-content li { margin-bottom: 0.4em; }
         .post-content img {
-            max-width: 100%; height: auto; border: 2px solid var(--water-mid);
+            max-width: 100%; height: auto; border: 2px solid var(--water-mid); margin-top:10px; margin-bottom:10px;
+            display: block; margin-left: auto; margin-right: auto; /* Center images */
             image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges;
+            box-shadow: 3px 3px 0px var(--habitat-structure-dark);
         }
         .post-content table { border-collapse: collapse; width: auto; margin-bottom: 1em; border: 2px solid var(--water-deep);}
         .post-content th, .post-content td { border: 1px solid var(--water-deep); padding: 6px 8px; font-size:0.9em}
@@ -244,10 +158,10 @@
     </style>
 </head>
 <body>
-
     <div class="background-layers">
         <div class="bg-sky">
-             <div class="bg-sun"></div> <div class="bg-cloud bg-cloud-1"></div>
+             <div class="bg-sun"></div>
+             <div class="bg-cloud bg-cloud-1"></div>
              <div class="bg-cloud bg-cloud-2"></div>
         </div>
         <div class="bg-water-gradient"></div>
@@ -267,71 +181,190 @@
     <script>
         const repoOwner = 'monksevillair';
         const repoName = 'monksevillair.github.io';
-        const directoryPath = 'underwatercity';
+        const directoryPath = 'underwatercity'; // Assuming your MD files are here
         const GITHUB_API_URL = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${directoryPath}`;
 
         const postListUl = document.getElementById('post-list-ul');
         const contentCache = new Map();
         let currentlyOpenItem = null;
 
+        function makeCollapsible(contentContainer) {
+            // Target H3 for "Age ##"
+            // Target LIs that start with "Month YYYY:", "Week ...", "Day ...", or bolded text for weeks/days
+            // This will depend heavily on the exact HTML structure produced by Marked.js from your Markdown.
+            // Let's assume the Markdown structure I proposed (H3 for Age, nested UL/LI for Month/Week/Day with **bold** headers)
+
+            const ageHeaders = contentContainer.querySelectorAll('h3'); // For "Age ##"
+            ageHeaders.forEach(ageHeader => {
+                if (ageHeader.textContent.toLowerCase().startsWith('age ')) {
+                    wrapNextElements(ageHeader, 'ul, ol, p, h4, h5, h6, div, table, blockquote, pre, hr');
+                }
+            });
+
+            // For nested lists: find LIs whose first child is a STRONG element (for Month, Week)
+            // Or LIs whose text content starts with specific keywords
+            const listItems = contentContainer.querySelectorAll('li');
+            listItems.forEach(li => {
+                const firstChild = li.firstChild;
+                let headerTextNode = null;
+                let isCollapsibleListItem = false;
+
+                if (firstChild && firstChild.nodeName === 'STRONG') { // e.g., **May 2025:** or **Rest of This Week...**
+                    headerTextNode = firstChild;
+                    isCollapsibleListItem = true;
+                } else if (firstChild && firstChild.nodeType === Node.TEXT_NODE &&
+                           (firstChild.textContent.trim().match(/^(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{4}:/i) ||
+                            firstChild.textContent.trim().match(/^(Rest of This Week|Next Week|Following Week|Last Week of)/i) ||
+                            firstChild.textContent.trim().match(/^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday),\s+\w+\s+\d+(st|nd|rd|th)/i)
+                           )) {
+                     // Wrap the text node in a span to make it clickable if it's just text
+                     const span = document.createElement('span');
+                     span.textContent = firstChild.textContent;
+                     li.insertBefore(span, firstChild.nextSibling);
+                     li.removeChild(firstChild);
+                     headerTextNode = span;
+                     isCollapsibleListItem = true;
+                }
+
+
+                if (isCollapsibleListItem && headerTextNode) {
+                    // Wrap the *subsequent* UL/OL within this LI, or subsequent sibling LIs if it's flat
+                    let contentToWrap = [];
+                    let nextElement = headerTextNode.nextSibling; // Start looking after the header text/strong
+                    while(nextElement) {
+                        if (nextElement.nodeName === 'UL' || nextElement.nodeName === 'OL') {
+                            contentToWrap.push(nextElement);
+                        }
+                        // If we encounter another LI at the same level, stop (unless it's a sub-list)
+                        // This logic gets tricky with mixed content.
+                        // Simpler: if there's a UL/OL directly inside the LI after the text, wrap that.
+                        nextElement = nextElement.nextSibling;
+                    }
+                     // More robust: if the LI contains a UL/OL as a direct child (but not the first child)
+                    const nestedLists = Array.from(li.children).filter(child => child !== headerTextNode && (child.tagName === 'UL' || child.tagName === 'OL'));
+
+
+                    if (nestedLists.length > 0) {
+                        const collapsibleContent = document.createElement('div');
+                        collapsibleContent.className = 'collapsible-content';
+                        nestedLists.forEach(nl => collapsibleContent.appendChild(nl)); // Move nested lists into the wrapper
+
+                        const newHeader = document.createElement('div'); // Use a div for the header
+                        newHeader.className = 'collapsible-header';
+                        // Move the original header text/strong into this new div
+                        while(headerTextNode.firstChild) newHeader.appendChild(headerTextNode.firstChild);
+                        if(headerTextNode.nodeType === Node.TEXT_NODE) newHeader.textContent = headerTextNode.textContent;
+
+
+                        // Replace the original text node/strong with the new header div
+                        if (headerTextNode.parentNode === li) {
+                            li.insertBefore(newHeader, headerTextNode);
+                            if (headerTextNode.nodeName !== "SPAN") li.removeChild(headerTextNode); // if it was <strong>
+                            else if(newHeader !== headerTextNode) li.removeChild(headerTextNode); // if it was a text node we wrapped in span
+                        }
+
+
+                        li.appendChild(collapsibleContent); // Append content wrapper to the LI
+
+                        newHeader.addEventListener('click', (e) => {
+                            e.stopPropagation(); // Prevent parent collapsibles from toggling
+                            newHeader.classList.toggle('open');
+                            if (newHeader.classList.contains('open')) {
+                                collapsibleContent.style.maxHeight = collapsibleContent.scrollHeight + 'px';
+                            } else {
+                                collapsibleContent.style.maxHeight = '0px';
+                            }
+                        });
+                        // Recursively make content inside this new collapsible section also collapsible
+                        makeCollapsible(collapsibleContent);
+                    }
+                }
+            });
+        }
+
+
+        function wrapNextElements(headerElement, selectorsToWrap) {
+            const contentWrapper = document.createElement('div');
+            contentWrapper.className = 'collapsible-content';
+            let sibling = headerElement.nextElementSibling;
+
+            while (sibling) {
+                if (sibling.matches(selectorsToWrap) && !sibling.matches('h1, h2, h3')) { // Stop if another major header
+                    const nextSibling = sibling.nextElementSibling; // Store next before moving
+                    contentWrapper.appendChild(sibling);
+                    sibling = nextSibling;
+                } else {
+                    break;
+                }
+            }
+
+            if (contentWrapper.children.length > 0) {
+                headerElement.parentNode.insertBefore(contentWrapper, headerElement.nextSibling);
+                headerElement.classList.add('collapsible-header');
+                headerElement.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    headerElement.classList.toggle('open');
+                    if (headerElement.classList.contains('open')) {
+                        contentWrapper.style.maxHeight = contentWrapper.scrollHeight + 'px';
+                    } else {
+                        contentWrapper.style.maxHeight = '0px';
+                    }
+                });
+                // Recursively make content inside this new collapsible section also collapsible
+                makeCollapsible(contentWrapper);
+            }
+        }
+
+
         async function fetchAndDisplayFiles() {
             try {
                 const response = await fetch(GITHUB_API_URL);
-                if (!response.ok) {
-                    throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
-                }
+                if (!response.ok) throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
                 const files = await response.json();
                 postListUl.innerHTML = '';
-
                 let markdownFiles = files.filter(file => file.name.endsWith('.md') && file.type === 'file');
 
                 if (markdownFiles.length === 0) {
                     postListUl.innerHTML = '<li style="text-align: center; padding: 20px; font-family: var(--font-pixel);">No log entries found.</li>';
                     return;
                 }
-
-                // Sort files alphabetically descending by name (proxy for "most recent")
-                // e.g., Z-post.md will come before A-post.md
                 markdownFiles.sort((a, b) => b.name.localeCompare(a.name));
-
                 const autoOpenFileName = markdownFiles.length > 0 ? markdownFiles[0].name : null;
 
                 markdownFiles.forEach(file => {
                     const listItem = document.createElement('li');
                     listItem.className = 'post-item';
-
                     const header = document.createElement('div');
                     header.className = 'post-header';
                     header.textContent = file.name.replace(/\.md$/i, '').replace(/[-_]/g, ' ');
                     header.dataset.fileName = file.name;
                     header.dataset.downloadUrl = file.download_url;
 
-                    const contentWrapper = document.createElement('div');
-                    contentWrapper.className = 'post-content-wrapper';
-
+                    const contentWrapperOuter = document.createElement('div');
+                    contentWrapperOuter.className = 'post-content-wrapper';
                     const contentDiv = document.createElement('div');
                     contentDiv.className = 'post-content';
                     contentDiv.innerHTML = '<p class="loading">Awaiting transmission...</p>';
 
-                    contentWrapper.appendChild(contentDiv);
+                    contentWrapperOuter.appendChild(contentDiv);
                     listItem.appendChild(header);
-                    listItem.appendChild(contentWrapper);
+                    listItem.appendChild(contentWrapperOuter);
                     postListUl.appendChild(listItem);
 
-                    const expandItem = async () => {
-                        // Accordion: Close other open items
-                        if (currentlyOpenItem && currentlyOpenItem !== listItem) {
+                    const expandItem = async (isAutoOpen = false) => {
+                        if (!isAutoOpen && currentlyOpenItem && currentlyOpenItem !== listItem) {
                             currentlyOpenItem.querySelector('.post-header').classList.remove('active');
                             currentlyOpenItem.querySelector('.post-content-wrapper').style.maxHeight = '0px';
                         }
-
                         header.classList.add('active');
                         currentlyOpenItem = listItem;
 
                         if (contentCache.has(file.name)) {
                             contentDiv.innerHTML = contentCache.get(file.name);
+                            makeCollapsible(contentDiv); // Re-apply collapsible logic to cached content
                         } else {
                             contentDiv.innerHTML = '<p class="loading">Receiving data...</p>';
+                            contentWrapperOuter.style.maxHeight = '100px'; // Temp height during load
                             try {
                                 const mdResponse = await fetch(file.download_url);
                                 if (!mdResponse.ok) throw new Error(`Connection unstable: ${mdResponse.status}`);
@@ -339,58 +372,46 @@
                                 const htmlContent = marked.parse(markdownText);
                                 contentCache.set(file.name, htmlContent);
                                 contentDiv.innerHTML = htmlContent;
+                                makeCollapsible(contentDiv); // Apply collapsible logic after fetching
                             } catch (err) {
-                                console.error('Error fetching/rendering MD:', err);
                                 const errorHtml = `<p class="error">Transmission error: ${err.message}.</p>`;
                                 contentDiv.innerHTML = errorHtml;
                             }
                         }
-                        // Set max-height after content is set
                         setTimeout(() => {
                             if(header.classList.contains('active')) {
-                                 contentWrapper.style.maxHeight = contentDiv.scrollHeight + "px";
+                                 contentWrapperOuter.style.maxHeight = contentDiv.scrollHeight + "px";
                             }
-                        }, 50);
+                        }, 100); // Increased delay for complex content rendering
                     };
 
                     header.addEventListener('click', async () => {
                         const isActive = header.classList.contains('active');
                         if (isActive) {
                             header.classList.remove('active');
-                            contentWrapper.style.maxHeight = '0px';
-                            currentlyOpenItem = null;
+                            contentWrapperOuter.style.maxHeight = '0px';
+                            if (currentlyOpenItem === listItem) currentlyOpenItem = null;
                         } else {
                             await expandItem();
                         }
                     });
 
-                    // Auto-open the "most recent" post
                     if (file.name === autoOpenFileName) {
-                        // Use a timeout to ensure this runs after the current event loop cycle,
-                        // allowing all elements to be in the DOM and event listeners attached.
-                        // Also, to ensure the expandItem logic doesn't conflict with manual clicks.
-                        setTimeout(() => expandItem(), 100);
+                        setTimeout(() => expandItem(true), 200); // Slight delay for auto-open
                     }
                 });
-
             } catch (error) {
                 console.error('Error fetching file list:', error);
                 postListUl.innerHTML = `<li style="text-align: center; padding: 20px; font-family: var(--font-pixel);" class="error">System error: ${error.message}</li>`;
             }
         }
 
-        // Initialize
         if (typeof marked === 'undefined') {
             postListUl.innerHTML = `<li style="text-align: center; padding: 20px; font-family: var(--font-pixel);" class="error">CRITICAL: Marked.js library offline.</li>`;
         } else {
-            marked.setOptions({
-                gfm: true,
-                breaks: true,
-                sanitize: false,
-            });
+            marked.setOptions({ gfm: true, breaks: true, sanitize: false });
             fetchAndDisplayFiles();
         }
     </script>
-
 </body>
 </html>
