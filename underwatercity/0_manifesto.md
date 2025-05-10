@@ -1,12 +1,12 @@
 # Path to an Underwater Future: Near-Term Focus & Long-Term Vision
 
-My immediate focus for this month (May 2025) is to prepare and sell my van. The proceeds and freed-up time will support my move to Key Largo, where I plan to immerse myself in the diving community, get involved with underwater habitat projects, and take scuba and dance classes at the local community college. This is a foundational step towards my ultimate goal of building an underwater city.
+My immediate focus for this month (May 2025) is to design and build out a complete interior for my van to make it highly sellable. This is a significant project that will be my top priority. In parallel, I will be researching opportunities in Key Largo (diving, underwater habitat involvement, scuba/dance classes) to prepare for my next steps once the van is sold. The van sale will fund this transition, which is a foundational step towards my ultimate goal of building an underwater city.
 
 ## The Ultimate Goal: Building an Underwater City
 
 Preliminary plans for building an underwater city.
 
-1.  **Generate significant capital to acquire necessary resources:** Initially, this will involve strategic life changes (like selling the van and relocating to a hub for marine activities). Longer-term, this could involve mapping the Ocean with ROVs.
+1.  **Generate significant capital to acquire necessary resources:** Initially, this will involve strategic life changes (like building out and selling the van, then relocating to a hub for marine activities). Longer-term, this could involve mapping the Ocean with ROVs.
 2.  **Build human submarine modules:** These will be capable of ocean exploration, science, and permanent habitation.
 3.  **Live full time underwater:** Explore the new frontier of the underwater world!
 
@@ -17,122 +17,93 @@ Preliminary plans for building an underwater city.
 ---
 
 <details>
-<summary>Year 27 (2025): Relocate to Key Largo, Dive In, and Sell Van</summary>
+<summary>Year 27 (2025): Van Interior Build & Sale, Prepare for Key Largo</summary>
 
-**Primary Focus:** Successfully sell the van to fund relocation. Move to Key Largo and establish connections. Begin diving, investigate underwater habitat projects, and enroll in scuba and dance classes at a local community college.
+**Primary Focus:** Design and execute a full interior build-out for the van to maximize its sale value. Successfully sell the van.
 
-**Secondary Focus (Time Permitting):** Continue preliminary research and community building for the long-range ROV and underwater city concept (e.g., Discord, Twitter).
+**Secondary Focus (Concurrent):** Thoroughly research and plan for relocation to Key Largo, including identifying diving opportunities, underwater habitat projects, and relevant community college courses (scuba, dance).
+
+**Tertiary Focus (Time Permitting):** Continue preliminary research and community building for the long-range ROV and underwater city concept (e.g., Discord, Twitter).
 
 <details>
-<summary>May 2025: Van Sale and Key Largo Preparation</summary>
+<summary>May 2025: Intensive Van Interior Build & Key Largo Research</summary>
 
 **Overall Goals for May:**
-* Successfully prepare and list the van for sale.
-* Thoroughly research and identify opportunities in Key Largo for diving, underwater habitat involvement, and community college classes (scuba, dance).
-* Finalize the sale of the van if a suitable offer is made.
+* **Van:** Finalize interior design, procure materials, and make significant progress on the van build (framing, insulation, paneling, basic structures). Aim to have the van ready for finishing touches by month-end.
+* **Key Largo:** Conduct comprehensive research into Key Largo opportunities, making initial contacts and gathering information for a potential move post-van sale.
 
 <details>
 <summary>Week ending May 11, 2025 (Rest of This Weekend)</summary>
 
 - **Saturday, May 10, 2025 (Today):**
-    - **Van:** Begin thorough cleaning and decluttering of the van. Create a detailed list of any necessary minor repairs or enhancements to maximize sale value.
-    - **Key Largo Research:** Conduct initial online searches for:
-        - Dive centers and PADI/NAUI instructors in Key Largo.
-        - Community colleges in or near Key Largo and their general course catalogs.
+    - **Van (Priority):** Begin detailed design of the van interior layout. Research build styles, materials (e.g., wood types, insulation, flooring, hardware), and create a comprehensive budget. Measure interior dimensions accurately. Develop a preliminary materials list.
+    - **Key Largo Research (Secondary):** Conduct initial online searches for dive centers, community colleges (course catalogs for scuba/dance), and general information about living in Key Largo.
 - **Sunday, May 11, 2025:**
-    - **Van:** Continue van clean-up and organization. Start taking high-quality photos for the sales listing.
-    - **Key Largo Research:**
-        - Investigate specific scuba diving course offerings (beginner to advanced, specialties) and dance class options (styles, schedules) at identified Key Largo community colleges.
-        - Search for marine conservation groups, underwater habitat restoration projects, or related volunteer opportunities in the Florida Keys.
+    - **Van (Priority):** Finalize van interior design plans and materials list. Start sourcing materials (online orders, identify local suppliers). If feasible, begin any necessary demolition of existing van interior or prepare surfaces for the new build.
+    - **Key Largo Research (Secondary):** Broad search for marine conservation groups, underwater habitat restoration projects, or related volunteer opportunities in the Florida Keys.
 
 </details>
 
 <details>
-<summary>Week of May 12–18, 2025</summary>
+<summary>Week of May 12–18, 2025 (Van Build Phase 1: Prep, Framing & Insulation)</summary>
 
-- **Monday, May 12:**
-    - **Van:** Address any identified minor repairs on the van. Start drafting the sales listing (description, features, price).
-    - **Key Largo (Diving):** Compile a list of dive shops in Key Largo; note down contact info and any advertised courses or job opportunities.
-- **Tuesday, May 13:**
-    - **Van:** Refine van sales listing. Research best platforms to sell your type of van (e.g., RV Trader, Facebook Marketplace, Craigslist).
-    - **Key Largo (Underwater Habitat):** Identify 2-3 promising underwater habitat projects or marine conservation organizations. Draft initial emails to inquire about involvement or volunteer opportunities.
-- **Wednesday, May 14:**
-    - **Van:** Finalize and post van sales listing on chosen platforms.
-    - **Key Largo (Community College):** For identified colleges, check admission requirements, application deadlines for Fall/Summer semesters, and registration process for scuba and dance classes.
-- **Thursday, May 15:**
-    - **Van:** Respond to inquiries about the van. Prepare for potential viewings.
-    - **Key Largo (Diving):** Begin contacting selected Key Largo dive shops via phone or email to inquire about courses, dive community, and potential part-time work or internships.
-- **Friday, May 16:**
-    - **Van:** Schedule and conduct van viewings.
-    - **Key Largo (Underwater Habitat):** Send out inquiry emails to habitat projects/organizations.
-- **Saturday, May 17:**
-    - **Van:** Continue managing van sale process.
-    - **Key Largo (Community College):** Create a comparison chart for community college options based on course availability, cost, and location.
-- **Sunday, May 18:**
-    - **Review weekly progress:** Assess van sale interest and Key Largo research. Plan next week's tasks accordingly.
+- **Van (Primary Focus Daily):**
+    - **Monday-Wednesday:** Procure initial batch of materials. Complete any remaining demolition/prep. Begin constructing the interior framework (e.g., for bed, storage, kitchenette if planned). Start installing insulation.
+    - **Thursday-Friday:** Continue framing and insulation. If electrical wiring is part of the plan, begin rough-in (consult resources if inexperienced).
+    - **Saturday-Sunday:** Aim to complete primary framing, insulation, and any sub-flooring. Double-check all measurements and structural integrity.
+- **Key Largo Research (Evening/Breaks):**
+    - Compile a detailed list of dive shops in Key Largo with contact info, course offerings, and potential job/internship notes.
+    - Identify 2-3 specific underwater habitat projects or marine conservation organizations that seem like a good fit.
+    - Investigate community college admission requirements, application deadlines (Summer/Fall), and registration processes for scuba and dance classes.
 
 </details>
 
 <details>
-<summary>Week of May 19–25, 2025</summary>
+<summary>Week of May 19–25, 2025 (Van Build Phase 2: Paneling, Flooring & Basic Structures)</summary>
 
-- **Monday, May 19:**
-    - **Van:** Follow up with potential buyers. Negotiate offers if applicable.
-    - **Key Largo (Diving/Habitat):** Follow up on any communications with dive shops or habitat organizations if no response received.
-- **Tuesday, May 20:**
-    - **Van:** If an offer is accepted, begin the process of transferring ownership (paperwork, payment).
-    - **Key Largo (Community College):** If enrollment periods are open and decisions made, begin application process for chosen college courses.
-- **Wednesday, May 21:**
-    - **Focus:** Continue with van sale logistics or actively marketing if still available.
-    - **Key Largo:** Research accommodation options in Key Largo (short-term and long-term rentals).
-- **Thursday, May 22:**
-    - **Focus:** Manage van sale.
-    - **Key Largo:** Look into cost of living in Key Largo (groceries, transportation, etc.).
-- **Friday, May 23:**
-    - **Focus:** Aim to finalize van sale by end of week/month.
-    - **Key Largo:** Start outlining a preliminary budget for living in Key Largo.
-- **Saturday, May 24 - Sunday, May 25:**
-    - **Van:** Final push for van sale if not yet completed.
-    - **Key Largo:** Consolidate all research on Key Largo. Develop a checklist for relocation if the van sale is successful and Key Largo seems viable.
+- **Van (Primary Focus Daily):**
+    - **Monday-Wednesday:** Begin installing wall and ceiling paneling. Install chosen flooring material.
+    - **Thursday-Friday:** Start building out fixed structures based on your design (e.g., bed platform, galley cabinets, seating/storage units).
+    - **Saturday-Sunday:** Continue assembly of interior structures. Ensure everything is securely fastened.
+- **Key Largo Research (Evening/Breaks):**
+    - Draft initial inquiry emails to selected dive shops and habitat projects/organizations in Key Largo.
+    - Compare community college options based on course specifics (scuba certifications offered, dance styles, schedules), costs, and campus location/accessibility.
 
 </details>
 
 <details>
-<summary>Week of May 26–31, 2025 (Last Week of May)</summary>
+<summary>Week of May 26–31, 2025 (Van Build Phase 3: Major Construction Nearing Completion)</summary>
 
-- **Monday, May 26 (Memorial Day):**
-    - **Van:** Complete sale paperwork if a deal is reached.
-    - **Key Largo:** Draft a timeline for a potential move to Key Largo based on research and van sale status.
-- **Tuesday, May 27:**
-    - **Transition Planning:** If van is sold, focus on logistics for moving belongings and yourself.
-    - **Key Largo:** Confirm course registration details if applications were submitted.
-- **Wednesday, May 28:**
-    - **Transition Planning/Contingency:** If van not sold, reassess sales strategy. If sold, continue planning move.
-    - **Key Largo:** Network online with any contacts made in Key Largo (dive shops, college groups if available).
-- **Thursday, May 29:**
-    - **Focus:** Packing/arranging transport or revising van sale approach.
-- **Friday, May 30:**
-    - **Key Largo:** Set concrete goals for your first month in Key Largo (e.g., complete X dives, enroll in Y, visit Z marine centers).
-- **Saturday, May 31:**
-    - **Review Month:** Assess achievements regarding van sale and Key Largo planning. Prepare for June.
+- **Van (Primary Focus Daily):**
+    - **Monday (Memorial Day) - Wednesday:** Continue with construction of larger interior components. Focus on completing the main build elements. Address any complex assembly tasks.
+    - **Thursday-Friday:** Work on integrating elements. Start planning for finishing touches (paint, stain, hardware) for early June.
+    - **Saturday:** Assess progress. Make a list of remaining tasks for the build completion (likely early June). Organize tools and materials.
+- **Key Largo Research (Evening/Breaks):**
+    - Send out inquiry emails to Key Largo contacts if not already done. Follow up if no response after a reasonable time.
+    - Consolidate all Key Largo research. Start outlining a preliminary budget and checklist for relocation, contingent on van sale.
 
 </details>
 
 </details>
 
 <details>
-<summary>June 2025: Transition to Key Largo and Immersion</summary>
+<summary>June 2025: Complete Van Build, Sell Van, Transition to Key Largo</summary>
 
-- **If van sold & Key Largo plan is a go:**
-    - Execute move to Key Largo.
-    - Secure accommodation.
-    - Enroll in and begin scuba and dance classes at the local community college.
-    - Actively engage with local dive shops and seek opportunities to dive regularly.
-    - Begin involvement (volunteering, internships, etc.) with an underwater habitat or marine conservation project.
-- **If van not sold or Key Largo plan delayed:**
+- **Van Build & Sale (First 1-2 Weeks Estimated):**
+    - Complete all finishing touches on the van interior (sanding, painting/staining, installing hardware, fixtures, final cleaning).
+    - Take high-quality photos and create a compelling sales listing.
+    - List van for sale on multiple platforms. Manage inquiries and showings.
+    - Negotiate and finalize sale, including all paperwork.
+- **Key Largo Transition (Latter Half of June, contingent on van sale):**
+    - Once van is sold and funds are available:
+        - Execute move to Key Largo.
+        - Secure short-term accommodation upon arrival.
+        - Visit community college, dive shops, and habitat organizations in person based on prior research.
+        - Enroll in and begin scuba and dance classes if timelines align.
+        - Start actively diving and engaging with the local marine community.
+- **If van sale or Key Largo plan is delayed:**
     - Continue efforts to sell the van.
-    - Re-evaluate Key Largo plan or explore alternative locations/strategies.
-    - Continue skill development relevant to long-term goals (online courses, local workshops if applicable).
+    - Refine Key Largo plans or explore alternative strategies.
 
 </details>
 
@@ -140,7 +111,7 @@ Preliminary plans for building an underwater city.
 <summary>July 2025</summary>
 
 - **Assuming in Key Largo:**
-    - Continue coursework (scuba, dance).
+    - Fully immerse in coursework (scuba, dance).
     - Deepen involvement in diving and underwater habitat projects.
     - Explore the local marine environment extensively.
     - Begin networking for future ROV/underwater city project with local experts.
@@ -175,7 +146,7 @@ Preliminary plans for building an underwater city.
 <details>
 <summary>Year 28 (2026): Deepen Marine Expertise & ROV Development</summary>
 
-- **Focus:** Leverage Key Largo experience to inform ROV design. Begin practical ROV development (potentially starting with smaller, more manageable projects or kits if CNC/Welding skills are still developing).
+- **Focus:** Leverage Key Largo experience to inform ROV design. Begin practical ROV development (potentially starting with smaller, more manageable projects or kits if CNC/Welding skills are still developing, or by finding collaborators).
 - Set up mapping missions (even small scale, local).
 - Develop autonomy algorithms (theoretical or simulated initially).
 - Collect and analyze data for new frontiers.
