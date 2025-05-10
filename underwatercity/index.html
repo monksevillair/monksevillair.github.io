@@ -3,20 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Underwater City Archives - Advanced Collapse</title>
+    <title>Underwater City Archives - Deep Dive Planner</title>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
-        /* ... (Keep existing styles from previous version, then add/modify for collapsibles) ... */
         :root {
-            /* ... (Keep existing color vars) ... */
+            /* Pastel Pixel Art Palette */
+            --sky-top: #b3e5fc; /* Light Pastel Sky Blue */
+            --sky-bottom: #e1f5fe; /* Lighter Pastel Sky Blue */
+            --sun-core: #fff59d; /* Pastel Yellow */
+            --sun-glow: rgba(255, 249, 196, 0.5);
+
+            --water-surface: #81d4fa; /* Bright Pastel Cyan */
+            --water-interface-highlight: #e0f7fa;
+            --water-shallows: #4fc3f7; /* Medium Pastel Blue */
+            --water-mid: #29b6f6;
+            --water-deep: #039be5;
+            --water-abyss: #01579b;
+            --water-abyss-darker: #003c6c;
+
+            --habitat-light-strong: #fffde7;
+            --habitat-light-glow: rgba(255, 253, 231, 0.6);
+            --habitat-structure: #bdbdbd;
+            --habitat-structure-dark: #757575;
+
+            --text-light: #f5f5f5;
+            --text-dark: #263238;
+            --text-link: #ffecb3;
+            --text-link-hover: #fff9c4;
+
             --font-pixel: 'Press Start 2P', 'Courier New', Courier, monospace;
             --font-main: 'Verdana', sans-serif;
         }
 
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-
-        body { /* Keep previous body styles */
+        body {
             margin: 0;
             font-family: var(--font-main);
             color: var(--text-light);
@@ -24,140 +45,251 @@
             position: relative;
         }
 
-        .background-layers { /* Keep previous styles */
+        /* --- Layered SCROLLING Background --- */
+        .background-layers {
             position: absolute; top: 0; left: 0; width: 100%;
             z-index: -1; overflow: hidden;
         }
-        .bg-sky { position: relative; width: 100%; height: 40vh; background: linear-gradient(to bottom, var(--sky-top), var(--sky-bottom)); }
+        .bg-sky {
+            position: relative; width: 100%; height: 40vh;
+            background: linear-gradient(to bottom, var(--sky-top), var(--sky-bottom));
+        }
         .bg-sun {
             position: absolute; top: 5vh; left: 15%; width: 80px; height: 80px;
             background-color: var(--sun-core); border-radius: 0;
-            box-shadow: 0 0 0 10px var(--sun-core), 0 0 20px 20px var(--sun-glow), 0 -60px 0 -20px var(--sun-core), 0 60px 0 -20px var(--sun-core), -60px 0 0 -20px var(--sun-core), 60px 0 0 -20px var(--sun-core);
+            box-shadow: 0 0 0 10px var(--sun-core), 0 0 20px 20px var(--sun-glow),
+                        0 -60px 0 -20px var(--sun-core), 0 60px 0 -20px var(--sun-core),
+                        -60px 0 0 -20px var(--sun-core), 60px 0 0 -20px var(--sun-core);
         }
-        .bg-cloud { position: absolute; background-color: #ffffff; border-radius: 0; box-shadow: 3px 3px 0px var(--sky-bottom); }
+        .bg-cloud {
+            position: absolute; background-color: #ffffff; border-radius: 0;
+            box-shadow: 3px 3px 0px var(--sky-bottom);
+        }
         .bg-cloud-1 { top: 10vh; left: 60%; width: 100px; height: 30px; }
-        .bg-cloud-1::before { content:''; position:absolute; top:-10px; left:20px; width:60px; height:30px; background: #fff; box-shadow: 3px 3px 0px var(--sky-bottom); }
+        .bg-cloud-1::before {
+            content:''; position:absolute; top:-10px; left:20px; width:60px; height:30px;
+            background: #fff; box-shadow: 3px 3px 0px var(--sky-bottom);
+        }
         .bg-cloud-2 { top: 15vh; left: 30%; width: 120px; height: 40px; }
         .bg-water-gradient {
-            position: relative; width: 100%; height: 3000px;
-            background: linear-gradient(to bottom, var(--water-surface) 0%, var(--water-shallows) 15%, var(--water-mid) 30%, var(--water-deep) 50%, var(--water-abyss) 75%, var(--water-abyss-darker) 100%);
-            margin-top: -2px;
+            position: relative; width: 100%; height: 3000px; /* Tall for scrolling */
+            background: linear-gradient(to bottom, var(--water-surface) 0%,
+                        var(--water-shallows) 15%, var(--water-mid) 30%,
+                        var(--water-deep) 50%, var(--water-abyss) 75%,
+                        var(--water-abyss-darker) 100%);
+            margin-top: -2px; /* Overlap sky slightly */
         }
-        .bg-habitat { position: absolute; background-color: var(--habitat-structure); border-radius: 0; box-shadow: 5px 5px 0px var(--habitat-structure-dark); }
+        .bg-habitat {
+            position: absolute; background-color: var(--habitat-structure);
+            border-radius: 0; box-shadow: 5px 5px 0px var(--habitat-structure-dark);
+        }
         .bg-habitat::before {
-            content: ''; position: absolute; width: 20px; height: 20px; background-color: var(--habitat-light-strong);
-            border-radius: 0; box-shadow: 0 0 15px 10px var(--habitat-light-glow), inset 0 0 5px var(--sun-core);
+            content: ''; position: absolute; width: 20px; height: 20px;
+            background-color: var(--habitat-light-strong); border-radius: 0;
+            box-shadow: 0 0 15px 10px var(--habitat-light-glow), inset 0 0 5px var(--sun-core);
         }
-        .habitat-1 { top: 70vh; left: 10%; width: 150px; height: 80px; } .habitat-1::before { top: 10px; left: 10px; }
-        .habitat-2 { top: 120vh; left: 70%; width: 120px; height: 100px; } .habitat-2::before { bottom: 15px; right: 15px; width:30px; height:30px;}
-        .habitat-3 { top: 180vh; left: 25%; width: 200px; height: 60px; opacity: 0.8; } .habitat-3::before { top: 50%; left: 50%; transform: translate(-50%, -50%); }
-        .habitat-4 { top: 250vh; left: 50%; width: 100px; height: 100px; opacity: 0.6; } .habitat-4::before { top: 5px; left: 5px; }
+        .habitat-1 { top: 70vh; left: 10%; width: 150px; height: 80px; }
+        .habitat-1::before { top: 10px; left: 10px; }
+        .habitat-2 { top: 120vh; left: 70%; width: 120px; height: 100px; }
+        .habitat-2::before { bottom: 15px; right: 15px; width:30px; height:30px;}
+        .habitat-3 { top: 180vh; left: 25%; width: 200px; height: 60px; opacity: 0.8; }
+        .habitat-3::before { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .habitat-4 { top: 250vh; left: 50%; width: 100px; height: 100px; opacity: 0.6; }
+        .habitat-4::before { top: 5px; left: 5px; }
 
-        .main-container { /* Keep previous styles */
+        /* --- Main Content Area --- */
+        .main-container {
             max-width: 700px; margin: 0 auto; padding: 15vh 20px 50px 20px;
             position: relative; z-index: 1; min-height: 100vh;
         }
-        .page-title { /* Keep previous styles */
-            font-family: var(--font-pixel); text-align: center; font-size: 2em; color: var(--sun-core);
+        .page-title {
+            font-family: var(--font-pixel); text-align: center; font-size: 2em;
+            color: var(--sun-core);
             text-shadow: 2px 2px 0px var(--water-abyss-darker), 4px 4px 0px var(--habitat-structure-dark);
             margin-bottom: 40px; padding: 15px; background-color: rgba(1, 87, 155, 0.5);
             border: 3px solid var(--water-mid); border-radius: 0;
         }
 
         .post-list { list-style: none; padding: 0; }
-        .post-item { /* Keep previous styles */
+        .post-item {
             margin-bottom: 15px; border-radius: 0; border: 2px solid var(--water-deep);
-            background-color: rgba(3, 155, 229, 0.3); box-shadow: 3px 3px 0px rgba(1, 87, 155, 0.7);
-            overflow: hidden;
+            background-color: rgba(3, 155, 229, 0.3);
+            box-shadow: 3px 3px 0px rgba(1, 87, 155, 0.7); overflow: hidden;
         }
-        .post-header { /* Keep previous styles */
+        .post-header {
             padding: 12px 18px; cursor: pointer; background-color: rgba(2, 119, 189, 0.6);
             color: var(--text-light); font-size: 1.1em; font-family: var(--font-pixel);
             display: flex; justify-content: space-between; align-items: center;
             transition: background-color 0.2s; border-bottom: 2px solid transparent;
         }
         .post-header:hover { background-color: rgba(3, 169, 244, 0.7); }
-        .post-header.active { background-color: rgba(79, 195, 247, 0.7); border-bottom-color: var(--water-shallows); }
-        .post-header::after { content: '[+]'; font-family: var(--font-pixel); font-size: 1em; color: var(--sun-core); margin-left: 10px; }
+        .post-header.active {
+            background-color: rgba(79, 195, 247, 0.7);
+            border-bottom-color: var(--water-shallows);
+        }
+        .post-header::after {
+            content: '[+]'; font-family: var(--font-pixel); font-size: 1em;
+            color: var(--sun-core); margin-left: 10px;
+        }
         .post-header.active::after { content: '[-]'; }
 
-        .post-content-wrapper { /* Keep previous styles */
+        .post-content-wrapper {
             max-height: 0; overflow: hidden; transition: max-height 0.5s ease-in-out;
-            background-color: rgba(1, 87, 155, 0.4); border-top: 2px dashed var(--water-mid);
+            background-color: rgba(1, 87, 155, 0.4);
+            border-top: 2px dashed var(--water-mid);
         }
         .post-content { padding: 15px 20px; color: var(--text-light); line-height: 1.7; }
-        .post-content.loading, .post-content.error { text-align: center; font-style: italic; padding: 25px 15px; font-family: var(--font-pixel); }
+        .post-content.loading, .post-content.error {
+            text-align: center; font-style: italic; padding: 25px 15px;
+            font-family: var(--font-pixel);
+        }
         .post-content.error { color: #ffcdd2; background-color: rgba(176, 0, 32, 0.4); }
 
         /* Styles for collapsible sections within post-content */
-        .collapsible-header {
+        .collapsible-header { /* General style for any collapsible trigger */
             cursor: pointer;
-            padding: 8px 10px;
-            margin-top: 10px;
-            background-color: rgba(79, 195, 247, 0.2); /* Lighter than post header */
-            border: 1px solid var(--water-shallows);
+            padding: 6px 8px;
+            margin-top: 8px;
+            margin-bottom: 2px; /* Space before its content block starts */
+            border: 1px solid var(--water-mid);
             border-radius: 0;
             font-family: var(--font-pixel);
-            font-size: 0.9em;
             color: var(--text-link-hover);
-            display: block; /* Make it block for easier styling */
+            display: block;
+            position: relative;
         }
         .collapsible-header:hover {
-            background-color: rgba(79, 195, 247, 0.4);
+            border-color: var(--water-shallows);
+            background-color: rgba(79, 195, 247, 0.1);
         }
         .collapsible-header::before {
             content: '[+] ';
             font-family: var(--font-pixel);
+            margin-right: 5px;
+            color: var(--sun-core);
         }
         .collapsible-header.open::before {
             content: '[-] ';
         }
+
+        /* Styling for H3 (Age) when it's a collapsible header */
+        .post-content h3.collapsible-header.level-0 {
+            font-size: 1.1em;
+            background-color: rgba(79, 195, 247, 0.3);
+            padding: 10px 12px;
+        }
+        /* Styling for list items converted to collapsible headers */
+        .list-item-collapsible-header { /* This class is added by JS */
+            font-size: 1em;
+            /* background-color: rgba(2, 119, 189, 0.3); */ /* Base for list items if needed */
+        }
+        .list-item-collapsible-header.level-1 { /* Month */
+            background-color: rgba(2, 119, 189, 0.35);
+            font-size: 1em;
+        }
+        .list-item-collapsible-header.level-2 { /* Week */
+            background-color: rgba(2, 119, 189, 0.25);
+            margin-left: 15px;
+            font-size: 0.95em;
+        }
+        .list-item-collapsible-header.level-3 { /* Day */
+            background-color: rgba(2, 119, 189, 0.20);
+            margin-left: 30px;
+            font-size: 0.9em;
+        }
+
         .collapsible-content {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.4s ease-in-out;
-            padding-left: 20px; /* Indent content */
-            border-left: 2px dashed var(--water-mid);
-            margin-left: 5px; /* Align with header padding */
-            margin-bottom: 5px;
+            /* border-left: 1px dashed var(--water-deep); */ /* Optional visual cue */
+            /* margin-left controls base indent for content of H3 */
+        }
+         /* Indentation for content based on the level of its header */
+        .collapsible-header.level-0 + .collapsible-content {
+            padding-left: 10px;
+        }
+        .collapsible-header.level-1 + .collapsible-content { /* Content of Month */
+            padding-left: 15px; /* Further indent for week headers */
+        }
+        .collapsible-header.level-2 + .collapsible-content { /* Content of Week */
+            padding-left: 15px; /* Further indent for day headers */
+        }
+        .collapsible-header.level-3 + .collapsible-content { /* Content of Day */
+            padding-left: 15px; /* Content under a day */
+            border-left: 1px solid var(--water-mid); /* Example fine detail */
         }
 
-        /* Markdown Content Styling (some might be overridden by collapsible styling) */
-        .post-content h1, .post-content h2 { /* Main headings in MD */
+        /* Remove default list styling from lists that are now part of the collapsible structure */
+        .post-content ul, .post-content ol {
+            /* padding-left: 25px; Default padding */
+        }
+        .post-content .collapsible-content ul,
+        .post-content .collapsible-content ol {
+             list-style-type: none; /* Remove bullets from lists that primarily contain more collapsibles */
+             padding-left: 0; /* Let the .collapsible-header margins handle indent */
+        }
+         /* Keep bullets for simple lists not acting as collapsible containers */
+        .post-content .collapsible-content .collapsible-content ul,
+        .post-content .collapsible-content .collapsible-content ol {
+            list-style-type: disc; /* Or revert to default */
+            padding-left: 20px; /* Standard indent for actual content lists */
+        }
+        .post-content .collapsible-content li > p { /* Paragraphs inside list items that are part of day's content */
+            margin-left: 5px;
+        }
+
+
+        /* Markdown Content Styling */
+        .post-content h1, .post-content h2 {
             font-family: var(--font-pixel); color: var(--text-link-hover);
             border-bottom: 2px solid var(--water-shallows); padding-bottom: 0.2em;
-            margin-top: 1.2em; margin-bottom: 0.8em; text-shadow: 1px 1px 0 var(--water-abyss-darker);
+            margin-top: 1.2em; margin-bottom: 0.8em;
+            text-shadow: 1px 1px 0 var(--water-abyss-darker);
         }
-        /* H3, H4, etc., if used as collapsible headers, will be styled by .collapsible-header */
-        .post-content h3.collapsible-header,
-        .post-content h4.collapsible-header,
-        .post-content div.collapsible-header /* For custom list-item based collapsibles */
-        {
-            font-size: 1em; /* Adjust as needed */
-            margin-bottom: 0;
-        }
-
         .post-content p { margin-bottom: 1em; }
-        .post-content a { color: var(--text-link); text-decoration: underline; text-decoration-style: dashed; text-decoration-color: var(--water-shallows); }
+        .post-content a {
+            color: var(--text-link); text-decoration: underline;
+            text-decoration-style: dashed; text-decoration-color: var(--water-shallows);
+        }
         .post-content a:hover { color: var(--text-link-hover); background-color: rgba(79, 195, 247, 0.3); }
-        .post-content code { font-family: var(--font-pixel); background-color: rgba(0,0,0,0.3); padding: 0.2em 0.3em; font-size: 0.9em; border: 1px solid var(--water-deep); color: #80deea; }
-        .post-content pre { font-family: var(--font-pixel); background-color: rgba(0,0,0,0.4); padding: 10px; border: 2px solid var(--water-deep); overflow-x: auto; font-size: 0.85em; box-shadow: inset 2px 2px 0px rgba(0,0,0,0.2); }
-        .post-content blockquote { border-left: 3px solid var(--text-link); padding-left: 10px; margin-left: 0; color: #cfd8dc; background-color: rgba(38, 50, 56, 0.3); font-style: italic; }
-        .post-content ul, .post-content ol { padding-left: 25px; }
+        .post-content code {
+            font-family: var(--font-pixel); background-color: rgba(0,0,0,0.3);
+            padding: 0.2em 0.3em; font-size: 0.9em; border: 1px solid var(--water-deep);
+            color: #80deea;
+        }
+        .post-content pre {
+            font-family: var(--font-pixel); background-color: rgba(0,0,0,0.4); padding: 10px;
+            border: 2px solid var(--water-deep); overflow-x: auto; font-size: 0.85em;
+            box-shadow: inset 2px 2px 0px rgba(0,0,0,0.2);
+        }
+        .post-content blockquote {
+            border-left: 3px solid var(--text-link); padding-left: 10px; margin-left: 0;
+            color: #cfd8dc; background-color: rgba(38, 50, 56, 0.3); font-style: italic;
+        }
         .post-content li { margin-bottom: 0.4em; }
         .post-content img {
-            max-width: 100%; height: auto; border: 2px solid var(--water-mid); margin-top:10px; margin-bottom:10px;
-            display: block; margin-left: auto; margin-right: auto; /* Center images */
+            max-width: 80%; height: auto; border: 2px solid var(--water-mid);
+            margin-top:15px; margin-bottom:15px; display: block;
+            margin-left: auto; margin-right: auto;
             image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges;
             box-shadow: 3px 3px 0px var(--habitat-structure-dark);
         }
-        .post-content table { border-collapse: collapse; width: auto; margin-bottom: 1em; border: 2px solid var(--water-deep);}
-        .post-content th, .post-content td { border: 1px solid var(--water-deep); padding: 6px 8px; font-size:0.9em}
-        .post-content th { background-color: rgba(3,155,229,0.4); font-family: var(--font-pixel); }
+        .post-content table {
+            border-collapse: collapse; width: auto; margin-bottom: 1em;
+            border: 2px solid var(--water-deep);
+        }
+        .post-content th, .post-content td {
+            border: 1px solid var(--water-deep); padding: 6px 8px; font-size:0.9em
+        }
+        .post-content th {
+            background-color: rgba(3,155,229,0.4); font-family: var(--font-pixel);
+        }
 
     </style>
 </head>
 <body>
+
     <div class="background-layers">
         <div class="bg-sky">
              <div class="bg-sun"></div>
@@ -181,118 +313,109 @@
     <script>
         const repoOwner = 'monksevillair';
         const repoName = 'monksevillair.github.io';
-        const directoryPath = 'underwatercity'; // Assuming your MD files are here
+        const directoryPath = 'underwatercity';
         const GITHUB_API_URL = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${directoryPath}`;
 
         const postListUl = document.getElementById('post-list-ul');
         const contentCache = new Map();
         let currentlyOpenItem = null;
 
-        function makeCollapsible(contentContainer) {
-            // Target H3 for "Age ##"
-            // Target LIs that start with "Month YYYY:", "Week ...", "Day ...", or bolded text for weeks/days
-            // This will depend heavily on the exact HTML structure produced by Marked.js from your Markdown.
-            // Let's assume the Markdown structure I proposed (H3 for Age, nested UL/LI for Month/Week/Day with **bold** headers)
 
-            const ageHeaders = contentContainer.querySelectorAll('h3'); // For "Age ##"
-            ageHeaders.forEach(ageHeader => {
-                if (ageHeader.textContent.toLowerCase().startsWith('age ')) {
-                    wrapNextElements(ageHeader, 'ul, ol, p, h4, h5, h6, div, table, blockquote, pre, hr');
+        function makeCollapsible(contentContainer, currentLevel = 0) {
+            // Process H3 elements first (e.g., "Age ##")
+            const h3Elements = Array.from(contentContainer.children).filter(el => el.tagName === 'H3');
+            h3Elements.forEach(h3 => {
+                if (!h3.classList.contains('collapsible-header-processed') && h3.textContent.toLowerCase().startsWith('age ')) {
+                    wrapNextElementsAndMakeCollapsible(h3, 'ul, ol, p, h4, h5, h6, div, table, blockquote, pre, hr', currentLevel);
+                    h3.classList.add('collapsible-header-processed');
                 }
             });
 
-            // For nested lists: find LIs whose first child is a STRONG element (for Month, Week)
-            // Or LIs whose text content starts with specific keywords
-            const listItems = contentContainer.querySelectorAll('li');
-            listItems.forEach(li => {
-                const firstChild = li.firstChild;
-                let headerTextNode = null;
-                let isCollapsibleListItem = false;
+            // Process top-level UL/OL elements within the current container for Months, Weeks, Days
+            const directLists = Array.from(contentContainer.children).filter(el => el.tagName === 'UL' || el.tagName === 'OL');
+            directLists.forEach(list => {
+                if (list.classList.contains('collapsible-list-processed')) return;
 
-                if (firstChild && firstChild.nodeName === 'STRONG') { // e.g., **May 2025:** or **Rest of This Week...**
-                    headerTextNode = firstChild;
-                    isCollapsibleListItem = true;
-                } else if (firstChild && firstChild.nodeType === Node.TEXT_NODE &&
-                           (firstChild.textContent.trim().match(/^(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{4}:/i) ||
-                            firstChild.textContent.trim().match(/^(Rest of This Week|Next Week|Following Week|Last Week of)/i) ||
-                            firstChild.textContent.trim().match(/^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday),\s+\w+\s+\d+(st|nd|rd|th)/i)
-                           )) {
-                     // Wrap the text node in a span to make it clickable if it's just text
-                     const span = document.createElement('span');
-                     span.textContent = firstChild.textContent;
-                     li.insertBefore(span, firstChild.nextSibling);
-                     li.removeChild(firstChild);
-                     headerTextNode = span;
-                     isCollapsibleListItem = true;
-                }
+                Array.from(list.children).filter(li => li.tagName === 'LI').forEach(li => {
+                    if (li.classList.contains('collapsible-item-processed')) return;
 
+                    let headerTextContent = '';
+                    let headerElementForLi = null; // This will be the div we create
+                    let originalHeaderMarker = null; // This is the <strong> or text node
 
-                if (isCollapsibleListItem && headerTextNode) {
-                    // Wrap the *subsequent* UL/OL within this LI, or subsequent sibling LIs if it's flat
-                    let contentToWrap = [];
-                    let nextElement = headerTextNode.nextSibling; // Start looking after the header text/strong
-                    while(nextElement) {
-                        if (nextElement.nodeName === 'UL' || nextElement.nodeName === 'OL') {
-                            contentToWrap.push(nextElement);
-                        }
-                        // If we encounter another LI at the same level, stop (unless it's a sub-list)
-                        // This logic gets tricky with mixed content.
-                        // Simpler: if there's a UL/OL directly inside the LI after the text, wrap that.
-                        nextElement = nextElement.nextSibling;
+                    // Scenario 1: LI starts with <strong> (for Weeks primarily)
+                    if (li.firstElementChild && li.firstElementChild.tagName === 'STRONG') {
+                        originalHeaderMarker = li.firstElementChild;
+                        headerTextContent = originalHeaderMarker.textContent.trim();
                     }
-                     // More robust: if the LI contains a UL/OL as a direct child (but not the first child)
-                    const nestedLists = Array.from(li.children).filter(child => child !== headerTextNode && (child.tagName === 'UL' || child.tagName === 'OL'));
+                    // Scenario 2: LI starts with text matching Month pattern (e.g., "May 2025:")
+                    else if (li.firstChild && li.firstChild.nodeType === Node.TEXT_NODE &&
+                             li.firstChild.textContent.trim().match(/^(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{4}:/i)) {
+                        originalHeaderMarker = li.firstChild; // The text node
+                        headerTextContent = originalHeaderMarker.textContent.trim();
+                    }
+                    // Scenario 3: LI starts with text like "* Friday, May 9th (Today):" (for Days)
+                    // Markdown parser might turn '*' into part of <em> or just text.
+                    // Let's assume the Markdown parser turns `*Friday...*` into `<em>Friday...</em>` or it's plain text
+                    else if ( (li.firstElementChild && li.firstElementChild.tagName === 'EM' && li.firstElementChild.textContent.trim().match(/\w+,\s+\w+\s+\d+(st|nd|rd|th)/i) ) ||
+                              (li.firstChild && li.firstChild.nodeType === Node.TEXT_NODE && li.firstChild.textContent.trim().match(/\w+,\s+\w+\s+\d+(st|nd|rd|th)/i))
+                            ) {
+                        originalHeaderMarker = li.firstElementChild || li.firstChild;
+                        headerTextContent = originalHeaderMarker.textContent.trim();
+                    }
 
 
-                    if (nestedLists.length > 0) {
-                        const collapsibleContent = document.createElement('div');
-                        collapsibleContent.className = 'collapsible-content';
-                        nestedLists.forEach(nl => collapsibleContent.appendChild(nl)); // Move nested lists into the wrapper
+                    if (headerTextContent) {
+                        // Check if this LI contains a nested UL/OL for its content
+                        const nestedLists = Array.from(li.children).filter(child => child !== originalHeaderMarker && (child.tagName === 'UL' || child.tagName === 'OL'));
 
-                        const newHeader = document.createElement('div'); // Use a div for the header
-                        newHeader.className = 'collapsible-header';
-                        // Move the original header text/strong into this new div
-                        while(headerTextNode.firstChild) newHeader.appendChild(headerTextNode.firstChild);
-                        if(headerTextNode.nodeType === Node.TEXT_NODE) newHeader.textContent = headerTextNode.textContent;
+                        if (nestedLists.length > 0) {
+                            headerElementForLi = document.createElement('div');
+                            headerElementForLi.className = `collapsible-header list-item-collapsible-header level-${currentLevel + 1}`;
+                            headerElementForLi.textContent = headerTextContent; // Use the extracted text
 
+                            const contentWrapperDiv = document.createElement('div');
+                            contentWrapperDiv.className = 'collapsible-content';
+                            nestedLists.forEach(nl => contentWrapperDiv.appendChild(nl));
 
-                        // Replace the original text node/strong with the new header div
-                        if (headerTextNode.parentNode === li) {
-                            li.insertBefore(newHeader, headerTextNode);
-                            if (headerTextNode.nodeName !== "SPAN") li.removeChild(headerTextNode); // if it was <strong>
-                            else if(newHeader !== headerTextNode) li.removeChild(headerTextNode); // if it was a text node we wrapped in span
-                        }
-
-
-                        li.appendChild(collapsibleContent); // Append content wrapper to the LI
-
-                        newHeader.addEventListener('click', (e) => {
-                            e.stopPropagation(); // Prevent parent collapsibles from toggling
-                            newHeader.classList.toggle('open');
-                            if (newHeader.classList.contains('open')) {
-                                collapsibleContent.style.maxHeight = collapsibleContent.scrollHeight + 'px';
-                            } else {
-                                collapsibleContent.style.maxHeight = '0px';
+                            // Restructure the LI:
+                            // 1. Remove original header marker (strong or text node)
+                            if (originalHeaderMarker.parentNode === li) {
+                                li.removeChild(originalHeaderMarker);
                             }
-                        });
-                        // Recursively make content inside this new collapsible section also collapsible
-                        makeCollapsible(collapsibleContent);
+                            // 2. Prepend the new header div
+                            li.insertBefore(headerElementForLi, li.firstChild);
+                            // 3. Append the content wrapper (which now contains the nested lists)
+                            li.appendChild(contentWrapperDiv);
+
+                            headerElementForLi.addEventListener('click', (e) => {
+                                e.stopPropagation();
+                                headerElementForLi.classList.toggle('open');
+                                contentWrapperDiv.style.maxHeight = headerElementForLi.classList.contains('open') ? contentWrapperDiv.scrollHeight + 'px' : '0px';
+                            });
+                            li.classList.add('collapsible-item-processed'); // Mark this LI as processed
+                            makeCollapsible(contentWrapperDiv, currentLevel + 1); // Recurse
+                        }
                     }
-                }
+                });
+                list.classList.add('collapsible-list-processed');
             });
         }
 
-
-        function wrapNextElements(headerElement, selectorsToWrap) {
+        function wrapNextElementsAndMakeCollapsible(headerElement, selectorsToWrap, level) {
             const contentWrapper = document.createElement('div');
             contentWrapper.className = 'collapsible-content';
             let sibling = headerElement.nextElementSibling;
 
             while (sibling) {
-                if (sibling.matches(selectorsToWrap) && !sibling.matches('h1, h2, h3')) { // Stop if another major header
-                    const nextSibling = sibling.nextElementSibling; // Store next before moving
+                // Stop if another H3 (potential 'Age' section) is encountered at the same level of DOM nesting
+                if (sibling.tagName === 'H3' && !headerElement.contains(sibling)) {
+                    break;
+                }
+                if (sibling.matches(selectorsToWrap)) {
+                    const nextSiblingStore = sibling.nextElementSibling;
                     contentWrapper.appendChild(sibling);
-                    sibling = nextSibling;
+                    sibling = nextSiblingStore;
                 } else {
                     break;
                 }
@@ -300,18 +423,13 @@
 
             if (contentWrapper.children.length > 0) {
                 headerElement.parentNode.insertBefore(contentWrapper, headerElement.nextSibling);
-                headerElement.classList.add('collapsible-header');
+                headerElement.classList.add('collapsible-header', `level-${level}`);
                 headerElement.addEventListener('click', (e) => {
                     e.stopPropagation();
                     headerElement.classList.toggle('open');
-                    if (headerElement.classList.contains('open')) {
-                        contentWrapper.style.maxHeight = contentWrapper.scrollHeight + 'px';
-                    } else {
-                        contentWrapper.style.maxHeight = '0px';
-                    }
+                    contentWrapper.style.maxHeight = headerElement.classList.contains('open') ? contentWrapper.scrollHeight + 'px' : '0px';
                 });
-                // Recursively make content inside this new collapsible section also collapsible
-                makeCollapsible(contentWrapper);
+                makeCollapsible(contentWrapper, level + 1);
             }
         }
 
@@ -328,7 +446,7 @@
                     postListUl.innerHTML = '<li style="text-align: center; padding: 20px; font-family: var(--font-pixel);">No log entries found.</li>';
                     return;
                 }
-                markdownFiles.sort((a, b) => b.name.localeCompare(a.name));
+                markdownFiles.sort((a, b) => b.name.localeCompare(a.name)); // Sort Z-A
                 const autoOpenFileName = markdownFiles.length > 0 ? markdownFiles[0].name : null;
 
                 markdownFiles.forEach(file => {
@@ -353,26 +471,31 @@
 
                     const expandItem = async (isAutoOpen = false) => {
                         if (!isAutoOpen && currentlyOpenItem && currentlyOpenItem !== listItem) {
-                            currentlyOpenItem.querySelector('.post-header').classList.remove('active');
-                            currentlyOpenItem.querySelector('.post-content-wrapper').style.maxHeight = '0px';
+                            if(currentlyOpenItem.querySelector('.post-header').classList.contains('active')){
+                                currentlyOpenItem.querySelector('.post-header').classList.remove('active');
+                                currentlyOpenItem.querySelector('.post-content-wrapper').style.maxHeight = '0px';
+                            }
                         }
                         header.classList.add('active');
                         currentlyOpenItem = listItem;
 
                         if (contentCache.has(file.name)) {
                             contentDiv.innerHTML = contentCache.get(file.name);
-                            makeCollapsible(contentDiv); // Re-apply collapsible logic to cached content
+                            makeCollapsible(contentDiv, 0); // Re-apply to cached content
                         } else {
                             contentDiv.innerHTML = '<p class="loading">Receiving data...</p>';
-                            contentWrapperOuter.style.maxHeight = '100px'; // Temp height during load
+                            contentWrapperOuter.style.maxHeight = '150px'; // Temp height during load
+
                             try {
                                 const mdResponse = await fetch(file.download_url);
                                 if (!mdResponse.ok) throw new Error(`Connection unstable: ${mdResponse.status}`);
                                 const markdownText = await mdResponse.text();
+                                // Ensure images in Markdown use relative paths like ./imagename.jpg if in same dir
+                                // Or adjust paths here if needed, e.g., by prepending the base path of the MD file
                                 const htmlContent = marked.parse(markdownText);
                                 contentCache.set(file.name, htmlContent);
                                 contentDiv.innerHTML = htmlContent;
-                                makeCollapsible(contentDiv); // Apply collapsible logic after fetching
+                                makeCollapsible(contentDiv, 0); // Apply after fetching
                             } catch (err) {
                                 const errorHtml = `<p class="error">Transmission error: ${err.message}.</p>`;
                                 contentDiv.innerHTML = errorHtml;
@@ -382,7 +505,7 @@
                             if(header.classList.contains('active')) {
                                  contentWrapperOuter.style.maxHeight = contentDiv.scrollHeight + "px";
                             }
-                        }, 100); // Increased delay for complex content rendering
+                        }, 150); // Increased delay for complex content rendering and collapsible processing
                     };
 
                     header.addEventListener('click', async () => {
@@ -397,7 +520,7 @@
                     });
 
                     if (file.name === autoOpenFileName) {
-                        setTimeout(() => expandItem(true), 200); // Slight delay for auto-open
+                        setTimeout(() => expandItem(true), 250);
                     }
                 });
             } catch (error) {
