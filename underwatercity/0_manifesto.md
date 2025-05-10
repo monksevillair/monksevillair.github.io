@@ -30,6 +30,7 @@ Rest of This Week (Week ending May 11th, 2025)
 
     Weekly Goal: Initiate ROV conceptualization by defining its core purpose and gather all necessary information and materials for your upcoming college courses.
         Friday, May 9th (Today): Draft a concise mission statement for your long-range ROV project, outlining its primary task (ocean floor mapping).
+          -> let's build street view, for the ocean! We want to see some money shots of hydrothermal vents
         Saturday, May 10th: Research and list 3-5 existing long-range ROVs, noting their key features, and confirm you have all required textbooks or access codes for your college courses.
         Sunday, May 11th: Sketch 2-3 very rough initial concepts for the ROV's overall shape and layout, and double-check the start date, time, and location for both college classes.
 
