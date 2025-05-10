@@ -33,18 +33,79 @@ Preliminary plans for building an underwater city.
 * **Key Largo:** Conduct comprehensive research into Key Largo opportunities, making initial contacts and gathering information for a potential move post-van sale.
 
 <details>
+<summary>Van Renovation Resources (Salvage, Tools & Materials)</summary>
+
+**Potential Salvage/Used Material Locations (Long Beach/LA Area):**
+
+* **Habitat for Humanity ReStores:** Excellent for a variety of used building materials, furniture, appliances, and sometimes tools. Proceeds support a good cause.
+    * *Bellflower:* 8739 E. Artesia Blvd., Bellflower, CA 90706 (Closest to Long Beach)
+    * *Torrance:* 18600 Crenshaw Blvd., Torrance, CA 90504
+    * *Los Angeles (Mid-Wilshire):* 1071 S. La Brea Ave., Los Angeles, CA 90019
+    * (Other locations in Pasadena, Anaheim, Santa Ana, Montclair may also be options)
+* **Architectural Salvage Yards:** More specialized for unique, vintage items. Can be pricier but offer distinctive finds.
+    * *Pasadena Architectural Salvage:* 2600 E. Foothill Blvd., Pasadena, CA 91107
+    * *Eric's Architectural Salvage of LA:* 1540 W 6th St, Los Angeles, CA 90017
+    * *Urban Americana (Long Beach):* 4928 E Pacific Coast Hwy, Long Beach, CA 90804 (More general antiques, but might have architectural decor)
+* **Tip:** Call ahead to ReStores or salvage yards to inquire about specific stock (lumber, flooring, lighting) if you have immediate needs.
+
+**Likely Tools & Materials for Van Renovation:**
+
+* **Essential Power Tools (Starting Point):**
+    * **Circular Saw:** For cutting sheet goods (plywood) and lumber.
+    * **Jigsaw:** For curved cuts, scribing wood to van walls, cutting holes. (Get assorted blades).
+    * **Cordless Drill/Driver Combo Kit:** For drilling pilot holes and driving screws. (Get good drill and driver bit sets).
+    * **Orbital Sander (or Detail Sander):** For smoothing wood surfaces.
+* **Highly Recommended Power Tools (Consider as budget/need arises):**
+    * **Miter Saw (Chop Saw):** For fast, accurate crosscuts (trim, framing).
+    * **Multitool (Oscillating Tool):** For precise cuts in awkward places, flush cutting.
+* **Essential Hand Tools:**
+    * Tape Measure (25 ft)
+    * Speed Square (or Combination Square)
+    * Utility Knife (Box Cutter) & extra blades
+    * Level (2 ft and/or Torpedo Level)
+    * Clamps (various sizes, Quick-Grip style recommended)
+    * Hammer
+    * Pry Bar / Nail Puller
+    * Screwdriver Set
+    * Pliers (Needle-nose, Channel Locks, Wire Strippers/Crimpers for lighting)
+    * Caulk Gun
+    * Putty Knife/Scraper
+* **Safety Gear (Non-negotiable!):**
+    * Safety Glasses/Goggles
+    * Dust Masks or Respirator (P95/N95 for dust; organic vapor cartridges for fumes)
+    * Work Gloves
+    * Hearing Protection (Earplugs or Earmuffs)
+* **Common Materials (Based on your task list):**
+    * **Flooring:** New flooring material (vinyl plank, laminate, etc.), underlayment, adhesive, thresholds.
+    * **Lighting:** LED lights (12V), electrical wire, switches, connectors, fuse block/fuses.
+    * **Bed:** Lumber for frame, plywood/slats for platform, screws, wood glue, hardware.
+    * **Wall Paneling:** Wood paneling (cedar/pine T&G, beadboard, Luan), screws/brad nails, construction adhesive (optional).
+    * **Small Kitchen:** Plywood/lumber for carcass/countertop, countertop material, drawer slides, hinges, handles, screws, wood glue.
+    * **Trim:** Wood trim pieces (quarter round, cove, flat stock), brad nails/pin nails, wood filler, caulk.
+* **General Consumables:** Assorted screws, sandpaper, wood glue, wood filler, paint/stain/sealer, cleaning supplies, pencils/Sharpies.
+* **Tool Acquisition Strategy:**
+    1.  Buy essential power tools first.
+    2.  Consider borrowing or renting specialized tools for short-term needs.
+    3.  Purchase other tools as specific needs arise.
+    4.  Check for used tools (Facebook Marketplace, Craigslist, pawn shops, ReStores) in good condition.
+
+</details>
+
+<details>
 <summary>Week ending May 11, 2025 (Rest of This Weekend - Current Date: Saturday, May 10)</summary>
 
 - **Saturday, May 10, 2025 (Today):**
     - **Van (Priority Tasks):**
-        - **Flooring (Task 1):** Research suitable nicer flooring options (e.g., vinyl plank, engineered hardwood, rubber). Measure floor area accurately. Obtain cost estimates and identify local suppliers.
-        - **Lighting (Task 2):** Brainstorm and research "better lighting" options (e.g., LED puck lights, strip LEDs, dimmable fixtures). Assess current wiring – can it be reused/adapted or is new wiring needed? Sketch a basic lighting plan.
-        - **Bed Design (Task 3):** Start designing the 1-person bed. Crucially, measure your bike(s) to determine the required clearance for underneath storage. Sketch out frame ideas and consider materials (wood, metal).
+        - **Acquire Essential Tools:** Based on the list above, prioritize getting at least the jigsaw and circular saw today if possible.
+        - **Flooring (Task 1):** Research suitable nicer flooring options. Measure floor area accurately. Obtain cost estimates and identify local suppliers, including checking ReStores or salvage yards from the list above.
+        - **Lighting (Task 2):** Brainstorm and research "better lighting" options. Assess current wiring. Sketch a basic lighting plan.
+        - **Bed Design (Task 3):** Start designing the 1-person bed. Measure bike(s) for underneath storage clearance. Sketch frame ideas.
     - **Key Largo Research (Secondary):** Conduct initial online searches for dive centers, community colleges (course catalogs for scuba/dance), and general information about living in Key Largo.
 - **Sunday, May 11, 2025:**
     - **Van (Priority Tasks):**
-        - **Flooring (Task 1):** Finalize flooring choice. If a decision is made and materials can be sourced today (check store hours/online availability for quick shipping), purchase them. Plan for old floor removal.
-        - **Lighting (Task 2):** Finalize lighting plan & fixture choices. Purchase new lights and any necessary wiring, switches, or connectors.
+        - **Tool Acquisition:** Continue acquiring essential tools and initial materials.
+        - **Flooring (Task 1):** Finalize flooring choice. Purchase flooring materials. Plan for old floor removal.
+        - **Lighting (Task 2):** Finalize lighting plan & fixture choices. Purchase new lights and necessary electrical components.
         - **Bed Design (Task 3):** Refine bed design and create a materials list for construction.
         - **Wall Paneling (Task 4):** Inspect areas needing wood wall covering. Measure these sections and estimate the quantity of wood paneling required. Research wood types and finishes.
     - **Key Largo Research (Secondary):** Broad search for marine conservation groups, underwater habitat restoration projects, or related volunteer opportunities in the Florida Keys.
@@ -55,12 +116,12 @@ Preliminary plans for building an underwater city.
 <summary>Week of May 12–18, 2025 (Focus: Flooring, Lighting Installation, Bed Frame Construction)</summary>
 
 - **Van (Primary Focus Daily):**
-    - **Flooring (Task 1):** Remove existing flooring. Prepare the subfloor (clean, level if needed). Begin installing the new flooring. This is often a multi-day task.
-    - **Lighting (Task 2):** Once flooring allows for easier movement/access, or in parallel if feasible, begin installing the new lighting fixtures. Run any new wiring carefully and safely (consult electrician or guides if unsure).
+    - **Flooring (Task 1):** Remove existing flooring. Prepare the subfloor. Begin installing the new flooring.
+    - **Lighting (Task 2):** Begin installing the new lighting fixtures. Run any new wiring carefully.
     - **Bed (Task 3):** Start sourcing materials for the bed. Begin construction of the bed frame, prioritizing the bike storage dimensions.
 - **Key Largo Research (Evening/Breaks):**
     - Compile a detailed list of dive shops in Key Largo with contact info, course offerings, and potential job/internship notes.
-    - Identify 2-3 specific underwater habitat projects or marine conservation organizations that seem like a good fit.
+    - Identify 2-3 specific underwater habitat projects or marine conservation organizations.
     - Investigate community college admission requirements, application deadlines (Summer/Fall), and registration processes for scuba and dance classes.
 
 </details>
@@ -82,9 +143,9 @@ Preliminary plans for building an underwater city.
 <summary>Week of May 26–31, 2025 (Focus: Kitchen Build, Wall Paneling Completion, Trim Planning)</summary>
 
 - **Van (Primary Focus Daily):**
-    - **Small Kitchen (Task 5):** Begin construction of the small kitchen unit based on your design. This may involve building a small counter, shelving, or fitting a pre-made unit.
+    - **Small Kitchen (Task 5):** Begin construction of the small kitchen unit based on your design.
     - **Wall Paneling (Task 4):** Aim to complete the installation of all wood wall paneling.
-    - **Trim (Task 6):** Assess all areas where trim will be needed to cover gaps (around floor edges, wall junctions, ceiling, around windows/doors). Start planning material choices and measure lengths required.
+    - **Trim (Task 6):** Assess all areas where trim will be needed. Start planning material choices and measure lengths required.
 - **Key Largo Research (Evening/Breaks):**
     - Send out inquiry emails to Key Largo contacts if not already done. Follow up if no response after a reasonable time.
     - Consolidate all Key Largo research. Start outlining a preliminary budget and checklist for relocation, contingent on van sale.
@@ -100,52 +161,35 @@ Preliminary plans for building an underwater city.
     - **Small Kitchen (Task 5):** Complete kitchen build and installation.
     - **Trim (Task 6):** Purchase and install all trim pieces.
     - Final Touches: Any painting, sealing, hardware installation for new components. Thoroughly clean the entire van.
-    - Photography & Listing: Take high-quality photos of the upgraded interior. Create a compelling sales listing highlighting all features, especially the new upgrades and existing amenities.
-    - List van for sale on multiple platforms. Manage inquiries and showings.
-    - Negotiate and finalize sale, including all paperwork.
+    - Photography & Listing: Take high-quality photos of the upgraded interior. Create a compelling sales listing highlighting all features.
+    - List van for sale. Manage inquiries and showings.
+    - Negotiate and finalize sale.
 - **Key Largo Transition (Latter Half of June / Early July, contingent on van sale):**
-    - Once van is sold and funds are available:
-        - Execute move to Key Largo.
-        - Secure short-term accommodation upon arrival.
-        - Visit community college, dive shops, and habitat organizations in person based on prior research.
-        - Enroll in and begin scuba and dance classes if timelines align.
-        - Start actively diving and engaging with the local marine community.
-- **If van sale or Key Largo plan is delayed:**
-    - Continue efforts to sell the van.
-    - Refine Key Largo plans or explore alternative strategies.
+    - Once van is sold: Execute move to Key Largo. Secure accommodation. Visit college, dive shops, habitat orgs. Enroll in classes. Start diving.
+- **If van sale or Key Largo plan is delayed:** Continue van sale efforts. Refine Key Largo plans.
 
 </details>
 
 <details>
 <summary>July 2025</summary>
 
-- **Assuming in Key Largo:**
-    - Fully immerse in coursework (scuba, dance).
-    - Deepen involvement in diving and underwater habitat projects.
-    - Explore the local marine environment extensively.
-    - Begin networking for future ROV/underwater city project with local experts.
-- **Secondary:** Grow your underwater city Discord/Twitter presence by sharing experiences from Key Largo.
+- **Assuming in Key Largo:** Immerse in coursework, diving, habitat projects. Explore marine environment. Network for ROV/city project.
+- **Secondary:** Grow Discord/Twitter presence with Key Largo experiences.
 
 </details>
 
 <details>
 <summary>August 2025</summary>
 
-- **Assuming in Key Largo:**
-    - Complete initial community college courses if on a summer schedule.
-    - Solidify diving skills and potentially pursue advanced certifications.
-    - Evaluate experience with habitat projects and identify areas for deeper contribution.
-- **Secondary:** Refine initial concepts for long-range ROV based on practical marine experience.
+- **Assuming in Key Largo:** Complete summer courses. Solidify diving skills (advanced certs?). Evaluate habitat project contributions.
+- **Secondary:** Refine ROV concepts based on practical marine experience.
 
 </details>
 
 <details>
 <summary>September 2025 onwards</summary>
 
-- Continue immersion in Key Largo's marine environment.
-- Depending on availability and interest, explore further education or certifications (e.g., Divemaster, technical diving, marine biology courses).
-- Re-evaluate timeline for more intensive ROV design and CNC/welding skill acquisition based on experiences and opportunities in Key Largo. It might be possible to find local workshops or integrate these goals with projects in Florida.
-- Actively engage your Discord/Twitter communities with updates from your journey.
+- Continue Key Largo immersion. Explore further education/certs. Re-evaluate ROV/CNC/welding timeline based on Florida opportunities. Engage online communities.
 
 </details>
 </details>
@@ -155,11 +199,7 @@ Preliminary plans for building an underwater city.
 <details>
 <summary>Year 28 (2026): Deepen Marine Expertise & ROV Development</summary>
 
-- **Focus:** Leverage Key Largo experience to inform ROV design. Begin practical ROV development (potentially starting with smaller, more manageable projects or kits if CNC/Welding skills are still developing, or by finding collaborators).
-- Set up mapping missions (even small scale, local).
-- Develop autonomy algorithms (theoretical or simulated initially).
-- Collect and analyze data for new frontiers.
-- Continue building online community and seeking collaborators.
+- **Focus:** Leverage Key Largo experience for ROV design. Begin practical ROV development. Map locally. Develop autonomy algorithms. Analyze data. Seek collaborators.
 
 </details>
 
@@ -168,10 +208,7 @@ Preliminary plans for building an underwater city.
 <details>
 <summary>Year 29 (2027): Scale ROV Operations & Site Identification</summary>
 
-- **Focus:** If initial ROV is successful, aim to improve and replicate. Begin to identify potential underwater habitat sites, possibly using ROV data, with a focus on areas near volcanically active regions for power generation.
-- Optimize manufacturing pipeline (if building multiple ROVs).
-- Plan site surveys.
-- Evaluate locations for first habitat.
+- **Focus:** Improve/replicate ROV. Identify potential underwater habitat sites (volcanic areas for power). Optimize manufacturing. Plan surveys.
 
 </details>
 
@@ -180,9 +217,7 @@ Preliminary plans for building an underwater city.
 <details>
 <summary>Year 31 (2029): Begin Production of Very Large Polycarbonate Domes</summary>
 
-- Design structural specs.
-- Prototype dome sections.
-- Test pressure resilience.
+- Design structural specs. Prototype dome sections. Test pressure resilience.
 
 </details>
 
@@ -191,9 +226,7 @@ Preliminary plans for building an underwater city.
 <details>
 <summary>Year 32 (2030): Master Dome Construction for Large Human-Carrying Submarines</summary>
 
-- Refine joining techniques.
-- Integrate life-support interfaces.
-- Conduct sea trials.
+- Refine joining techniques. Integrate life-support interfaces. Conduct sea trials.
 
 </details>
 
@@ -202,9 +235,7 @@ Preliminary plans for building an underwater city.
 <details>
 <summary>Year 33 (2031): Explore the Ocean Commercially and Sell Human-Carrying Subs</summary>
 
-- Launch prototype tours.
-- Gather customer feedback.
-- Scale sales operations.
+- Launch prototype tours. Gather customer feedback. Scale sales operations.
 
 </details>
 
@@ -215,9 +246,7 @@ Preliminary plans for building an underwater city.
 
 ![Concept of an Underwater Habitat](./underwater%20house%201.jpg)
 
-- Finalize habitat systems.
-- Build prototype habitat-sub.
-- Sea-trial performance.
+- Finalize habitat systems. Build prototype habitat-sub. Sea-trial performance.
 
 </details>
 
@@ -226,9 +255,7 @@ Preliminary plans for building an underwater city.
 <details>
 <summary>Year 36 (2034): Outfit Habitats with Full Living Amenities; Lease for Scientific Missions and West-Coast Eco-Hotel</summary>
 
-- Install life-support.
-- Partner with research institutions.
-- Market eco-stay packages.
+- Install life-support. Partner with research institutions. Market eco-stay packages.
 
 </details>
 
@@ -237,9 +264,7 @@ Preliminary plans for building an underwater city.
 <details>
 <summary>Year 37 (2035): Scale Habitat Production to 100 Units/Year</summary>
 
-- Streamline assembly.
-- Secure supply chains.
-- Train workforce.
+- Streamline assembly. Secure supply chains. Train workforce.
 
 </details>
 
@@ -248,9 +273,7 @@ Preliminary plans for building an underwater city.
 <details>
 <summary>Year 38 (2036): Deploy Modular Habitats to Volcano-Proximate Locations for Geothermal Power</summary>
 
-- Map volcanic sites.
-- Plan logistics.
-- Install power systems.
+- Map volcanic sites. Plan logistics. Install power systems.
 
 </details>
 
@@ -259,9 +282,7 @@ Preliminary plans for building an underwater city.
 <details>
 <summary>Year 39 (2037): Build Basic “Town” Infrastructure and Powerplant</summary>
 
-- Lay underwater cables.
-- Set up communal facilities.
-- Commission powerplant.
+- Lay underwater cables. Set up communal facilities. Commission powerplant.
 
 </details>
 
