@@ -11,7 +11,7 @@ Preliminary plans for building an underwater city.
 ---
 
 <details>
-<summary>Age 27: Learn CNC Plasma Cutting and Welding, begin designing a long‑range ROV, start an underwater city Discord, actively use Twitter and gather a community</summary>
+<summary>Year 27: Learn CNC Plasma Cutting and Welding, begin designing a long‑range ROV, start an underwater city Discord, actively use Twitter and gather a community</summary>
 
 <details>
 <summary>May 2025</summary>
@@ -124,7 +124,7 @@ Plan Q1 2026 fabrication of your first ROV prototype; expand your network; seek
 ---
 
 <details>
-<summary>Age 28: Autonomously map a large section of the ocean, seeking shipwrecks and scientific discoveries (“Google Street View for the Ocean”)</summary>
+<summary>Year 28: Autonomously map a large section of the ocean, seeking shipwrecks and scientific discoveries (“Google Street View for the Ocean”)</summary>
 
 - Set up mapping missions.  
 - Develop autonomy algorithms.  
@@ -135,7 +135,7 @@ Plan Q1 2026 fabrication of your first ROV prototype; expand your network; seek
 ---
 
 <details>
-<summary>Age 29: Scale production to 100 ROVs/year; use them to identify underwater habitat sites near volcanically active areas for power generation</summary>
+<summary>Year 29: Scale production to 100 ROVs/year; use them to identify underwater habitat sites near volcanically active areas for power generation</summary>
 
 - Optimize manufacturing pipeline.  
 - Plan site surveys.  
@@ -146,7 +146,7 @@ Plan Q1 2026 fabrication of your first ROV prototype; expand your network; seek
 ---
 
 <details>
-<summary>Age 31: Begin production of very large polycarbonate domes</summary>
+<summary>Year 31: Begin production of very large polycarbonate domes</summary>
 
 - Design structural specs.  
 - Prototype dome sections.  
@@ -157,7 +157,7 @@ Plan Q1 2026 fabrication of your first ROV prototype; expand your network; seek
 ---
 
 <details>
-<summary>Age 32: Master dome construction for large human‑carrying submarines</summary>
+<summary>Year 32: Master dome construction for large human‑carrying submarines</summary>
 
 - Refine joining techniques.  
 - Integrate life‑support interfaces.  
@@ -168,7 +168,7 @@ Plan Q1 2026 fabrication of your first ROV prototype; expand your network; seek
 ---
 
 <details>
-<summary>Age 33: Explore the ocean commercially and sell human‑carrying subs</summary>
+<summary>Year 33: Explore the ocean commercially and sell human‑carrying subs</summary>
 
 - Launch prototype tours.  
 - Gather customer feedback.  
@@ -179,7 +179,7 @@ Plan Q1 2026 fabrication of your first ROV prototype; expand your network; seek
 ---
 
 <details>
-<summary>Age 35: Increase dome size; complete first self‑sustaining underwater habitat with detachable tailcone for hydrodynamic mobility</summary>
+<summary>Year 35: Increase dome size; complete first self‑sustaining underwater habitat with detachable tailcone for hydrodynamic mobility</summary>
 
 ![Concept of an Underwater Habitat](./underwater%20house%201.jpg)
 
@@ -192,7 +192,7 @@ Plan Q1 2026 fabrication of your first ROV prototype; expand your network; seek
 ---
 
 <details>
-<summary>Age 36: Outfit habitats with full living amenities; lease for scientific missions and West‑Coast eco‑hotel</summary>
+<summary>Year 36: Outfit habitats with full living amenities; lease for scientific missions and West‑Coast eco‑hotel</summary>
 
 - Install life‑support.  
 - Partner with research institutions.  
@@ -203,7 +203,7 @@ Plan Q1 2026 fabrication of your first ROV prototype; expand your network; seek
 ---
 
 <details>
-<summary>Age 37: Scale habitat production to 100 units/year</summary>
+<summary>Year 37: Scale habitat production to 100 units/year</summary>
 
 - Streamline assembly.  
 - Secure supply chains.  
@@ -214,7 +214,7 @@ Plan Q1 2026 fabrication of your first ROV prototype; expand your network; seek
 ---
 
 <details>
-<summary>Age 38: Deploy modular habitats to volcano‑proximate locations for geothermal power</summary>
+<summary>Year 38: Deploy modular habitats to volcano‑proximate locations for geothermal power</summary>
 
 - Map volcanic sites.  
 - Plan logistics.  
@@ -225,7 +225,7 @@ Plan Q1 2026 fabrication of your first ROV prototype; expand your network; seek
 ---
 
 <details>
-<summary>Age 39: Build basic “town” infrastructure and powerplant</summary>
+<summary>Year 39: Build basic “town” infrastructure and powerplant</summary>
 
 - Lay underwater cables.  
 - Set up communal facilities.  
@@ -236,7 +236,7 @@ Plan Q1 2026 fabrication of your first ROV prototype; expand your network; seek
 ---
 
 <details>
-<summary>Age 40: …and beyond</summary>
+<summary>Year 40: …and beyond</summary>
 
 *Continue expanding the underwater city, adding research labs, tourism modules, and long‑term sustainability projects.*
 
