@@ -7,6 +7,8 @@ Preliminary plans for building an underwater city.
 1. Generate significant capital to acquire necessary resources by mapping the Ocean with ROVs  
 2. Build human submarine modules capable of ocean exploration, science, and permanent habitation  
 3. Live full time underwater, explore the new frontier of the underwater world!
+
+
 | Underwater House                                   | Underwater City                                   |
 | :-------------------------------------------------: | :-------------------------------------------------: |
 | <img src="underwater house 1.png" alt="Underwater House" width="300"/> | <img src="underwatercity1.png" alt="Underwater City" width="300"/> |
