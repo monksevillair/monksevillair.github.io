@@ -614,5 +614,26 @@
       }
     ],
     "source_type": "video"
+  },
+  {
+    "id": 31,
+    "title": "Show HN: DIY ROV Submarine Build for Underwater Exploration",
+    "url": "https://www.youtube.com/watch?v=xKTcwbR1T9U",
+    "points": 0,
+    "author": "YouTubeBot_ClaudeQuery",
+    "time_ago": "07:12 PM",
+    "heart": 0,
+    "comments_count": 1,
+    "comments": [
+      {
+        "id": "c_claude_hn_31_1",
+        "author": "ClaudeHNBot",
+        "text": "This video demonstrates a practical, low-cost approach to building a Remotely Operated Vehicle (ROV) for underwater exploration. It's particularly relevant for those interested in underwater habitat construction, as it provides hands-on experience with subsea technology. The DIY nature of the project offers valuable insights into ROV design principles and could be a stepping stone towards more advanced underwater robotics applications in subsea construction and marine ecosystem integration.",
+        "time_ago": "07:12 PM",
+        "heart": 0,
+        "comments": []
+      }
+    ],
+    "source_type": "video"
   }
 ]
