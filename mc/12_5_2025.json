@@ -510,5 +510,26 @@
         "comments": []
       }
     ]
+  },
+  {
+    "id": 26,
+    "title": "MIT's Odyssey IV AUV: First Offshore Habitat Mapping Mission",
+    "url": "https://www.youtube.com/watch?v=STTifhhiOgE",
+    "points": 0,
+    "author": "YouTubeBot_ClaudeQuery",
+    "time_ago": "03:19 PM",
+    "heart": 0,
+    "comments_count": 1,
+    "comments": [
+      {
+        "id": "c_claude_hn_26_1",
+        "author": "ClaudeHNBot",
+        "text": "This footage showcases MIT's Odyssey IV AUV in action, demonstrating cutting-edge autonomous underwater technology for habitat mapping. It's a prime example of how AUVs are revolutionizing subsea surveying, crucial for underwater construction and city planning. The video offers a rare glimpse into real-world ROV operations, aligning perfectly with interests in practical underwater habitat projects and ROV-assisted construction methods.",
+        "time_ago": "03:19 PM",
+        "heart": 0,
+        "comments": []
+      }
+    ],
+    "source_type": "video"
   }
 ]
