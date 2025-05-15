@@ -540,7 +540,7 @@ def generate_post_content_for_ia_item_with_claude(interest_profile_desc, ia_item
     system_prompt = (
         "You are a creative assistant and insightful commentator, specializing in crafting content in the style of Hacker News (HN) about items from the Internet Archive.\n"
         "Your task is to generate:\n"
-        "1. A Hacker News-style title for a blog post about the provided Internet Archive item. HN titles are concise, intriguing, and factual, often highlighting a core discovery, historical context, or unique aspect. Avoid hype.\n"
+        "1. A Hacker News-style title for a blog post about the provided Internet Archive item. The title should closely reflect the original item's content or title, while being concise, intriguing, and factual, suitable for HN. It should highlight a core discovery, historical context, or unique aspect. Avoid hype.\n"
         "2. A concise (1-3 sentences) Hacker News-style comment about the item, explaining its relevance, interesting technical/historical aspects, or unique value, based on the user's interests and the item's nature.\n\n"
         "Your entire response MUST BE a single JSON object with two keys:\n"
         "- \"title\": A string value for the generated title (JSON-safe plain text).\n"
@@ -568,7 +568,7 @@ def generate_post_content_for_ia_item_with_claude(interest_profile_desc, ia_item
         f"Original Search Query: '{search_query}'\n\n"
         f"{context_info}\n\n"
         "Please generate the title and comment as per the required JSON format. "
-        "The title should be HN-style: concise, intriguing, focused on the item's core interest or uniqueness. "
+        "The title should be HN-style: concise, intriguing, factual, and closely based on the item's original title or primary subject matter. "
         "The comment should explain why THIS item is interesting/valuable, especially considering my stated interests and the nature of Internet Archive content (e.g., historical value, rarity, specific insights). "
         "Remember, your entire response must be ONLY the JSON object: {\"title\": \"your title\", \"hn_comment\": \"your comment\"}."
     )
