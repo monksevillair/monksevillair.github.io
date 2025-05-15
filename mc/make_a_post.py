@@ -1,9 +1,10 @@
 #!/usr/bin/env nix-shell
-#!nix-shell -i python3 -p python3 python3Packages.requests python3Packages.python-dotenv
+#!nix-shell -i python3 -p python3 python3Packages.requests python3Packages.python-dotenv python3Packages.pytz
 
 import requests
 import json # Added for JSON handling
 from datetime import datetime # Added for date-based filenames
+import pytz # Added for timezone handling
 import re # Added for parsing Gemini's selection
 import random # Added for random selection
 import os # For checking file existence and getting env vars
@@ -35,6 +36,12 @@ if not GEMINI_API_KEY:
     exit(1)
 # Update the Gemini API URL with the potentially newly loaded key
 GEMINI_API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key={GEMINI_API_KEY}"
+
+def get_current_pst_time():
+    """Returns the current time in PST/PDT."""
+    utc_now = datetime.utcnow().replace(tzinfo=pytz.utc)
+    pst_tz = pytz.timezone('America/Los_Angeles')
+    return utc_now.astimezone(pst_tz)
 
 def load_all_prompts(filename=PROMPTS_FILE):
     """Loads immutable and mutable prompts from a JSON file."""
@@ -71,7 +78,7 @@ def save_all_prompts(prompts_data, filename=PROMPTS_FILE):
         print(f"Error: Could not write prompts to file {filename}.")
 
 def get_todays_json_filename():
-    now = datetime.now()
+    now = get_current_pst_time()
     return f"{now.day}_{now.month}_{now.year}.json"
 
 def load_todays_posts(filename):
@@ -403,14 +410,18 @@ def generate_title_with_gemini(search_query, marginalia_result, existing_titles_
 
     prompt = (
         f"Based on the search query '{search_query}' and the following search result from Marginalia:\n"
-        f"URL: {marginalia_result.get('url', 'N/A')}\n"
-        f"Title: {marginalia_result.get('title', 'N/A')}\n"
-        f"Description: {marginalia_result.get('description', 'N/A')}\n\n"
+        f"Original URL: {marginalia_result.get('url', 'N/A')}\n"
+        f"Original Title: {marginalia_result.get('title', 'N/A')}\n"
+        f"Original Description: {marginalia_result.get('description', 'N/A')}\n\n"
         f"{title_context}\n\n"
-        "Please generate a quirky, intriguing, and Hacker News-style title for a new blog post about this topic. "
-        "The title should spark curiosity and hint at the core interesting aspect of the content, often with a slightly informal or clever angle. "
-        "It should be suitable for a JSON data entry and must not contain any special formatting or quotation marks that would break JSON structure. "
-        "Just the plain text of the title. Think of titles you'd see on HN that make you want to click!"
+        "Your task is to generate a new title for a blog post about this article. "
+        "The new title should be:\n"
+        "1. Closely based on the Original Title and Original Description, reflecting the article's main topic and key information accurately.\n"
+        "2. Clear, concise, and informative.\n"
+        "3. Engaging, but without sacrificing accuracy or becoming overly sensational. It should still sound like a title for a thoughtful discovery.\n"
+        "4. If the Original Title is already excellent and fitting, you can use it directly or make minimal modifications to enhance clarity or fit the context of a curated list.\n"
+        "5. Ensure the title is plain text, suitable for a JSON data entry, and does not contain any special formatting or quotation marks that would break JSON structure.\n\n"
+        "Respond with ONLY the generated title text."
     )
 
     payload = {
@@ -418,8 +429,8 @@ def generate_title_with_gemini(search_query, marginalia_result, existing_titles_
             "parts": [{"text": prompt}]
         }],
         "generationConfig": {
-            "maxOutputTokens": 70, # Slightly more room for creative/quirky titles
-            "temperature": 0.75     # Encourage more variability and "quirkiness"
+            "maxOutputTokens": 70, 
+            "temperature": 0.4     # Lowered temperature for more factual/less quirky titles
         }
     }
     headers = {
@@ -551,9 +562,9 @@ def add_post_to_daily_json(post_title, post_url, hn_comment_text=None):
     Adds a new post to a JSON file named with today's date, including a single HN-style comment.
     Initializes heart to 0 (neutral). Stores the creation time.
     """
-    now = datetime.now()
+    now = get_current_pst_time()
     filename = f"{now.day}_{now.month}_{now.year}.json"
-    creation_time_str = now.strftime("%I:%M %p") # Format as HH:MM AM/PM e.g., 03:45 PM
+    creation_time_str = now.strftime("%I:%M %p %Z") # Format as HH:MM AM/PM TZ e.g., 03:45 PM PST
     
     posts = []
     try:
@@ -583,7 +594,7 @@ def add_post_to_daily_json(post_title, post_url, hn_comment_text=None):
             "id": f"c_gemini_hn_{new_post_id}_1", # Unique comment ID
             "author": "GeminiHNBot", 
             "text": hn_comment_text,
-            "time_ago": creation_time_str, # Use formatted creation time
+            "time_ago": creation_time_str, # Use formatted creation time with timezone
             "heart": 0, # Initialize heart to 0 (neutral) for new comments
             "comments": [] 
         })
@@ -594,7 +605,7 @@ def add_post_to_daily_json(post_title, post_url, hn_comment_text=None):
         "url": post_url,
         "points": 0,
         "author": "AutoGeneratedBot",
-        "time_ago": creation_time_str, # Use formatted creation time
+        "time_ago": creation_time_str, # Use formatted creation time with timezone
         "heart": 0, # Initialize heart to 0 (neutral) for new posts
         "comments_count": len(post_comments),
         "comments": post_comments
