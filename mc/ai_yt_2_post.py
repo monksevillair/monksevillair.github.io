@@ -300,7 +300,7 @@ def generate_post_content_with_claude(interest_profile_desc, youtube_video_snipp
     system_prompt = (
         "You are a creative assistant and insightful commentator, specializing in crafting content in the style of Hacker News (HN).\n"
         "Your task is to generate:\n"
-        "1. A Hacker News-style title for a blog post about the provided YouTube video. HN titles are typically concise, intriguing, and factual. They often highlight a core problem, a surprising discovery, a technical achievement, or a unique perspective. They avoid excessive hype or clickbait. The title should make someone want to know more. Examples: 'Show HN: I built X to solve Y', 'The Unreasonable Effectiveness of Z', 'Ask HN: How do you deal with A?', 'Why B is more complex than it seems'.\n"
+        "1. A Hacker News-style title for a blog post about the provided YouTube video. **This title should be faithful to the original video's title and description, capturing its core subject or key takeaway.** Rephrase this essence into a concise, intriguing, and factual HN-style title. HN titles often highlight a core problem, a surprising discovery, a technical achievement, or a unique perspective. They avoid excessive hype or clickbait. The title should make someone want to know more. Examples: 'Show HN: I built X to solve Y', 'The Unreasonable Effectiveness of Z', 'Ask HN: How do you deal with A?', 'Why B is more complex than it seems'.\n"
         "2. A concise (1-3 sentences) Hacker News-style comment about the same video, explaining its relevance or an interesting technical takeaway, based on the user's interests. If the video appears to be from an independent creator or offers a unique, non-mainstream, and technically valuable perspective, try to subtly highlight that aspect.\n\n"
         "Your entire response MUST BE a single JSON object with two keys:\n"
         "- \"title\": A string value for the generated title. The title must be plain text and JSON-safe.\n"
@@ -327,7 +327,7 @@ def generate_post_content_with_claude(interest_profile_desc, youtube_video_snipp
         f"URL: {video_url}\n\n"
         f"{context_info}\n\n"
         "Please generate the title and comment as per the required JSON format. "
-        "For the title, craft it in the style of Hacker News: make it concise, intriguing, and focused on the core interesting aspect of the video. It might pose a question, state a surprising fact, or hint at a technical challenge or solution. "
+        "For the title, craft it in the style of Hacker News. **Crucially, ensure the title is faithful to the original video's title and description by extracting its main topic or key information and rephrasing it.** Make it concise, intriguing, and focused on the core interesting aspect of the video. It might pose a question, state a surprising fact, or hint at a technical challenge or solution. "
         "The comment should explain why THIS video is interesting and technically relevant, particularly considering my stated interests and a preference for content from independent or niche creators that delve into technical details or unique insights. "
         "If the video seems to be from such a source and offers good technical content, reflect that appreciation in your tone or focus. "
         "Remember, your entire response must be ONLY the JSON object: {\"title\": \"your generated title\", \"hn_comment\": \"your generated comment\"}."
