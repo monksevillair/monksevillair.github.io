@@ -23,7 +23,7 @@ jobs:
           python-version: '3.x' # The script uses python3
 
       - name: Install dependencies
-        run: pip install requests python-dotenv
+        run: pip install requests python-dotenv pytz
 
       - name: Run Python script
         env:
