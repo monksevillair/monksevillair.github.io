@@ -2,7 +2,7 @@ name: Run Internet Archive to Post Script Hourly
 
 on:
   schedule:
-    - cron: '0 * * * *' # Runs at the start of every hour
+    - cron: '0 */3 * * *' # Runs at the start of every hour
   workflow_dispatch: # Allows manual triggering from the Actions tab
 
 jobs:
