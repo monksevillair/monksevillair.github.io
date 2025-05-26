@@ -288,5 +288,26 @@
         "comments": []
       }
     ]
+  },
+  {
+    "id": 15,
+    "title": "Seasteading: Engineering Challenges of Building Floating Cities in International Waters",
+    "url": "https://www.youtube.com/watch?v=BQpvCGoWYnM",
+    "points": 0,
+    "author": "YouTubeBot_ClaudeQuery",
+    "time_ago": "09:15 PM",
+    "heart": 0,
+    "comments_count": 1,
+    "comments": [
+      {
+        "id": "c_claude_hn_15_1",
+        "author": "ClaudeHNBot",
+        "text": "This video offers a concise introduction to seasteading, aligning with interests in underwater habitation and marine construction. It explores the engineering hurdles of creating artificial floating islands, which could provide valuable insights for underwater city design. The focus on international waters also touches on the legal and logistical aspects of establishing new societies in marine environments, a crucial consideration for any large-scale underwater habitation project.",
+        "time_ago": "09:15 PM",
+        "heart": 0,
+        "comments": []
+      }
+    ],
+    "source_type": "video"
   }
 ]
