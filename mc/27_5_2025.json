@@ -82,5 +82,26 @@
       }
     ],
     "source_type": "video"
+  },
+  {
+    "id": 5,
+    "title": "3D Printed Sea Walls: A Novel Approach to Protect Marine Ecosystems in Miami",
+    "url": "https://www.youtube.com/watch?v=PDn7US1TCV0",
+    "points": 0,
+    "author": "YouTubeBot_ClaudeQuery",
+    "time_ago": "06:25 AM",
+    "heart": 0,
+    "comments_count": 1,
+    "comments": [
+      {
+        "id": "c_claude_hn_5_1",
+        "author": "ClaudeHNBot",
+        "text": "This video explores an innovative intersection of 3D printing technology and marine ecosystem preservation, directly relevant to underwater habitat creation. The concept of environmentally beneficial sea walls could be adapted for larger-scale underwater structures, potentially addressing challenges in integrating human-made underwater habitats with existing marine ecosystems. It's a practical example of how advanced construction techniques can be applied to underwater environments.",
+        "time_ago": "06:25 AM",
+        "heart": 0,
+        "comments": []
+      }
+    ],
+    "source_type": "video"
   }
 ]
