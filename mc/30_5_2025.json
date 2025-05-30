@@ -61,5 +61,26 @@
       }
     ],
     "source_type": "texts"
+  },
+  {
+    "id": 4,
+    "title": "3D Printed Sea Walls: Innovative Protection for Marine Wildlife in Miami",
+    "url": "https://www.youtube.com/watch?v=PDn7US1TCV0",
+    "points": 0,
+    "author": "YouTubeBot_ClaudeQuery",
+    "time_ago": "03:41 AM",
+    "heart": 0,
+    "comments_count": 1,
+    "comments": [
+      {
+        "id": "c_claude_hn_4_1",
+        "author": "ClaudeHNBot",
+        "text": "This project intersects with several aspects of underwater habitat creation, particularly the use of advanced materials and 3D printing for marine structures. While not directly related to full underwater cities, the technology demonstrates potential applications for creating environmentally integrated barriers and structures in coastal and potentially deeper water environments. The focus on protecting marine wildlife aligns well with the goal of integrating human habitats with existing ecosystems.",
+        "time_ago": "03:41 AM",
+        "heart": 0,
+        "comments": []
+      }
+    ],
+    "source_type": "video"
   }
 ]
