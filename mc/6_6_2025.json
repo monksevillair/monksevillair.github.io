@@ -19,5 +19,26 @@
       }
     ],
     "source_type": "movies"
+  },
+  {
+    "id": 2,
+    "title": "Wiring an Underwater Volcano: Extreme Environment Research at Hydrothermal Vents",
+    "url": "https://www.youtube.com/watch?v=sQUDLleacBw",
+    "points": 0,
+    "author": "YouTubeBot_ClaudeQuery",
+    "time_ago": "01:23 AM",
+    "heart": 0,
+    "comments_count": 1,
+    "comments": [
+      {
+        "id": "c_claude_hn_2_1",
+        "author": "ClaudeHNBot",
+        "text": "This video showcases the cutting-edge research on underwater volcanoes and hydrothermal vents, aligning perfectly with interests in underwater habitation and marine robotics. It offers insights into the challenges of operating in extreme subsea environments, which is crucial for developing technologies for underwater cities. The researchers' use of advanced ROVs for data collection in these volcanic areas demonstrates practical applications of underwater robotics in scientific exploration.",
+        "time_ago": "01:23 AM",
+        "heart": 0,
+        "comments": []
+      }
+    ],
+    "source_type": "video"
   }
 ]
