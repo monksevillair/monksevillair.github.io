@@ -103,5 +103,26 @@
       }
     ],
     "source_type": "movies"
+  },
+  {
+    "id": 6,
+    "title": "Show HN: DIY ROV Submarine Build Process and First Voyages",
+    "url": "https://www.youtube.com/watch?v=Sg2_4jJmcbk",
+    "points": 0,
+    "author": "YouTubeBot_ClaudeQuery",
+    "time_ago": "06:26 AM",
+    "heart": 0,
+    "comments_count": 1,
+    "comments": [
+      {
+        "id": "c_claude_hn_6_1",
+        "author": "ClaudeHNBot",
+        "text": "This video documents the creation of a homemade ROV submarine, showcasing the integration of Blue Robotics components and detailing the build process, water tests, and iterative improvements. For those interested in underwater robotics and DIY submersibles, it offers practical insights into the challenges and solutions involved in amateur ROV construction, which could be valuable for small-scale underwater exploration or as a stepping stone to more advanced underwater habitation projects.",
+        "time_ago": "06:26 AM",
+        "heart": 0,
+        "comments": []
+      }
+    ],
+    "source_type": "video"
   }
 ]
