@@ -34,6 +34,7 @@ import tempfile
 import zipfile
 from pathlib import Path
 from typing import Iterator, List, Sequence, Tuple
+from datetime import datetime, timedelta, timezone
 
 import requests
 from PIL import Image, ImageDraw, ImageSequence
@@ -100,6 +101,16 @@ def lonlat_to_pixel(lon: float, lat: float, width: int, height: int) -> Tuple[in
     x = int((lon - LON_MIN) / (LON_MAX - LON_MIN) * width)
     y = int((LAT_MAX - lat) / (LAT_MAX - LAT_MIN) * height)  # y inverted
     return x, y
+
+
+def _parse_iso_time(val: str) -> datetime | None:
+    """Attempt to parse various ISO-like datetime strings to UTC."""
+    for fmt in ("%Y-%m-%d %H:%M:%S", "%Y-%m-%d %H:%M", "%Y%m%d %H%M", "%Y-%m-%dT%H:%M:%S", "%Y-%m-%dT%H:%M"):
+        try:
+            return datetime.strptime(val.strip(), fmt).replace(tzinfo=timezone.utc)
+        except Exception:
+            continue
+    return None
 
 
 # -----------------------------------------------------------------------------
@@ -169,31 +180,94 @@ def load_cone_polygons(zip_path: Path) -> List[Polygon]:
     return polygons
 
 
+def load_track_points(zip_path: Path) -> List[Tuple[float, float, datetime | None]]:
+    """Return (lon, lat, datetime|None) tuples from best-track shapefile."""
+    result: List[Tuple[float, float, datetime | None]] = []
+    with zipfile.ZipFile(zip_path) as zf, tempfile.TemporaryDirectory() as tdir:
+        shp_members = [n for n in zf.namelist() if n.lower().endswith('.shp')]
+        if not shp_members:
+            return []
+        shp_members.sort(key=lambda n: ('pts' not in n.lower(), n))
+
+        for shp_member in shp_members:
+            base_no_ext = shp_member[:-4]
+            needed = [base_no_ext + ext for ext in ('.shp', '.shx', '.dbf')]
+            if not all(any(n.lower() == m.lower() for n in zf.namelist()) for m in needed):
+                continue
+            # extract required components
+            extracted = {}
+            for m in needed:
+                member_real = next(n for n in zf.namelist() if n.lower() == m.lower())
+                dest = Path(tdir) / Path(member_real).name
+                with zf.open(member_real) as src, open(dest, 'wb') as dst:
+                    dst.write(src.read())
+                extracted[m[-4:]] = dest  # keyed by extension
+
+            try:
+                rdr = shapefile.Reader(str(extracted['.shp']))
+            except Exception:
+                continue
+
+            # locate ISO_TIME field if present
+            field_names = [f[0] for f in rdr.fields[1:]]
+            iso_idx = field_names.index('ISO_TIME') if 'ISO_TIME' in field_names else None
+
+            for sr in rdr.shapeRecords():
+                shp = sr.shape
+                rec = sr.record
+                if not shp.points:
+                    continue
+                lon, lat = shp.points[0]
+                dt = None
+                if iso_idx is not None:
+                    dt = _parse_iso_time(rec[iso_idx])
+                result.append((lon, lat, dt))
+            if result:
+                break
+    return result
+
+
 # -----------------------------------------------------------------------------
 # Main overlay routine
 # -----------------------------------------------------------------------------
 
-def create_overlay_gif(base_gif: Path, cones: Sequence[Polygon], out_gif: Path) -> None:
-    """Render *cones* onto every frame of *base_gif* and save to *out_gif*."""
+def create_overlay_gif(base_gif: Path, cones: Sequence[Polygon],
+                       tracks: Sequence[Sequence[Tuple[float, float]]],
+                       out_gif: Path) -> None:
+    """Render cones, tracks, and current positions onto *base_gif* → *out_gif*."""
     base = Image.open(base_gif)
     width, height = base.size
     frames: List[Image.Image] = []
+    # total number of frames for proportional indexing
+    frames_total = getattr(base, "n_frames", sum(1 for _ in ImageSequence.Iterator(base)))
 
-    # Pre-compute pixel polygons for speed
-    px_polys: List[List[Tuple[int, int]]] = []
-    for poly in cones:
-        px_coords = [lonlat_to_pixel(lon, lat, width, height) for lon, lat in poly.exterior.coords]
-        px_polys.append(px_coords)
+    # pre-convert polygons to pixel space
+    px_cones = [[lonlat_to_pixel(lon, lat, width, height) for lon, lat in poly.exterior.coords]
+                for poly in cones]
+    px_tracks = [[lonlat_to_pixel(lon, lat, width, height) for lon, lat in seg]
+                 for seg in tracks]
 
     for frame in ImageSequence.Iterator(base):
         fr = frame.convert("RGBA")
         draw = ImageDraw.Draw(fr, "RGBA")
-        for px in px_polys:
-            draw.polygon(px, outline=(255, 255, 0, 255), fill=None)  # yellow outline, no fill
+        # cones – yellow outline
+        for poly_px in px_cones:
+            draw.polygon(poly_px, outline=(255, 255, 0, 255), fill=None)
+        # tracks – cyan line
+        for line_px in px_tracks:
+            if len(line_px) > 1:
+                draw.line(line_px, fill=(0, 255, 255, 255), width=2)
+        # moving storm centre – red dot advances along track over frames
+        for track_px in px_tracks:
+            if not track_px:
+                continue
+            idx = int(frame.tell() / max(frames_total - 1, 1) * (len(track_px) - 1))
+            x, y = track_px[idx]
+            r = 4
+            draw.ellipse((x - r, y - r, x + r, y + r), outline=(255, 0, 0, 255), fill=(255, 0, 0, 255))
         frames.append(fr)
 
-    # Save with original duration info (Pillow stores .info['duration'] per-frame)
-    durations = [frame.info.get("duration", 100) for frame in ImageSequence.Iterator(base)]
+    durations = [frame.info.get('duration', 100) for frame in ImageSequence.Iterator(base)]
     frames[0].save(out_gif, save_all=True, append_images=frames[1:], optimize=False,
                    duration=durations, loop=0)
 
@@ -235,10 +309,12 @@ def main() -> None:
 
         print("Found", len(cone_links), "active storm cone shapefile(s).")
 
-        # 3. Download shapefiles and build polygons ----------------------------
+        # 3. Download shapefiles and build polygons/track lines --------------
         all_polys: List[Polygon] = []
+        all_tracks: List[List[Tuple[float, float]]] = []
         for url in cone_links:
             fname = tmp / Path(url).name
+            base_id = Path(url).stem.split('_')[0]  # e.g., al032025
             print("  •", url.split("/")[-1])
             try:
                 download_file(url, fname)
@@ -247,14 +323,28 @@ def main() -> None:
             except Exception as exc:
                 print(f"    ! Failed to process {url}: {exc}")
 
+            # attempt to fetch best-track for this storm
+            bt_url = f"https://www.nhc.noaa.gov/gis/best_track/{base_id}_best_track.zip"
+            try:
+                bt_path = tmp / Path(bt_url).name
+                download_file(bt_url, bt_path)
+                pts = load_track_points(bt_path)
+                if pts:
+                    # extract lon/lat regardless of length of tuple
+                    all_tracks.append([(p[0], p[1]) for p in pts])
+            except Exception as exc:
+                print(f"    ! Failed to get track for {base_id}: {exc}")
+
         if not all_polys:
             print("Could not extract any polygons from shapefiles – aborting.")
             sys.exit(1)
 
         # 4. Overlay and save ---------------------------------------------------
         out_path = Path(args.output)
+        # Ensure destination directory exists
+        out_path.parent.mkdir(parents=True, exist_ok=True)
         print(f"Rendering overlay GIF → {out_path.resolve()}")
-        create_overlay_gif(base_gif, all_polys, out_path)
+        create_overlay_gif(base_gif, all_polys, all_tracks, out_path)
         print("Done! ")
 
 
