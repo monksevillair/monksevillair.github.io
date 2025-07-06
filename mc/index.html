@@ -72,10 +72,10 @@
         #date-navigation button:hover:not(:disabled) {
             background-color: #7655C7; /* Lighter purple on hover */
         }
-        #current-date-display {
-            margin: 0 15px;
+        #current-date-display, #current-time-display {
+            margin: 0 10px;
             font-weight: bold;
-            color: #f0f0f0; /* Bright white for the date */
+            color: #f0f0f0; /* Bright white for the date/time */
         }
         .post {
             margin-bottom: 10px;
@@ -207,6 +207,7 @@
                 <div id="date-navigation">
                     <button id="prev-day-button">◄ Previous Day</button>
                     <span id="current-date-display"></span>
+                    <span id="current-time-display"></span>
                     <button id="next-day-button">Next Day ►</button>
                 </div>
             </div>
@@ -218,19 +219,19 @@
         <div class="right-column">
              <img src="https://github.com/monksevillair/monksevillair.github.io/blob/master/mc/weather/overlay_glm_hurricanes.gif?raw=true" alt="Hurricane Weather GIF">
              <div class="links-box">
-                <h3>Links</h3>
-                <ul>
-                    <li><a href="https://xcancel.com/search?f=tweets&q=underwater+habitat" target="_blank" rel="noopener noreferrer">Underwater Habitat (Tweets)</a></li>
-                    <li><a href="https://xcancel.com/search?f=tweets&q=aquarium&since=&until=&near=" target="_blank" rel="noopener noreferrer">Aquarium (Tweets)</a></li>
-                    <li><a href="https://xcancel.com/search?f=tweets&q=underwater+rov&since=&until=&near=" target="_blank" rel="noopener noreferrer">Underwater ROV (Tweets)</a></li>
-                    <li><a href="https://xcancel.com/elonmusk" target="_blank" rel="noopener noreferrer">Nitter</a></li>
-                    <li><a href="https://xcancel.com/search?f=tweets&q=miami+robotics&since=&until=&near=" target="_blank" rel="noopener noreferrer">Miami Robotics (Tweets)</a></li>
-                    <li><a href="https://xcancel.com/search?f=tweets&q=miami+scuba&since=&until=&near=" target="_blank" rel="noopener noreferrer">Miami Scuba (Tweets)</a></li>
-                    <li><a href="https://www.facebook.com/search/top?q=underwater%20habitat" target="_blank" rel="noopener noreferrer">Underwater Habitat (Facebook)</a></li>
-                    <li><a href="https://www.facebook.com/search/top?q=miami%20scuba" target="_blank" rel="noopener noreferrer">Miami Scuba (Facebook)</a></li>
-                    <li><a href="https://miami.craigslist.org/search/sss?query=scuba#search=2~gallery~0" target="_blank" rel="noopener noreferrer">Craigslist Scuba (Miami)</a></li>
-                </ul>
-            </div>
+                 <h3>Links</h3>
+                 <ul>
+                     <li><a href="https://xcancel.com/search?f=tweets&q=underwater+habitat" target="_blank" rel="noopener noreferrer">Underwater Habitat (Tweets)</a></li>
+                     <li><a href="https://xcancel.com/search?f=tweets&q=aquarium&since=&until=&near=" target="_blank" rel="noopener noreferrer">Aquarium (Tweets)</a></li>
+                     <li><a href="https://xcancel.com/search?f=tweets&q=underwater+rov&since=&until=&near=" target="_blank" rel="noopener noreferrer">Underwater ROV (Tweets)</a></li>
+                     <li><a href="https://xcancel.com/elonmusk" target="_blank" rel="noopener noreferrer">Nitter</a></li>
+                     <li><a href="https://xcancel.com/search?f=tweets&q=miami+robotics&since=&until=&near=" target="_blank" rel="noopener noreferrer">Miami Robotics (Tweets)</a></li>
+                     <li><a href="https://xcancel.com/search?f=tweets&q=miami+scuba&since=&until=&near=" target="_blank" rel="noopener noreferrer">Miami Scuba (Tweets)</a></li>
+                     <li><a href="https://www.facebook.com/search/top?q=underwater%20habitat" target="_blank" rel="noopener noreferrer">Underwater Habitat (Facebook)</a></li>
+                     <li><a href="https://www.facebook.com/search/top?q=miami%20scuba" target="_blank" rel="noopener noreferrer">Miami Scuba (Facebook)</a></li>
+                     <li><a href="https://miami.craigslist.org/search/sss?query=scuba#search=2~gallery~0" target="_blank" rel="noopener noreferrer">Craigslist Scuba (Miami)</a></li>
+                 </ul>
+             </div>
         </div>
     </div>
 
@@ -240,9 +241,22 @@
             const prevDayButton = document.getElementById('prev-day-button');
             const nextDayButton = document.getElementById('next-day-button');
             const currentDateDisplay = document.getElementById('current-date-display');
+            const currentTimeDisplay = document.getElementById('current-time-display');
 
             const actualToday = new Date(); // The true current date for navigation limits
             let displayedDate = new Date(); // Date for which posts are currently shown, starts with today
+
+            function updateCurrentTime() {
+                const now = new Date();
+                const timeString = now.toLocaleTimeString('en-US', {
+                    timeZone: 'America/New_York', // IANA time zone for Miami (EST/EDT)
+                    hourCycle: 'h23', // 24-hour clock
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'
+                });
+                currentTimeDisplay.textContent = `${timeString} (Miami)`;
+            }
 
             function updateCurrentDateDisplay() {
                 currentDateDisplay.textContent = displayedDate.toLocaleDateString(undefined, {
@@ -392,6 +406,8 @@
 
             // Initial Load
             fetchPostsForDate(displayedDate);
+            updateCurrentTime(); // Initial call to display time immediately
+            setInterval(updateCurrentTime, 1000); // Update time every second
         });
     </script>
 </body>
