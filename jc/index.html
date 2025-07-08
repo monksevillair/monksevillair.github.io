@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joanna's Checklist</title>
+    <style>
+        body {
+            background-color: white;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Joanna's Checklist</h1>
+
+    <form id="checklist">
+        <p>
+            <input type="checkbox" id="task1">
+            <label for="task1">Check your Email, make zero inbox: <a href="https://mail.google.com" target="_blank">Gmail</a></label>
+        </p>
+
+        <hr>
+
+        <h2>Check each of these links</h2>
+        <p><input type="checkbox" id="task2"><a href="https://miami.craigslist.org/search/jjj?query=student" target="_blank">Miami Craigslist - "student"</a></p>
+        <p><input type="checkbox" id="task3"><a href="https://miami.craigslist.org/search/jjj?query=chinese" target="_blank">Miami Craigslist - "chinese"</a></p>
+        <p><input type="checkbox" id="task4"><a href="https://miami.craigslist.org/search/jjj?query=job%20fiu" target="_blank">Miami Craigslist - "job fiu"</a></p>
+        <p><input type="checkbox" id="task5"><a href="https://www.facebook.com/search/top?q=fiu%20job" target="_blank">Facebook - "fiu job"</a></p>
+        <p><input type="checkbox" id="task6"><a href="https://www.facebook.com/search/top?q=miami%20job" target="_blank">Facebook - "miami job"</a></p>
+        <p><input type="checkbox" id="task7"><a href="https://www.facebook.com/search/top?q=miami%20camp" target="_blank">Facebook - "miami camp"</a></p>
+        <p><input type="checkbox" id="task8"><a href="https://www.facebook.com/search/top?q=miami%20tutoring" target="_blank">Facebook - "miami tutoring"</a></p>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const checklist = document.getElementById('checklist');
+            const checkboxes = checklist.querySelectorAll('input[type="checkbox"]');
+            const storageKey = 'joannasChecklist';
+            const lastResetKey = 'joannasChecklistLastReset';
+
+            function resetChecklist() {
+                const now = new Date();
+                const lastReset = new Date(localStorage.getItem(lastResetKey) || 0);
+                
+                // Reset at 3 AM
+                const resetTime = new Date(now);
+                resetTime.setHours(3, 0, 0, 0);
+
+                if (now >= resetTime && lastReset < resetTime) {
+                    checkboxes.forEach(checkbox => {
+                        checkbox.checked = false;
+                        localStorage.removeItem(checkbox.id);
+                    });
+                    localStorage.setItem(lastResetKey, now.toISOString());
+                }
+            }
+
+            function saveState() {
+                checkboxes.forEach(checkbox => {
+                    localStorage.setItem(checkbox.id, checkbox.checked);
+                });
+            }
+
+            function loadState() {
+                checkboxes.forEach(checkbox => {
+                    const savedState = localStorage.getItem(checkbox.id);
+                    if (savedState !== null) {
+                        checkbox.checked = savedState === 'true';
+                    }
+                });
+            }
+
+            resetChecklist();
+            loadState();
+
+            checklist.addEventListener('change', saveState);
+        });
+    </script>
+
+</body>
+</html>
