@@ -11,8 +11,8 @@ Usage (from shell):
         --gif-url https://cdn.star.nesdis.noaa.gov/GOES19/GLM/SECTOR/se/EXTENT3/20251852306-20251860306-GOES19-GLM-SE-EXTENT3-600x600.gif \
         --output overlay_glm_hurricanes.gif
 
-If --gif-url is not supplied, the script falls back to the hard-coded example
-URL above. The script grabs the most recent cone-of-uncertainty shapefile(s)
+If --gif-url is not supplied, the script will automatically discover the latest GIF from the directory.
+The script grabs the most recent cone-of-uncertainty shapefile(s)
 for every *active* storm listed in the NHC Atlantic and East-Pacific GIS RSS
 feeds, converts those polygons/centre-tracks to image-pixel coordinates, and
 burns them into each frame of the lightning GIF.
@@ -45,6 +45,9 @@ import shapefile  # pyshp
 # -----------------------------------------------------------------------------
 # Constants & configuration – tweak here if the GOES sector changes
 # -----------------------------------------------------------------------------
+
+# Directory for GIF files
+GIF_DIRECTORY_URL = "https://cdn.star.nesdis.noaa.gov/GOES19/GLM/SECTOR/se/EXTENT3/"
 
 # Default GIF to pull (24-hour lightning extent mosaic for GOES-19 / SE sector)
 DEFAULT_GIF_URL = (
@@ -272,17 +275,48 @@ def create_overlay_gif(base_gif: Path, cones: Sequence[Polygon],
                    duration=durations, loop=0)
 
 
+def find_latest_gif_url() -> str:
+    """Fetch the directory listing and find the latest GIF based on end timestamp."""
+    resp = requests.get(GIF_DIRECTORY_URL)
+    resp.raise_for_status()
+    html = resp.text
+    # Find all hrefs matching the pattern
+    pattern = r'href="(\d+-\d+-GOES19-GLM-SE-EXTENT3-600x600\.gif)"'
+    links = re.findall(pattern, html)
+    if not links:
+        raise ValueError("No matching GIF files found in the directory.")
+    
+    # Extract end time for sorting
+    def get_end_time(link: str) -> int:
+        parts = link.split('-')
+        if len(parts) >= 3:
+            try:
+                return int(parts[1])
+            except ValueError:
+                pass
+        return 0
+    
+    links.sort(key=get_end_time, reverse=True)
+    latest_file = links[0]
+    return GIF_DIRECTORY_URL + latest_file
+
+
 # -----------------------------------------------------------------------------
 # Entrypoint
 # -----------------------------------------------------------------------------
 
 def main() -> None:
     ap = argparse.ArgumentParser(description="Overlay active NHC cones on GOES GLM GIF.")
-    ap.add_argument("--gif-url", default=DEFAULT_GIF_URL,
-                    help="Source GOES lightning GIF (24-hour animation).")
+    ap.add_argument("--gif-url", default=None,
+                    help="Source GOES lightning GIF (24-hour animation). If not provided, auto-discover latest.")
     ap.add_argument("--output", default="overlay_glm_hurricanes.gif",
                     help="Filename for the overlaid GIF.")
     args = ap.parse_args()
+
+    if args.gif_url is None:
+        print("Discovering latest GIF URL...")
+        args.gif_url = find_latest_gif_url()
+        print(f"Using latest GIF: {args.gif_url}")
 
     with tempfile.TemporaryDirectory() as tmpdir:
         tmp = Path(tmpdir)
