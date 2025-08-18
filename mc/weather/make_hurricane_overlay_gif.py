@@ -17,6 +17,8 @@ for every *active* storm listed in the NHC Atlantic and East-Pacific GIS RSS
 feeds, converts those polygons/centre-tracks to image-pixel coordinates, and
 burns them into each frame of the lightning GIF.
 
+If no active storms are found or no polygons can be extracted, the script will still produce the output GIF without overlays.
+
 Dependencies:
     nix-shell -p "python3.withPackages (ps: with ps; [ requests pillow imageio shapely pyshp ])"
 
@@ -338,10 +340,10 @@ def main() -> None:
             cone_links.extend(links)
 
         if not cone_links:
-            print("No active storms with cone shapefiles found – nothing to overlay.")
-            sys.exit(0)
+            print("No active storms with cone shapefiles found – proceeding without overlays.")
 
-        print("Found", len(cone_links), "active storm cone shapefile(s).")
+        else:
+            print("Found", len(cone_links), "active storm cone shapefile(s).")
 
         # 3. Download shapefiles and build polygons/track lines --------------
         all_polys: List[Polygon] = []
@@ -369,9 +371,8 @@ def main() -> None:
             except Exception as exc:
                 print(f"    ! Failed to get track for {base_id}: {exc}")
 
-        if not all_polys:
-            print("Could not extract any polygons from shapefiles – aborting.")
-            sys.exit(1)
+        if cone_links and not all_polys:
+            print("Could not extract any polygons from shapefiles – proceeding without overlays.")
 
         # 4. Overlay and save ---------------------------------------------------
         out_path = Path(args.output)
